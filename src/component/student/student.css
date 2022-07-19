@@ -1,0 +1,57 @@
+.container {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  /* identical to box height, or 157% */
+
+  /* Grey/600 */
+
+  color: #596579;
+}
+.sidebar-secondary {
+  width: 20vw;
+  height: 100vh;
+  background: #f4f7fb;
+  padding-top: 15px;
+}
+.hamburger-seconday {
+  padding-left: 12px;
+  margin-bottom: 18px;
+}
+.arrow {
+  content: url("./img/Arrow.png");
+  width: fit-content;
+  margin-right: 10px;
+}
+.list-secondary {
+  list-style-image: url("./img/Arrow.png");
+}
+.list-action {
+  width: 95%;
+  margin: 4px;
+  padding: 4px;
+  padding-left: 12px;
+  padding-right: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.list-action-active {
+  background: #e6eaf0;
+  border-radius: 2px;
+}
+.list-action:hover {
+  background: #e6eaf0;
+  border-radius: 2px;
+}
+@media (max-width: 650px) {
+  .sidebar-secondary {
+    width: 30vw;
+  }
+}
+@media (max-width: 600px) {
+  .sidebar-secondary {
+    display: none;
+  }
+}

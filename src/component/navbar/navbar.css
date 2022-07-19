@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  box-sizing: border-box;
+
+  /* white */
+
+  background: #ffffff;
+  /* Grey/400 */
+
+  justify-content: space-between;
+  align-items: center;
+  /* position: fixed; */
+  width: 100vw;
+  flex-grow: 3;
+}
+.navbar-border-bottom {
+  border-bottom: 0.3px solid #a7b2c3;
+  overflow: none;
+}
+.logo {
+  width: 48;
+}
+.logo-container {
+  margin-left: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-text {
+  width: 162px;
+  margin-left: 8px;
+  text-align: left;
+  justify-content: center;
+  margin-top: 14px;
+  margin-bottom: 14px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  /* or 129% */
+
+  color: #034da2;
+}
+
+.active {
+  /* Dashboard */
+
+  /* position: absolute; */
+  /* width: 84px;
+  height: 24px;
+  left: 409px;
+  top: 20px; */
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Grey/700 */
+  border-bottom: 0.01px solid #374253;
+  color: #374253 !important;
+}
+.list-items {
+  /* position: absolute;
+  width: 71px;
+  height: 24px;
+  left: 959px;
+  top: 20px; */
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  /* Grey/600 */
+
+  color: #596579;
+}
+.list-items:hover {
+  border-bottom: 0.01px solid #374253;
+  color: #374253;
+  cursor: pointer;
+}
+.right {
+  gap: 19px;
+  align-items: center;
+  margin-right: 27px;
+}
+.nav-list {
+  list-style: none;
+  gap: 32px;
+}
+.notf {
+  width: 16px;
+  height: 18px;
+}
+.profile-img {
+  border-radius: calc(41px / 2);
+  border: 1.5px solid #014da1;
+  width: 40px;
+  height: 40px;
+}
+.ham-burger {
+  display: none;
+  width: 18px;
+  height: 14px;
+}
+
+@media (max-width: 1100px) {
+  .sm-hidden {
+    display: none;
+  }
+  .nav-list {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+    top: 65px;
+    width: 100vw;
+    height: 100vh;
+    /* text-align: center; */
+
+    background: #a7b2c3;
+    /* display: none; */
+  }
+  .list-items {
+    width: 70vw;
+    border: 1px solid #596579;
+    border-radius: 5px;
+    margin: 20px auto 20px auto;
+    padding: 20px;
+    text-align: center;
+    color: #1f272c;
+  }
+  .ham-burger {
+    display: block;
+    width: 18px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 346px) {
+  .navbar {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+  }
+  .logo {
+    width: 38px;
+  }
+  .logo-text {
+    font-size: 12px;
+    width: 80px;
+  }
+  .nav-list {
+    /* width: 200%; */
+    overflow: hidden;
+    position: absolute;
+    left: 0px;
+  }
+}
