@@ -1,6 +1,6 @@
 .sidebar {
-  /* position: absolute; */
-  width: 72px;
+  position: relative;
+  width: 5vw;
   min-height: 100vh;
 
   /* white */
@@ -37,6 +37,7 @@
   margin-bottom: 30px;
   cursor: pointer;
 }
+
 .active-sid {
   background: #a7b2c3;
 }
@@ -54,5 +55,16 @@
   .button {
     padding-top: 9px;
     margin-bottom: 12px;
+  }
+  .sidebar {
+    width: 10vw;
+  }
+}
+@media (max-width: 425px) {
+  .sidebar {
+    width: 15vw;
+  }
+  .nav-text {
+    font-size: 7px;
   }
 }

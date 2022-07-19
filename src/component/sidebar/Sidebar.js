@@ -16,7 +16,7 @@ import transport from "./img/transport.png";
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <div className="sidebar hide" id="sidebar">
       <div className="buttons">
         <Button logo={admin} title={"Admin"} />
         <div className="active-sid">

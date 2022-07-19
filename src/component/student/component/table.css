@@ -5,6 +5,7 @@
   border: 1px solid #d0d7e2;
   border-radius: 8px;
   overflow-x: scroll;
+  margin-bottom: 5vh;
 }
 .table {
   min-width: 1560px;

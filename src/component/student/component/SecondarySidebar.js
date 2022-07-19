@@ -2,8 +2,10 @@ import React from "react";
 import hamburger from "../img/secondary-sidebar-ham-burger.png";
 
 const SecondarySidebar = () => {
+  const sidebarS = document.getElementById("modal").classList;
+  const sidebar = document.getElementById("sidebar").classList;
   const modal = () => {
-    const sidebar = document.getElementById("modal").classList;
+    sidebarS.contains("hide") ? sidebarS.remove("hide") : sidebarS.add("hide");
     sidebar.contains("hide") ? sidebar.remove("hide") : sidebar.add("hide");
   };
   return (
