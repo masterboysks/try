@@ -26,9 +26,9 @@ const Table = () => {
     },
   ];
   return (
-    <div className="table-container lg-hide">
-      <div className="table">
-        <table>
+    <>
+      <div className="table-container container">
+        <table className="table">
           <thead className="heading-table">
             <tr>
               <th className="id-row flex">
@@ -67,7 +67,7 @@ const Table = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 

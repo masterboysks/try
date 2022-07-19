@@ -7,7 +7,7 @@ function Form() {
 
   return (
     <>
-      <form className="main-form">
+      <form className="main-form container">
         <div className="form-element">
           <label htmlFor="Student Id">Student Id</label>
           <br />
@@ -57,12 +57,12 @@ function Form() {
             <option value="Test">Select</option>
           </select>
         </div>
-        {/* <input
+        <input
           type="submit"
           value="Search"
           onClick={submit}
           className="button-search"
-        /> */}
+        />
       </form>
     </>
   );

@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+body {
+  overflow-x: none;
+  overflow-y: auto;
+}
 .flex {
   display: inline-flex;
 }
 
 .bold {
   font-weight: 500;
+}
+.width {
+  width: 100vw;
 }
