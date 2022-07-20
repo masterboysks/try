@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.devList::before {
+  content: url("./assets/arrow.svg");
+  margin-right: 12px;
+}
