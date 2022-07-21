@@ -1,13 +1,13 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/*.html"],
   theme: {
     extend: {
       colors: {
         primary: {
           textC: "#596579",
-          btn: "#596579",
+          btn: "#0052CC",
           active: "#374253",
           circle: "#014DA1",
           bg: "#F4F7FB",
@@ -21,5 +21,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

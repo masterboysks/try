@@ -1,14 +1,14 @@
-import Admin from "./logo/admin.svg";
-import Student from "./logo/student.svg";
-import Staff from "./logo/staff.svg";
-import Billing from "./logo/bill.svg";
-import Account from "./logo/account.svg";
-import Libary from "./logo/libary.svg";
-import Inventory from "./logo/inventory.svg";
-import Exam from "./logo/exam.svg";
-import Lms from "./logo/Lms.svg";
-import Transport from "./logo/bus.svg";
-import hamburger from "./logo/ham-burger.svg";
+import { ReactComponent as Admin } from "./logo/admin.svg";
+import { ReactComponent as Student } from "./logo/student.svg";
+import { ReactComponent as Staff } from "./logo/staff.svg";
+import { ReactComponent as Billing } from "./logo/bill.svg";
+import { ReactComponent as Account } from "./logo/account.svg";
+import { ReactComponent as Libary } from "./logo/libary.svg";
+import { ReactComponent as Inventory } from "./logo/inventory.svg";
+import { ReactComponent as Exam } from "./logo/exam.svg";
+import { ReactComponent as Lms } from "./logo/Lms.svg";
+import { ReactComponent as Transport } from "./logo/bus.svg";
+import { ReactComponent as Hamburger } from "./logo/ham-burger.svg";
 
 export default function Sidebar() {
   const activity = [
@@ -34,32 +34,43 @@ export default function Sidebar() {
   };
   return (
     <>
-      <img
+      {/* <img
         src={hamburger}
         alt="hamburger"
-        className="md:hidden absolute top-[70px] left-2"
+        className="md:hidden absolute top-[70px] z-10 left-2"
         onClick={sidebar}
-      />
+      /> */}
+      <Hamburger
+        className="md:hidden absolute top-[70px] z-10 left-2"
+        onClick={sidebar}
+      ></Hamburger>
       <div
-        className="w-[72px] py-8 shadow-lg min-h-max h-screen  text-sm sm:block hidden bg-white"
+        className="w-[72px] py-8 shadow-lg top-[64px] md:static z-0 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white"
         id="sidebar"
       >
         {activity.map((curr) => {
           return (
             <div
-              className={` w-[65px] mx-auto rounded py-1 my-3 ${
-                curr.name === "Student" ? "  bg-primary-bg " : ""
+              className={` w-[65px] text-center rounded py-1 my-3 hover:bg-primary-bg  ${
+                curr.name === "Student"
+                  ? "  bg-primary-bg text-primary-active"
+                  : " text-primary-textC "
               }`}
-              key={curr.value}
+              key={curr.name}
             >
-              <img
+              {/* <img
                 src={curr.value}
                 alt={curr.name}
                 className={` mx-auto ${
                   curr.name === "Student" ? "brightness-50" : ""
                 }`}
+              /> */}
+              <curr.value
+                className={` mx-auto ${
+                  curr.name === "Student" ? "brightness-75" : ""
+                }`}
               />
-              <div className="text-center">{curr.name}</div>
+              <div className="  text-inherit">{curr.name}</div>
             </div>
           );
         })}

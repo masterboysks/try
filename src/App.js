@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="inline-flex">
+      <div className=" md:inline-flex  w-screen ">
         <Sidebar />
         <Student />
       </div>
