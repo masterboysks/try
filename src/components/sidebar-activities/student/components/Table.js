@@ -40,7 +40,7 @@ export default function Example() {
   }
 
   return (
-    <div className=" text-primary-textC text-inherit min-w-0">
+    <div className=" text-primary-textC text-inherit min-w-full">
       <div className="ml-auto w-fit">
         <button
           type="button"
@@ -51,7 +51,7 @@ export default function Example() {
       </div>
       <div className="my-8 flex flex-col rounded w-full ">
         <div className="overflow-x-auto  ">
-          <table className=" table-fixed divide-y divide-gray-300 w-max">
+          <table className=" table-fixed divide-y divide-gray-300 min-w-full">
             <thead className="bg-gray-50">
               <tr>
                 <th scope="col" className="relative w-12 px-6 sm:w-16 sm:px-8">
