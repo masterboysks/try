@@ -48,14 +48,14 @@ const Form = () => {
           </ol>
         </nav>
       </div>
-      <form className="grid grid-cols-1 gap-3 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 rounded-md border-2 my-6 p-4 border-primary-bgActive">
+      <form className="grid grid-cols-1 gap-3 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 rounded-md border-2 my-6 p-4 border-primary-bgActive form-solid">
         <div className="">
           <label className="text-sm" htmlFor="Student Id">
             Student Id
           </label>
           <br />
           <input
-            className="w-full p-2 rounded outline-primary-active"
+            className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    outline-primary-active"
             type="text"
             placeholder="Id"
           />
@@ -66,7 +66,7 @@ const Form = () => {
           </label>
           <br />
           <input
-            className="w-full p-2 rounded outline-primary-active"
+            className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    outline-primary-active"
             type="text"
             placeholder="Student Name"
           />{" "}
@@ -76,7 +76,7 @@ const Form = () => {
             Class / Semester
           </label>
           <br />
-          <select className="w-full p-2 rounded outline-primary-active">
+          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    outline-primary-active">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -85,7 +85,7 @@ const Form = () => {
             Faculty
           </label>
           <br />
-          <select className="w-full p-2 rounded outline-primary-active">
+          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    outline-primary-active">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -94,7 +94,7 @@ const Form = () => {
             Section
           </label>
           <br />
-          <select className="w-full p-2 rounded outline-primary-active">
+          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    outline-primary-active">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -103,7 +103,7 @@ const Form = () => {
             Status
           </label>
           <br />
-          <select className="w-full p-2 rounded selected-primary-active">
+          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    selected-primary-active">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -112,7 +112,7 @@ const Form = () => {
             Order By
           </label>
           <br />
-          <select className="w-full p-2 rounded outline-primary-active">
+          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-icon focus:ring-primary-icon    outline-primary-active">
             <option value="Test">Select</option>
           </select>
         </div>
