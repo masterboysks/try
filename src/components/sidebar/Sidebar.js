@@ -1,14 +1,24 @@
-import { ReactComponent as Admin } from "./logo/admin.svg";
-import { ReactComponent as Student } from "./logo/student.svg";
-import { ReactComponent as Staff } from "./logo/staff.svg";
-import { ReactComponent as Billing } from "./logo/bill.svg";
-import { ReactComponent as Account } from "./logo/account.svg";
-import { ReactComponent as Libary } from "./logo/libary.svg";
-import { ReactComponent as Inventory } from "./logo/inventory.svg";
-import { ReactComponent as Exam } from "./logo/exam.svg";
-import { ReactComponent as Lms } from "./logo/Lms.svg";
-import { ReactComponent as Transport } from "./logo/bus.svg";
-import { ReactComponent as Hamburger } from "./logo/ham-burger.svg";
+// import { ReactComponent as Admin } from "./logo/admin.svg";
+import Admin from "@mui/icons-material/AdminPanelSettings";
+// import { ReactComponent as Student } from "./logo/student.svg";
+import Student from "@mui/icons-material/SchoolOutlined";
+import Staff from "@mui/icons-material/SupervisorAccountOutlined";
+// import { ReactComponent as Billing } from "./logo/bill.svg";
+import Billing from "@mui/icons-material/ReceiptLongOutlined";
+// import { ReactComponent as Account } from "./logo/account.svg";
+import Account from "@mui/icons-material/AccountBalanceWalletOutlined";
+// import { ReactComponent as Libary } from "./logo/libary.svg";
+import Libary from "@mui/icons-material/LocalLibraryOutlined";
+// import { ReactComponent as Inventory } from "./logo/inventory.svg";
+import Inventory from "@mui/icons-material/Inventory2Outlined";
+// import { ReactComponent as Exam } from "./logo/exam.svg";
+import Exam from "@mui/icons-material/QuizOutlined";
+// import { ReactComponent as Lms } from "./logo/Lms.svg";
+import Lms from "@mui/icons-material/AppRegistrationOutlined";
+// import { ReactComponent as Transport } from "./logo/bus.svg";
+import Transport from "@mui/icons-material/DirectionsBusOutlined";
+// import { ReactComponent as Hamburger } from "./logo/ham-burger.svg";
+import Hamburger from "@mui/icons-material/MenuOutlined";
 import Slidebar from "./slidebar/Slidebar";
 
 export default function Sidebar() {
@@ -21,7 +31,7 @@ export default function Sidebar() {
     { name: "Libary", value: Libary },
     { name: "Inventory", value: Inventory },
     { name: "Exam", value: Exam },
-    { name: "Lms", value: Lms },
+    { name: "LMS", value: Lms },
     { name: "Transport", value: Transport },
   ];
   const sidebar = () => {
@@ -46,7 +56,7 @@ export default function Sidebar() {
         onClick={sidebar}
       ></Hamburger>
       <div
-        className="min-w-[72px] py-8 shadow-lg top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white "
+        className="min-w-[72px] mt-[2px] py-8 border-r-[1px] border-r-primary-bgActive top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white "
         id="sidebar"
       >
         {activity.map((curr) => {
@@ -68,7 +78,7 @@ export default function Sidebar() {
               /> */}
               <curr.value
                 className={` mx-auto ${
-                  curr.name === "Student" ? "brightness-75" : ""
+                  curr.name === "Student" ? "text-primary-active" : ""
                 }`}
               />
               <div className="  text-inherit">{curr.name}</div>

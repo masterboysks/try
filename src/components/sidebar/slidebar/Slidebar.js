@@ -25,7 +25,7 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] text-primary-textC  bg-primary-bg absolute top-16 md:static   ml-[72px] md:ml-0 h-screen hidden md:inline "
+        className="min-w-[216px] mt-[2px] text-primary-textC border-r-[1px] border-r-primary-bgActive bg-primary-bg absolute top-16 md:static   ml-[72px] md:ml-0 h-screen hidden md:inline "
         id="slidebar"
       >
         <div className="w-full">

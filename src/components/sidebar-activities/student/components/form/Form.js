@@ -116,7 +116,7 @@ const Form = () => {
             <option value="Test">Select</option>
           </select>
         </div>
-        <div className="ml-auto px-4 py-3 mt-auto h-fit w-full box-border sm:w-fit text-center  bg-primary-btn sm:box-content rounded lg:col-span-2 xl:col-span-1">
+        <div className="ml-auto px-4 py-3 mt-auto h-fit w-full box-border sm:w-fit text-center cursor-pointer bg-primary-btn sm:box-content rounded lg:col-span-2 xl:col-span-1">
           <span className="sm:hidden text-primary-bg text-sm">Search</span>
           <Search className="w-4 hidden sm:block"></Search>
         </div>

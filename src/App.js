@@ -9,7 +9,8 @@ function App() {
     <>
       <Navbar className=" " />
       <div className=" md:inline-flex  w-full ">
-        <Sidebar className=" " />
+        <Sidebar />
+
         <Main />
       </div>
     </>

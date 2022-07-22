@@ -1,8 +1,28 @@
-import { useLayoutEffect, useRef, useState } from "react";
+// import { useLayoutEffect, useRef, useState } from "react";
 
 const people = [
   {
     stdId: "Lindsay Walton",
+    stdName: "Front-end Developer",
+    class: "lindsay.walton@example.com",
+    faculty: "Member",
+    sec: "Lindsay Walton",
+    gen: "Front-end Developer",
+    numb: "lindsay.walton@example.com",
+    status: "Member",
+  },
+  {
+    stdId: "Lindsa",
+    stdName: "Front-end Developer",
+    class: "lindsay.walton@example.com",
+    faculty: "Member",
+    sec: "Lindsay Walton",
+    gen: "Front-end Developer",
+    numb: "lindsay.walton@example.com",
+    status: "Member",
+  },
+  {
+    stdId: "Lindsay Wa",
     stdName: "Front-end Developer",
     class: "lindsay.walton@example.com",
     faculty: "Member",
@@ -48,20 +68,17 @@ export default function Example() {
           Add user
         </button>
       </div>
-      <div className="overflow-scroll border-2 border-primary-textC rounded-md mt-8">
-        <table className="min-w-full divide-y divide-gray-300">
-          <thead className="bg-gray-50">
+      <div className="overflow-x-scroll border-2 border-primary-logo rounded-md my-8">
+        <table className="min-w-full divide-y divide-primary-logo">
+          <thead className="bg-primary-bg">
             <tr>
               <th
                 scope="col"
-                className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 "
               >
                 Student ID
               </th>
-              <th
-                scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-              ></th>
+
               <th
                 scope="col"
                 className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
@@ -116,9 +133,7 @@ export default function Example() {
             {people.map((person, personIdx) => (
               <tr
                 key={person.stdId}
-                className={
-                  personIdx % 2 === 0 ? undefined : "bg-primary-bgActive"
-                }
+                className={personIdx % 2 === 0 ? undefined : "bg-primary-bg"}
               >
                 <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 ">
                   {person.stdId}
