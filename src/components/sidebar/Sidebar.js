@@ -1,4 +1,4 @@
-import Admin from "@mui/icons-material/AdminPanelSettings";
+import Admin from "@mui/icons-material/AdminPanelSettingsOutlined";
 import Student from "@mui/icons-material/SchoolOutlined";
 import Staff from "@mui/icons-material/SupervisorAccountOutlined";
 import Billing from "@mui/icons-material/ReceiptLongOutlined";
@@ -53,7 +53,7 @@ export default function Sidebar() {
         {activity.map((curr) => {
           return (
             <div
-              className={` w-[65px] text-center rounded py-1 my-3 mx-auto hover:bg-primary-bg  ${
+              className={` w-[60px] text-center text-xs rounded py-1 my-4 mx-auto hover:bg-primary-bg  ${
                 curr.name === "Student"
                   ? "  bg-primary-bg text-primary-active"
                   : " text-primary-textC "
@@ -71,7 +71,7 @@ export default function Sidebar() {
                 className={` mx-auto ${
                   curr.name === "Student"
                     ? "text-primary-active"
-                    : "text-primary-textC"
+                    : "text-primary-icon"
                 }`}
               />
               <div className="  text-inherit">{curr.name}</div>

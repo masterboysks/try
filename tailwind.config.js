@@ -13,6 +13,7 @@ module.exports = {
           bg: "#F4F7FB",
           bgActive: "#E6EAF0",
           icon: "#A7B2C3",
+          field: "#C2C9D1",
         },
         logo: "rgba(3, 77, 162, 1)",
       },

@@ -61,7 +61,7 @@ export default function Example() {
   // }
 
   return (
-    <div className=" text-primary-textC text-inherit w-full ">
+    <div className=" text-primary-textC text-inherit w-full mt-11 ">
       <div className="ml-auto w-full sm:w-fit">
         <Link
           className=" text-primary-bg inline-flex items-center 
@@ -74,62 +74,62 @@ export default function Example() {
           Add user
         </Link>
       </div>
-      <div className="overflow-x-auto border-2 border-primary-logo rounded-md my-8">
-        <table className="min-w-full divide-y divide-primary-logo">
+      <div className="overflow-x-auto border-[1px] border-primary-icon rounded-md my-6">
+        <table className="min-w-full  border-collapse  divide-y divide-">
           <thead className="bg-primary-bg">
             <tr>
               <th
                 scope="col"
-                className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 "
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon    "
               >
                 Student ID
               </th>
 
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Student Name
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Class/Semester
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Faculty
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Section
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Gender
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Mobile Number
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon   "
               >
                 Status
               </th>
               <th
                 scope="col"
-                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                className="px-3 py-3.5 text-left text-sm font-medium text-primary-textC border-primary-icon  "
               >
                 Action
               </th>
@@ -141,31 +141,31 @@ export default function Example() {
                 key={person.stdId}
                 className={personIdx % 2 === 0 ? undefined : "bg-primary-bg"}
               >
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 ">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon   ">
                   {person.stdId}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.stdName}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.class}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.faculty}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.sec}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.gen}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.numb}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon  ">
                   {person.status}
                 </td>
-                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-active border-primary-icon ">
                   Edit
                 </td>
               </tr>

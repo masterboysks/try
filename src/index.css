@@ -4,5 +4,6 @@
 
 .devList::before {
   content: url("./assets/arrow.svg");
-  margin-right: 12px;
+  margin-right: 8px;
+  margin-left: 4px;
 }

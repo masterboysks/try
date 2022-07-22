@@ -48,71 +48,71 @@ const Form = () => {
           </ol>
         </nav>
       </div>
-      <form className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-md border-2 my-6 p-4 border-primary-logo form-solid">
+      <form className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-md border-2 my-6 p-4 border-primary-logo form-solid">
         <div className="">
-          <label className="text-sm" htmlFor="Student Id">
+          <label className="my-6 text-sm" htmlFor="Student Id">
             Student Id
           </label>
           <br />
           <input
-            className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon"
+            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm"
             type="text"
             placeholder="Id"
           />
         </div>
         <div className="">
-          <label className="text-sm" htmlFor="Student Name">
+          <label className="my-6 text-sm" htmlFor="Student Name">
             Student Name
           </label>
           <br />
           <input
-            className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon"
+            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm"
             type="text"
             placeholder="Student Name"
           />{" "}
         </div>
         <div className="">
-          <label className="text-sm" htmlFor="Class / Semester">
+          <label className="my-6 text-sm" htmlFor="Class / Semester">
             Class / Semester
           </label>
           <br />
-          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
         <div className="">
-          <label className="text-sm" htmlFor="Faculty">
+          <label className="my-6 text-sm" htmlFor="Faculty">
             Faculty
           </label>
           <br />
-          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
         <div className="">
-          <label className="text-sm" htmlFor="Section">
+          <label className="my-6 text-sm" htmlFor="Section">
             Section
           </label>
           <br />
-          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
         <div className="">
-          <label className="text-sm" htmlFor="Status">
+          <label className="my-6 text-sm" htmlFor="Status">
             Status
           </label>
           <br />
-          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
         <div className="">
-          <label className="text-sm" htmlFor="Order By">
+          <label className="my-6 text-sm" htmlFor="Order By">
             Order By
           </label>
           <br />
-          <select className="w-full p-2 rounded focus:border-[1px] focus:border-primary-active focus:ring-primary-active    outline-primary-icon">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
             <option value="Test">Select</option>
           </select>
         </div>

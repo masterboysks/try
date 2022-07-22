@@ -30,10 +30,10 @@ const Slidebar = () => {
       >
         <div className="w-full">
           <ul className="mx-2 pt-9">
-            <li className=" devList p-1 my-2 cursor-pointer rounded bg-primary-bgActive w-full text-primary-active">
+            <li className=" devList p-1 my-2 cursor-pointer rounded bg-primary-bgActive w-full text-primary-active text-sm">
               Student information
             </li>
-            <li className="devList p-1 my-2 cursor-pointer hover:bg-primary-bgActive">
+            <li className="devList p-1 my-2 cursor-pointer hover:bg-primary-bgActive text-sm">
               Student attendence
             </li>
           </ul>

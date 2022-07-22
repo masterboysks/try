@@ -10,10 +10,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure
-      as="nav"
-      className="bg-white shadow-lg z-50 border-b-2 border-red border-b-primary-textC"
-    >
+    <Disclosure as="nav" className="bg-white shadow-md z-50  ">
       {({ open }) => (
         <div className=" ">
           <div className=" px-4 sm:px-4 ">
@@ -39,25 +36,25 @@ export default function Example() {
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-medium"
+                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Event calander
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-medium"
+                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Push Notification
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-medium"
+                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Fee Payment
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-medium"
+                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Logsheet
                   </a>
@@ -65,7 +62,7 @@ export default function Example() {
                 <div className=" hidden sm:flex mx-2 ml-auto lg:ml-0 lg:flex items-center">
                   <button
                     type="button"
-                    className="flex-shrink-0 bg-white p-1 text-gray-400 rounded-full hover:text-gray-500 focus:outline-none   "
+                    className="flex-shrink-0 bg-white p-1  text-primary-textC hover:text-primary-active rounded-full focus:outline-none   "
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -152,7 +149,7 @@ export default function Example() {
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="bg-primary-bgActive border-primary-active text-primary-active block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="bg-primary-bgActive border-primary-active text-primary-active block pl-3 pr-4 py-2 border-l-4 text-base font-normal"
                       >
                         Dashboard
                       </Disclosure.Button>
@@ -202,10 +199,10 @@ export default function Example() {
                           />
                         </div>
                         <div className="ml-3">
-                          <div className="text-base font-medium text-gray-800">
+                          <div className="text-base font-normal text-gray-800">
                             Tom Cook
                           </div>
-                          <div className="text-base font-medium text-gray-500">
+                          <div className="text-base font-normal text-gray-500">
                             tom@example.com
                           </div>
                         </div>
@@ -221,21 +218,21 @@ export default function Example() {
                         <Disclosure.Button
                           as="a"
                           href="#"
-                          className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                          className="block px-4 py-2 text-base font-normal text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                         >
                           Your Profile
                         </Disclosure.Button>
                         <Disclosure.Button
                           as="a"
                           href="#"
-                          className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                          className="block px-4 py-2 text-base font-normal text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                         >
                           Settings
                         </Disclosure.Button>
                         <Disclosure.Button
                           as="a"
                           href="#"
-                          className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                          className="block px-4 py-2 text-base font-normal text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                         >
                           Sign out
                         </Disclosure.Button>
