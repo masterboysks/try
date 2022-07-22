@@ -2,15 +2,15 @@ import "./App.css";
 // import ReactIcon from "./ReactIcon";
 import Navbar from "./components/navbar/Navbar";
 import Sidebar from "./components/sidebar/Sidebar";
-import Student from "./components/sidebar-activities/student/Student";
+import Main from "./components/sidebar-activities/index";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar className=" " />
       <div className=" md:inline-flex  w-screen ">
-        <Sidebar />
-        <Student />
+        <Sidebar className=" " />
+        <Main />
       </div>
     </>
   );

@@ -9,6 +9,7 @@ import { ReactComponent as Exam } from "./logo/exam.svg";
 import { ReactComponent as Lms } from "./logo/Lms.svg";
 import { ReactComponent as Transport } from "./logo/bus.svg";
 import { ReactComponent as Hamburger } from "./logo/ham-burger.svg";
+import Slidebar from "./slidebar/Slidebar";
 
 export default function Sidebar() {
   const activity = [
@@ -41,17 +42,17 @@ export default function Sidebar() {
         onClick={sidebar}
       /> */}
       <Hamburger
-        className="md:hidden absolute top-[70px] z-10 left-2"
+        className="md:hidden absolute top-[70px] z-20 left-2"
         onClick={sidebar}
       ></Hamburger>
       <div
-        className="w-[72px] py-8 shadow-lg top-[64px] md:static z-0 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white"
+        className="min-w-[72px] py-8 shadow-lg top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white"
         id="sidebar"
       >
         {activity.map((curr) => {
           return (
             <div
-              className={` w-[65px] text-center rounded py-1 my-3 hover:bg-primary-bg  ${
+              className={` w-[65px] text-center rounded py-1 my-3 mx-auto hover:bg-primary-bg  ${
                 curr.name === "Student"
                   ? "  bg-primary-bg text-primary-active"
                   : " text-primary-textC "
@@ -75,6 +76,7 @@ export default function Sidebar() {
           );
         })}
       </div>
+      <Slidebar />
     </>
   );
 }
