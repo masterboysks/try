@@ -1,19 +1,11 @@
-import "./App.css";
-// import ReactIcon from "./ReactIcon";
-import Navbar from "./components/navbar/Navbar";
-import Sidebar from "./components/sidebar/Sidebar";
-import Main from "./components/sidebar-activities/index";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <Navbar className=" " />
-      <div className=" md:inline-flex  w-full ">
-        <Sidebar />
-
-        <Main />
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+    </Routes>
   );
 }
 

@@ -68,7 +68,7 @@ export default function Example() {
           Add user
         </button>
       </div>
-      <div className="overflow-x-scroll border-2 border-primary-logo rounded-md my-8">
+      <div className="overflow-x-auto border-2 border-primary-logo rounded-md my-8">
         <table className="min-w-full divide-y divide-primary-logo">
           <thead className="bg-primary-bg">
             <tr>

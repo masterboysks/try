@@ -138,7 +138,7 @@ export default function Example() {
                 </div>
                 <div className=" items-center flex lg:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary-textC hover:text-primary-active hover:bg-primary-bgActive focus:outline-none">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -146,48 +146,48 @@ export default function Example() {
                       <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
-                  <Disclosure.Panel className="lg:hidden absolute right-0 top-16 h-2/4 md:h-4/5 bg-primary-bg">
+                  <Disclosure.Panel className="lg:hidden absolute right-0 top-[66px] h-5/6  bg-primary-bg shadow-md">
                     <div className="pt-2 pb-3 space-y-1">
                       {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="bg-primary-bgActive border-primary-active text-primary-active block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
                       >
                         Dashboard
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Event Calender
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Projects
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Push Notification
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Fee Payment
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium"
+                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Logsheet
                       </Disclosure.Button>
