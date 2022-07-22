@@ -1,5 +1,7 @@
 // import { useLayoutEffect, useRef, useState } from "react";
 
+import { Link } from "react-router-dom";
+
 const people = [
   {
     stdId: "Lindsay Walton",
@@ -34,9 +36,9 @@ const people = [
   // More people...
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(" ");
+// }
 
 export default function Example() {
   // const checkbox = useRef();
@@ -61,12 +63,16 @@ export default function Example() {
   return (
     <div className=" text-primary-textC text-inherit w-full ">
       <div className="ml-auto w-full sm:w-fit">
-        <button
-          type="button"
-          className=" text-primary-bg inline-flex items-center w-full sm:w-fit justify-center rounded-md border border-transparent bg-primary-btn px-4 py-2 text-sm font-medium  shadow-sm hover: focus:outline-none focus:ring-2 focus:ring-focus:ring-offset-2 "
+        <Link
+          className=" text-primary-bg inline-flex items-center 
+          w-full sm:w-fit justify-center rounded-md border border-transparent
+           bg-primary-btn px-4 py-2 text-sm font-medium  shadow-sm
+            hover: focus:outline-none focus:ring-2 focus:ring-
+            focus:ring-offset-2 "
+          to="/add-student"
         >
           Add user
-        </button>
+        </Link>
       </div>
       <div className="overflow-x-auto border-2 border-primary-logo rounded-md my-8">
         <table className="min-w-full divide-y divide-primary-logo">

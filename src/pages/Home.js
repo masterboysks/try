@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 import Sidebar from "../components/sidebar/Sidebar";
-import Main from "../components/sidebar-activities/index";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -8,8 +8,7 @@ const Home = () => {
       <Navbar className=" " />
       <div className=" md:flex  w-full ">
         <Sidebar />
-
-        <Main />
+        <Outlet />
       </div>
     </>
   );
