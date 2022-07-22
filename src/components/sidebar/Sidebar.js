@@ -46,7 +46,7 @@ export default function Sidebar() {
         onClick={sidebar}
       ></Hamburger>
       <div
-        className="min-w-[72px] py-8 shadow-lg top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white"
+        className="min-w-[72px] py-8 shadow-lg top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white "
         id="sidebar"
       >
         {activity.map((curr) => {

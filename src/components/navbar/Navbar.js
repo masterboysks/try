@@ -10,12 +10,12 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-white shadow-sm ">
+    <Disclosure as="nav" className="bg-white shadow-lg z-50 ">
       {({ open }) => (
         <div className=" ">
-          <div className=" px-4 sm:px-4 lg:px-8w-full">
+          <div className=" px-4 sm:px-4 ">
             <div className="flex md:justify-between h-16">
-              <div className="flex px-2 justify-between  w-full">
+              <div className="flex px-2 justify-between  w-screen">
                 <div className="md:flex-shrink-0 flex items-center">
                   <img
                     className="block  h-10 w-auto "

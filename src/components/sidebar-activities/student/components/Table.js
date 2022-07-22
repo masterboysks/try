@@ -2,17 +2,16 @@ import { useLayoutEffect, useRef, useState } from "react";
 
 const people = [
   {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    email: "lindsay.walton@example.com",
-    role: "Member",
+    stdId: "Lindsay Walton",
+    stdName: "Front-end Developer",
+    class: "lindsay.walton@example.com",
+    faculty: "Member",
+    sec: "Lindsay Walton",
+    gen: "Front-end Developer",
+    numb: "lindsay.walton@example.com",
+    status: "Member",
   },
-  {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    email: "lindsay.walton@examplfdgbf.com",
-    role: "Member",
-  },
+  // More people...
 ];
 
 function classNames(...classes) {
@@ -20,129 +19,138 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-  const checkbox = useRef();
-  const [checked, setChecked] = useState(false);
-  const [indeterminate, setIndeterminate] = useState(false);
-  const [selectedPeople, setSelectedPeople] = useState([]);
+  // const checkbox = useRef();
+  // const [checked, setChecked] = useState(false);
+  // const [indeterminate, setIndeterminate] = useState(false);
+  // const [selectedPeople, setSelectedPeople] = useState([]);
 
-  useLayoutEffect(() => {
-    const isIndeterminate =
-      selectedPeople.length > 0 && selectedPeople.length < people.length;
-    setChecked(selectedPeople.length === people.length);
-    setIndeterminate(isIndeterminate);
-    checkbox.current.indeterminate = isIndeterminate;
-  }, [selectedPeople]);
+  // useLayoutEffect(() => {
+  //   const isIndeterminate =
+  //     selectedPeople.length > 0 && selectedPeople.length < people.length;
+  //   setChecked(selectedPeople.length === people.length);
+  //   setIndeterminate(isIndeterminate);
+  //   checkbox.current.indeterminate = isIndeterminate;
+  // }, [selectedPeople]);
 
-  function toggleAll() {
-    setSelectedPeople(checked || indeterminate ? [] : people);
-    setChecked(!checked && !indeterminate);
-    setIndeterminate(false);
-  }
+  // function toggleAll() {
+  //   setSelectedPeople(checked || indeterminate ? [] : people);
+  //   setChecked(!checked && !indeterminate);
+  //   setIndeterminate(false);
+  // }
 
   return (
-    <div className=" text-primary-textC text-inherit min-w-full">
-      <div className="ml-auto w-fit">
+    <div className=" text-primary-textC text-inherit w-full ">
+      <div className="ml-auto w-full sm:w-fit">
         <button
           type="button"
-          className="inline-flex items-center  justify-center rounded-md border border-transparent bg-primary-btn px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+          className=" text-primary-bg inline-flex items-center w-full sm:w-fit justify-center rounded-md border border-transparent bg-primary-btn px-4 py-2 text-sm font-medium  shadow-sm hover: focus:outline-none focus:ring-2 focus:ring-focus:ring-offset-2 "
         >
           Add user
         </button>
       </div>
-      <div className="my-8 flex flex-col rounded w-full ">
-        <div className="overflow-x-auto  ">
-          <table className=" table-fixed divide-y divide-gray-300 min-w-full">
-            <thead className="bg-gray-50">
-              <tr>
-                <th scope="col" className="relative w-12 px-6 sm:w-16 sm:px-8">
-                  <input
-                    type="checkbox"
-                    className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 sm:left-6"
-                    ref={checkbox}
-                    checked={checked}
-                    onChange={toggleAll}
-                  />
-                </th>
-                <th
-                  scope="col"
-                  className="min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-primary-active"
-                >
-                  Name
-                </th>
-                <th
-                  scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-primary-active"
-                >
-                  Title
-                </th>
-                <th
-                  scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-primary-active"
-                >
-                  Email
-                </th>
-                <th
-                  scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-primary-active"
-                >
-                  Role
-                </th>
-                <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                  <span className="sr-only">Edit</span>
-                </th>
+      <div className="overflow-scroll border-2 border-primary-textC rounded-md mt-8">
+        <table className="min-w-full divide-y divide-gray-300">
+          <thead className="bg-gray-50">
+            <tr>
+              <th
+                scope="col"
+                className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+              >
+                Student ID
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              ></th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Student Name
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Class/Semester
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Faculty
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Section
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Gender
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Mobile Number
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Status
+              </th>
+              <th
+                scope="col"
+                className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white">
+            {people.map((person, personIdx) => (
+              <tr
+                key={person.stdId}
+                className={
+                  personIdx % 2 === 0 ? undefined : "bg-primary-bgActive"
+                }
+              >
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 ">
+                  {person.stdId}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.stdName}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.class}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.faculty}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.sec}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.gen}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.numb}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  {person.status}
+                </td>
+                <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                  Edit
+                </td>
               </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200 bg-white ">
-              {people.map((person) => (
-                <tr
-                  key={person.email}
-                  className={
-                    selectedPeople.includes(person) ? "bg-gray-50" : undefined
-                  }
-                >
-                  <td className="relative w-12 px-6 sm:w-16 sm:px-8">
-                    {selectedPeople.includes(person) && (
-                      <div className="absolute inset-y-0 left-0 w-0.5 bg-indigo-600" />
-                    )}
-                    <input
-                      type="checkbox"
-                      className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 sm:left-6"
-                      value={person.email}
-                      checked={selectedPeople.includes(person)}
-                      onChange={(e) =>
-                        setSelectedPeople(
-                          e.target.checked
-                            ? [...selectedPeople, person]
-                            : selectedPeople.filter((p) => p !== person)
-                        )
-                      }
-                    />
-                  </td>
-                  <td
-                    className={classNames(
-                      "whitespace-nowrap py-4 pr-3 text-sm font-medium",
-                      selectedPeople.includes(person)
-                        ? "text-indigo-600"
-                        : "text-primary-active"
-                    )}
-                  >
-                    {person.name}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    {person.title}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    {person.email}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    {person.role}
-                  </td>
-                  <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6"></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar className=" " />
-      <div className=" md:inline-flex  w-screen ">
+      <div className=" md:inline-flex  w-full ">
         <Sidebar className=" " />
         <Main />
       </div>
