@@ -6,14 +6,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          textC: "#596579",
+          "grey-600": "#596579",
           btn: "#0052CC",
-          active: "#374253",
-          circle: "#014DA1",
-          bg: "#F4F7FB",
-          bgActive: "#E6EAF0",
-          icon: "#A7B2C3",
+          "grey-700": "#374253",
+          "profile-circle": "#014DA1",
+          "grey-100": "#F4F7FB",
+          "grey-200": "#E6EAF0",
+          "grey-400": "#A7B2C3",
           field: "#C2C9D1",
+          "grey-300": "#D0D7E2",
         },
         logo: "rgba(3, 77, 162, 1)",
       },

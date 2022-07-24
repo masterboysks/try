@@ -20,7 +20,7 @@ const Form = () => {
                       href={page.href}
                       className={` text-${
                         page.current ? "base font-medium" : "sm font-normal"
-                      }  text-primary-textC`}
+                      }  text-primary-grey-600`}
                       aria-current={page.current ? "page" : undefined}
                     >
                       {page.name}
@@ -35,7 +35,7 @@ const Form = () => {
                         href={page.href}
                         className={`ml-2 text-${
                           page.current ? "base font-medium" : "sm font-normal"
-                        }  text-primary-textC`}
+                        }  text-primary-grey-600`}
                         aria-current={page.current ? "page" : undefined}
                       >
                         {page.name}
@@ -48,14 +48,14 @@ const Form = () => {
           </ol>
         </nav>
       </div>
-      <form className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-md border-2 my-6 p-4 border-primary-logo form-solid">
+      <form className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-md  my-6 p-4 shadow ring-1 ring-black ring-opacity-5 form-solid">
         <div className="">
           <label className="my-6 text-sm" htmlFor="Student Id">
             Student Id
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm"
+            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm"
             type="text"
             placeholder="Id"
           />
@@ -66,7 +66,7 @@ const Form = () => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm"
+            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm"
             type="text"
             placeholder="Student Name"
           />{" "}
@@ -76,7 +76,7 @@ const Form = () => {
             Class / Semester
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -85,7 +85,7 @@ const Form = () => {
             Faculty
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -94,7 +94,7 @@ const Form = () => {
             Section
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -103,7 +103,7 @@ const Form = () => {
             Status
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -112,13 +112,13 @@ const Form = () => {
             Order By
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-icon text-primary-active  text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
-        <div className="ml-auto px-4 py-3 mt-auto h-fit w-full box-border sm:w-fit text-center cursor-pointer bg-primary-btn sm:box-content rounded lg:col-span-2 xl:col-span-1">
-          <span className="sm:hidden text-primary-bg text-sm">Search</span>
-          <Search className="w-4 hidden sm:block"></Search>
+        <div className="mx-auto sm:mx-0 sm:ml-auto px-4 py-3 mt-auto h-fit w-1/2 box-border sm:w-fit text-center cursor-pointer bg-primary-btn sm:box-content rounded lg:col-span-2 xl:col-span-1">
+          {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
+          <Search className="w-4 mx-auto"></Search>
         </div>
       </form>
     </>

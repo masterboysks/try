@@ -30,31 +30,31 @@ export default function Example() {
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   <a
                     href="#"
-                    className=" text-primary-active inline-flex items-center px-1 pt-1  text-base font-medium"
+                    className="text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-medium"
                   >
                     Dashboard
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
+                    className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Event calander
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
+                    className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Push Notification
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
+                    className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Fee Payment
                   </a>
                   <a
                     href="#"
-                    className="border-transparent text-primary-textC hover:text-primary-active inline-flex items-center px-1 pt-1  text-base font-normal"
+                    className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Logsheet
                   </a>
@@ -62,7 +62,7 @@ export default function Example() {
                 <div className=" hidden sm:flex mx-2 ml-auto lg:ml-0 lg:flex items-center">
                   <button
                     type="button"
-                    className="flex-shrink-0 bg-white p-1  text-primary-textC hover:text-primary-active rounded-full focus:outline-none   "
+                    className="flex-shrink-0 bg-white p-1  text-primary-grey-600 hover:text-primary-grey-700 rounded-full focus:outline-none   "
                   >
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
@@ -71,7 +71,7 @@ export default function Example() {
                   {/* Profile dropdown */}
                   <Menu as="div" className="ml-4 relative flex-shrink-0">
                     <div>
-                      <Menu.Button className="bg-white rounded-full flex text-base focus:outline-none ring-2 ring-offset-1  ring-primary-circle">
+                      <Menu.Button className="bg-white rounded-full flex text-base focus:outline-none ring-2 ring-offset-1  ring-primary-profile-circle">
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
@@ -135,7 +135,7 @@ export default function Example() {
                 </div>
                 <div className=" items-center flex lg:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary-textC hover:text-primary-active hover:bg-primary-bgActive focus:outline-none">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary-grey-600 hover:text-primary-grey-700 hover:bg-primary-grey-200 focus:outline-none">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -143,48 +143,48 @@ export default function Example() {
                       <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                     )}
                   </Disclosure.Button>
-                  <Disclosure.Panel className="lg:hidden absolute right-0 top-[66px] h-5/6  bg-primary-bg shadow-md">
+                  <Disclosure.Panel className="lg:hidden absolute right-0 top-[66px] h-5/6  bg-primary-grey-100 shadow-md">
                     <div className="pt-2 pb-3 space-y-1">
                       {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="bg-primary-bgActive border-primary-active text-primary-active block pl-3 pr-4 py-2 border-l-4 text-base font-normal"
+                        className="bg-primary-grey-200 border-primary-grey-100-grey-700text-primary-grey-700block pl-3 pr-4 py-2 border-l-4 text-base font-normal"
                       >
                         Dashboard
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
+                        className="border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Event Calender
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
+                        className="border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Projects
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
+                        className="border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Push Notification
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
+                        className="border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Fee Payment
                       </Disclosure.Button>
                       <Disclosure.Button
                         as="a"
                         href="#"
-                        className="border-transparent text-primary-textC hover:bg-primary-bgActive hover:border-primary-textC block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
+                        className="border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 block pl-3 pr-4 py-2 border-l-4 text-base font-sm"
                       >
                         Logsheet
                       </Disclosure.Button>

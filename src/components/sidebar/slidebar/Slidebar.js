@@ -25,15 +25,15 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] mt-[2px] text-primary-textC border-r-[1px] border-r-primary-bgActive bg-primary-bg absolute top-16 md:static   ml-[72px] md:ml-0 h-screen hidden md:inline "
+        className="min-w-[216px] mt-[2px] text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 absolute top-16 md:static   ml-[72px] md:ml-0 h-screen hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">
           <ul className="mx-2 pt-9">
-            <li className=" devList p-1 my-2 cursor-pointer rounded bg-primary-bgActive w-full text-primary-active text-sm">
+            <li className=" devList p-1 my-2 cursor-pointer rounded bg-primary-grey-200 w-full text-primary-grey-700 text-sm">
               Student information
             </li>
-            <li className="devList p-1 my-2 cursor-pointer hover:bg-primary-bgActive text-sm">
+            <li className="devList p-1 my-2 cursor-pointer rounded hover:bg-primary-grey-200 text-primary-grey-600 text-sm">
               Student attendence
             </li>
           </ul>

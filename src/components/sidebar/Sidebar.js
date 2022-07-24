@@ -42,21 +42,21 @@ export default function Sidebar() {
         className="md:hidden absolute top-[70px] z-10 left-2"
         onClick={sidebar}
       /> */}
-      <div className="md:hidden p-2 rounded-md text-primary-textC hover:text-primary-active hover:bg-primary-bgActive focus:outline-none absolute top-[70px]  z-20 left-2">
+      <div className="lg:hidden p-2 rounded-md text-primary-grey-600 hover:text-primary-grey-600 hover:bg-primary-grey-200 focus:outline-none absolute top-[70px]  z-20 left-2">
         <Hamburger onClick={sidebar}></Hamburger>
       </div>
 
       <div
-        className="min-w-[72px] mt-[2px] py-8 border-r-[1px] border-r-primary-bgActive top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white "
+        className="min-w-[72px] mt-[2px] py-8 border-r-[1px] border-r-primary-grey-100-grey-200 top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white "
         id="sidebar"
       >
         {activity.map((curr) => {
           return (
             <div
-              className={` w-[60px] text-center text-xs rounded py-1 my-4 mx-auto hover:bg-primary-bg  ${
+              className={` w-[60px] text-center text-xs rounded py-1 my-4 mx-auto hover:bg-primary-grey-100  ${
                 curr.name === "Student"
-                  ? "  bg-primary-bg text-primary-active"
-                  : " text-primary-textC "
+                  ? "  bg-primary-grey-100 text-primary-grey-700"
+                  : " text-primary-grey-600 "
               }`}
               key={curr.name}
             >
@@ -70,8 +70,8 @@ export default function Sidebar() {
               <curr.value
                 className={` mx-auto ${
                   curr.name === "Student"
-                    ? "text-primary-active"
-                    : "text-primary-icon"
+                    ? "text-primary-grey-700"
+                    : "text-primary-grey-400"
                 }`}
               />
               <div className="  text-inherit">{curr.name}</div>
