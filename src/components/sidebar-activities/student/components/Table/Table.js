@@ -1,5 +1,5 @@
-import { Person } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 const people = [
   {
@@ -724,14 +724,18 @@ export default function Example() {
           <h1 className="text-xl font-semibold text-primary-grey-700">
             Student Details
           </h1>
+          <p className="mt-2 text-sm text-gray-700">
+            A list of all the users in your account including their name, title,
+            email and role.
+          </p>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-          <button
-            type="button"
+          <Link
+            to="/student/add-student-details"
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
-            Add user
-          </button>
+            Add Student
+          </Link>
         </div>
       </div>
       <div className="my-6">

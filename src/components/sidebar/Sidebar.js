@@ -8,9 +8,9 @@ import Inventory from "@mui/icons-material/Inventory2Outlined";
 import Exam from "@mui/icons-material/QuizOutlined";
 import Lms from "@mui/icons-material/AppRegistrationOutlined";
 import Transport from "@mui/icons-material/DirectionsBusOutlined";
+import { Link } from "react-router-dom";
 
 import Hamburger from "@mui/icons-material/MenuOutlined";
-import Slidebar from "./slidebar/Slidebar";
 
 export default function Sidebar() {
   const activity = [
@@ -67,19 +67,21 @@ export default function Sidebar() {
                   curr.name === "Student" ? "brightness-50" : ""
                 }`}
               /> */}
-              <curr.value
-                className={` mx-auto ${
-                  curr.name === "Student"
-                    ? "text-primary-grey-700"
-                    : "text-primary-grey-400"
-                }`}
-              />
-              <div className="  text-inherit">{curr.name}</div>
+              <Link to={`/${curr.name.toLowerCase()}`}>
+                <curr.value
+                  className={` mx-auto ${
+                    curr.name === "Student"
+                      ? "text-primary-grey-700"
+                      : "text-primary-grey-400"
+                  }`}
+                />
+                <div className="  text-inherit">{curr.name}</div>
+              </Link>
+              `
             </div>
           );
         })}
       </div>
-      <Slidebar />
     </>
   );
 }
