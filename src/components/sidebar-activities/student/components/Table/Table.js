@@ -1,4 +1,6 @@
+import { Person } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
+import RenderTable from "./RenderTable";
 const people = [
   {
     stdId: "Lindsay Walton",
@@ -681,48 +683,39 @@ const people = [
     numb: "lindsay.walton@example.com",
     status: "Member",
   },
-  // More people...
 ];
 
 export default function Example() {
-  const itemOnPage = 5;
-  const [page, setpage] = useState(1);
-  const [currentItems, setCurrentItems] = useState(people.slice(itemOnPage));
-  const table = () => {
-    {
-      currentItems.map((person, index) => (
-        <tr key={person.stdId}>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500    ">
-            {person.stdId}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.stdName}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.class}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.faculty}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.sec}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.gen}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.numb}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
-            {person.status}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500  ">
-            Edit
-          </td>
-        </tr>
-      ));
-    }
+  const itemsOnPage = 5;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentItems, setCurrentItems] = useState(
+    people.slice(0, itemsOnPage)
+  );
+  const [indexOfLastItem, setIndexOfLastItem] = useState(
+    currentPage * itemsOnPage
+  );
+  const [indexOfFirstItem, setIndexOfFirstItem] = useState(
+    indexOfLastItem - itemsOnPage
+  );
+  const [message, setmessage] = useState("Showing 1 to 2 of 2 results");
+
+  const onNextPage = () => {
+    setCurrentPage((curr) => curr + 1);
   };
+
+  const onPreviousPage = () => {
+    setCurrentPage((curr) => curr - 1);
+  };
+  useEffect(() => {
+    setIndexOfLastItem(currentPage * itemsOnPage);
+  }, [currentPage]);
+  useEffect(() => {
+    setIndexOfFirstItem(indexOfLastItem - itemsOnPage);
+  }, [indexOfLastItem]);
+  useEffect(() => {
+    console.log(indexOfFirstItem, indexOfLastItem);
+    setCurrentItems(people.slice(indexOfFirstItem, indexOfLastItem));
+  }, [indexOfFirstItem]);
 
   return (
     <div className="mt-11">
@@ -805,36 +798,36 @@ export default function Example() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white"></tbody>
+                <tbody className="divide-y divide-gray-200 bg-white">
+                  <RenderTable currentItems={currentItems} />
+                </tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
       <nav
-        className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6"
+        className="bg-white  py-3 flex items-center justify-between border-t border-gray-200 "
         aria-label="Pagination"
       >
         <div className="hidden sm:block">
-          <p className="text-sm text-gray-700">
-            Showing <span className="font-medium">1</span> to{" "}
-            <span className="font-medium">50</span> of{" "}
-            <span className="font-medium">52</span> results
-          </p>
+          <p className="text-sm text-gray-700">{message}</p>
         </div>
         <div className="flex-1 flex justify-between sm:justify-end">
-          <a
-            href="#"
-            className="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+          <button
+            disabled={indexOfFirstItem === 0}
+            onClick={onPreviousPage}
+            className="relative inline-flex items-center disabled:opacity-80 px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
           >
             Previous
-          </a>
-          <a
-            href="#"
-            className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+          </button>
+          <button
+            disabled={indexOfLastItem >= people.length}
+            onClick={onNextPage}
+            className="ml-3 relative inline-flex items-center px-4 py-2 border disabled:opacity-80 border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
           >
             Next
-          </a>
+          </button>
         </div>
       </nav>
     </div>
