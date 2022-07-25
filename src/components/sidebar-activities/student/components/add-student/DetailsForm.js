@@ -133,7 +133,7 @@ const DetailsForm = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="sm:col-span-2">
           <label
             htmlFor="photo"
             className="block text-sm font-medium text-gray-700"

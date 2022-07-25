@@ -5,6 +5,7 @@ import AddStudent from "./components/sidebar-activities/student/components/add-s
 // import Main from "./components/sidebar-activities/index";
 import Slidebar from "./components/sidebar-activities/student/components/slidebar/Slidebar";
 import Student from "./components/sidebar-activities/student/Student";
+// import Toggler from "./components/sidebar-activities/student/components/add-student/Toggler";
 
 function App() {
   return (

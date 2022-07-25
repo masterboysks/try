@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Slidebar = () => {
   //   const modal = () => {
@@ -21,6 +21,13 @@ const Slidebar = () => {
     className="absolute   top-[70px] left-20 block md:hidden"
     onClick={modal}
   /> }*/
+  // useEffect(() => {
+  //   // function some() {
+  //   //   document.getElementById("slidebar").classList.slidebar.remove("hidden");
+  //   // }
+  //   //  && some();
+  //   // console.log(document.getElementById("slidebar").classList.remove("hidden"));
+  // }, []);
 
   return (
     <>

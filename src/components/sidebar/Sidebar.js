@@ -27,11 +27,14 @@ export default function Sidebar() {
   ];
   const sidebar = () => {
     const nav = document.getElementById("sidebar").classList;
-    const slidebar = document.getElementById("slidebar").classList;
+    const slidebar =
+      document.getElementById("slidebar") &&
+      document.getElementById("slidebar").classList;
 
-    slidebar.contains("hidden")
-      ? slidebar.remove("hidden")
-      : slidebar.add("hidden");
+    slidebar &&
+      (slidebar.contains("hidden") && nav.contains("hidden")
+        ? slidebar.remove("hidden")
+        : slidebar.add("hidden"));
     nav.contains("hidden") ? nav.remove("hidden") : nav.add("hidden");
   };
   return (
