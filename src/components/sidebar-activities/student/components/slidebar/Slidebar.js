@@ -32,7 +32,7 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] mt-[2px] text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 absolute top-16 md:static   ml-[72px] md:ml-0 h-screen hidden lg:inline "
+        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 absolute top-16 md:static   ml-[72px] md:ml-0 min-h-screen hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">

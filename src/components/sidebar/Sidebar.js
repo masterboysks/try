@@ -50,7 +50,7 @@ export default function Sidebar() {
       </div>
 
       <div
-        className="min-w-[72px] mt-[2px] py-8 border-r-[1px] border-r-primary-grey-100-grey-200 top-[64px] md:static z-10 absolute h-fit min-h-screen text-sm sm:inline hidden bg-white "
+        className="min-w-[72px]  mt-[2px] py-8 border-r-[1px] border-r-primary-grey-100-grey-200 top-[64px] md:static z-10 absolute  min-h-screen text-sm sm:inline hidden bg-white "
         id="sidebar"
       >
         {activity.map((curr) => {

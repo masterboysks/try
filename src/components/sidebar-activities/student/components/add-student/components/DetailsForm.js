@@ -1,8 +1,10 @@
 import Upload from "@mui/icons-material/UploadOutlined";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-const DetailsForm = ({ setHasAnotherChild }) => {
+const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
   return (
-    <form className="rounded-md  my-6 p-4 shadow ring-1 ring-black ring-opacity-5 form-solid">
+    <form className="rounded-md  my-6 form-solid">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         <div>
           <label className="my-6 text-sm" htmlFor="Student Id">
@@ -10,9 +12,9 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
-            placeholder="Id"
+            placeholder="First name"
           />
         </div>
         <div className="">
@@ -21,9 +23,9 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
-            placeholder="Id"
+            placeholder="Middle name"
           />
         </div>
         <div className="">
@@ -32,9 +34,9 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
-            placeholder="Id"
+            placeholder="Last name"
           />
         </div>
         <div className="">
@@ -43,9 +45,9 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
-            placeholder="Id"
+            placeholder="Mobile number"
           />
         </div>
         <div className="">
@@ -54,9 +56,9 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
-            placeholder="Id"
+            placeholder="mail@gmail.com"
           />
         </div>
         <div className="">
@@ -64,7 +66,7 @@ const DetailsForm = ({ setHasAnotherChild }) => {
             Gender*
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
+          <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -73,7 +75,7 @@ const DetailsForm = ({ setHasAnotherChild }) => {
             Blood Group
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
+          <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>{" "}
@@ -83,7 +85,7 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-40 text-primary-grey-700 text-sm"
+            className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-40 text-primary-grey-700 text-sm"
             type="date"
             placeholder="Id"
           />
@@ -92,7 +94,7 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           <label htmlFor="cover-photo" className="block text-sm   ">
             Birth/Citizenship Certificate*
           </label>
-          <div className="mt-1 sm:mt-0 sm:col-span-2">
+          <div className=" mt-[6px] sm:col-span-2 ">
             <div className="w-full flex border-2  py-2 px-3 border-gray-300 border-dashed rounded-md ">
               <div className="space-y-1 w-full ">
                 {/* <svg
@@ -112,11 +114,10 @@ const DetailsForm = ({ setHasAnotherChild }) => {
                 <div className=" text-sm  w-full">
                   <label
                     htmlFor="file-upload"
-                    className="cursor-pointer bg-white flex justify-between w-full rounded-md text-sm text-primary-grey-700 -indigo-600 hover:text-focus-within:outline-none focus-within:ring- focus-within:ring-offset-0 focus-within:ring-"
+                    className="cursor-pointer  bg-white flex items-center justify-between w-full rounded-md text-sm text-primary-grey-700 -indigo-600 hover:text-focus-within:outline-none focus-within:ring- focus-within:ring-offset-0 focus-within:ring-"
                   >
                     <div>Upload here</div>
-                    <div>
-                      {" "}
+                    <div className="text-primary-btn">
                       <Upload />
                     </div>
                     <input
@@ -135,7 +136,7 @@ const DetailsForm = ({ setHasAnotherChild }) => {
           <label htmlFor="photo" className="block text-sm  ">
             Photo
           </label>
-          <div className="mt-1 sm:mt-0 sm:col-span-2">
+          <div className="mt-[6px] sm:mt-0 sm:col-span-2">
             <div className="flex items-center text-primary-gray-700">
               <span className="h-12 w-12 rounded-full overflow-hidden ">
                 <svg
@@ -168,32 +169,33 @@ const DetailsForm = ({ setHasAnotherChild }) => {
             id="comments"
             name="comments"
             type="checkbox"
+            checked={anotherChild}
             className="focus:ring- h-4 w-4 text-primary-btn focus:ring-0 focus:ring-offset-0 border-gray-300 rounded"
-            onClick={() => {
-              setHasAnotherChild((curr) => !curr);
+            onChange={() => {
+              anotherChildToggle(!anotherChild);
             }}
           />
         </div>
         <div className="ml-3 text-sm">
-          <label htmlFor="comments" className="font-medium text-gray-700">
+          <label htmlFor="comments" className="font-sm text-primary-grey-700">
             Has another child admitted
           </label>
         </div>
       </div>
       <div className="w-full">
         <div className=" ml-auto w-fit">
-          <div
-            to="/student/add-student-details"
-            className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-200 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+          <Link
+            to="/student/"
+            className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-50 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
             Cancel
-          </div>
-          <div
-            to="/student/add-student-details"
+          </Link>
+          <Link
+            to={`/student/add-student-details/guardian-${anotherChild}`}
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
             Next
-          </div>
+          </Link>
         </div>
       </div>
     </form>

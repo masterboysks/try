@@ -1,4 +1,5 @@
 import React from "react";
+import ThreeDots from "@mui/icons-material/MoreVert";
 
 const RenderTable = ({ currentItems }) => {
   return (
@@ -29,9 +30,28 @@ const RenderTable = ({ currentItems }) => {
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500   ">
             {person.status}
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500  ">
-            Edit
+          <td
+            className="whitespace-nowrap px-3 py-4 text-sm text-gray-500  "
+            onMouseOver={() => {
+              document.getElementById(person.stdId).classList.remove("hidden");
+            }}
+            onMouseLeave={() => {
+              document.getElementById(person.stdId).classList.add("hidden");
+            }}
+          >
+            <ThreeDots className="devMenuTable" />
           </td>
+          <table
+            className="divide-y-2 absolute -ml-[112px] hidden bg-white shadow-lg w-12 rounded "
+            id={person.stdId}
+          >
+            <tr>
+              <td className="p-3">Edit</td>
+            </tr>
+            <tr>
+              <td className="p-3">Delete</td>
+            </tr>
+          </table>
         </tr>
       ))}
     </>

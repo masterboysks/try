@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "./logoHeader.png";
@@ -25,9 +26,12 @@ export default function Example() {
                     src={logo}
                     alt="Kinder garden school logo"
                   />
-                  <span className="w-36 ml-2 font-medium text-base text-logo">
+                  <Link
+                    className="w-36 ml-2 font-medium text-base text-logo hidden sm:block"
+                    to="/"
+                  >
                     Kindergarden Secondary School
-                  </span>
+                  </Link>
                 </div>
                 <div className="hidden lg:flex lg:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
