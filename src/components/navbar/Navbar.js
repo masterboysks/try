@@ -35,36 +35,36 @@ export default function Example() {
                 </div>
                 <div className="hidden lg:flex lg:space-x-8">
                   {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  <a
-                    href="#"
+                  <Link
+                    to="/dashboard"
                     className="text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-medium"
                   >
                     Dashboard
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/event-calender"
                     className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Event calander
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/push-notification"
                     className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Push Notification
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="fee-payment"
                     className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Fee Payment
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="logsheet"
                     className="border-transparent text-primary-grey-600 hover:text-primary-grey-700 inline-flex items-center px-1 pt-1  text-base font-normal"
                   >
                     Logsheet
-                  </a>
+                  </Link>
                 </div>
                 <div className=" hidden sm:flex mx-2 ml-auto lg:ml-0 lg:flex items-center">
                   <button
@@ -100,7 +100,7 @@ export default function Example() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              to="/profile"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-base text-gray-700"
@@ -113,7 +113,7 @@ export default function Example() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              to="/settings"
                               className={classNames(
                                 active ? "bg-gray-100" : "",
                                 "block px-4 py-2 text-base text-gray-700"

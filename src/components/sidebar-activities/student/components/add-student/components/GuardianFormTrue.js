@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Break from "./Break";
+import Search from "@mui/icons-material/SearchOutlined";
 
 const GuardianFormFalse = () => {
   return (
@@ -23,7 +24,7 @@ const GuardianFormFalse = () => {
               to="/student/add-student-details"
               className="  rounded-md border border-transparent bg-primary-btn h-[38px]  flex justify-center items-center  text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 "
             >
-              Search
+              <Search />
             </Link>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Base from "./pages/Base";
 import AddStudent from "./components/sidebar-activities/student/components/add-student/AddStudent";
@@ -12,6 +13,8 @@ import Home from "./pages/Home";
 
 function App() {
   const [HasAnotherChild, setHasAnotherChild] = useState(false);
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <Routes>
       <Route path="/" element={<Base />}>
@@ -55,7 +58,14 @@ function App() {
             </>
           }
         />
-        <Route path="*" element={<>Page not found</>} />
+        <Route
+          path="*"
+          element={
+            <div className="mt-12 w-full text-center text-xl text-primary-grey-700 font-semibold">
+              Page not found-{location.pathname.replace("/", " ")}
+            </div>
+          }
+        />
       </Route>
     </Routes>
   );
