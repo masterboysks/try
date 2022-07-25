@@ -55,7 +55,7 @@ const Form = () => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm"
+            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
             type="text"
             placeholder="Id"
           />
@@ -66,7 +66,7 @@ const Form = () => {
           </label>
           <br />
           <input
-            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm"
+            className="w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
             type="text"
             placeholder="Student Name"
           />{" "}
@@ -76,7 +76,7 @@ const Form = () => {
             Class / Semester
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -85,7 +85,7 @@ const Form = () => {
             Faculty
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -94,7 +94,7 @@ const Form = () => {
             Section
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -103,7 +103,7 @@ const Form = () => {
             Status
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
@@ -112,7 +112,7 @@ const Form = () => {
             Order By
           </label>
           <br />
-          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-grey-400text-primary-grey-700 text-sm">
+          <select className="w-full p-2  cursor-pointer rounded  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
         </div>
