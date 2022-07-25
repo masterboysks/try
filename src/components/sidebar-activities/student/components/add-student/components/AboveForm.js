@@ -3,9 +3,17 @@ import Break from "./Break";
 import { Link } from "react-router-dom";
 
 const pages = [
-  { name: "Student", href: "#", current: false },
-  { name: "Student Information", href: "/student/", current: false },
-  { name: "Add Student", href: "#", current: true },
+  { name: "Student", href: "/student/", current: false },
+  {
+    name: "Student Information",
+    href: "/student/student-information/",
+    current: false,
+  },
+  {
+    name: "Add Student",
+    href: "/student/student-information/add-student-details",
+    current: true,
+  },
 ];
 
 const AboveForm = ({ steps, title }) => {

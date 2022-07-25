@@ -1,12 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Base from "./pages/Base";
-import AddStudent from "./components/sidebar-activities/student/components/add-student/AddStudent";
+import AddStudent from "./components/sidebar-activities/student//components/add-student/AddStudent";
 
 // import Main from "./components/sidebar-activities/index";
 import Slidebar from "./components/sidebar-activities/student/components/slidebar/Slidebar";
-import Student from "./components/sidebar-activities/student/Student";
+import StudentInformation from "./components/sidebar-activities/student/Student-information";
+import StudentAttendence from "./components/sidebar-activities/student/Student-attendence";
 import AddguardianTrue from "./components/sidebar-activities/student/components/add-student/AddGuardianTrue";
 import AddguardianFalse from "./components/sidebar-activities/student/components/add-student/AddGuardianFalse";
 import Home from "./pages/Home";
@@ -24,12 +25,20 @@ function App() {
           element={
             <>
               <Slidebar />
-              <Student />
             </>
           }
-        ></Route>
+        >
+          <Route
+            path="/student/student-information"
+            element={<StudentInformation />}
+          />{" "}
+          <Route
+            path="/student/student-attendence"
+            element={<StudentAttendence />}
+          ></Route>
+        </Route>
         <Route
-          path="/student/add-student-details"
+          path="/student/student-information/add-student-details"
           element={
             <>
               <Slidebar />
@@ -41,7 +50,7 @@ function App() {
           }
         />
         <Route
-          path="/student/add-student-details/guardian-true"
+          path="/student/student-information/add-student-details/guardian-true"
           element={
             <>
               <Slidebar />
@@ -50,7 +59,7 @@ function App() {
           }
         />
         <Route
-          path="/student/add-student-details/guardian-false"
+          path="/student/student-information/add-student-details/guardian-false"
           element={
             <>
               <Slidebar />
@@ -58,6 +67,7 @@ function App() {
             </>
           }
         />
+
         <Route
           path="*"
           element={

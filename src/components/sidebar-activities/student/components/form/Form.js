@@ -2,8 +2,12 @@ import { ChevronRightIcon } from "@heroicons/react/solid";
 import { ReactComponent as Search } from "./search.svg";
 
 const pages = [
-  { name: "Student", href: "#", current: false },
-  { name: "Student Information", href: "/student/", current: true },
+  { name: "Student", href: "/student/", current: false },
+  {
+    name: "Student Information",
+    href: "/student/student-information/",
+    current: true,
+  },
 ];
 
 const Form = () => {

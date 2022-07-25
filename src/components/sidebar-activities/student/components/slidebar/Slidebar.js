@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link, Outlet } from "react-router-dom";
 
 const Slidebar = () => {
   //   const modal = () => {
@@ -38,14 +39,15 @@ const Slidebar = () => {
         <div className="w-full">
           <ul className="mx-2 pt-9">
             <li className=" devList p-1 my-2 cursor-pointer rounded bg-primary-grey-200 w-full text-primary-grey-700 text-sm">
-              Student information
+              <Link to="/student/student-information">Student information</Link>
             </li>
             <li className="devList p-1 my-2 cursor-pointer rounded hover:bg-primary-grey-200 text-primary-grey-600 text-sm">
-              Student attendence
+              <Link to="/student/student-attendence"> Student attendence</Link>
             </li>
           </ul>
         </div>
       </div>
+      <Outlet />
     </>
   );
 };

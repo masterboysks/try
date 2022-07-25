@@ -185,13 +185,13 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
       <div className="w-full">
         <div className=" ml-auto w-fit">
           <Link
-            to="/student/"
+            to="/student/student-information/"
             className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-50 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
             Cancel
           </Link>
           <Link
-            to={`/student/add-student-details/guardian-${anotherChild}`}
+            to={`/student/student-information/add-student-details/guardian-${anotherChild}`}
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
             Next

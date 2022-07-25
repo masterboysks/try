@@ -21,8 +21,8 @@ const GuardianFormFalse = () => {
           </div>
           <div className="sm:w-1/2 mt-auto">
             <Link
-              to="/student/add-student-details"
-              className="  rounded-md border border-transparent bg-primary-btn h-[38px]  flex justify-center items-center  text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 "
+              to="/student/student-information/add-student-details"
+              className="  rounded-md border border-transparent bg-primary-btn h-fit p-2 w-fit  flex justify-center items-center  text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 "
             >
               <Search />
             </Link>
@@ -259,13 +259,13 @@ const GuardianFormFalse = () => {
       <div className="w-full">
         <div className=" ml-auto w-fit">
           <Link
-            to="/student/add-student-details"
+            to="/student/student-information/add-student-details"
             className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-50 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
             Back
           </Link>
           <Link
-            to={`/student/add-student-details/`}
+            to={`/student/student-information/add-student-details/`}
             className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
           >
             Next

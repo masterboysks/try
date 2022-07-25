@@ -7,7 +7,7 @@ const AddGuardianFalse = () => {
     {
       id: "01",
       name: "Student details",
-      href: "/student/add-student-details",
+      href: "/student/student-information/add-student-details",
       status: "complete",
     },
     { id: "02", name: "Guardian details", href: "#", status: "current" },
