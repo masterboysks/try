@@ -8,11 +8,12 @@ import Inventory from "@mui/icons-material/Inventory2Outlined";
 import Exam from "@mui/icons-material/QuizOutlined";
 import Lms from "@mui/icons-material/AppRegistrationOutlined";
 import Transport from "@mui/icons-material/DirectionsBusOutlined";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Hamburger from "@mui/icons-material/MenuOutlined";
 
 export default function Sidebar() {
+  const location = useLocation().pathname.toLowerCase();
   const activity = [
     { name: "Admin", value: Admin },
     { name: "Student", value: Student },
@@ -57,7 +58,7 @@ export default function Sidebar() {
           return (
             <div
               className={` w-[60px] text-center text-xs rounded py-1 my-4 mx-auto hover:bg-primary-grey-100  ${
-                curr.name === "Student"
+                location.includes(curr.name.toLowerCase())
                   ? "  bg-primary-grey-100 text-primary-grey-700"
                   : " text-primary-grey-600 "
               }`}
@@ -73,12 +74,12 @@ export default function Sidebar() {
               <Link to={`/${curr.name.toLowerCase()}`}>
                 <curr.value
                   className={` mx-auto ${
-                    curr.name === "Student"
+                    location.includes(curr.name.toLowerCase())
                       ? "text-primary-grey-700"
                       : "text-primary-grey-400"
                   }`}
                 />
-                <div className="  text-inherit">{curr.name}</div>
+                <div className=" text-inherit">{curr.name}</div>
               </Link>
               `
             </div>

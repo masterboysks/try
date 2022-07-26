@@ -1,6 +1,7 @@
 import { CheckIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import Break from "./Break";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const pages = [
   { name: "Student", href: "/student/", current: false },
@@ -17,9 +18,10 @@ const pages = [
 ];
 
 const AboveForm = ({ steps, title }) => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="breadNav">
+      <div className="hidden breadNav sm:block">
         <nav className="flex" aria-label="Breadcrumb">
           <ol role="list" className="flex items-center ">
             {pages.map((page) => (
@@ -38,7 +40,7 @@ const AboveForm = ({ steps, title }) => {
                   ) : (
                     <>
                       <ChevronRightIcon
-                        className="flex-shrink-0 h-5 w-5 text-gray-400"
+                        className="flex-shrink-0 w-5 h-5 text-gray-400"
                         aria-hidden="true"
                       />
                       <Link
@@ -60,18 +62,18 @@ const AboveForm = ({ steps, title }) => {
       </div>
       <nav
         aria-label="Progress"
-        className="my-8 overflow-x-auto overflow-y-hidden border border-primary-grey-300 rounded-md"
+        className="my-8 overflow-x-auto overflow-y-hidden border rounded-md border-primary-grey-300"
       >
         <ol
           role="list"
-          className=" divide-y divide-primary-grey-300 md:flex md:divide-y-0 "
+          className="divide-y divide-primary-grey-300 md:flex md:divide-y-0"
         >
           {steps.map((step, stepIdx) => (
             <li key={step.name} className="relative md:flex-1 md:flex sm:h-14 ">
               {step.status === "complete" ? (
-                <Link to={step.href} className="group flex items-center w-full">
-                  <span className="px-6 py-4 flex items-center text-sm font-medium">
-                    <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-primary-btn rounded-full ">
+                <Link to={step.href} className="flex items-center w-full group">
+                  <span className="flex items-center px-6 py-4 text-sm font-medium">
+                    <span className="flex items-center justify-center flex-shrink-0 w-10 h-10 rounded-full bg-primary-btn ">
                       <CheckIcon
                         className="w-6 h-6 text-white"
                         aria-hidden="true"
@@ -85,10 +87,10 @@ const AboveForm = ({ steps, title }) => {
               ) : step.status === "current" ? (
                 <Link
                   to={step.href}
-                  className="px-6 py-4 flex items-center text-sm font-medium"
+                  className="flex items-center px-6 py-4 text-sm font-medium"
                   aria-current="step"
                 >
-                  <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-primary-grey-600 rounded-full">
+                  <span className="flex items-center justify-center flex-shrink-0 w-10 h-10 border-2 rounded-full border-primary-grey-600">
                     <span className="text-primary-grey-600">{step.id}</span>
                   </span>
                   <span className="ml-4 text-sm font-medium text-primary-grey-600">
@@ -96,9 +98,9 @@ const AboveForm = ({ steps, title }) => {
                   </span>
                 </Link>
               ) : (
-                <Link to={step.href} className="group flex items-center">
-                  <span className="px-6 py-4 flex items-center text-sm font-medium">
-                    <span className="flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-300 rounded-full group-hover:border-gray-400">
+                <Link to={step.href} className="flex items-center group">
+                  <span className="flex items-center px-6 py-4 text-sm font-medium">
+                    <span className="flex items-center justify-center flex-shrink-0 w-10 h-10 border-2 border-gray-300 rounded-full group-hover:border-gray-400">
                       <span className="text-gray-500 group-hover:text-gray-900">
                         {step.id}
                       </span>
@@ -114,11 +116,11 @@ const AboveForm = ({ steps, title }) => {
                 <>
                   {/* Arrow separator for lg screens and up */}
                   <div
-                    className="hidden md:block absolute top-0 right-0 h-full w-5"
+                    className="absolute top-0 right-0 hidden w-5 h-full md:block"
                     aria-hidden="true"
                   >
                     <svg
-                      className="h-full w-full text-gray-300"
+                      className="w-full h-full text-gray-300"
                       viewBox="0 0 22 80"
                       fill="none"
                       preserveAspectRatio="none"

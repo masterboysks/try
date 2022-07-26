@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 
 const Slidebar = () => {
+  const location = useLocation().pathname;
   //   const modal = () => {
   //     const sidebarS = document.getElementById("modal").classList;
   //     // const sidebar = document.getElementById("sidebar").classList;
@@ -38,10 +40,22 @@ const Slidebar = () => {
       >
         <div className="w-full">
           <ul className="mx-2 pt-9">
-            <li className=" devList p-1 my-2 cursor-pointer rounded bg-primary-grey-200 w-full text-primary-grey-700 text-sm">
+            <li
+              className={` devList p-1 my-2 cursor-pointer rounded ${
+                location.includes("information")
+                  ? " bg-primary-grey-200  text-primary-grey-700 "
+                  : " hover:bg-primary-grey-200 text-primary-grey-600 "
+              } text-sm`}
+            >
               <Link to="/student/student-information">Student information</Link>
             </li>
-            <li className="devList p-1 my-2 cursor-pointer rounded hover:bg-primary-grey-200 text-primary-grey-600 text-sm">
+            <li
+              className={` devList p-1 my-2 cursor-pointer rounded ${
+                location.includes("attendence")
+                  ? " bg-primary-grey-200  text-primary-grey-700 "
+                  : " hover:bg-primary-grey-200 text-primary-grey-600 "
+              } text-sm`}
+            >
               <Link to="/student/student-attendence"> Student attendence</Link>
             </li>
           </ul>

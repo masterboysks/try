@@ -11,11 +11,21 @@ import StudentAttendence from "./components/sidebar-activities/student/Student-a
 import AddguardianTrue from "./components/sidebar-activities/student/components/add-student/AddGuardianTrue";
 import AddguardianFalse from "./components/sidebar-activities/student/components/add-student/AddGuardianFalse";
 import Home from "./pages/Home";
+import WholeClass from "./components/sidebar-activities/student/components-attendence/wholeClass/WholeClass";
+import StudentProfile from "./components/sidebar-activities/student/components-attendence/studentProfile/StudentProfile";
+
+const classes = [
+  {
+    semester: "Class-11",
+    level: "+2",
+    faculty: "Science-Bio",
+    section: "A",
+  },
+];
 
 function App() {
   const [HasAnotherChild, setHasAnotherChild] = useState(false);
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <Routes>
       <Route path="/" element={<Base />}>
@@ -33,45 +43,45 @@ function App() {
             element={<StudentInformation />}
           />{" "}
           <Route
-            path="/student/student-attendence"
-            element={<StudentAttendence />}
-          ></Route>
-        </Route>
-        <Route
-          path="/student/student-information/add-student-details"
-          element={
-            <>
-              <Slidebar />
+            path="/student/student-information/add-student-details"
+            element={
               <AddStudent
                 HasAnotherChild={HasAnotherChild}
                 setHasAnotherChild={setHasAnotherChild}
               />
-            </>
-          }
-        />
-        <Route
-          path="/student/student-information/add-student-details/guardian-true"
-          element={
-            <>
-              <Slidebar />
-              <AddguardianTrue />
-            </>
-          }
-        />
-        <Route
-          path="/student/student-information/add-student-details/guardian-false"
-          element={
-            <>
-              <Slidebar />
-              <AddguardianFalse />
-            </>
-          }
-        />
+            }
+          />
+          <Route
+            path="/student/student-information/add-student-details/guardian-true"
+            element={<AddguardianTrue />}
+          />
+          <Route
+            path="/student/student-information/add-student-details/guardian-false"
+            element={<AddguardianFalse />}
+          />
+          <Route
+            path="/student/student-attendence"
+            element={<StudentAttendence />}
+          ></Route>
+          {classes.map((classs, index) => {
+            return (
+              <Route
+                key={index}
+                path={`/student/student-attendence/${classs.semester}-${classs.faculty}-${classs.section}`}
+                element={<WholeClass />}
+              />
+            );
+          })}
+          <Route
+            path="/student/student-attendence/Class-11-Science-Bio-A/ranjit"
+            element={<StudentProfile />}
+          />
+        </Route>
 
         <Route
           path="*"
           element={
-            <div className="mt-12 w-full text-center text-xl text-primary-grey-700 font-semibold">
+            <div className="w-full mt-12 text-xl font-semibold text-center text-primary-grey-700">
               Page not found-{location.pathname.replace("/", " ")}
             </div>
           }

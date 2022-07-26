@@ -89,7 +89,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
             type="date"
             placeholder="Id"
           />
-        </div>{" "}
+        </div>
         <div className="">
           <label htmlFor="cover-photo" className="block text-sm   ">
             Birth/Citizenship Certificate*

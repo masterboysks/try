@@ -1,5 +1,6 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import { ReactComponent as Search } from "./search.svg";
+import { useNavigate } from "react-router-dom";
+import Search from "@mui/icons-material/SearchOutlined";
 
 const pages = [
   { name: "Student", href: "/student/", current: false },
@@ -11,9 +12,10 @@ const pages = [
 ];
 
 const Form = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="breadNav">
+      <div className="hidden breadNav sm:block">
         <nav className="flex" aria-label="Breadcrumb">
           <ol role="list" className="flex items-center ">
             {pages.map((page) => (
@@ -32,7 +34,7 @@ const Form = () => {
                   ) : (
                     <>
                       <ChevronRightIcon
-                        className="flex-shrink-0 h-5 w-5 text-gray-400"
+                        className="flex-shrink-0 w-5 h-5 text-gray-400"
                         aria-hidden="true"
                       />
                       <a
@@ -52,7 +54,13 @@ const Form = () => {
           </ol>
         </nav>
       </div>
-      <form className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-md  my-6 p-4 shadow ring-1 ring-black ring-opacity-5 form-solid">
+      <div
+        className="absolute w-10 rotate-180 -top-10 right-2 text-primary-grey-700"
+        onClick={() => navigate(-1)}
+      >
+        <ChevronRightIcon />
+      </div>
+      <form className="grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid">
         <div className="">
           <label className="my-6 text-sm" htmlFor="Student Id">
             Student Id
@@ -120,8 +128,8 @@ const Form = () => {
             <option value="Test">Select</option>
           </select>
         </div>
-        <div className="mx-auto sm:mx-0 sm:ml-auto px-4 py-3 mt-auto h-fit w-1/2 box-border sm:w-fit text-center cursor-pointer bg-primary-btn sm:box-content rounded lg:col-span-2 xl:col-span-1">
-          {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
+        <div className="box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer h-fit w-fit bg-primary-btn sm:box-content lg:col-span-2 xl:col-span-1">
+          {/* <span className="text-sm sm:hidden text-primary-grey-100">Search</span> */}
           <Search className="w-4 mx-auto"></Search>
         </div>
       </form>
