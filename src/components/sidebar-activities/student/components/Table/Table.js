@@ -713,7 +713,6 @@ export default function Example() {
     setIndexOfFirstItem(indexOfLastItem - itemsOnPage);
   }, [indexOfLastItem]);
   useEffect(() => {
-    console.log(indexOfFirstItem, indexOfLastItem);
     setCurrentItems(people.slice(indexOfFirstItem, indexOfLastItem));
   }, [indexOfFirstItem]);
 
@@ -721,7 +720,7 @@ export default function Example() {
     <div className="mt-11">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
-          <h1 className="text-xl font-semibold text-primary-grey-700">
+          <h1 className="text-primary-grey-700 text-xl font-semibold">
             Student Details
           </h1>
           <p className="mt-2 text-sm text-gray-700">
@@ -729,20 +728,20 @@ export default function Example() {
             email and role.
           </p>
         </div>
-        <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+        <div className="sm:mt-0 sm:ml-16 sm:flex-none mt-4">
           <Link
             to="/student/student-information/add-student-details"
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Add Student
           </Link>
         </div>
       </div>
       <div className="my-6">
-        <div className=" overflow-x-auto min-w-full rounded-lg shadow ring-1 ring-black ring-opacity-5 ">
-          <div className="inline-block align-middle  w-full">
+        <div className=" ring-1 ring-black ring-opacity-5 min-w-full overflow-x-auto rounded-lg shadow">
+          <div className="inline-block w-full align-middle">
             <div className=" w-full rounded-lg">
-              <table className="min-w-full divide-y table-auto divide-gray-300">
+              <table className="min-w-full divide-y divide-gray-300 table-auto">
                 <thead className="bg-gray-50">
                   <tr>
                     <th
@@ -755,7 +754,6 @@ export default function Example() {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
-                      {" "}
                       Student Name
                     </th>
                     <th
@@ -802,7 +800,7 @@ export default function Example() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200 bg-white">
+                <tbody className="bg-white divide-y divide-gray-200">
                   <RenderTable currentItems={currentItems} />
                 </tbody>
               </table>
@@ -811,24 +809,24 @@ export default function Example() {
         </div>
       </div>
       <nav
-        className="bg-white  py-3 flex items-center justify-between border-t border-gray-200 "
+        className=" flex items-center justify-between py-3 bg-white border-t border-gray-200"
         aria-label="Pagination"
       >
-        <div className="hidden sm:block">
+        <div className="sm:block hidden">
           <p className="text-sm text-gray-700">{message}</p>
         </div>
-        <div className="flex-1 flex justify-between sm:justify-end">
+        <div className="sm:justify-end flex justify-between flex-1">
           <button
             disabled={indexOfFirstItem === 0}
             onClick={onPreviousPage}
-            className="relative inline-flex items-center disabled:opacity-80 px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+            className="disabled:opacity-80 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md"
           >
             Previous
           </button>
           <button
             disabled={indexOfLastItem >= people.length}
             onClick={onNextPage}
-            className="ml-3 relative inline-flex items-center px-4 py-2 border disabled:opacity-80 border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
+            className="disabled:opacity-80 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md"
           >
             Next
           </button>
@@ -906,37 +904,33 @@ export default function Example() {
 //   // }
 
 //   return (
-//     <div className=" text-primary-grey-600 text-inherit w-full mt-11 ">
-//       {/* <div className="space w-full ">
+//     <div className=" text-primary-grey-600 text-inherit mt-11 w-full">
+//       {/* <div className="space w-full">
 //         Student Details
 //         <Link
-//           className=" text-primary-grey-100 inline-flex items-center
-//           w-full sm:w-fit justify-center rounded-md border border-transparent
-//            bg-primary-btn px-4 py-2 text-sm font-medium  shadow-sm
-//             hover: focus:outline-none focus:ring-2 focus:ring-
-//             focus:ring-offset-2 "
+//           className=" text-primary-grey-100 // sm:w-fit bg-primary-btn hover: focus:outline-none focus:ring-2 focus:ring- focus:ring-offset-2 inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium border border-transparent rounded-md shadow-sm"
 //           to="/add-student"
 //         >
 //           Add user
 //         </Link>
 //       </div> */}
 //       <div className="sm:flex sm:items-center">
-//         <div className="sm:flex-auto text-center sm:text-left ">
-//           <h1 className="text-xl font-semibold text-primary-grey-600">
+//         <div className="sm:flex-auto sm:text-left text-center">
+//           <h1 className="text-primary-grey-600 text-xl font-semibold">
 //             Student Details
 //           </h1>
 //         </div>
-//         <div className="mt-4 sm:my-auto ">
+//         <div className="sm:my-auto mt-4">
 //           <button
 //             type="button"
-//             className="inline-flex items-center w-full  justify-center rounded-md border border-transparent bg-primary-btn px-4 py-2 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring-2 focus:ring- focus:ring-offset-2 sm:w-auto"
+//             className="bg-primary-btn hover: focus:outline-none focus:ring-2 focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
 //           >
 //             Add user
 //           </button>
 //         </div>
 //       </div>
 //       <div className="overflow-x-auto border-[1px] border-primary-grey-300 rounded-md my-6">
-//         <table className="min-w-full  divide-y divide-primary-grey-300   ">
+//         <table className="divide-primary-grey-300 min-w-full divide-y">
 //           <thead className="bg-primary-grey-100">
 //             <tr>
 //               <th
@@ -996,7 +990,7 @@ export default function Example() {
 //               </th>
 //             </tr>
 //           </thead>
-//           <tbody className="bg-white divide-y divide-primary-grey-300">
+//           <tbody className="divide-primary-grey-300 bg-white divide-y">
 //             {people.map((person, personIdx) => (
 //
 //             ))}

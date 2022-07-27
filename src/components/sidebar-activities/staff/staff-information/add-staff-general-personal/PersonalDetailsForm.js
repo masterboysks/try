@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
   return (
-    <form className="rounded-md  my-6 form-solid">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+    <form className="form-solid my-6 rounded-md">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  grid grid-cols-1 gap-4">
         <div>
           <label className="my-6 text-sm" htmlFor="Student Id">
             First Name*
@@ -90,14 +90,14 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
           />
         </div>
         <div className="">
-          <label htmlFor="cover-photo" className="block text-sm   ">
+          <label htmlFor="cover-photo" className=" block text-sm">
             Birth/Citizenship Certificate*
           </label>
           <div className=" mt-[6px] sm:col-span-2 ">
-            <div className="w-full flex border-2  py-2 px-3 border-gray-300 border-dashed rounded-md ">
-              <div className="space-y-1 w-full ">
+            <div className=" flex w-full px-3 py-2 border-2 border-gray-300 border-dashed rounded-md">
+              <div className=" w-full space-y-1">
                 {/* <svg
-                className="mx-auto h-12 w-12 text-gray-400"
+                className="w-12 h-12 mx-auto text-gray-400"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 48 48"
@@ -110,10 +110,10 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
                   strokeLinejoin="round"
                 /> */}
                 {/* </svg> */}
-                <div className=" text-sm  w-full">
+                <div className=" w-full text-sm">
                   <label
                     htmlFor="file-upload"
-                    className="cursor-pointer  bg-white flex items-center justify-between w-full rounded-md text-sm text-primary-grey-700 -indigo-600 hover:text-focus-within:outline-none focus-within:ring- focus-within:ring-offset-0 focus-within:ring-"
+                    className="text-primary-grey-700 -indigo-600 hover:text-focus-within:outline-none focus-within:ring- focus-within:ring-offset-0 flex items-center justify-between w-full text-sm bg-white rounded-md cursor-pointer"
                   >
                     <div>Upload here</div>
                     <div className="text-primary-btn">
@@ -132,14 +132,14 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
           </div>
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="photo" className="block text-sm  ">
+          <label htmlFor="photo" className=" block text-sm">
             Photo
           </label>
           <div className="mt-[6px] sm:mt-0 sm:col-span-2">
-            <div className="flex items-center text-primary-gray-700">
-              <span className="h-12 w-12 rounded-full overflow-hidden ">
+            <div className="text-primary-gray-700 flex items-center">
+              <span className=" w-12 h-12 overflow-hidden rounded-full">
                 <svg
-                  className="h-full w-full text-gray-300"
+                  className="w-full h-full text-gray-300"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -148,7 +148,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
               </span>
               <input
                 type="file"
-                className="ml-5 bg-white py-2 px-3 rounded-md  text-sm leading-4 font-medium text-primary-gray- hidden hover:bg-gray-50 focus:outline-none focus:ring- focus:ring-offset-2 focus:ring-"
+                className="text-primary-gray- hover:bg-gray-50 focus:outline-none focus:ring- focus:ring-offset-2 hidden px-3 py-2 ml-5 text-sm font-medium leading-4 bg-white rounded-md"
                 name="file"
               />
               <label
@@ -169,7 +169,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
             name="comments"
             type="checkbox"
             checked={anotherChild}
-            className="focus:ring- h-4 w-4 text-primary-btn focus:ring-0 focus:ring-offset-0 border-gray-300 rounded"
+            className="focus:ring- text-primary-btn focus:ring-0 focus:ring-offset-0 w-4 h-4 border-gray-300 rounded"
             onChange={() => {
               anotherChildToggle(!anotherChild);
             }}
@@ -182,16 +182,16 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
         </div>
       </div>
       <div className="w-full">
-        <div className=" ml-auto w-fit">
+        <div className=" w-fit ml-auto">
           <Link
             to="/student/student-information/"
-            className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-50 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
           >
             Cancel
           </Link>
           <Link
             to={`/student/student-information/add-student-details/guardian-${anotherChild}`}
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Next
           </Link>

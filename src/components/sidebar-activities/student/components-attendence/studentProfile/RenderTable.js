@@ -11,7 +11,7 @@ const students = [
 ];
 const RenderTable = () => {
   return (
-    <tbody>
+    <>
       {students.map((person, index) => (
         <tr key={index}>
           <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
@@ -35,7 +35,7 @@ const RenderTable = () => {
           </td>
         </tr>
       ))}
-    </tbody>
+    </>
   );
 };
 

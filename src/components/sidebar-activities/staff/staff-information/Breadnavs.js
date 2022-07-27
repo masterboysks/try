@@ -1,60 +1,55 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const pages = [
-  { name: "Student", href: "#", current: false },
+  { name: "Staff", href: "#", current: false },
   {
-    name: "Student Attendence",
-    href: "/student/student-attendence/",
+    name: "Staff Information",
+    href: "/staff/staff-information/",
     current: false,
   },
   {
-    name: "Class 11 - Science - Bio -B",
-    href: "/student/student-attendence/Class-11-Science-Bio-A",
-    current: false,
-  },
-  {
-    name: "Ranjit",
-    href: "/student/student-attendence/Class-11-Science-Bio-A/ranjit",
+    name: "Add Staff",
+    href: "/staff/staff-information/add-staff/general/personal-details",
     current: true,
   },
 ];
 
-const BreadNav = () => {
+const Breadcurm = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="hidden breadNav sm:block">
+      <div className="breadNav sm:block hidden">
         <nav className="flex" aria-label="Breadcrumb">
-          <ol role="list" className="flex items-center ">
+          <ol role="list" className=" flex items-center">
             {pages.map((page) => (
               <li key={page.name}>
                 <div className="flex items-center">
                   {pages.indexOf(page) === 0 ? (
-                    <a
-                      href={page.href}
+                    <Link
+                      to={page.href}
                       className={` text-${
                         page.current ? "base font-medium" : "sm font-normal"
                       }  text-primary-grey-600`}
                       aria-current={page.current ? "page" : undefined}
                     >
                       {page.name}
-                    </a>
+                    </Link>
                   ) : (
                     <>
                       <ChevronRightIcon
                         className="flex-shrink-0 w-5 h-5 text-gray-400"
                         aria-hidden="true"
                       />
-                      <a
-                        href={page.href}
+                      <Link
+                        to={page.href}
                         className={`ml-2 text-${
                           page.current ? "base font-medium" : "sm font-normal"
                         }  text-primary-grey-600`}
                         aria-current={page.current ? "page" : undefined}
                       >
                         {page.name}
-                      </a>
+                      </Link>
                     </>
                   )}
                 </div>
@@ -64,7 +59,7 @@ const BreadNav = () => {
         </nav>
       </div>
       <div
-        className="absolute w-10 rotate-180 -top-10 right-2 text-primary-grey-700"
+        className="-top-10 right-2 text-primary-grey-700 absolute w-10 rotate-180"
         onClick={() => navigate(-1)}
       >
         <ChevronRightIcon />
@@ -73,4 +68,4 @@ const BreadNav = () => {
   );
 };
 
-export default BreadNav;
+export default Breadcurm;

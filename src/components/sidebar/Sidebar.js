@@ -9,34 +9,72 @@ import Exam from "@mui/icons-material/QuizOutlined";
 import Lms from "@mui/icons-material/AppRegistrationOutlined";
 import Transport from "@mui/icons-material/DirectionsBusOutlined";
 import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 import Hamburger from "@mui/icons-material/MenuOutlined";
 
 export default function Sidebar() {
   const location = useLocation().pathname.toLowerCase();
   const activity = [
-    { name: "Admin", value: Admin },
-    { name: "Student", value: Student },
-    { name: "Staff", value: Staff },
-    { name: "Billing", value: Billing },
-    { name: "Account", value: Account },
-    { name: "Libary", value: Libary },
-    { name: "Inventory", value: Inventory },
-    { name: "Exam", value: Exam },
-    { name: "LMS", value: Lms },
-    { name: "Transport", value: Transport },
+    { name: "Admin", value: Admin, path: "admin" },
+    { name: "Student", value: Student, path: "student/student-information" },
+    { name: "Staff", value: Staff, path: "staff/staff-information" },
+    { name: "Billing", value: Billing, path: "student/student-information" },
+    { name: "Account", value: Account, path: "student/student-information" },
+    { name: "Libary", value: Libary, path: "student/student-information" },
+    {
+      name: "Inventory",
+      value: Inventory,
+      path: "student/student-information",
+    },
+    { name: "Exam", value: Exam, path: "student/student-information" },
+    { name: "LMS", value: Lms, path: "student/student-information" },
+    {
+      name: "Transport",
+      value: Transport,
+      path: "student/student-information",
+    },
   ];
+  let nav;
   const sidebar = () => {
-    const nav = document.getElementById("sidebar").classList;
+    nav = document.getElementById("sidebar").classList;
+    nav.contains("hidden") ? nav.remove("hidden") : nav.add("hidden");
+    slidebar();
+  };
+  const slidebar = () => {
+    nav = document.getElementById("sidebar").classList;
+    let overlay =
+      document.getElementById("overlay") &&
+      document.getElementById("overlay").classList;
     const slidebar =
       document.getElementById("slidebar") &&
       document.getElementById("slidebar").classList;
 
     slidebar &&
-      (slidebar.contains("hidden") && nav.contains("hidden")
+      (slidebar.contains("hidden") && !nav.contains("hidden")
         ? slidebar.remove("hidden")
         : slidebar.add("hidden"));
-    nav.contains("hidden") ? nav.remove("hidden") : nav.add("hidden");
+    overlay &&
+      (!slidebar.contains("hidden")
+        ? overlay.remove("hidden")
+        : overlay.add("hidden"));
+  };
+  const slidebarLink = () => {
+    let overlay =
+      document.getElementById("overlay") &&
+      document.getElementById("overlay").classList;
+    const slidebar =
+      document.getElementById("slidebar") &&
+      document.getElementById("slidebar").classList;
+
+    slidebar &&
+      (slidebar.contains("hidden")
+        ? slidebar.remove("hidden")
+        : slidebar.add("hidden"));
+    overlay &&
+      (!slidebar.contains("hidden")
+        ? overlay.remove("hidden")
+        : overlay.add("hidden"));
   };
   return (
     <>
@@ -46,7 +84,7 @@ export default function Sidebar() {
         className="md:hidden absolute top-[70px] z-10 left-2"
         onClick={sidebar}
       /> */}
-      <div className="lg:hidden p-2 rounded-md text-primary-grey-600 hover:text-primary-grey-600 hover:bg-primary-grey-200 focus:outline-none absolute top-[70px]  z-20 left-2">
+      <div className="lg:hidden p-2 rounded-md text-primary-grey-600 hover:text-primary-grey-600 hover:bg-primary-grey-200 top-3 left-16 focus:outline-none absolute sm:top-[70px] z-50 sm:z-20 sm:left-2">
         <Hamburger onClick={sidebar}></Hamburger>
       </div>
 
@@ -63,6 +101,7 @@ export default function Sidebar() {
                   : " text-primary-grey-600 "
               }`}
               key={curr.name}
+              onClick={slidebarLink}
             >
               {/* <img
                 src={curr.value}
@@ -71,7 +110,14 @@ export default function Sidebar() {
                   curr.name === "Student" ? "brightness-50" : ""
                 }`}
               /> */}
-              <Link to={`/${curr.name.toLowerCase()}`}>
+              <Link
+                to={curr.path}
+                className={
+                  location.includes(curr.name.toLowerCase())
+                    ? "pointer pointer-events-none"
+                    : " "
+                }
+              >
                 <curr.value
                   className={` mx-auto ${
                     location.includes(curr.name.toLowerCase())
@@ -81,7 +127,6 @@ export default function Sidebar() {
                 />
                 <div className=" text-inherit">{curr.name}</div>
               </Link>
-              `
             </div>
           );
         })}

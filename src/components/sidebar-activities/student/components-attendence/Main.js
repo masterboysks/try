@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import Form from "./Form";
 const pages = [
-  { name: "Student", href: "/student/", current: false },
+  { name: "Student", href: "#", current: false },
   {
     name: "Student Attendence",
     href: "/student/student-attendence/",

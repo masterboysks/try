@@ -162,7 +162,7 @@ const GuardianFormFalse = () => {
             type="Email"
             placeholder="mail@gmail.com"
           />
-        </div>{" "}
+        </div>
         <div className="">
           <label className="py-6 text-sm" htmlFor="Student Id">
             Occupation*
@@ -231,7 +231,7 @@ const GuardianFormFalse = () => {
             type="Email"
             placeholder="mail@gmail.com"
           />
-        </div>{" "}
+        </div>
         <div className="">
           <label className="py-6 text-sm" htmlFor="Student Id">
             Occupation*

@@ -11,35 +11,35 @@ const students = [
 ];
 const RenderTable = () => {
   return (
-    <tbody>
+    <>
       {students.map((person, index) => (
         <tr key={index}>
-          <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.stdId}
           </td>
-          <td className="px-3 py-4 text-sm font-medium text-primary-btn whitespace-nowrap">
+          <td className="text-primary-btn whitespace-nowrap px-3 py-4 text-sm font-medium">
             <Link to="/student/student-attendence/Class-11-Science-Bio-A/ranjit">
               {person.stdName}
             </Link>
           </td>
 
-          <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.numb}
           </td>
-          <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.status}
           </td>
-          <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.reason}
           </td>
-          <td className="px-3 py-4 text-sm font-medium text-primary-btn whitespace-nowrap">
+          <td className="text-primary-btn whitespace-nowrap px-3 py-4 text-sm font-medium">
             <Link to="/student/student-attendence/Class-11-Science-Bio-A/ranjit">
               View
             </Link>
           </td>
         </tr>
       ))}
-    </tbody>
+    </>
   );
 };
 

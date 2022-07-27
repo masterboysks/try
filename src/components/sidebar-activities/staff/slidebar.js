@@ -71,7 +71,7 @@ const Slidebar = () => {
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
-              <Link to="/student/student-information">Student information</Link>
+              <Link to="/staff/staff-information">Staff information</Link>
             </li>
             <li
               className={` devList p-1 my-2 cursor-pointer rounded ${
@@ -80,7 +80,7 @@ const Slidebar = () => {
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
-              <Link to="/student/student-attendence"> Student attendence</Link>
+              <Link to="/staff/staff-attendence">Staff attendence</Link>
             </li>
           </ul>
         </div>

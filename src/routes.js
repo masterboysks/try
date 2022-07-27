@@ -5,14 +5,19 @@ import Base from "./pages/Base";
 import AddStudent from "./components/sidebar-activities/student//components/add-student/AddStudent";
 
 // import Main from "./components/sidebar-activities/index";
-import Slidebar from "./components/sidebar-activities/student/components/slidebar/Slidebar";
+import Home from "./pages/Home";
+// student import
+import StudentSlidebar from "./components/sidebar-activities/student/components/slidebar/Slidebar";
 import StudentInformation from "./components/sidebar-activities/student/Student-information";
 import StudentAttendence from "./components/sidebar-activities/student/Student-attendence";
 import AddguardianTrue from "./components/sidebar-activities/student/components/add-student/AddGuardianTrue";
 import AddguardianFalse from "./components/sidebar-activities/student/components/add-student/AddGuardianFalse";
-import Home from "./pages/Home";
 import WholeClass from "./components/sidebar-activities/student/components-attendence/wholeClass/WholeClass";
 import StudentProfile from "./components/sidebar-activities/student/components-attendence/studentProfile/StudentProfile";
+// Staff immport
+import StaffSlidebar from "./components/sidebar-activities/staff/slidebar.js";
+import StaffInformation from "./components/sidebar-activities/staff/staff-information/main/staff-information.js";
+import AddStaffGeneralPersonal from "./components/sidebar-activities/staff/staff-information/add-staff-general-personal/AddStaffGeneralPersonal";
 
 const classes = [
   {
@@ -30,18 +35,19 @@ function App() {
     <Routes>
       <Route path="/" element={<Base />}>
         <Route path="/" element={<Home />} />
+        {/* Student Routes reside here */}
         <Route
           path="/student"
           element={
             <>
-              <Slidebar />
+              <StudentSlidebar />
             </>
           }
         >
           <Route
             path="/student/student-information"
             element={<StudentInformation />}
-          />{" "}
+          />
           <Route
             path="/student/student-information/add-student-details"
             element={
@@ -77,11 +83,21 @@ function App() {
             element={<StudentProfile />}
           />
         </Route>
-
+        {/* Staff Routes reside here */}
+        <Route path="/staff" element={<StaffSlidebar></StaffSlidebar>}>
+          <Route
+            path="staff-information"
+            element={<StaffInformation />}
+          ></Route>
+          <Route
+            path="/staff/staff-information/add-staff/general/personal-details"
+            element={<AddStaffGeneralPersonal />}
+          />
+        </Route>
         <Route
           path="*"
           element={
-            <div className="w-full mt-12 text-xl font-semibold text-center text-primary-grey-700">
+            <div className="text-primary-grey-700 w-full mt-12 text-xl font-semibold text-center">
               Page not found-{location.pathname.replace("/", " ")}
             </div>
           }

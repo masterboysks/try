@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure, Menu, Popover, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import logo from "./logoHeader.png";
 import man from "./man-pic.png";
@@ -12,212 +12,232 @@ function classNames(...classes) {
 export default function Example() {
   const location = useLocation().pathname;
   return (
-    <Disclosure
-      as="nav"
-      className="z-50 bg-white border-2 border-b shadow-md  sm:border-none"
-    >
-      {({ open }) => (
-        <div className="">
-          <div className="px-4 sm:px-4">
-            <div className="flex h-16 md:justify-between ">
-              <div className="flex justify-between w-screen px-2 ">
-                <div className="flex items-center md:flex-shrink-0">
-                  <img
-                    className="block w-auto h-10 "
-                    src={logo}
-                    alt="Kinder garden school logo"
-                  />
-                  <Link
-                    className="hidden ml-2 text-base font-medium w-36 text-logo sm:block"
-                    to="/"
-                  >
-                    Kindergarden Secondary School
-                  </Link>
-                </div>
-                <div className="hidden lg:flex lg:space-x-8">
-                  {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
-                  <Link
-                    to="/dashboard"
-                    className={`${
-                      location.includes("dashboard")
-                        ? "text-primary-grey-700 font-medium"
-                        : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
-                    }  inline-flex items-center px-1 pt-1  text-base `}
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    to="/event-calender"
-                    className={`${
-                      location.includes("event-calender")
-                        ? "text-primary-grey-700 font-medium"
-                        : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
-                    }  inline-flex items-center px-1 pt-1  text-base `}
-                  >
-                    Event calander
-                  </Link>
-                  <Link
-                    to="/push-notification"
-                    className={`${
-                      location.includes("push-notification")
-                        ? "text-primary-grey-700 font-medium"
-                        : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
-                    }  inline-flex items-center px-1 pt-1  text-base `}
-                  >
-                    Push Notification
-                  </Link>
-                  <Link
-                    to="fee-payment"
-                    className={`${
-                      location.includes("fee-payment")
-                        ? "text-primary-grey-700 font-medium"
-                        : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
-                    }  inline-flex items-center px-1 pt-1  text-base `}
-                  >
-                    Fee Payment
-                  </Link>
-                  <Link
-                    to="logsheet"
-                    className={`${
-                      location.includes("logsheet")
-                        ? "text-primary-grey-700 font-medium"
-                        : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
-                    }  inline-flex items-center px-1 pt-1  text-base `}
-                  >
-                    Logsheet
-                  </Link>
-                </div>
-                <div className="items-center hidden mx-2 ml-auto sm:flex lg:ml-0 lg:flex">
-                  <button
-                    type="button"
-                    className="flex-shrink-0 p-1 bg-white rounded-full text-primary-grey-600 hover:text-primary-grey-700 focus:outline-none "
-                  >
-                    <span className="sr-only">View notifications</span>
-                    <BellIcon className="w-6 h-6" aria-hidden="true" />
-                  </button>
-
-                  {/* Profile dropdown */}
-                  <Menu as="div" className="relative flex-shrink-0 ml-4">
-                    <div>
-                      <Menu.Button className="flex text-base bg-white rounded-full focus:outline-none ring-2 ring-offset-1 ring-primary-profile-circle">
-                        <span className="sr-only">Open user menu</span>
-                        <img
-                          className="w-8 h-8 rounded-full"
-                          src={man}
-                          alt="man"
-                        />
-                      </Menu.Button>
+    <>
+      <div className=" fixed top-0 z-50 w-screen">
+        <Disclosure
+          as="nav"
+          className="sm:border-none z-50 bg-white border-2 border-b shadow-md"
+        >
+          {({ open }) => (
+            <div className="">
+              <div className="sm:px-4 px-4">
+                <div className="md:justify-between flex h-16">
+                  <div className=" flex justify-between w-screen px-2">
+                    <div className="md:flex-shrink-0 flex items-center">
+                      <img
+                        className=" block w-auto h-10"
+                        src={logo}
+                        alt="Kinder garden school logo"
+                      />
+                      <Link
+                        className="w-36 text-logo sm:block hidden ml-2 text-base font-medium"
+                        to="/"
+                      >
+                        Kindergarden Secondary School
+                      </Link>
                     </div>
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-sm ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              to="/profile"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-base text-gray-700"
-                              )}
-                            >
-                              Your Profile
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              to="/settings"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-base text-gray-700"
-                              )}
-                            >
-                              Settings
-                            </a>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="#"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-base text-gray-700"
-                              )}
-                            >
-                              Sign out
-                            </a>
-                          )}
-                        </Menu.Item>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
-                </div>
-                <div className="flex items-center lg:hidden">
-                  {/* Mobile menu button */}
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary-grey-600 hover:text-primary-grey-700 hover:bg-primary-grey-200 focus:outline-none">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XIcon className="block w-6 h-6" aria-hidden="true" />
-                    ) : (
-                      <MenuIcon className="block w-6 h-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
-                  <Disclosure.Panel className="lg:hidden absolute right-0 top-[66px] h-5/6  bg-primary-grey-100 shadow-md">
-                    <div className="pt-2 pb-3 space-y-1">
-                      {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: " text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
-                      <Disclosure.Button
-                        as="a"
-                        href="#"
-                        className="py-2 pl-3 pr-4 text-base border-l-4 bg-primary-grey-200 border-primary-grey-100-grey font-normal-700text-primary-grey-700block "
+                    <div className="lg:flex lg:space-x-8 hidden">
+                      {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                      <Link
+                        to="/dashboard"
+                        className={`${
+                          location.includes("dashboard")
+                            ? "text-primary-grey-700 font-medium"
+                            : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
+                        }  inline-flex items-center px-1 pt-1  text-base `}
                       >
                         Dashboard
-                      </Disclosure.Button>
-                      <Disclosure.Button
-                        as="a"
-                        href="#"
-                        className="block py-2 pl-3 pr-4 text-base border-l-4 border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 font-sm"
+                      </Link>
+                      <Link
+                        to="/event-calender"
+                        className={`${
+                          location.includes("event-calender")
+                            ? "text-primary-grey-700 font-medium"
+                            : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
+                        }  inline-flex items-center px-1 pt-1  text-base `}
                       >
-                        Event Calender
-                      </Disclosure.Button>
-                      <Disclosure.Button
-                        as="a"
-                        href="#"
-                        className="block py-2 pl-3 pr-4 text-base border-l-4 border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 font-sm"
-                      >
-                        Projects
-                      </Disclosure.Button>
-                      <Disclosure.Button
-                        as="a"
-                        href="#"
-                        className="block py-2 pl-3 pr-4 text-base border-l-4 border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 font-sm"
+                        Event calander
+                      </Link>
+                      <Link
+                        to="/push-notification"
+                        className={`${
+                          location.includes("push-notification")
+                            ? "text-primary-grey-700 font-medium"
+                            : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
+                        }  inline-flex items-center px-1 pt-1  text-base `}
                       >
                         Push Notification
-                      </Disclosure.Button>
-                      <Disclosure.Button
-                        as="a"
-                        href="#"
-                        className="block py-2 pl-3 pr-4 text-base border-l-4 border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 font-sm"
+                      </Link>
+                      <Link
+                        to="fee-payment"
+                        className={`${
+                          location.includes("fee-payment")
+                            ? "text-primary-grey-700 font-medium"
+                            : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
+                        }  inline-flex items-center px-1 pt-1  text-base `}
                       >
                         Fee Payment
-                      </Disclosure.Button>
-                      <Disclosure.Button
-                        as="a"
-                        href="#"
-                        className="block py-2 pl-3 pr-4 text-base border-l-4 border-transparent text-primary-grey-600 hover:bg-primary-grey-200 hover:border-primary-grey-100-grey-600 font-sm"
+                      </Link>
+                      <Link
+                        to="logsheet"
+                        className={`${
+                          location.includes("logsheet")
+                            ? "text-primary-grey-700 font-medium"
+                            : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
+                        }  inline-flex items-center px-1 pt-1  text-base `}
                       >
                         Logsheet
-                      </Disclosure.Button>
+                      </Link>
                     </div>
-                    {/* <div className="pt-4 pb-3 border-t border-gray-200">
+                    <div className="sm:flex lg:ml-0 lg:flex items-center hidden mx-2 ml-auto">
+                      <button
+                        type="button"
+                        className="text-primary-grey-600 hover:text-primary-grey-700 focus:outline-none flex-shrink-0 p-1 bg-white rounded-full"
+                      >
+                        <span className="sr-only">View notifications</span>
+                        <BellIcon className="w-6 h-6" aria-hidden="true" />
+                      </button>
+
+                      {/* Profile dropdown */}
+                      <Menu as="div" className="relative flex-shrink-0 ml-4">
+                        <div>
+                          <Menu.Button className="focus:outline-none ring-2 ring-offset-1 ring-primary-profile-circle flex text-base bg-white rounded-full">
+                            <span className="sr-only">Open user menu</span>
+                            <img
+                              className="w-8 h-8 rounded-full"
+                              src={man}
+                              alt="man"
+                            />
+                          </Menu.Button>
+                        </div>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="ring-1 ring-black ring-opacity-5 focus:outline-none absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-sm">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  to="/profile"
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-base text-gray-700"
+                                  )}
+                                >
+                                  Your Profile
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  to="/settings"
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-base text-gray-700"
+                                  )}
+                                >
+                                  Settings
+                                </a>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href="#"
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-base text-gray-700"
+                                  )}
+                                >
+                                  Sign out
+                                </a>
+                              )}
+                            </Menu.Item>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
+                    </div>
+                    <Popover className="lg:hidden flex items-center">
+                      {/* Mobile menu button */}
+                      <Popover.Button className="text-primary-grey-600 hover:text-primary-grey-700 hover:bg-primary-grey-200 focus:outline-none inline-flex items-center justify-center p-2 rounded-md">
+                        <span className="sr-only">Open main menu</span>
+
+                        <MenuIcon
+                          className="block w-6 h-6"
+                          aria-hidden="true"
+                        />
+                      </Popover.Button>
+                      <Popover.Panel className="lg:hidden absolute right-0 top-[66px] w-40 h-screen">
+                        <div className="h-5/6 min-h-fit bg-primary-grey-100 pt-2 pb-3 space-y-1 shadow-md">
+                          {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: " text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
+                          <Popover.Button
+                            as="a"
+                            className={`${
+                              location.includes("dashboard")
+                                ? "bg-primary-grey-200 border-primary-grey-300 font-normal-700 cursor-pointer w-full text-primary-grey-700 block py-2 pl-3 pr-4 text-base border-l-4"
+                                : "bg-primary-grey-100 font-normal-700  hover:bg-primary-grey-200 w-full hover:border-primary-grey-300  cursor-pointer text-primary-grey-600 block py-2 pl-3 pr-4 text-base hover:border-l-4"
+                            }  inline-flex items-center px-1 pt-1  text-base `}
+                          >
+                            <Link to="/"> Dashboard</Link>
+                          </Popover.Button>
+                          <Popover.Button
+                            as="a"
+                            className={`${
+                              location.includes("event-calender")
+                                ? "bg-primary-grey-200 border-primary-grey-300 font-normal-700 cursor-pointer w-full text-primary-grey-700 block py-2 pl-3 pr-4 text-base border-l-4"
+                                : "bg-primary-grey-100 font-normal-700  hover:bg-primary-grey-200 w-full hover:border-primary-grey-300  cursor-pointer text-primary-grey-600 block py-2 pl-3 pr-4 text-base hover:border-l-4"
+                            }  inline-flex items-center px-1 pt-1  text-base `}
+                          >
+                            <Link to="/"> Event</Link> Calender
+                          </Popover.Button>
+                          <Popover.Button
+                            as="a"
+                            className={`${
+                              location.includes("projects")
+                                ? "bg-primary-grey-200 border-primary-grey-300 font-normal-700 cursor-pointer w-full text-primary-grey-700 block py-2 pl-3 pr-4 text-base border-l-4"
+                                : "bg-primary-grey-100 font-normal-700  hover:bg-primary-grey-200 w-full hover:border-primary-grey-300  cursor-pointer text-primary-grey-600 block py-2 pl-3 pr-4 text-base hover:border-l-4"
+                            }  inline-flex items-center px-1 pt-1  text-base `}
+                          >
+                            <Link to="/"> Projects</Link>
+                          </Popover.Button>
+                          <Popover.Button
+                            as="a"
+                            className={`${
+                              location.includes("push-notification")
+                                ? "bg-primary-grey-200 border-primary-grey-300 font-normal-700 cursor-pointer w-full text-primary-grey-700 block py-2 pl-3 pr-4 text-base border-l-4"
+                                : "bg-primary-grey-100 font-normal-700  hover:bg-primary-grey-200 w-full hover:border-primary-grey-300  cursor-pointer text-primary-grey-600 block py-2 pl-3 pr-4 text-base hover:border-l-4"
+                            }  inline-flex items-center px-1 pt-1  text-base `}
+                          >
+                            <Link to="/"> Push</Link> Notification
+                          </Popover.Button>
+                          <Popover.Button
+                            as="a"
+                            className={`${
+                              location.includes("fee-payment")
+                                ? "bg-primary-grey-200 border-primary-grey-300 font-normal-700 cursor-pointer w-full text-primary-grey-700 block py-2 pl-3 pr-4 text-base border-l-4"
+                                : "bg-primary-grey-100 font-normal-700  hover:bg-primary-grey-200 w-full hover:border-primary-grey-300  cursor-pointer text-primary-grey-600 block py-2 pl-3 pr-4 text-base hover:border-l-4"
+                            }  inline-flex items-center px-1 pt-1  text-base `}
+                          >
+                            <Link to="/"> Fee</Link> Payment
+                          </Popover.Button>
+                          <Popover.Button
+                            as="a"
+                            className={`${
+                              location.includes("logsheet")
+                                ? "bg-primary-grey-200 border-primary-grey-300 font-normal-700 cursor-pointer w-full text-primary-grey-700 block py-2 pl-3 pr-4 text-base border-l-4"
+                                : "bg-primary-grey-100 font-normal-700  hover:bg-primary-grey-200 w-full hover:border-primary-grey-300  cursor-pointer text-primary-grey-600 block py-2 pl-3 pr-4 text-base hover:border-l-4"
+                            }  inline-flex items-center px-1 pt-1  text-base `}
+                          >
+                            <Link to="/"> Logsheet</Link>
+                          </Popover.Button>
+                        </div>
+                        {/* <div className="pt-4 pb-3 border-t border-gray-200">
                       <div className="flex items-center px-4">
                         <div className="flex-shrink-0">
                           <img
@@ -227,7 +247,7 @@ export default function Example() {
                           />
                         </div font-normal>
                         <div className="ml-3">
-                          <div className="text-base text-gray font-normal-800">
+                          <div className="text-gray font-normal-800 text-base">
                             Tom Cook
                           </div>
                           <div className="text-base text-gray-500">
@@ -236,43 +256,44 @@ export default function Example() {
                         </div>
                         <button
                           type="button"
-                          className="flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                          className="hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 flex-shrink-0 p-1 ml-auto text-gray-400 bg-white rounded-full"
                         >
                           <span className="sr-only">View notifications</span>
                           <BellIcon className="w-6 h-6" aria-hidden="true" />
                         </button>
                       </div>
                       <div className="mt-3 space-y-1">
-                        <Disclosure.Button
+                        <Popover.Button
                           as font-normal="a"
-                          href="#"
-                          className="block px-4 py-2 text-base text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                          
+                          className="hover:text-gray-800 hover:bg-gray-100 block px-4 py-2 text-base text-gray-500"
                         >
                           Your Profile
-                        </Disclosure.Button>
-                        <Disclosure.Button
-                          as font-normal="a"
-                          href="#"
-                          className="block px-4 py-2 text-base text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                        </.Button>
+                        <Popover.Button
+                          as font-normal="a"Popover.Button                    
+                          className="hover:text-gray-800 hover:bg-gray-100 block px-4 py-2 text-base text-gray-500"
                         >
                           Settings
-                        </Disclosure.Button>
-                        <Disclosure.Button
-                          as font-normal="a"
-                          href="#"
-                          className="block px-4 py-2 text-base text-gray-500 hover:text-gray-800 hover:bg-gray-100"
+                        </.Button>
+                        <Popover.Button
+                          as font-normal="a"Popover.Button                    
+                          className="hover:text-gray-800 hover:bg-gray-100 block px-4 py-2 text-base text-gray-500"
                         >
                           Sign out
-                        </Disclosure.Button>
+                        </.Button>
                       </div>
                     </div> */}
-                  </Disclosure.Panel>
+                      </Popover.Panel>
+                    </Popover>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-    </Disclosure>
+          )}
+        </Disclosure>
+      </div>
+      <div className="mb-16"></div>
+    </>
   );
 }

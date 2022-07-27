@@ -11,27 +11,27 @@ const classes = [
 
 const RenderTable = () => {
   return (
-    <tbody>
+    <>
       {classes.map((classs, index) => (
         <>
           <tr key={index}>
-            <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
               {classs.semester}
             </td>
-            <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
               {classs.level}
             </td>
-            <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
               {classs.faculty}
             </td>
-            <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap ">
+            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
               {classs.section}
             </td>
 
-            <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap text-end">
+            <td className="whitespace-nowrap text-end px-3 py-4 text-sm text-gray-500">
               <Link
                 to={`${classs.semester}-${classs.faculty}-${classs.section}`}
-                className="px-3 py-4 text-sm font-medium text-primary-btn whitespace-nowrap"
+                className="text-primary-btn whitespace-nowrap px-3 py-4 text-sm font-medium"
               >
                 View
               </Link>
@@ -39,7 +39,7 @@ const RenderTable = () => {
           </tr>
         </>
       ))}
-    </tbody>
+    </>
   );
 };
 

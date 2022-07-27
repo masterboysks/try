@@ -5,9 +5,9 @@ const ClassTable = () => {
   return (
     <div className="mt-8">
       <div className="my-6">
-        <div className="min-w-full overflow-x-auto rounded-lg shadow ring-1 ring-black ring-opacity-5">
+        <div className="ring-1 ring-black ring-opacity-5 min-w-full overflow-x-auto rounded-lg shadow">
           <div className="inline-block w-full align-middle">
-            <div className="w-full rounded-lg ">
+            <div className=" w-full rounded-lg">
               <table className="min-w-full divide-y divide-gray-300 table-auto">
                 <thead className="bg-gray-50">
                   <tr>
@@ -21,7 +21,6 @@ const ClassTable = () => {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
-                      {" "}
                       Level
                     </th>
                     <th
