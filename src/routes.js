@@ -24,6 +24,7 @@ import StaffAcademicDetails from "./components/sidebar-activities/staff/staff-in
 import AddStaffAcademicDetails from "./components/sidebar-activities/staff/staff-information/academic/add-acedimic-details/AddAcademicDetails";
 import AddStaffDocument from "./components/sidebar-activities/staff/staff-information/documents/add-document/AddDocument";
 import StaffDocument from "./components/sidebar-activities/staff/staff-information/documents/documents/Document";
+import StaffBase from "./components/sidebar-activities/staff/staff-information/general/Base";
 
 const classes = [
   {
@@ -96,17 +97,23 @@ function App() {
             element={<StaffInformation />}
           ></Route>
           <Route
-            path="/staff/staff-information/add-staff/general/personal-details"
-            element={<AddStaffGeneralPersonal />}
-          />
-          <Route
-            path="/staff/staff-information/add-staff/general/address-details"
-            element={<AddStaffGeneralAddress />}
-          />
-          <Route
-            path="/staff/staff-information/add-staff/general/office-details"
-            element={<AddStaffGeneralOffice />}
-          />
+            path="/staff/staff-information/add-staff/general"
+            element={<StaffBase />}
+          >
+            <Route
+              path="/staff/staff-information/add-staff/general/personal-details"
+              element={<AddStaffGeneralPersonal />}
+            />
+            <Route
+              path="/staff/staff-information/add-staff/general/address-details"
+              element={<AddStaffGeneralAddress />}
+            />
+            <Route
+              path="/staff/staff-information/add-staff/general/office-details"
+              element={<AddStaffGeneralOffice />}
+            />
+          </Route>
+
           <Route
             path="/staff/staff-information/add-staff/academic"
             element={<StaffAcademicDetails />}

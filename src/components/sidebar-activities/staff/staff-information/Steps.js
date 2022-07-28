@@ -7,7 +7,7 @@ const Steps = ({ steps, title }) => {
     <>
       <nav
         aria-label="Progress"
-        className="border-primary-grey-300 md:pb-0 pb-2 my-8 overflow-x-auto overflow-y-hidden border rounded-md"
+        className="border-primary-grey-300 md:pb-0 -z-20 pb-2 my-8 overflow-x-auto overflow-y-hidden border rounded-md"
       >
         <ol role="list" className=" md:flex md:divide-y-0">
           {steps.map((step, stepIdx) => (
