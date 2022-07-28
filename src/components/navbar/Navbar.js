@@ -165,11 +165,11 @@ export default function Example() {
                     </div>
                     <Popover className="lg:hidden flex items-center">
                       {/* Mobile menu button */}
-                      <Popover.Button className="text-primary-grey-600 hover:text-primary-grey-700 hover:bg-primary-grey-200 focus:outline-none inline-flex items-center justify-center p-2 rounded-md">
+                      <Popover.Button className=" hover:text-primary-grey-700 focus:outline-primary-grey-200 focus:outline inline-flex items-center justify-center p-2 rounded-md">
                         <span className="sr-only">Open main menu</span>
 
                         <MenuIcon
-                          className="block w-6 h-6"
+                          className=" block w-6 h-6"
                           aria-hidden="true"
                         />
                       </Popover.Button>

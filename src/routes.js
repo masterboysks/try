@@ -20,8 +20,10 @@ import StaffInformation from "./components/sidebar-activities/staff/staff-inform
 import AddStaffGeneralPersonal from "./components/sidebar-activities/staff/staff-information/general/add-staff-general-personal/AddStaffGeneralPersonal";
 import AddStaffGeneralAddress from "./components/sidebar-activities/staff/staff-information/general/add-staff-general-address/AddStaffGeneralAddress";
 import AddStaffGeneralOffice from "./components/sidebar-activities/staff/staff-information/general/add-staff-general-office/AddStaffGeneralOffice";
-import AcademicDetails from "./components/sidebar-activities/staff/staff-information/academic/academic-details/AcademicDetails";
-import AddAcademicDetails from "./components/sidebar-activities/staff/staff-information/academic/add-acedimic-details/AddAcademicDetails";
+import StaffAcademicDetails from "./components/sidebar-activities/staff/staff-information/academic/academic-details/AcademicDetails";
+import AddStaffAcademicDetails from "./components/sidebar-activities/staff/staff-information/academic/add-acedimic-details/AddAcademicDetails";
+import AddStaffDocument from "./components/sidebar-activities/staff/staff-information/documents/add-document/AddDocument";
+import StaffDocument from "./components/sidebar-activities/staff/staff-information/documents/documents/Document";
 
 const classes = [
   {
@@ -107,11 +109,19 @@ function App() {
           />
           <Route
             path="/staff/staff-information/add-staff/academic"
-            element={<AcademicDetails />}
+            element={<StaffAcademicDetails />}
           />
           <Route
             path="/staff/staff-information/add-staff/academic/add-academic-details"
-            element={<AddAcademicDetails />}
+            element={<AddStaffAcademicDetails />}
+          />
+          <Route
+            path="/staff/staff-information/add-staff/documents"
+            element={<StaffDocument />}
+          />
+          <Route
+            path="/staff/staff-information/add-staff/documents/add-documents"
+            element={<AddStaffDocument />}
           />
         </Route>
         <Route
