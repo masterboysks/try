@@ -26,6 +26,8 @@ import AddStaffDocument from "./components/sidebar-activities/staff/staff-inform
 import StaffDocument from "./components/sidebar-activities/staff/staff-information/documents/documents/Document";
 import StaffBase from "./components/sidebar-activities/staff/staff-information/general/Base";
 
+// Admin Imports
+import AdminSlidebar from "./components/sidebar-activities/admin/slidebar";
 const classes = [
   {
     semester: "Class-11",
@@ -34,7 +36,6 @@ const classes = [
     section: "A",
   },
 ];
-
 function App() {
   const [HasAnotherChild, setHasAnotherChild] = useState(false);
   const location = useLocation();
@@ -42,6 +43,19 @@ function App() {
     <Routes>
       <Route path="/" element={<Base />}>
         <Route path="/" element={<Home />} />
+        {/* Admin Routes reside here */}
+        <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
+          <Route path="/admin/organization-setup" element={<></>} />
+          <Route path="/admin/data-setup/university-board" element={<></>} />
+          <Route path="/admin/data-setup/level" element={<></>} />
+          <Route path="/admin/data-setup/faculty" element={<></>} />
+          <Route path="/admin/data-setup/sub-faculty" element={<></>} />
+          <Route path="/admin/data-setup/section" element={<></>} />
+          <Route path="/admin/data-setup/subject" element={<></>} />
+          <Route path="/admin/data-setup/class-semester" element={<></>} />
+          <Route path="/admin/data-setup/department" element={<></>} />
+          <Route path="/admin/data-setup/designation" element={<></>} />
+        </Route>
         {/* Student Routes reside here */}
         <Route
           path="/student"

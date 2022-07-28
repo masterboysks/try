@@ -1,36 +1,10 @@
-import React, { useEffect } from "react";
+import Arrow from "@mui/icons-material/ArrowForwardIos";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 
 const Slidebar = () => {
   const location = useLocation().pathname;
-  //   const modal = () => {
-  //     const sidebarS = document.getElementById("modal").classList;
-  //     // const sidebar = document.getElementById("sidebar").classList;
-  //     sidebarS.contains("hidden")
-  //       ? sidebarS.remove("hidden")
-  //       : sidebarS.add("hidden");
-  //     // sidebar.contains("sm-hide")
-  //     //   ? sidebar.remove("sm-hide")
-  //     //   : sidebar.add("sm-hide");
-  //   };
-
-  /* {/* {value ? (
-  ""
-) : (
-  <img
-    src={hamburger}
-    alt="hamburger"
-    className="absolute   top-[70px] left-20 block md:hidden"
-    onClick={modal}
-  /> }*/
-  // useEffect(() => {
-  //   // function some() {
-  //   //   document.getElementById("slidebar").classList.slidebar.remove("hidden");
-  //   // }
-  //   //  && some();
-  //   // console.log(document.getElementById("slidebar").classList.remove("hidden"));
-  // }, []);
   let nav;
   const sidebar = () => {
     nav = document.getElementById("sidebar").classList;
@@ -65,21 +39,27 @@ const Slidebar = () => {
         <div className="w-full">
           <ul className="pt-9 mx-2">
             <li
-              className={` devList p-1 my-2 cursor-pointer rounded ${
-                location.includes("information")
+              className={` flex p-1 my-2 cursor-pointer rounded ${
+                location.includes("staff-information")
                   ? " bg-primary-grey-200  text-primary-grey-700 "
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
+              <div className="devList">
+                <Arrow fontSize="sm" />
+              </div>
               <Link to="/staff/staff-information">Staff information</Link>
             </li>
             <li
-              className={` devList p-1 my-2 cursor-pointer rounded ${
-                location.includes("attendence")
+              className={` flex p-1 my-2 cursor-pointer rounded ${
+                location.includes("staff-attendence")
                   ? " bg-primary-grey-200  text-primary-grey-700 "
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
+              <div className="devList">
+                <Arrow fontSize="sm" />
+              </div>
               <Link to="/staff/staff-attendence">Staff attendence</Link>
             </li>
           </ul>

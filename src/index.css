@@ -1,11 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.devList::before {
+/* 
+.devList {
   content: url("./assets/arrow.svg");
   margin-right: 8px;
   margin-left: 4px;
   position: relative;
-  top: 2px;
-}
+} */
