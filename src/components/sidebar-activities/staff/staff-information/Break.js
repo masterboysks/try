@@ -8,7 +8,9 @@ const Break = ({ title }) => {
           <div className="w-full border-t border-gray-300" />
         </div>
         <div className="relative flex justify-start">
-          <span className="pr-2 bg-white text-sm text-gray-500">{title}</span>
+          <span className="pr-2 text-sm font-semibold text-gray-700 bg-white">
+            {title}
+          </span>
         </div>
       </div>
     </div>

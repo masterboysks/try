@@ -17,7 +17,10 @@ import StudentProfile from "./components/sidebar-activities/student/components-a
 // Staff immport
 import StaffSlidebar from "./components/sidebar-activities/staff/slidebar.js";
 import StaffInformation from "./components/sidebar-activities/staff/staff-information/main/staff-information.js";
-import AddStaffGeneralPersonal from "./components/sidebar-activities/staff/staff-information/add-staff-general-personal/AddStaffGeneralPersonal";
+import AddStaffGeneralPersonal from "./components/sidebar-activities/staff/staff-information/general/add-staff-general-personal/AddStaffGeneralPersonal";
+import AddStaffGeneralAddress from "./components/sidebar-activities/staff/staff-information/general/add-staff-general-address/AddStaffGeneralAddress";
+import AddStaffGeneralOffice from "./components/sidebar-activities/staff/staff-information/general/add-staff-general-office/AddStaffGeneralOffice";
+import AcademicDetails from "./components/sidebar-activities/staff/staff-information/academic/academic-details/AcademicDetails";
 
 const classes = [
   {
@@ -92,6 +95,18 @@ function App() {
           <Route
             path="/staff/staff-information/add-staff/general/personal-details"
             element={<AddStaffGeneralPersonal />}
+          />
+          <Route
+            path="/staff/staff-information/add-staff/general/address-details"
+            element={<AddStaffGeneralAddress />}
+          />
+          <Route
+            path="/staff/staff-information/add-staff/general/office-details"
+            element={<AddStaffGeneralOffice />}
+          />
+          <Route
+            path="/staff/staff-information/add-staff/academic"
+            element={<AcademicDetails />}
           />
         </Route>
         <Route

@@ -1,25 +1,26 @@
-import Breadnavs from "../Breadnavs";
-import Steps from "./Steps";
-import Tabs from "./TabsPersonalDetails";
-import Form from "./PersonalDetailsForm";
+import Breadnavs from "../../Breadnavs";
+import Steps from "../../Steps";
+import Tabs from "../add-staff-general-personal/Tabs";
+import OfficeDetailsForm from "./OfficeDetailsForm";
+
 const steps = [
   {
     id: "01",
     name: "Personal details",
     href: "/staff/staff-information/add-staff/general/personal-details",
-    status: "current",
+    status: "complete",
   },
   {
     id: "02",
     name: "Address details",
     href: "/staff/staff-information/add-staff/general/address-details",
-    status: "upcomming",
+    status: "complete",
   },
   {
     id: "03",
     name: "Office details",
     href: "/staff/staff-information/add-staff/general/office-details",
-    status: "upcomming",
+    status: "current",
   },
 ];
 const AddStaffGeneralPersonal = () => {
@@ -29,8 +30,8 @@ const AddStaffGeneralPersonal = () => {
         <div className="-z-10 w-11/12 mx-auto text-sm">
           <Breadnavs />
           <Tabs />
-          <Steps steps={steps} title="General details" />
-          <Form />
+          <Steps steps={steps} title="Office details" />
+          <OfficeDetailsForm />
         </div>
       </div>
     </div>

@@ -7,29 +7,27 @@ const RenderTable = ({ currentItems }) => {
       {currentItems.map((person, index) => (
         <tr key={index}>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.staffId}
+            {person.board}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.staffName}
+            {person.level}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.depart}
+            {person.program}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.desig}
+            {person.batch}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.type}
+            {person.grade}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.gen}
+            {person.org}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.numb}
+            {person.orgAddress}
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.status}
-          </td>
+
           <td
             className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
             onMouseOver={() => {
