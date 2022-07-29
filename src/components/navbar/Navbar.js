@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Disclosure, Menu, Popover, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import logo from "./logoHeader.png";
+import logo from "../../assets/logoHeader.png";
 import man from "./man-pic.png";
 
 function classNames(...classes) {

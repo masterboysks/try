@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 import Arrow from "@mui/icons-material/ArrowForwardIos";
@@ -15,7 +15,13 @@ const links = [
   { name: "Designation", path: "/admin/data-setup/designation" },
 ];
 const Slidebar = () => {
+  const [dropdownActive, setDropdownActive] = useState(true);
+  const [data, setData] = useState(false);
   const location = useLocation().pathname;
+  useEffect(() => {
+    location.includes("data-setup") ? setData(true) : setData(false);
+  }, [location]);
+
   let nav;
   const sidebar = () => {
     nav = document.getElementById("sidebar").classList;
@@ -50,55 +56,72 @@ const Slidebar = () => {
         <div className="w-full">
           <ul className="pt-9 mx-2">
             <li
-              className={` flex p-1 my-2 cursor-pointer rounded ${
+              className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                 location.includes("organization-setup")
                   ? " bg-primary-grey-200  text-primary-grey-700 "
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
-              <div className="devList">
+              <div className="devList text-primary-grey-300">
                 <Arrow fontSize="sm"></Arrow>
               </div>
               <Link to="/admin/organization-setup">Organization setup</Link>
             </li>
             <li
               id="data"
-              className={`flex  p-1 my-2 cursor-pointer rounded hover:bg-primary-grey-200 ${
-                location.includes("data-setup")
-                  ? "  text-primary-grey-700 "
-                  : "  text-primary-grey-600 "
-              } ${
-                location.includes("data-setup") ? "bg-primary-grey-200" : ""
-              } text-sm`}
+              onClick={() => {
+                setDropdownActive(!dropdownActive);
+              }}
+              className={`flex  p-1 mt-2 mb-3 cursor-pointer rounded hover:bg-primary-grey-200 
+              ${data ? "text-primary-grey-700" : "text-primary-grey-600"} 
+                   ${
+                     data && !dropdownActive
+                       ? "bg-primary-grey-200 "
+                       : "text-primary-grey-600"
+                   }text-sm`}
             >
               <div
                 id="arrow"
-                className={`devList text-black  transition duration-100 ease-in`}
+                className={`devList text-black  transition duration-100 ease-in text-sm ${
+                  dropdownActive ? "rotate-90" : ""
+                }  `}
               >
                 <Arrow fontSize="sm" />
               </div>
-              <div>Data setup</div>
+              <div className=" text-sm">Data setup</div>
             </li>
           </ul>
-          <ul className=" hidden transition duration-700 ease-in" id="dropdown">
+          <ul
+            className={`${
+              dropdownActive ? "" : "hidden"
+            } transition duration-700 ease-in`}
+            id="dropdown"
+          >
             {links.map((curr) => {
               return (
-                <li
-                  key={curr.name}
-                  className={`pl-6 mx-2 my-2 rounded  ${
-                    location.includes(curr.path)
-                      ? "bg-primary-grey-200 text-primary-grey-700"
-                      : "hover:bg-primary-grey-200 text-primary-grey-600"
-                  }`}
-                >
-                  <Link to={curr.path}>{curr.name}</Link>
-                </li>
+                <Link to={curr.path} key={curr.name}>
+                  <li
+                    className={`pl-6 mx-2 mt-2 mb-3 rounded py-[2px] text-sm ${
+                      location.includes(curr.path)
+                        ? "bg-primary-grey-200 text-primary-grey-700"
+                        : "hover:bg-primary-grey-200 text-primary-grey-600"
+                    }`}
+                  >
+                    {curr.name}
+                  </li>
+                </Link>
               );
             })}
           </ul>
         </div>
+      </div>{" "}
+      <div className=" sm:ml-[72px] box-border md:ml-0 sm:pt-2 md:w-full  md:min-w-0 flex-1">
+        <div className="top-28 sm:mt-9 md:block sm:static -z-10 absolute left-0 w-full">
+          <div className="-z-10 w-11/12 mx-auto text-sm">
+            <Outlet />
+          </div>
+        </div>
       </div>
-      <Outlet />
       <div
         className="lg:hidden overscroll-none opacity-95 fixed top-0  z-[99999] left-[288px] hidden w-full h-screen bg-transparent"
         id="overlay"

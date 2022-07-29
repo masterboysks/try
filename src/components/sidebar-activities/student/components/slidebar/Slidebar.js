@@ -66,25 +66,25 @@ const Slidebar = () => {
         <div className="w-full">
           <ul className="pt-9 mx-2">
             <li
-              className={` flex p-1 my-2 cursor-pointer rounded ${
+              className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
                 location.includes("student-information")
                   ? " bg-primary-grey-200  text-primary-grey-700 "
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
-              <div className="devList">
+              <div className="devList text-primary-grey-300">
                 <Arrow fontSize="sm" />
               </div>
               <Link to="/student/student-information">Student information</Link>
             </li>
             <li
-              className={` flex p-1 my-2 cursor-pointer rounded ${
+              className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
                 location.includes("student-attendence")
                   ? " bg-primary-grey-200  text-primary-grey-700 "
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
             >
-              <div className="devList">
+              <div className="devList text-primary-grey-300">
                 <Arrow fontSize="sm" />
               </div>
               <Link to="/student/student-attendence"> Student attendence</Link>

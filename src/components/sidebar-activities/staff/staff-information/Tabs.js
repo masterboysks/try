@@ -14,7 +14,6 @@ export default function Example({ tabs }) {
     })[0]
   );
   useEffect(() => {
-    console.log(selected);
     navigate(selected.href);
   }, [selected]);
   return (
@@ -76,19 +75,6 @@ export default function Example({ tabs }) {
             </Transition>
           </div>
         </Listbox>
-        {/* <select
-          id="tabs"
-          name="tabs"
-          className="focus:ring-i focus:border- border-primary-grey-200 block w-full rounded-md"
-          defaultValue={tabs.find((tab) => tab.current).name}
-          onChange={(e) => {
-            console.log(e.target.selected);
-          }}
-        >
-          {tabs.map((tab) => (
-            <option key={tab.name}>{tab.name}</option>
-          ))}
-        </select> */}
       </div>
       <div className="sm:block hidden">
         <div className="border-b border-gray-200">

@@ -150,10 +150,11 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
                 type="file"
                 className="text-primary-gray- hover:bg-gray-50 focus:outline-none focus:ring- focus:ring-offset-2 hidden px-3 py-2 ml-5 text-sm font-medium leading-4 bg-white rounded-md"
                 name="file"
+                id="file"
               />
               <label
                 htmlFor="file"
-                className="bg-primary-grey-200 border-primary-field border-[1px] rounded ml-2 p-1 text-primary-grey-700"
+                className="bg-primary-grey-200 cursor-pointer border-primary-field border-[1px] rounded ml-2 p-1 text-primary-grey-700"
               >
                 Choose a file to upload
               </label>
