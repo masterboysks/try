@@ -4,16 +4,20 @@ import RenderTable from "./RenderTable";
 
 const people = [
   {
-    board: "NEB",
+    level: "NEB",
+    board: "jhdgsgasfd",
+    hasFaculty: "no",
   },
   {
-    board: "TU",
+    level: "TU",
+    board: "gfstrft",
+    hasFaculty: "no",
   },
 ];
 
 export default function Table() {
   return (
-    <div className="mt-11 lg:w-2/3 w-full">
+    <div className="mt-11 w-full">
       <div className="sm:flex sm:items-center justify-between">
         <div class="relative  w-72 max-w-full">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
@@ -41,7 +45,7 @@ export default function Table() {
         </div>
         <div className="sm:mt-0 sm:ml-16 sm:flex-none mt-4">
           <Link
-            to="/admin/data-setup/university-board/add"
+            to="/admin/data-setup/level/add"
             className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Add
@@ -52,16 +56,28 @@ export default function Table() {
         <div className=" ring-1 ring-black ring-opacity-5 overflow-x-auto rounded-lg shadow">
           <div className="inline-block w-full align-middle">
             <div className=" w-full rounded-lg">
-              <table className="min-w-full divide-y divide-gray-300 table-fixed">
+              <table className="min-w-full divide-y divide-gray-300 table-auto">
                 <thead className="bg-gray-50">
                   <tr>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700    "
+                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700    "
                     >
-                      University/Board
+                      Level
                     </th>
 
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
+                    >
+                      Board
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
+                    >
+                      Has faculty
+                    </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "

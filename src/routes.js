@@ -33,6 +33,10 @@ import AdminSlidebar from "./components/sidebar-activities/admin/slidebar";
 import OrginazationSetup from "./components/sidebar-activities/admin/organization-setup/OrginazationSetup";
 import UniversityBoard from "./components/sidebar-activities/admin/data-setup/university-board/university-board/UniversityBoard";
 import AddUniversityBoard from "./components/sidebar-activities/admin/data-setup/university-board/add-university-board/AddUniversityBoard";
+import Level from "./components/sidebar-activities/admin/data-setup/level/level/Level";
+import AddLevel from "./components/sidebar-activities/admin/data-setup/level/add-level/AddLevel";
+import Faculty from "./components/sidebar-activities/admin/data-setup/faculty/faculty/Faculty";
+import AddFaculty from "./components/sidebar-activities/admin/data-setup/faculty/add-faculty/AddFaculty";
 const classes = [
   {
     semester: "Class-11",
@@ -62,14 +66,31 @@ function App() {
             path="/admin/data-setup/university-board/add"
             element={<AddUniversityBoard></AddUniversityBoard>}
           />
-          <Route path="/admin/data-setup/level" element={<></>} />
-          <Route path="/admin/data-setup/faculty" element={<></>} />
-          <Route path="/admin/data-setup/sub-faculty" element={<></>} />
-          <Route path="/admin/data-setup/section" element={<></>} />
-          <Route path="/admin/data-setup/subject" element={<></>} />
-          <Route path="/admin/data-setup/class-semester" element={<></>} />
-          <Route path="/admin/data-setup/department" element={<></>} />
-          <Route path="/admin/data-setup/designation" element={<></>} />
+          <Route path="/admin/data-setup/level" element={<Level></Level>} />
+          <Route
+            path="/admin/data-setup/level/add"
+            element={<AddLevel></AddLevel>}
+          />
+          <Route
+            path="/admin/data-setup/faculty"
+            element={<Faculty></Faculty>}
+          />
+          <Route path="/admin/data-setup/faculty" element={<AddFaculty />} />
+          <Route
+            path="/admin/data-setup/sub-faculty"
+            element={<AddFaculty />}
+          />
+          <Route path="/admin/data-setup/section" element={<AddFaculty />} />
+          <Route path="/admin/data-setup/subject" element={<AddFaculty />} />
+          <Route
+            path="/admin/data-setup/class-semester"
+            element={<AddFaculty />}
+          />
+          <Route path="/admin/data-setup/department" element={<AddFaculty />} />
+          <Route
+            path="/admin/data-setup/designation"
+            element={<AddFaculty />}
+          />
         </Route>
         {/* Student Routes reside here */}
         <Route
