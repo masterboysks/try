@@ -55,11 +55,6 @@ const Slidebar = () => {
                   ? " bg-primary-grey-200  text-primary-grey-700 "
                   : " hover:bg-primary-grey-200 text-primary-grey-600 "
               } text-sm`}
-              onClick={() => {
-                const data = document.getElementById("data").classList;
-                data.remove("text-primary-grey-700");
-                data.remove("bg-primary-grey-200");
-              }}
             >
               <div className="devList">
                 <Arrow fontSize="sm"></Arrow>
@@ -75,25 +70,6 @@ const Slidebar = () => {
               } ${
                 location.includes("data-setup") ? "bg-primary-grey-200" : ""
               } text-sm`}
-              onClick={(e) => {
-                const dropdown = document.getElementById("dropdown").classList;
-                const arrow = document.getElementById("arrow").classList;
-
-                if (dropdown.contains("hidden")) {
-                  dropdown.remove("hidden");
-                  console.log(arrow);
-                  e.target.classList.remove("text-primary-grey-700");
-                  e.target.classList.remove("bg-primary-grey-200");
-                  arrow.add("rotate-90");
-                } else {
-                  if (location.includes("data-setup")) {
-                    dropdown.add("hidden");
-                    e.target.classList.add("text-primary-grey-700");
-                    e.target.classList.add("bg-primary-grey-200");
-                    arrow.remove("rotate-90");
-                  }
-                }
-              }}
             >
               <div
                 id="arrow"
@@ -109,11 +85,6 @@ const Slidebar = () => {
               return (
                 <li
                   key={curr.name}
-                  onClick={() => {
-                    const data = document.getElementById("data").classList;
-                    data.remove("text-primary-grey-700");
-                    data.remove("bg-primary-grey-200");
-                  }}
                   className={`pl-6 mx-2 my-2 rounded  ${
                     location.includes(curr.path)
                       ? "bg-primary-grey-200 text-primary-grey-700"
