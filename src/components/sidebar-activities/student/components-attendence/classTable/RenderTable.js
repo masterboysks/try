@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 const classes = [
   {
     semester: "Class-11",
@@ -13,18 +13,18 @@ const RenderTable = () => {
   return (
     <>
       {classes.map((classs, index) => (
-        <>
-          <tr key={index}>
-            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
+        <Fragment key={index}>
+          <tr>
+            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
               {classs.semester}
             </td>
-            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
+            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
               {classs.level}
             </td>
-            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
+            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
               {classs.faculty}
             </td>
-            <td className="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
+            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
               {classs.section}
             </td>
 
@@ -37,7 +37,7 @@ const RenderTable = () => {
               </Link>
             </td>
           </tr>
-        </>
+        </Fragment>
       ))}
     </>
   );

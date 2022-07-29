@@ -60,6 +60,9 @@ const AboveForm = ({ steps, title }) => {
           </ol>
         </nav>
       </div>
+      <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
+        {pages[pages.length - 1].name}
+      </span>
       <div
         className="-top-10 right-2 text-primary-grey-700 absolute w-10 rotate-180"
         onClick={() => navigate(-1)}
@@ -72,13 +75,16 @@ const AboveForm = ({ steps, title }) => {
       >
         <ol role="list" className=" md:flex md:divide-y-0">
           {steps.map((step, stepIdx) => (
-            <li key={step.name} className="md:flex-1 md:flex sm:h-14 relative">
+            <li
+              key={step.name}
+              className="md:flex-1 md:flex sm:h-14 -z-10 relative"
+            >
               {step.status === "complete" ? (
                 <Link to={step.href} className="group flex items-center w-full">
                   <span className="flex items-center px-6 py-4 text-sm font-medium">
                     <span className="bg-primary-btn flex items-center justify-center flex-shrink-0 w-10 h-10 rounded-full">
                       <CheckIcon
-                        className="w-6 h-6 text-white"
+                        className=" w-6 h-6 text-white"
                         aria-hidden="true"
                       />
                     </span>

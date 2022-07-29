@@ -50,23 +50,26 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 absolute top-16 md:static   ml-[72px] md:ml-0 min-h-screen hidden lg:inline "
+        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 min-h-screen hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">
           <ul className="pt-9 mx-2">
-            <li
-              className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                location.includes("organization-setup")
-                  ? " bg-primary-grey-200  text-primary-grey-700 "
-                  : " hover:bg-primary-grey-200 text-primary-grey-600 "
-              } text-sm`}
-            >
-              <div className="devList text-primary-grey-300">
-                <Arrow fontSize="sm"></Arrow>
-              </div>
-              <Link to="/admin/organization-setup">Organization setup</Link>
-            </li>
+            <Link to="/admin/organization-setup" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
+                  location.includes("organization-setup")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm"></Arrow>
+                </div>
+                Organization setup
+              </li>
+            </Link>
             <li
               id="data"
               onClick={() => {
@@ -90,28 +93,28 @@ const Slidebar = () => {
               </div>
               <div className=" text-sm">Data setup</div>
             </li>
-          </ul>
-          <ul
-            className={`${
-              dropdownActive ? "" : "hidden"
-            } transition duration-700 ease-in`}
-            id="dropdown"
-          >
-            {links.map((curr) => {
-              return (
-                <Link to={curr.path} key={curr.name}>
-                  <li
-                    className={`pl-6 mx-2 mt-2 mb-3 rounded py-[3px] text-sm ${
-                      location.includes(curr.path)
-                        ? "bg-primary-grey-200 text-primary-grey-700"
-                        : "hover:bg-primary-grey-200 text-primary-grey-600"
-                    }`}
-                  >
-                    {curr.name}
-                  </li>
-                </Link>
-              );
-            })}
+            <ul
+              className={`${
+                dropdownActive ? "" : "hidden"
+              } transition duration-700 ease-in`}
+              id="dropdown"
+            >
+              {links.map((curr) => {
+                return (
+                  <Link to={curr.path} key={curr.name} onClick={sidebar}>
+                    <li
+                      className={`pl-6 mx-2 mt-2 mb-3 rounded py-[3px] text-sm ${
+                        location.includes(curr.path)
+                          ? "bg-primary-grey-200 text-primary-grey-700"
+                          : "hover:bg-primary-grey-200 text-primary-grey-600"
+                      }`}
+                    >
+                      {curr.name}
+                    </li>
+                  </Link>
+                );
+              })}
+            </ul>
           </ul>
         </div>
       </div>{" "}

@@ -58,6 +58,9 @@ const Breadcurm = () => {
           </ol>
         </nav>
       </div>
+      <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
+        {pages[pages.length - 1].name}
+      </span>
       <div
         className="-top-10 right-2 text-primary-grey-700 absolute w-10 rotate-180"
         onClick={() => navigate(-1)}

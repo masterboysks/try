@@ -38,30 +38,35 @@ const Slidebar = () => {
       >
         <div className="w-full">
           <ul className="pt-9 mx-2">
-            <li
-              className={` flex p-1  mt-2 mb-3 cursor-pointer rounded  ${
-                location.includes("staff-information")
-                  ? " bg-primary-grey-200  text-primary-grey-700 "
-                  : " hover:bg-primary-grey-200 text-primary-grey-600 "
-              } text-sm`}
-            >
-              <div className="devList text-primary-grey-300">
-                <Arrow fontSize="sm" />
-              </div>
-              <Link to="/staff/staff-information">Staff information</Link>
-            </li>
-            <li
-              className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
-                location.includes("staff-attendence")
-                  ? " bg-primary-grey-200  text-primary-grey-700 "
-                  : " hover:bg-primary-grey-200 text-primary-grey-600 "
-              } text-sm`}
-            >
-              <div className="devList text-primary-grey-300">
-                <Arrow fontSize="sm" />
-              </div>
-              <Link to="/staff/staff-attendence">Staff attendence</Link>
-            </li>
+            <Link to="/staff/staff-information" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1  mt-2 mb-3 cursor-pointer rounded  ${
+                  location.includes("staff-information")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm" />
+                </div>
+                Staff information
+              </li>
+            </Link>
+            <Link to="/staff/staff-attendence" onClick={sidebar}>
+              <li
+                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                  location.includes("staff-attendence")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm" />
+                </div>
+                Staff attendence
+              </li>
+            </Link>
           </ul>
         </div>
       </div>

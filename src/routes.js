@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import Base from "./pages/Base";

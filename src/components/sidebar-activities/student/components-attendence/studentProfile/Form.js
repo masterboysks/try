@@ -3,9 +3,9 @@ import Search from "@mui/icons-material/SearchOutlined";
 
 const Form = () => {
   return (
-    <div className="w-full lg:w-11/12 mb-14">
-      <div className="p-4 my-6 rounded-md shadow xl:flex ring-black ring-opacity-5 ring-1 form-solid">
-        <div className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <div className="lg:w-11/12 mb-14 w-full">
+      <div className="xl:flex ring-black ring-opacity-5 ring-1 form-solid p-4 my-6 rounded-md shadow">
+        <div className="md:grid-cols-2 xl:grid-cols-3 grid flex-1 grid-cols-1 gap-4">
           <div className="">
             <label className="my-6 text-sm" htmlFor="Date">
               From date*
@@ -38,13 +38,13 @@ const Form = () => {
               <option value="Test">Select</option>
             </select>
           </div>
-          <div className="box-border px-4 py-3 mt-auto ml-auto text-center text-white rounded cursor-pointer md:mx-0 md:ml-auto h-fit w-fit bg-primary-btn md:box-content xl:hidden">
-            {/* <span className="text-sm sm:hidden text-primary-grey-100">Search</span> */}
+          <div className="md:mx-0 md:ml-auto h-fit w-fit bg-primary-btn md:box-content xl:hidden box-border px-4 py-3 mt-auto ml-auto text-center text-white rounded cursor-pointer">
+            {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
             <Search className="w-4 mx-auto"></Search>
           </div>
         </div>
-        <div className="box-border hidden px-2 py-2 mt-auto ml-3 text-center text-white rounded cursor-pointer w-fit h-fit bg-primary-btn xl:block">
-          {/* <span className="text-sm sm:hidden text-primary-grey-100">Search</span> */}
+        <div className="w-fit h-fit bg-primary-btn xl:block box-border hidden px-2 py-2 mt-auto ml-3 text-center text-white rounded cursor-pointer">
+          {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
           <Search className="w-4 mx-auto"></Search>
         </div>
       </div>

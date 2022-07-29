@@ -84,12 +84,12 @@ export default function Sidebar() {
         className="md:hidden absolute top-[70px] z-10 left-2"
         onClick={sidebar}
       /> */}
+
       <div className="lg:hidden ml-[11px] p-1 mt-1 rounded-md text-primary-grey-600  hover:outline-primary-grey-200 hover:outline   top-3 left-16 focus:outline-none absolute sm:top-[70px] z-50 sm:z-20 sm:left-2">
         <Hamburger onClick={sidebar}></Hamburger>
       </div>
-
       <div
-        className="min-w-[72px]  mt-[2px] py-8 border-r-[1px] border-r-primary-grey-100-grey-200 top-[64px] md:static z-10 absolute  min-h-screen text-sm sm:inline hidden bg-white "
+        className="min-w-[72px]  mt-[2px] py-8 border-r-[1px] border-r-primary-grey-100-grey-200 top-[64px] md:static z-10 fixed  min-h-screen text-sm sm:inline hidden bg-white "
         id="sidebar"
       >
         {activity.map((curr) => {
@@ -101,7 +101,10 @@ export default function Sidebar() {
                   : " text-primary-grey-600 "
               }`}
               key={curr.name}
-              onClick={slidebarLink}
+              onClick={() => {
+                slidebarLink();
+                sidebar();
+              }}
             >
               {/* <img
                 src={curr.value}

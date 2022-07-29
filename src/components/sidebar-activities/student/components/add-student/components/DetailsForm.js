@@ -163,7 +163,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
         </div>
       </div>
 
-      <div className="relative flex items-start">
+      <div className="-z-10 relative flex items-start">
         <div className="flex items-center h-5">
           <input
             id="comments"
