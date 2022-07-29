@@ -16,7 +16,7 @@ import Hamburger from "@mui/icons-material/MenuOutlined";
 export default function Sidebar() {
   const location = useLocation().pathname.toLowerCase();
   const activity = [
-    { name: "Admin", value: Admin, path: "admin" },
+    { name: "Admin", value: Admin, path: "admin/organization-setup" },
     { name: "Student", value: Student, path: "student/student-information" },
     { name: "Staff", value: Staff, path: "staff/staff-information" },
     { name: "Billing", value: Billing, path: "student/student-information" },

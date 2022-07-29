@@ -105,7 +105,7 @@ const people = [
   },
 ];
 
-export default function Example() {
+export default function Table() {
   const itemsOnPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState(

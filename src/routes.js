@@ -31,6 +31,8 @@ import AddStaffDocumentBase from "./components/sidebar-activities/staff/staff-in
 // Admin Imports
 import AdminSlidebar from "./components/sidebar-activities/admin/slidebar";
 import OrginazationSetup from "./components/sidebar-activities/admin/organization-setup/OrginazationSetup";
+import UniversityBoard from "./components/sidebar-activities/admin/data-setup/university-board/university-board/UniversityBoard";
+import AddUniversityBoard from "./components/sidebar-activities/admin/data-setup/university-board/add-university-board/AddUniversityBoard";
 const classes = [
   {
     semester: "Class-11",
@@ -52,7 +54,14 @@ function App() {
             path="/admin/organization-setup"
             element={<OrginazationSetup />}
           />
-          <Route path="/admin/data-setup/university-board" element={<></>} />
+          <Route
+            path="/admin/data-setup/university-board"
+            element={<UniversityBoard></UniversityBoard>}
+          />
+          <Route
+            path="/admin/data-setup/university-board/add"
+            element={<AddUniversityBoard></AddUniversityBoard>}
+          />
           <Route path="/admin/data-setup/level" element={<></>} />
           <Route path="/admin/data-setup/faculty" element={<></>} />
           <Route path="/admin/data-setup/sub-faculty" element={<></>} />

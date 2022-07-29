@@ -101,7 +101,7 @@ const Slidebar = () => {
               return (
                 <Link to={curr.path} key={curr.name}>
                   <li
-                    className={`pl-6 mx-2 mt-2 mb-3 rounded py-[2px] text-sm ${
+                    className={`pl-6 mx-2 mt-2 mb-3 rounded py-[3px] text-sm ${
                       location.includes(curr.path)
                         ? "bg-primary-grey-200 text-primary-grey-700"
                         : "hover:bg-primary-grey-200 text-primary-grey-600"
