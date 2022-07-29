@@ -41,6 +41,8 @@ import SubFaculty from "./components/sidebar-activities/admin/data-setup/sub-fac
 import AddSubFaculty from "./components/sidebar-activities/admin/data-setup/sub-faculty/add-sub-faculty/AddSubFaculty";
 import Section from "./components/sidebar-activities/admin/data-setup/section/section/Section";
 import AddSection from "./components/sidebar-activities/admin/data-setup/section/add-section/AddSection";
+import Subject from "./components/sidebar-activities/admin/data-setup/subject/subject/Subject";
+import AddSubject from "./components/sidebar-activities/admin/data-setup/subject/add-subject/AddSubject";
 const classes = [
   {
     semester: "Class-11",
@@ -96,12 +98,16 @@ function App() {
             path="/admin/data-setup/section/add"
             element={<AddSection />}
           />
-          <Route path="/admin/data-setup/subject" element={<AddFaculty />} />
+          <Route path="/admin/data-setup/subject" element={<Subject />} />
+          <Route
+            path="/admin/data-setup/subject/add"
+            element={<AddSubject />}
+          />
           <Route
             path="/admin/data-setup/class-semester"
             element={<AddFaculty />}
           />
-          <Route path="/admin/data-setup/department" element={<AddFaculty />} />
+          <Route path="/admin/data-setup/department" element={<AddSubject />} />
           <Route
             path="/admin/data-setup/designation"
             element={<AddFaculty />}

@@ -14,7 +14,7 @@ const pages = [
     current: false,
   },
   {
-    name: "Section",
+    name: "Add",
     href: "/admin/data-setup/section/add",
     current: true,
   },
