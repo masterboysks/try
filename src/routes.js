@@ -37,6 +37,8 @@ import Level from "./components/sidebar-activities/admin/data-setup/level/level/
 import AddLevel from "./components/sidebar-activities/admin/data-setup/level/add-level/AddLevel";
 import Faculty from "./components/sidebar-activities/admin/data-setup/faculty/faculty/Faculty";
 import AddFaculty from "./components/sidebar-activities/admin/data-setup/faculty/add-faculty/AddFaculty";
+import SubFaculty from "./components/sidebar-activities/admin/data-setup/sub-faculty/sub-faculty/SubFaculty";
+import AddSubFaculty from "./components/sidebar-activities/admin/data-setup/sub-faculty/add-sub-faculty/AddSubFaculty";
 const classes = [
   {
     semester: "Class-11",
@@ -75,10 +77,17 @@ function App() {
             path="/admin/data-setup/faculty"
             element={<Faculty></Faculty>}
           />
-          <Route path="/admin/data-setup/faculty" element={<AddFaculty />} />
+          <Route
+            path="/admin/data-setup/faculty/add"
+            element={<AddFaculty />}
+          />
           <Route
             path="/admin/data-setup/sub-faculty"
-            element={<AddFaculty />}
+            element={<SubFaculty />}
+          />
+          <Route
+            path="/admin/data-setup/sub-faculty/add"
+            element={<AddSubFaculty />}
           />
           <Route path="/admin/data-setup/section" element={<AddFaculty />} />
           <Route path="/admin/data-setup/subject" element={<AddFaculty />} />

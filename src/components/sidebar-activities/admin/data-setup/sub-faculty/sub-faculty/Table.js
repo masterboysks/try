@@ -5,11 +5,11 @@ import RenderTable from "./RenderTable";
 const people = [
   {
     faculty: "NEB",
-    level: "jhdgsgasfd",
+    subFaculty: "jhdgsgasfd",
   },
   {
     faculty: "TU",
-    level: "gfstrft",
+    subFaculty: "gfstrft",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function Table() {
         </div>
         <div className="sm:mt-0 sm:ml-16 sm:flex-none mt-4">
           <Link
-            to="/admin/data-setup/faculty/add"
+            to="/admin/data-setup/sub-faculty/add"
             className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Add
@@ -59,16 +59,15 @@ export default function Table() {
                   <tr>
                     <th
                       scope="col"
+                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
+                    >
+                      Sub-faculty
+                    </th>
+                    <th
+                      scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700    "
                     >
                       Faculty
-                    </th>
-
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
-                    >
-                      Level
                     </th>
 
                     <th
