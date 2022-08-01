@@ -14,7 +14,7 @@ const links = [
   { name: "Assign-Subject", path: "/admin/data-setup/assign-subject" },
   { name: "Department", path: "/admin/data-setup/department" },
   { name: "Designation", path: "/admin/data-setup/designation" },
-  { name: "Acadamic Year", path: "/admin/data-setup/acadamic-year" },
+  { name: "Academic Year", path: "/admin/data-setup/academic-year" },
   { name: "Fiscal Year", path: "/admin/data-setup/fiscal-year" },
 ];
 const Slidebar = () => {

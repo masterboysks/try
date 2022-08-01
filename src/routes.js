@@ -53,6 +53,8 @@ import Designation from "./components/sidebar-activities/admin/data-setup/design
 import AddDesignation from "./components/sidebar-activities/admin/data-setup/designation/add-designation/AddDesignation";
 import AcademicYear from "./components/sidebar-activities/admin/data-setup/academic-year/academic-year/AcademicYear";
 import AddAcademicYear from "./components/sidebar-activities/admin/data-setup/academic-year/add-academic-year/AddAcademicYear";
+import FiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/fiscal-year/FiscalYear";
+import AddFiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/add-fiscal-year/AddFiscalYear";
 const classes = [
   {
     semester: "Class-11",
@@ -145,20 +147,20 @@ function App() {
             element={<AddDesignation />}
           />
           <Route
-            path="/admin/data-setup/acadamic-year"
+            path="/admin/data-setup/academic-year"
             element={<AcademicYear />}
           />
           <Route
-            path="/admin/data-setup/acadamic-year/add"
+            path="/admin/data-setup/academic-year/add"
             element={<AddAcademicYear />}
           />
           <Route
-            path="/admin/data-setup/fiscial-year"
-            element={<AddFaculty />}
+            path="/admin/data-setup/fiscal-year"
+            element={<FiscalYear />}
           />
           <Route
-            path="/admin/data-setup/fiscial-year/add"
-            element={<AddFaculty />}
+            path="/admin/data-setup/fiscal-year/add"
+            element={<AddFiscalYear />}
           />
         </Route>
         {/* Student Routes reside here */}
