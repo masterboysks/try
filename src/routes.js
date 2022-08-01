@@ -43,6 +43,16 @@ import Section from "./components/sidebar-activities/admin/data-setup/section/se
 import AddSection from "./components/sidebar-activities/admin/data-setup/section/add-section/AddSection";
 import Subject from "./components/sidebar-activities/admin/data-setup/subject/subject/Subject";
 import AddSubject from "./components/sidebar-activities/admin/data-setup/subject/add-subject/AddSubject";
+import ClassSemester from "./components/sidebar-activities/admin/data-setup/class-semester/class-semester/ClassSemester";
+import AddClassSemester from "./components/sidebar-activities/admin/data-setup/class-semester/add-class-semester/AddClassSemester";
+import AssignSubject from "./components/sidebar-activities/admin/data-setup/assign-subject/assign-subject/AssignSubject";
+import AddAssiginSubject from "./components/sidebar-activities/admin/data-setup/assign-subject/add-assign-subject/AddAssiginSubject";
+import Department from "./components/sidebar-activities/admin/data-setup/department/department/Department";
+import AddDepartment from "./components/sidebar-activities/admin/data-setup/department/add-department/AddDepartment";
+import Designation from "./components/sidebar-activities/admin/data-setup/designation/designation/Designation";
+import AddDesignation from "./components/sidebar-activities/admin/data-setup/designation/add-designation/AddDesignation";
+import AcademicYear from "./components/sidebar-activities/admin/data-setup/academic-year/academic-year/AcademicYear";
+import AddAcademicYear from "./components/sidebar-activities/admin/data-setup/academic-year/add-academic-year/AddAcademicYear";
 const classes = [
   {
     semester: "Class-11",
@@ -105,11 +115,49 @@ function App() {
           />
           <Route
             path="/admin/data-setup/class-semester"
-            element={<AddFaculty />}
+            element={<ClassSemester />}
           />
-          <Route path="/admin/data-setup/department" element={<AddSubject />} />
+          <Route
+            path="/admin/data-setup/class-semester/add"
+            element={<AddClassSemester />}
+          ></Route>
+          <Route
+            path="/admin/data-setup/assign-subject"
+            element={<AssignSubject />}
+          />
+
+          <Route
+            path="/admin/data-setup/assign-subject/add"
+            element={<AddAssiginSubject />}
+          ></Route>
+
+          <Route path="/admin/data-setup/department" element={<Department />} />
+          <Route
+            path="/admin/data-setup/department/add"
+            element={<AddDepartment />}
+          />
           <Route
             path="/admin/data-setup/designation"
+            element={<Designation />}
+          />
+          <Route
+            path="/admin/data-setup/designation/add"
+            element={<AddDesignation />}
+          />
+          <Route
+            path="/admin/data-setup/acadamic-year"
+            element={<AcademicYear />}
+          />
+          <Route
+            path="/admin/data-setup/acadamic-year/add"
+            element={<AddAcademicYear />}
+          />
+          <Route
+            path="/admin/data-setup/fiscial-year"
+            element={<AddFaculty />}
+          />
+          <Route
+            path="/admin/data-setup/fiscial-year/add"
             element={<AddFaculty />}
           />
         </Route>

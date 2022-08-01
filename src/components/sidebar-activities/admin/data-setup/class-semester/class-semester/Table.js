@@ -5,13 +5,10 @@ import RenderTable from "./RenderTable";
 const people = [
   {
     level: "NEB",
-    board: "jhdgsgasfd",
-    hasFaculty: "no",
-  },
-  {
-    level: "TU",
-    board: "gfstrft",
-    hasFaculty: "no",
+    class: "class 12",
+    sections: ["A", "B", "C"],
+    subFaculty: "Bio",
+    faculty: "Science",
   },
 ];
 
@@ -19,11 +16,11 @@ export default function Table() {
   return (
     <div className="mt-11 w-full">
       <div className="sm:flex sm:items-center justify-between">
-        <div className="relative  w-72 max-w-full -z-10">
-          <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+        <div className="w-72 -z-10 relative max-w-full">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
-              className="w-5 h-5 text-primary-grey-600"
+              className="text-primary-grey-600 w-5 h-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +42,7 @@ export default function Table() {
         </div>
         <div className="sm:mt-0 sm:ml-16 sm:flex-none mt-4">
           <Link
-            to="/admin/data-setup/level/add"
+            to="/admin/data-setup/class-semester/add"
             className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Add
@@ -63,21 +60,34 @@ export default function Table() {
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700    "
                     >
-                      Level
+                      Class/Semester
                     </th>
 
                     <th
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
-                      Board
+                      Level
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
-                      Has faculty
+                      Faculty
                     </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "
+                    >
+                      Sub-Faculty
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "
+                    >
+                      Section
+                    </th>
+
                     <th
                       scope="col"
                       className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "

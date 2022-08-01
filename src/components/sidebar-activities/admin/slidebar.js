@@ -11,15 +11,18 @@ const links = [
   { name: "Section", path: "/admin/data-setup/section" },
   { name: "Subject", path: "/admin/data-setup/subject" },
   { name: "Class/Semester", path: "/admin/data-setup/class-semester" },
+  { name: "Assign-Subject", path: "/admin/data-setup/assign-subject" },
   { name: "Department", path: "/admin/data-setup/department" },
   { name: "Designation", path: "/admin/data-setup/designation" },
+  { name: "Acadamic Year", path: "/admin/data-setup/acadamic-year" },
+  { name: "Fiscal Year", path: "/admin/data-setup/fiscal-year" },
 ];
 const Slidebar = () => {
   const [dropdownActive, setDropdownActive] = useState(true);
   const [data, setData] = useState(false);
   const location = useLocation().pathname;
   useEffect(() => {
-    location.includes("data-setup") ? setData(true) : setData(false);
+    location.includes("/admin/data-setup") ? setData(true) : setData(false);
   }, [location]);
 
   let nav;
@@ -59,7 +62,7 @@ const Slidebar = () => {
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("organization-setup")
+                  location.includes("/admin/organization-setup")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
@@ -115,6 +118,81 @@ const Slidebar = () => {
                 );
               })}
             </ul>
+            <Link to="/admin/organization-setup" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
+                  location.includes("/admin/class-shedule")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm"></Arrow>
+                </div>
+                Class schedule
+              </li>
+            </Link>
+            <Link to="/admin/organization-setup" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
+                  location.includes("/admin/upgrade-class")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm"></Arrow>
+                </div>
+                Upgrade class
+              </li>
+            </Link>
+            <Link to="/admin/organization-setup" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
+                  location.includes("/admin/notice")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm"></Arrow>
+                </div>
+                Notice
+              </li>
+            </Link>
+            <Link to="/admin/organization-setup" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
+                  location.includes("/admin/event-calender")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm"></Arrow>
+                </div>
+                Event Calender
+              </li>
+            </Link>
+            <Link to="/admin/organization-setup" onClick={sidebar}>
+              {" "}
+              <li
+                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
+                  location.includes("/admin/templete")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm"></Arrow>
+                </div>
+                Template
+              </li>
+            </Link>
           </ul>
         </div>
       </div>{" "}
