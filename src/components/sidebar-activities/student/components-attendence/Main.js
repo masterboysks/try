@@ -17,9 +17,9 @@ const Main = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="hidden breadNav sm:block">
+      <div className="breadNav sm:block hidden">
         <nav className="flex" aria-label="Breadcrumb">
-          <ol role="list" className="flex items-center ">
+          <ol role="list" className=" flex items-center">
             {pages.map((page) => (
               <li key={page.name}>
                 <div className="flex items-center">
@@ -56,8 +56,11 @@ const Main = () => {
           </ol>
         </nav>
       </div>
+      <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
+        {pages[pages.length - 1].name}
+      </span>
       <div
-        className="absolute w-10 rotate-180 -top-10 right-2 text-primary-grey-700"
+        className="-top-10 right-2 text-primary-grey-700 absolute w-10 rotate-180"
         onClick={() => navigate(-1)}
       >
         <ChevronRightIcon />

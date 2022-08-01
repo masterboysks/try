@@ -118,11 +118,11 @@ const Slidebar = () => {
                 );
               })}
             </ul>
-            <Link to="/admin/organization-setup" onClick={sidebar}>
+            <Link to="/admin/class-schedule" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/class-shedule")
+                  location.includes("/admin/class-schedule")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
@@ -133,7 +133,7 @@ const Slidebar = () => {
                 Class schedule
               </li>
             </Link>
-            <Link to="/admin/organization-setup" onClick={sidebar}>
+            <Link to="/admin/upgrade-class" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
@@ -148,7 +148,7 @@ const Slidebar = () => {
                 Upgrade class
               </li>
             </Link>
-            <Link to="/admin/organization-setup" onClick={sidebar}>
+            <Link to="/admin/notice" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
@@ -163,7 +163,7 @@ const Slidebar = () => {
                 Notice
               </li>
             </Link>
-            <Link to="/admin/organization-setup" onClick={sidebar}>
+            <Link to="/admin/event-calender" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
@@ -178,7 +178,7 @@ const Slidebar = () => {
                 Event Calender
               </li>
             </Link>
-            <Link to="/admin/organization-setup" onClick={sidebar}>
+            <Link to="/admin/templete" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${

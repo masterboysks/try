@@ -57,7 +57,10 @@ const BreadNav = () => {
             ))}
           </ol>
         </nav>
-      </div>
+      </div>{" "}
+      <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
+        {pages[pages.length - 1].name}
+      </span>
       <div
         className="absolute w-10 rotate-180 -top-10 right-2 text-primary-grey-700"
         onClick={() => navigate(-1)}

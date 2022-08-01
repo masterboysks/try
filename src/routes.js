@@ -55,6 +55,8 @@ import AcademicYear from "./components/sidebar-activities/admin/data-setup/acade
 import AddAcademicYear from "./components/sidebar-activities/admin/data-setup/academic-year/add-academic-year/AddAcademicYear";
 import FiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/fiscal-year/FiscalYear";
 import AddFiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/add-fiscal-year/AddFiscalYear";
+import ClassShedule from "./components/sidebar-activities/admin/class-shedule/class-shedule/ClassShedule";
+import AddClassShedule from "./components/sidebar-activities/admin/class-shedule/add-class-shedule/AddClassShedule";
 const classes = [
   {
     semester: "Class-11",
@@ -72,6 +74,13 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
+          <Route path="upgrade-class" element={<UpgradeClass />}></Route>
+          <Route path="upgrade-class/add" element={<AddUpgradeClass />}></Route>
+          <Route path="class-schedule" element={<ClassShedule />}></Route>
+          <Route
+            path="class-schedule/add"
+            element={<AddClassShedule />}
+          ></Route>
           <Route
             path="/admin/organization-setup"
             element={<OrginazationSetup />}
