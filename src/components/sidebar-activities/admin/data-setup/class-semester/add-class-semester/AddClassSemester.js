@@ -9,13 +9,13 @@ const pages = [
     current: false,
   },
   {
-    name: "Subject",
-    href: "/admin/data-setup/subject",
+    name: "Class/semester",
+    href: "/admin/data-setup/class-semester",
     current: false,
   },
   {
     name: "Add",
-    href: "/admin/data-setup/subject/add",
+    href: "/admin/data-setup/class-semester/add",
     current: true,
   },
 ];
@@ -53,7 +53,10 @@ const AddClassSemester = () => {
               Sub faculty
             </label>
 
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
+            <select
+              disabled
+              className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn   bg-primary-grey-100 border-primary-grey-400 shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
+            >
               <option value="Test">Select</option>
             </select>
           </div>
@@ -85,7 +88,7 @@ const AddClassSemester = () => {
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 grid grid-cols-1 gap-4">
-          <div className="md:flex-row col-span-full xl:col-span-3 flex flex-col my-6 ml-auto">
+          <div className="md:flex-row col-span-full xl:col-span-4 flex flex-col my-6 ml-auto">
             <div className=" w-fit">
               <Link
                 to="/admin/data-setup/class-semester"
@@ -97,7 +100,7 @@ const AddClassSemester = () => {
                 to="/admin/data-setup/class-semester"
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
-                Next
+                Save
               </Link>
             </div>
           </div>

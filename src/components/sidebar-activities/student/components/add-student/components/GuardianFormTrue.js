@@ -5,10 +5,10 @@ import Search from "@mui/icons-material/SearchOutlined";
 
 const GuardianFormFalse = () => {
   return (
-    <form className="rounded-md  my-6 form-solid">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-span-full">
-          <div className=" ">
+    <form className="form-solid my-6 rounded-md">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
+        <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-span-full grid grid-cols-1 gap-4">
+          <div className="">
             <label className="py-6 text-sm" htmlFor="Student Id">
               Mobile Number*
             </label>
@@ -22,7 +22,7 @@ const GuardianFormFalse = () => {
           <div className="sm:w-1/2 mt-auto">
             <Link
               to="/student/student-information/add-student-details"
-              className="  rounded-md border border-transparent bg-primary-btn h-fit p-2 w-fit  flex justify-center items-center  text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 "
+              className=" bg-primary-btn h-fit w-fit hover: focus:outline-none focus:ring- focus:ring-offset-2 flex items-center justify-center p-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
             >
               <Search />
             </Link>
@@ -34,7 +34,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="text"
             placeholder="First name"
           />
@@ -45,7 +46,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="text"
             placeholder="Middle name"
           />
@@ -56,7 +58,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="text"
             placeholder="Last name"
           />
@@ -68,7 +71,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="Email"
             placeholder="mail@gmail.com"
           />
@@ -79,7 +83,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="text"
             placeholder="Occupation"
           />
@@ -90,7 +95,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="text"
             placeholder="Mother"
           />
@@ -101,7 +107,8 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="text"
             placeholder="Username"
           />
@@ -112,21 +119,22 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            disabled
             type="password"
             placeholder="Password"
           />
         </div>
       </div>
       <Break title="Father details" />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-6">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-6">
         <div>
           <label className="py-6 text-sm" htmlFor="Student Id">
             First Name*
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="First name"
           />
@@ -137,7 +145,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="Middle name"
           />
@@ -148,7 +156,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="Last name"
           />
@@ -159,7 +167,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="number"
             placeholder="Mobile number"
           />
@@ -170,7 +178,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="Email"
             placeholder="mail@gmail.com"
           />
@@ -181,21 +189,21 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="Occupation"
           />
         </div>
       </div>
       <Break title="Mother details" />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-6">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-6">
         <div>
           <label className="py-6 text-sm" htmlFor="Student Id">
             First Name*
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="First name"
           />
@@ -206,7 +214,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="Middle name"
           />
@@ -217,7 +225,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="Last name"
           />
@@ -228,7 +236,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="number"
             placeholder="Mobile number"
           />
@@ -239,7 +247,7 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="Email"
             placeholder="mail@gmail.com"
           />
@@ -250,23 +258,23 @@ const GuardianFormFalse = () => {
           </label>
           <br />
           <input
-            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
             placeholder="Occupation"
           />
         </div>
       </div>
       <div className="w-full">
-        <div className=" ml-auto w-fit">
+        <div className=" w-fit ml-auto">
           <Link
             to="/student/student-information/add-student-details"
-            className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-50 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
           >
             Back
           </Link>
           <Link
             to={`/student/student-information/add-student-details/`}
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Next
           </Link>

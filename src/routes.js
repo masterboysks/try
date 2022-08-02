@@ -60,6 +60,10 @@ import AddClassShedule from "./components/sidebar-activities/admin/class-shedule
 import UpgradeClass from "./components/sidebar-activities/admin/upgrade-class/upgrade-class/UpgradeClass";
 import ClassSchedule from "./components/sidebar-activities/admin/class-shedule/class-shedule/ClassShedule";
 import Upgrade from "./components/sidebar-activities/admin/upgrade-class/upgrade/Upgrade";
+import Notice from "./components/sidebar-activities/admin/notice/notice/Notice";
+import NewNotice from "./components/sidebar-activities/admin/notice/new-notice/NewNotice";
+import Event from "./components/sidebar-activities/admin/event/event/Event";
+import AddEvent from "./components/sidebar-activities/admin/event/add-event/AddEvent";
 const classes = [
   {
     semester: "Class-11",
@@ -69,7 +73,7 @@ const classes = [
   },
 ];
 function App() {
-  const [HasAnotherChild, setHasAnotherChild] = useState(false);
+  const [hasAnotherChild, setHasAnotherChild] = useState(false);
   const location = useLocation();
   return (
     <Routes>
@@ -77,8 +81,16 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
+          <Route path="event-calender" element={<Event />}></Route>
+          <Route path="event-calender/add" element={<AddEvent />}></Route>
+
+          <Route path="notice" element={<Notice />}></Route>
+          <Route path="notice/new" element={<NewNotice />}></Route>
           <Route path="upgrade" element={<Upgrade />}></Route>
-          <Route path="upgrade/class" element={<UpgradeClass />}></Route>
+          <Route
+            path="upgrade/class/:classname"
+            element={<UpgradeClass />}
+          ></Route>
           <Route path="class-schedule" element={<ClassSchedule />}></Route>
           <Route
             path="class-schedule/add"
@@ -192,7 +204,7 @@ function App() {
             path="/student/student-information/add-student-details"
             element={
               <AddStudent
-                HasAnotherChild={HasAnotherChild}
+                HasAnotherChild={hasAnotherChild}
                 setHasAnotherChild={setHasAnotherChild}
               />
             }

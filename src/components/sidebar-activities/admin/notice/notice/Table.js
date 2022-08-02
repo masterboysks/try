@@ -4,11 +4,11 @@ import RenderTable from "./RenderTable";
 
 const people = [
   {
-    level: "NEB",
-    class: "class 12",
-    sections: ["A", "B", "C"],
-    subFaculty: "Bio",
-    faculty: "Science",
+    document: true,
+    status: "Active",
+    date: "2022/06/20",
+    title: "Failed students",
+    sendTo: "All",
   },
 ];
 
@@ -42,10 +42,10 @@ export default function Table() {
         </div>
         <div className="sm:mt-0 sm:ml-16 sm:flex-none mt-4">
           <Link
-            to="/admin/data-setup/class-semester/add"
+            to="/admin/notice/new"
             className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
-            Add
+            New notice
           </Link>
         </div>
       </div>
@@ -60,32 +60,32 @@ export default function Table() {
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700    "
                     >
-                      Class/Semester
+                      Entry date
                     </th>
 
                     <th
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
-                      Level
+                      Notice title
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
-                      Faculty
+                      Send to
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
-                      Sub-Faculty
+                      Document
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
-                      Section
+                      Status
                     </th>
 
                     <th

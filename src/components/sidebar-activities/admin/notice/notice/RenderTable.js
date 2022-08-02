@@ -7,28 +7,19 @@ const RenderTable = ({ currentItems }) => {
       {currentItems.map((person, index) => (
         <tr key={index}>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.class}
+            {person.date}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.faculty}
+            {person.title}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.subFaculty}
+            {person.sendTo}
+          </td>
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 underline">
+            {person.document ? "View" : ""}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.section}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.compulsary &&
-              person.compulsary.map((curr, index) => {
-                return index === 0 ? `${curr}` : ` ,${curr}`;
-              })}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.elective &&
-              person.elective.map((curr, index) => {
-                return index === 0 ? `${curr}` : ` ,${curr}`;
-              })}
+            {person.status}
           </td>
 
           <td

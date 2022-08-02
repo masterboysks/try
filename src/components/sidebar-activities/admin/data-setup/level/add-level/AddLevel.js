@@ -71,7 +71,7 @@ const AddLevel = () => {
                 to="/admin/data-setup/level"
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
-                Next
+                Save
               </Link>
             </div>
           </div>

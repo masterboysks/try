@@ -48,7 +48,7 @@ const AddAssignSubject = () => {
           </div>{" "}
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">
-              Faculty*
+              Faculty
             </label>
 
             <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
@@ -66,7 +66,7 @@ const AddAssignSubject = () => {
           </div>{" "}
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">
-              Section
+              Section*
             </label>
 
             <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
@@ -126,7 +126,7 @@ const AddAssignSubject = () => {
             />
             Has faculty
           </div>
-          <div className="col-span-full pt-5">Select for elective Subject*</div>
+          <div className="col-span-full pt-5">Select for elective Subject</div>
           <div>
             <input
               type="checkbox"
@@ -195,7 +195,7 @@ const AddAssignSubject = () => {
                 to="/admin/data-setup/level"
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
-                Next
+                Save
               </Link>
             </div>
           </div>

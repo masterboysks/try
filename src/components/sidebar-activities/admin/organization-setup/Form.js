@@ -195,11 +195,14 @@ const Form = () => {
           <br />
           <select
             placeholder="BS"
-            className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
+            className="w-full p-2 my-[6px]   cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
           >
             <option value="bs">BS</option>
             <option value="ad">AD</option>
           </select>
+          <span className="text-sm">
+            Note:Selected date format will be used in whole system.
+          </span>
         </div>
         <div className="">
           <label className="my-6 text-sm" htmlFor="Student Id">
@@ -210,10 +213,6 @@ const Form = () => {
             className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-40 text-primary-grey-700 text-sm"
             type="date"
           />
-        </div>
-        <div className="col-span-full text-primary-grey-600 h-4 mb-3 text-sm text-center">
-          {" "}
-          Note:Selected data will be used in whole system
         </div>
         <div className="">
           <label htmlFor="logo" className=" block text-sm">
@@ -293,7 +292,7 @@ const Form = () => {
             to={`#`}
             className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
-            Next
+            Save
           </Link>
         </div>
       </div>

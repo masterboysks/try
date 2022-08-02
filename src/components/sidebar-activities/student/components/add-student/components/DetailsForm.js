@@ -1,4 +1,5 @@
 import Upload from "@mui/icons-material/UploadOutlined";
+
 import { Link } from "react-router-dom";
 
 const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
@@ -163,7 +164,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
         </div>
       </div>
 
-      <div className="-z-10 relative flex items-start">
+      <div className="relative z-0 flex items-start mt-6">
         <div className="flex items-center h-5">
           <input
             id="comments"
@@ -171,7 +172,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
             type="checkbox"
             checked={anotherChild}
             className="focus:ring- text-primary-btn focus:ring-0 focus:ring-offset-0 w-4 h-4 border-gray-300 rounded"
-            onChange={() => {
+            onClick={() => {
               anotherChildToggle(!anotherChild);
             }}
           />

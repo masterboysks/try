@@ -60,13 +60,6 @@ export default function Table() {
                   <tr>
                     <th
                       scope="col"
-                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700    "
-                    >
-                      Seaction
-                    </th>
-
-                    <th
-                      scope="col"
                       className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700  "
                     >
                       Class
@@ -79,19 +72,25 @@ export default function Table() {
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "
+                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700  "
                     >
                       Sub-Faculty
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "
+                      className="px-3 py-3.5  text-left text-sm font-medium text-primary-grey-700    "
+                    >
+                      Section
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700  "
                     >
                       Compulsary subjects
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "
+                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700  "
                     >
                       Elective subject
                     </th>
