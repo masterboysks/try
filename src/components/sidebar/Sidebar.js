@@ -73,7 +73,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="lg:hidden ml-[11px] p-1 mt-1 rounded-md text-primary-grey-600  hover:outline-primary-grey-200 hover:outline   top-3 left-16 focus:outline-none  fixed sm:absolute sm:top-[70px] z-50 sm:z-20 sm:left-2">
+      <div className="lg:hidden ml-[11px] p-1 mt-1 rounded-md text-primary-grey-600  hover:outline-primary-grey-200 hover:outline   top-3 left-16 focus:outline-none  fixed sm:absolute sm:top-[70px] z-[100] sm:z-20 sm:left-2">
         <Hamburger onClick={sidebar}></Hamburger>
       </div>
       <div

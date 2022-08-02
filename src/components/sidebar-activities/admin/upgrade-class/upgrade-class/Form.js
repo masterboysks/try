@@ -72,8 +72,12 @@ const Form = () => {
               <label className="" htmlFor="Student Id">
                 Available sections
               </label>
-              <Link to="/admin/data-setup/section/add">
-                <AiOutlineEdit className="lg:hidden mr-1 cursor-pointer"></AiOutlineEdit>
+              <Link
+                to="/admin/data-setup/section/add"
+                className=" text-primary-btn lg:hidden flex mr-1"
+              >
+                <AiOutlineEdit className=" top-1 relative mx-2 cursor-pointer"></AiOutlineEdit>
+                <span>Manage</span>
               </Link>
             </div>
 

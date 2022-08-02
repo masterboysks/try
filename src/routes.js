@@ -82,7 +82,7 @@ function App() {
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
           <Route path="event-calender" element={<Event />}></Route>
-          <Route path="event-calender/add" element={<AddEvent />}></Route>
+          <Route path="event-calender/add/:date" element={<AddEvent />}></Route>
 
           <Route path="notice" element={<Notice />}></Route>
           <Route path="notice/new" element={<NewNotice />}></Route>

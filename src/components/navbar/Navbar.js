@@ -13,10 +13,10 @@ export default function Example() {
   const location = useLocation().pathname;
   return (
     <>
-      <div className=" fixed top-0 z-50 w-screen">
+      <div className=" fixed top-0 z-[100] w-screen">
         <Disclosure
           as="nav"
-          className="sm:border-none z-50 bg-white border-2 border-b shadow-md"
+          className="sm:border-none bg-white border-2 border-b shadow-md"
         >
           {({ open }) => (
             <div className="">
