@@ -133,11 +133,11 @@ const Slidebar = () => {
                 Class schedule
               </li>
             </Link>
-            <Link to="/admin/upgrade-class" onClick={sidebar}>
+            <Link to="/admin/upgrade" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/upgrade-class")
+                  location.includes("/admin/upgrade")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}

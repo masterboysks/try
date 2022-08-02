@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Break from "../../break";
-import Breadcurm from "../breadnav";
+import Breadcurm from "../../breadnav";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 const pages = [
   { name: "Admin", href: "#", current: false },

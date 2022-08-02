@@ -2,7 +2,7 @@ import Search from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
-import Breadcurm from "../breadnav";
+import Breadcurm from "../../breadnav";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {

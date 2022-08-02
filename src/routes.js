@@ -57,6 +57,9 @@ import FiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-
 import AddFiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/add-fiscal-year/AddFiscalYear";
 import ClassShedule from "./components/sidebar-activities/admin/class-shedule/class-shedule/ClassShedule";
 import AddClassShedule from "./components/sidebar-activities/admin/class-shedule/add-class-shedule/AddClassShedule";
+import UpgradeClass from "./components/sidebar-activities/admin/upgrade-class/upgrade-class/UpgradeClass";
+import ClassSchedule from "./components/sidebar-activities/admin/class-shedule/class-shedule/ClassShedule";
+import Upgrade from "./components/sidebar-activities/admin/upgrade-class/upgrade/Upgrade";
 const classes = [
   {
     semester: "Class-11",
@@ -74,9 +77,9 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
-          <Route path="upgrade-class" element={<UpgradeClass />}></Route>
-          <Route path="upgrade-class/add" element={<AddUpgradeClass />}></Route>
-          <Route path="class-schedule" element={<ClassShedule />}></Route>
+          <Route path="upgrade" element={<Upgrade />}></Route>
+          <Route path="upgrade/class" element={<UpgradeClass />}></Route>
+          <Route path="class-schedule" element={<ClassSchedule />}></Route>
           <Route
             path="class-schedule/add"
             element={<AddClassShedule />}
