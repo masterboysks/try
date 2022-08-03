@@ -148,11 +148,12 @@ const Form = () => {
             VDC/Municipality*
           </label>
           <br />
-          <input
+          <select
             className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="text"
-            placeholder="Bagmati"
-          />
+          >
+            <option value="test">Select</option>
+          </select>
         </div>
         <div className="">
           <label className="my-6 text-sm" htmlFor="Student Id">

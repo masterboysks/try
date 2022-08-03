@@ -96,7 +96,7 @@ export default function Example() {
             <tbody className=" bg-white divide-y divide-gray-200">
               {people.map((person) => (
                 <tr
-                  key={person.email}
+                  key={person.id}
                   className={
                     selectedPeople.includes(person) ? "bg-gray-50" : undefined
                   }

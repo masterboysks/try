@@ -178,7 +178,7 @@ const Slidebar = () => {
                 Event Calender
               </li>
             </Link>
-            <Link to="/admin/templete" onClick={sidebar}>
+            <Link to="/admin/template" onClick={sidebar}>
               {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${

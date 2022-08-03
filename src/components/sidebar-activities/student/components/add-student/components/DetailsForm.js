@@ -172,7 +172,7 @@ const DetailsForm = ({ anotherChildToggle, anotherChild }) => {
             type="checkbox"
             checked={anotherChild}
             className="focus:ring- text-primary-btn focus:ring-0 focus:ring-offset-0 w-4 h-4 border-gray-300 rounded"
-            onClick={() => {
+            onChange={() => {
               anotherChildToggle(!anotherChild);
             }}
           />

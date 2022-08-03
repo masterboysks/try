@@ -11,10 +11,7 @@ const Steps = ({ steps, title }) => {
       >
         <ol role="list" className=" md:flex md:divide-y-0">
           {steps.map((step, stepIdx) => (
-            <li
-              key={step.name}
-              className="md:flex-1 md:flex sm:h-14 -z-10 relative"
-            >
+            <li key={step.name} className="md:flex-1 md:flex sm:h-14 relative">
               {step.status === "complete" ? (
                 <Link to={step.href} className="group flex items-center w-full">
                   <span className="flex items-center px-6 py-4 text-sm font-medium">

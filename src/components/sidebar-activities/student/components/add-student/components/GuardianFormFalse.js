@@ -4,8 +4,8 @@ import Break from "./Break";
 
 const GuardianFormFalse = () => {
   return (
-    <form className="rounded-md  my-6 form-solid">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+    <form className="form-solid my-6 rounded-md">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  grid grid-cols-1 gap-4">
         <div>
           <label className="py-6 text-sm" htmlFor="Student Id">
             First Name*
@@ -107,7 +107,7 @@ const GuardianFormFalse = () => {
         </div>
       </div>
       <Break title="Father details" />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-6">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-6">
         <div>
           <label className="py-6 text-sm" htmlFor="Student Id">
             First Name*
@@ -176,7 +176,7 @@ const GuardianFormFalse = () => {
         </div>
       </div>
       <Break title="Mother details" />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-6">
+      <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-6">
         <div>
           <label className="py-6 text-sm" htmlFor="Student Id">
             First Name*
@@ -245,16 +245,16 @@ const GuardianFormFalse = () => {
         </div>
       </div>
       <div className="w-full">
-        <div className=" ml-auto w-fit">
+        <div className=" w-fit ml-auto">
           <Link
             to="/student/student-information/add-student-details"
-            className="inline-flex items-center mr-3     justify-center rounded-md border border-transparent bg-primary-grey-50 px-4 py-3 text-sm font-medium text-primary-grey-700 shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
           >
             Back
           </Link>
           <Link
-            to={`/student/student-information/add-student-details/`}
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-primary-btn px-4 py-3 text-sm font-medium text-white shadow-sm hover: focus:outline-none focus:ring- focus:ring- focus:ring-offset-2 sm:w-auto"
+            to={`/student/student-information/add-address-details`}
+            className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
           >
             Next
           </Link>

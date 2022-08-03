@@ -55,7 +55,6 @@ import AcademicYear from "./components/sidebar-activities/admin/data-setup/acade
 import AddAcademicYear from "./components/sidebar-activities/admin/data-setup/academic-year/add-academic-year/AddAcademicYear";
 import FiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/fiscal-year/FiscalYear";
 import AddFiscalYear from "./components/sidebar-activities/admin/data-setup/fiscal-year/add-fiscal-year/AddFiscalYear";
-import ClassShedule from "./components/sidebar-activities/admin/class-shedule/class-shedule/ClassShedule";
 import AddClassShedule from "./components/sidebar-activities/admin/class-shedule/add-class-shedule/AddClassShedule";
 import UpgradeClass from "./components/sidebar-activities/admin/upgrade-class/upgrade-class/UpgradeClass";
 import ClassSchedule from "./components/sidebar-activities/admin/class-shedule/class-shedule/ClassShedule";
@@ -64,6 +63,10 @@ import Notice from "./components/sidebar-activities/admin/notice/notice/Notice";
 import NewNotice from "./components/sidebar-activities/admin/notice/new-notice/NewNotice";
 import Event from "./components/sidebar-activities/admin/event/event/Event";
 import AddEvent from "./components/sidebar-activities/admin/event/add-event/AddEvent";
+import Temeplate from "./components/sidebar-activities/admin/tempelate/Temeplate";
+import AddAddress from "./components/sidebar-activities/student/components/add-student/AddAddress";
+import AddClassDetails from "./components/sidebar-activities/student/components/add-student/AddClassDetails";
+import AddFeeDetails from "./components/sidebar-activities/student/components/add-student/AddFeeDetails";
 const classes = [
   {
     semester: "Class-11",
@@ -81,6 +84,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
+          <Route path="template" element={<Temeplate />}></Route>
           <Route path="event-calender" element={<Event />}></Route>
           <Route path="event-calender/add/:date" element={<AddEvent />}></Route>
 
@@ -216,6 +220,18 @@ function App() {
           <Route
             path="/student/student-information/add-student-details/guardian-false"
             element={<AddguardianFalse />}
+          />
+          <Route
+            path="/student/student-information/add-address-details"
+            element={<AddAddress />}
+          />
+          <Route
+            path="/student/student-information/add-class-details"
+            element={<AddClassDetails />}
+          />
+          <Route
+            path="/student/student-information/add-fee-details"
+            element={<AddFeeDetails />}
           />
           <Route
             path="/student/student-attendence"

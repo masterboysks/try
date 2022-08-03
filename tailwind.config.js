@@ -16,6 +16,7 @@ module.exports = {
           field: "#C2C9D1",
           "grey-300": "#D0D7E2",
           "grey-50": "#F0F2FF",
+          "info-50": "#E1F0FF",
         },
         logo: "rgba(3, 77, 162, 1)",
       },
