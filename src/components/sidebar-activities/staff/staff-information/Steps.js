@@ -1,6 +1,6 @@
 import { CheckIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
-import Break from "./Break";
+import Break from "../Break";
 
 const Steps = ({ steps, title }) => {
   return (

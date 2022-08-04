@@ -21,7 +21,6 @@ export default function UpgradeClass() {
   ];
   return (
     <div>
-      {" "}
       <Breadcurm pages={pages} />
       <Form></Form>
       <Filter />

@@ -104,7 +104,7 @@ const Form = () => {
             type="text"
             placeholder="www.xyz.com"
           />
-        </div>{" "}
+        </div>
         <div className="">
           <label className="my-6 text-sm" htmlFor="Student Id">
             Email
@@ -188,7 +188,7 @@ const Form = () => {
             type="text"
             placeholder="Link here"
           />
-        </div>{" "}
+        </div>
         <div className="">
           <label className="my-6 text-sm" htmlFor="Faculty">
             AD/BS*
@@ -279,7 +279,7 @@ const Form = () => {
 
       <div className="md:flex-row flex flex-col justify-between w-full my-6">
         <div className="w-44">
-          *Note:Please upload logo of school as below{" "}
+          *Note:Please upload logo of school as below
           <img src={logo} alt="" className="my-3" />
         </div>
         <div className=" w-fit my-auto">

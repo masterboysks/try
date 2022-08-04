@@ -50,9 +50,8 @@ function Form({ date }) {
             ></textarea>
           </div>
         </div>
-      </form>{" "}
+      </form>
       <form className="form-solid w-full my-4 rounded-md">
-        {" "}
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">
@@ -79,7 +78,6 @@ function Form({ date }) {
         </div>
       </form>
       <form className="form-solid w-full my-4 rounded-md">
-        {" "}
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">
@@ -96,7 +94,7 @@ function Form({ date }) {
           <div>
             <label htmlFor="cover-photo" className=" block text-sm">
               Document
-            </label>{" "}
+            </label>
             <div className=" mt-[6px] sm:col-span-2 ">
               <div className=" flex w-full px-3 py-1.5 border-2 border-gray-300 border-dashed rounded-md">
                 <div className=" w-full space-y-1">

@@ -172,6 +172,7 @@ export default function FeeForm() {
                   </td>
                 </tr>
                 {/* transportation */}
+
                 <tr>
                   <td className="whitespace-nowrap py-4 pr-3 text-sm text-left text-gray-500">
                     <input
@@ -215,22 +216,22 @@ export default function FeeForm() {
                   </td>
                   <td className="whitespace-nowrap relative h-[75px] py-4 pr-3 text-sm text-left text-gray-500">
                     <input
-                      className=" p- rounded  focus:ring-primary-btn   absolute top-[22px] w-[90%] border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+                      className=" p- rounded  focus:ring-primary-btn   absolute top-[22px] xl:w-[96%] w-[90%] sm:w-[92%] md:w-[94%] border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
                       disabled
                       type="number"
                       placeholder="8000"
                     />
                   </td>
-                  <td className="whitespace-nowrap relative h-[75px] py-4 pr-3 text-sm text-left text-gray-500">
+                  <td className="whitespace-nowrap relative h-[75px] py-4 pr-3 text-sm text-left text-gray-500 ">
                     <input
                       type="Number"
                       placeholder="1000"
-                      className="  p- rounded  focus:ring-primary-btn    absolute top-[22px] w-[90%]  border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+                      className="  p- rounded  focus:ring-primary-btn    absolute top-[22px] xl:w-[96%] w-[90%] sm:w-[92%] md:w-[94%]  border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
                     />
                   </td>
                   <td className="whitespace-nowrap relative h-[75px] py-4 pr-3 text-sm text-left text-gray-500">
                     <input
-                      className=" p- rounded  focus:ring-primary-btn    absolute top-[22px] w-[90%]  border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+                      className=" p- rounded  focus:ring-primary-btn    absolute top-[22px] xl:w-[96%] w-[90%] sm:w-[92%] md:w-[94%]  border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
                       disabled
                       type="number"
                       placeholder="7000"
@@ -241,7 +242,7 @@ export default function FeeForm() {
             </table>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className=" w-full my-6">
         <div className="w-fit flex items-center ml-auto">
           <div className="">Grand total :</div>

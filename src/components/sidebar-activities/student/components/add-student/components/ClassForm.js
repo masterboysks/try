@@ -99,7 +99,7 @@ function ClassForm() {
             type="text"
             placeholder="3.45"
           />
-        </div>{" "}
+        </div>
         <div className="">
           <label className="py-6 text-sm" htmlFor="Student Id">
             Status

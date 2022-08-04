@@ -21,23 +21,7 @@ const steps = [
     status: "upcomming",
   },
 ];
-const tabs = [
-  {
-    name: "General details",
-    href: "/staff/staff-information/add-staff/general/personal-details",
-    current: true,
-  },
-  {
-    name: "Academic details",
-    href: "/staff/staff-information/add-staff/academic",
-    current: false,
-  },
-  {
-    name: "Documents",
-    href: "/staff/staff-information/add-staff/documents",
-    current: false,
-  },
-];
+
 const AddStaffGeneralPersonal = () => {
   return (
     <>

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Breadnavs from "../Breadnavs";
+import Breadnavs from "../../Breadnavs";
 import Tabs from "../Tabs";
 const tabs = [
   {
@@ -18,17 +18,26 @@ const tabs = [
     current: false,
   },
 ];
+const pages = [
+  { name: "Staff", href: "#", current: false },
+  {
+    name: "Staff Information",
+    href: "/staff/staff-information/",
+    current: false,
+  },
+  {
+    name: "Add",
+    href: "/staff/staff-information/Add",
+    current: true,
+  },
+];
 const Base = () => {
   return (
-    <div className=" sm:ml-[72px] box-border md:ml-0 sm:pt-2 md:w-full  md:min-w-0 flex-1">
-      <div className="top-28 sm:mt-9 md:block sm:static -z-10 absolute left-0 w-full">
-        <div className="-z-10 w-11/12 mx-auto text-sm">
-          <Breadnavs />
-          <Tabs tabs={tabs} />
-          <Outlet></Outlet>
-        </div>
-      </div>
-    </div>
+    <>
+      <Breadnavs pages={pages} />
+      <Tabs tabs={tabs} />
+      <Outlet></Outlet>
+    </>
   );
 };
 export default Base;

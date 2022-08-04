@@ -59,7 +59,6 @@ const Slidebar = () => {
         <div className="w-full">
           <ul className="pt-9 mx-2">
             <Link to="/admin/organization-setup" onClick={sidebar}>
-              {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                   location.includes("/admin/organization-setup")
@@ -119,7 +118,6 @@ const Slidebar = () => {
               })}
             </ul>
             <Link to="/admin/class-schedule" onClick={sidebar}>
-              {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                   location.includes("/admin/class-schedule")
@@ -134,7 +132,6 @@ const Slidebar = () => {
               </li>
             </Link>
             <Link to="/admin/upgrade" onClick={sidebar}>
-              {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                   location.includes("/admin/upgrade")
@@ -149,7 +146,6 @@ const Slidebar = () => {
               </li>
             </Link>
             <Link to="/admin/notice" onClick={sidebar}>
-              {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                   location.includes("/admin/notice")
@@ -164,7 +160,6 @@ const Slidebar = () => {
               </li>
             </Link>
             <Link to="/admin/event-calender" onClick={sidebar}>
-              {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                   location.includes("/admin/event-calender")
@@ -179,7 +174,6 @@ const Slidebar = () => {
               </li>
             </Link>
             <Link to="/admin/template" onClick={sidebar}>
-              {" "}
               <li
                 className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
                   location.includes("/admin/templete")
@@ -195,7 +189,7 @@ const Slidebar = () => {
             </Link>
           </ul>
         </div>
-      </div>{" "}
+      </div>
       <div className=" sm:ml-[72px] box-border md:ml-0 sm:pt-2 md:w-full  md:min-w-0 flex-1">
         <div className="top-28 sm:mt-9 md:block sm:static -z-10 absolute left-0 w-full">
           <div className="-z-10 w-11/12 mx-auto text-sm">

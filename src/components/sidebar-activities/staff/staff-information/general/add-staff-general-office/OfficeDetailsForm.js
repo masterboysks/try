@@ -30,7 +30,7 @@ const PermanentAddressForm = () => {
           <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
-        </div>{" "}
+        </div>
         <div className="">
           <label className="my-6 text-sm" htmlFor="Student Id">
             Joined date*
@@ -73,7 +73,7 @@ const PermanentAddressForm = () => {
             <option value="Test">Select</option>
           </select>
         </div>
-      </div>{" "}
+      </div>
       <div className="w-full my-6">
         <div className=" w-fit ml-auto">
           <Link

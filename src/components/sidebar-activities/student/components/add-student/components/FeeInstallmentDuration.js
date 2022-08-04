@@ -17,46 +17,45 @@ function FeeInstallmentDuration() {
         <option value="test">Select</option>
       </select>
       <div className="xl:flex">
-        <div className="note max-w-fit bg-primary-info-50 p-4 mb-6 rounded">
+        <div className="note max-w-fit bg-primary-50 p-4 mb-6 rounded">
           <h3 className="mb-3">*Note about installment duration:</h3>
           <ol>
             <li>
-              1.{" "}
+              1.
               <span className="text-primary-grey-700 font-bold tracking-wide">
                 1 month
-              </span>{" "}
+              </span>
               :- Fee should be paid monthly & fee invoice are generated monthly.
             </li>
             <li>
-              2.{" "}
+              2.
               <span className="text-primary-grey-700 font-bold tracking-wide">
                 2 months
-              </span>{" "}
+              </span>
               :- Fee should be paid after each 2 months & fee invoice is
               generated in every 2 months.
             </li>
             <li>
-              3.{" "}
+              3.
               <span className="text-primary-grey-700 font-bold tracking-wide">
                 4 months
-              </span>{" "}
+              </span>
               :- Fee should be paid after each 4 months & fee invoice is
               generated in every 4 months.
             </li>
             <li>
-              {" "}
-              4.{" "}
+              4.
               <span className="text-primary-grey-700 font-bold tracking-wide">
                 6 months
-              </span>{" "}
+              </span>
               :- Fee should be paid after each 6 months & fee invoice is
-              generated in every 6 months.{" "}
+              generated in every 6 months.
             </li>
             <li>
-              5.{" "}
+              5.
               <span className="text-primary-grey-700 font-bold tracking-wide">
                 12 months
-              </span>{" "}
+              </span>
               :- Fee should be paid all at once & fee invoice is generated all
               at once.
             </li>

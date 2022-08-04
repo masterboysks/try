@@ -1,5 +1,5 @@
-import Breadnavs from "../../Breadnavs";
-import Break from "../../Break";
+import Breadnavs from "../../../Breadnavs";
+import Break from "../../../Break";
 import Tabs from "../../Tabs";
 import Form from "./Form";
 

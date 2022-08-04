@@ -1,4 +1,4 @@
-import Break from "../../Break";
+import Break from "../../../Break";
 
 import AddAcademicDetailsForm from "./AddAcademicDetailsForm";
 

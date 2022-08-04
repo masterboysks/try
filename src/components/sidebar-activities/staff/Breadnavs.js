@@ -1,21 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 
-const pages = [
-  { name: "Staff", href: "#", current: false },
-  {
-    name: "Staff Information",
-    href: "/staff/staff-information/",
-    current: false,
-  },
-  {
-    name: "Add Staff",
-    href: "/staff/staff-information/add-staff/general/personal-details",
-    current: true,
-  },
-];
-
-const Breadcurm = () => {
+const Breadcurm = ({ pages }) => {
   const navigate = useNavigate();
   return (
     <>

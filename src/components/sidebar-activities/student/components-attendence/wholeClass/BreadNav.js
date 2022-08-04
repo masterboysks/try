@@ -57,7 +57,7 @@ const BreadNav = () => {
             ))}
           </ol>
         </nav>
-      </div>{" "}
+      </div>
       <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
         {pages[pages.length - 1].name}
       </span>

@@ -44,14 +44,14 @@ function Temeplate() {
           templateName="admin_card"
           photo={photo}
         />
-      </form>{" "}
+      </form>
       <Break title="Marksheet"></Break>
       Select a template :
       <form className=" md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid grid-cols-2 gap-4 my-6 rounded-md">
         <View templateId="marksheet1" templateName="marksheet" photo={photo} />
         <View templateId="marksheet2" templateName="marksheet" photo={photo} />
         <View templateId="marksheet3" templateName="marksheet" photo={photo} />
-      </form>{" "}
+      </form>
       <Break title="Class routine"></Break>
       Select a template :
       <form className=" md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid grid-cols-2 gap-4 my-6 rounded-md">
@@ -65,7 +65,7 @@ function Temeplate() {
           templateId="class_routine2"
           photo={photo}
         />
-      </form>{" "}
+      </form>
       <Break title="Teacher ID card"></Break>
       Select a template :
       <form className=" md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid grid-cols-2 gap-4 my-6 rounded-md">
@@ -93,7 +93,7 @@ function Temeplate() {
           templateId="student_id_card2"
           photo={photo}
         />
-      </form>{" "}
+      </form>
       <Break title="Invoice"></Break>
       Select a template :
       <form className=" md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid grid-cols-2 gap-4 my-6 rounded-md">
@@ -109,7 +109,7 @@ function Temeplate() {
       <form className=" md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid grid-cols-2 gap-4 my-6 rounded-md">
         <View templateName="reciept" templateId="reciept1" photo={photo} />
         <View templateName="reciept" templateId="reciept2" photo={photo} />
-      </form>{" "}
+      </form>
       <div className="w-full">
         <div className=" w-fit my-auto ml-auto">
           <Link

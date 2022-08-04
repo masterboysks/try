@@ -22,7 +22,7 @@ export default function Example({ tabs }) {
         <label htmlFor="tabs" className="sr-only">
           Select a tab
         </label>
-        {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}{" "}
+        {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
         <Listbox value={selected} onChange={setSelected}>
           <div className="relative mt-1">
             <Listbox.Button className="focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-grey-200 sm:text-sm relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default">

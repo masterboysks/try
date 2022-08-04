@@ -67,6 +67,10 @@ import Temeplate from "./components/sidebar-activities/admin/tempelate/Temeplate
 import AddAddress from "./components/sidebar-activities/student/components/add-student/AddAddress";
 import AddClassDetails from "./components/sidebar-activities/student/components/add-student/AddClassDetails";
 import AddFeeDetails from "./components/sidebar-activities/student/components/add-student/AddFeeDetails";
+import StaffAttendence from "./components/sidebar-activities/staff/staff-attendence/main/StaffAttendence";
+import TeacherAssign from "./components/sidebar-activities/staff/teacher-assign/teacher-assign/TeacherAssign";
+import AssignTeacher from "./components/sidebar-activities/staff/teacher-assign/assign-teacher/AssignTeacher";
+
 const classes = [
   {
     semester: "Class-11",
@@ -253,6 +257,12 @@ function App() {
         </Route>
         {/* Staff Routes reside here */}
         <Route path="/staff" element={<StaffSlidebar></StaffSlidebar>}>
+          <Route
+            path="teacher-assign/assign-teacher"
+            element={<AssignTeacher />}
+          ></Route>
+          <Route path="teacher-assign" element={<TeacherAssign />}></Route>
+          <Route path="staff-attendence" element={<StaffAttendence />}></Route>
           <Route
             path="staff-information"
             element={<StaffInformation />}

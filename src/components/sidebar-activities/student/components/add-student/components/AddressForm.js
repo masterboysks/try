@@ -81,7 +81,7 @@ function AddressForm() {
       <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-6">
         <div className="col-span-full">
           <input type="checkbox" id="same" className="mr-3 rounded" />
-          <label htmlFor="same"> Same as permenant address</label>{" "}
+          <label htmlFor="same"> Same as permenant address</label>
         </div>
         <div>
           <label className="py-6 text-sm" htmlFor="Student Id">
