@@ -70,6 +70,13 @@ import AddFeeDetails from "./components/sidebar-activities/student/components/ad
 import StaffAttendence from "./components/sidebar-activities/staff/staff-attendence/main/StaffAttendence";
 import TeacherAssign from "./components/sidebar-activities/staff/teacher-assign/teacher-assign/TeacherAssign";
 import AssignTeacher from "./components/sidebar-activities/staff/teacher-assign/assign-teacher/AssignTeacher";
+import FeeSlidebar from "./components/sidebar-activities/fee/slidebar";
+import FeeType from "./components/sidebar-activities/fee/fee-type/fee-type/FeeType";
+import AddFeeType from "./components/sidebar-activities/fee/fee-type/add-fee-type/AddFeeType";
+import FeeAssign from "./components/sidebar-activities/fee/fee-assign/fee-assign/FeeAssign";
+import Assign from "./components/sidebar-activities/fee/fee-assign/assign/Assign";
+import StudentLogsheet from "./components/sidebar-activities/fee/logsheet/student-logsheet/StudentLogsheet";
+import Logsheet from "./components/sidebar-activities/fee/logsheet/logsheet/Logsheet";
 
 const classes = [
   {
@@ -86,6 +93,19 @@ function App() {
     <Routes>
       <Route path="/" element={<Base />}>
         <Route path="/" element={<Home />} />
+        {/* Fee Routes reside here */}
+        <Route path="/fee" element={<FeeSlidebar />}>
+          <Route path="fee-type" element={<FeeType />}></Route>
+          <Route path="fee-type/add" element={<AddFeeType />}></Route>
+          <Route path="fee-assign" element={<FeeAssign />}></Route>
+          <Route path="fee-assign/assign" element={<Assign />}></Route>
+          <Route path="student-logsheet" element={<StudentLogsheet />}></Route>
+          <Route
+            path="student-logsheet/:student"
+            element={<Logsheet />}
+          ></Route>
+        </Route>
+
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
           <Route path="template" element={<Temeplate />}></Route>

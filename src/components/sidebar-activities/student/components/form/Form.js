@@ -17,7 +17,7 @@ const Form = () => {
     <>
       <div className="breadNav sm:block hidden">
         <nav className="flex" aria-label="Breadcrumb">
-          <ol role="list" className=" flex items-center">
+          <ol className=" flex items-center">
             {pages.map((page) => (
               <li key={page.name}>
                 <div className="flex items-center">

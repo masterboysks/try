@@ -1,7 +1,7 @@
 import Admin from "@mui/icons-material/AdminPanelSettingsOutlined";
 import Student from "@mui/icons-material/SchoolOutlined";
 import Staff from "@mui/icons-material/SupervisorAccountOutlined";
-import Billing from "@mui/icons-material/ReceiptLongOutlined";
+import Fee from "@mui/icons-material/ReceiptLongOutlined";
 import Account from "@mui/icons-material/AccountBalanceWalletOutlined";
 import Libary from "@mui/icons-material/LocalLibraryOutlined";
 import Inventory from "@mui/icons-material/Inventory2Outlined";
@@ -15,23 +15,23 @@ import Hamburger from "@mui/icons-material/MenuOutlined";
 
 const activity = [
   { name: "Admin", value: Admin, path: "admin/organization-setup" },
-  { name: "Student", value: Student, path: "student/student-information" },
   { name: "Staff", value: Staff, path: "staff/staff-information" },
-  { name: "Billing", value: Billing, path: "billing" },
-  { name: "Account", value: Account, path: "account" },
-  { name: "Libary", value: Libary, path: "student/student-information" },
-  {
-    name: "Inventory",
-    value: Inventory,
-    path: "student/student-information",
-  },
+  { name: "Student", value: Student, path: "student/student-information" },
+  { name: "Fee", value: Fee, path: "fee/fee-type" },
   { name: "Exam", value: Exam, path: "student/student-information" },
-  { name: "LMS", value: Lms, path: "student/student-information" },
+  { name: "Libary", value: Libary, path: "student/student-information" },
   {
     name: "Transport",
     value: Transport,
     path: "student/student-information",
   },
+  { name: "Account", value: Account, path: "account" },
+  {
+    name: "Inventory",
+    value: Inventory,
+    path: "student/student-information",
+  },
+  { name: "LMS", value: Lms, path: "student/student-information" },
 ];
 export default function Sidebar() {
   useEffect(() => {

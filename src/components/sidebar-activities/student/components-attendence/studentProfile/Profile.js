@@ -35,7 +35,7 @@ const Details = () => {
             <span className="text-primary-grey-700">Active</span>
           </div>
           <div className="flex justify-between py-2 border-b-[1px] border-b-primary-grey-300 ">
-            <span className="text-primary-grey-600">Seaction:</span>
+            <span className="text-primary-grey-600">Section:</span>
             <span className="text-primary-grey-700">B</span>
           </div>
           <div className="flex justify-between py-2 ">
