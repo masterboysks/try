@@ -1,9 +1,11 @@
 import Arrow from "@mui/icons-material/ArrowForwardIos";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 
 const FeeSlidebar = () => {
+  const [data, setData] = useState(false);
+  const [dropFeeStatement, setDropFeeStatement] = useState(false);
   const location = useLocation().pathname;
   let nav;
   const sidebar = () => {
@@ -11,6 +13,19 @@ const FeeSlidebar = () => {
     nav.contains("hidden") ? nav.remove("hidden") : nav.add("hidden");
     slidebar();
   };
+  const links = [
+    {
+      name: "Class statement ",
+      path: "fee-statement/class-fee-statement",
+    },
+    {
+      name: "Student statement",
+      path: "fee-statement/student-fee-statement",
+    },
+  ];
+  useEffect(() => {
+    location.includes("/fee/fee-statement") ? setData(true) : setData(false);
+  }, [location]);
 
   const slidebar = () => {
     nav = document.getElementById("sidebar").classList;
@@ -92,6 +107,65 @@ const FeeSlidebar = () => {
                   <Arrow fontSize="sm" />
                 </div>
                 Fee payment
+              </li>
+            </Link>
+            <li
+              id="data"
+              onClick={() => {
+                setDropFeeStatement(!dropFeeStatement);
+              }}
+              className={`flex  p-1 mt-2 mb-3 cursor-pointer rounded hover:bg-primary-grey-200 
+              ${data ? "text-primary-grey-700" : "text-primary-grey-600"} 
+                   ${
+                     data && !dropFeeStatement
+                       ? "bg-primary-grey-200 "
+                       : "text-primary-grey-600"
+                   }text-sm`}
+            >
+              <div
+                id="arrow"
+                className={`devList text-black  transition duration-100 ease-in text-sm ${
+                  dropFeeStatement ? "rotate-90" : ""
+                }  `}
+              >
+                <Arrow fontSize="sm" />
+              </div>
+              <div className=" text-sm">Fee statement</div>
+            </li>
+            <ul
+              className={`${
+                dropFeeStatement ? "" : "hidden"
+              } transition duration-700 ease-in`}
+              id="dropdown"
+            >
+              {links.map((curr) => {
+                return (
+                  <Link to={curr.path} key={curr.name} onClick={sidebar}>
+                    <li
+                      className={`pl-6 mx-2 mt-2 mb-3 rounded py-[3px] text-sm ${
+                        location.includes(curr.path)
+                          ? "bg-primary-grey-200 text-primary-grey-700"
+                          : "hover:bg-primary-grey-200 text-primary-grey-600"
+                      }`}
+                    >
+                      {curr.name}
+                    </li>
+                  </Link>
+                );
+              })}
+            </ul>{" "}
+            <Link to="/fee/miscellaneous-fee-assign" onClick={sidebar}>
+              <li
+                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                  location.includes("fee/miscellaneous-fee-assign")
+                    ? " bg-primary-grey-200  text-primary-grey-700 "
+                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
+                } text-sm`}
+              >
+                <div className="devList text-primary-grey-300">
+                  <Arrow fontSize="sm" />
+                </div>
+                Misc. fee assign
               </li>
             </Link>
           </ul>

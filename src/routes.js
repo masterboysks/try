@@ -77,6 +77,14 @@ import FeeAssign from "./components/sidebar-activities/fee/fee-assign/fee-assign
 import Assign from "./components/sidebar-activities/fee/fee-assign/assign/Assign";
 import StudentLogsheet from "./components/sidebar-activities/fee/logsheet/student-logsheet/StudentLogsheet";
 import Logsheet from "./components/sidebar-activities/fee/logsheet/logsheet/Logsheet";
+import FeePayment from "./components/sidebar-activities/fee/fee-payment/fee-payment/FeePayment";
+import MiscAssign from "./components/sidebar-activities/fee/miscellaneous-fee-assign/assign/MiscAssign";
+import MiscellaneousFeeAssign from "./components/sidebar-activities/fee/miscellaneous-fee-assign/miscellaneous-fee-assign/MiscellaneousFeeAssign";
+import FeeStudent from "./components/sidebar-activities/fee/fee-payment/fee-student/FeeStudent";
+import ClassFeeStatement from "./components/sidebar-activities/fee/fee-statement/class-fee-statement/class-fee-statement/ClassFeeStatement";
+import StudentFeeStatement from "./components/sidebar-activities/fee/fee-statement/student-fee-statement/student-fee-statement/StudentFeeStatement";
+import ClassStatement from "./components/sidebar-activities/fee/fee-statement/class-fee-statement/class-statement/ClassStatement";
+import StudentStatement from "./components/sidebar-activities/fee/fee-statement/student-fee-statement/student-statement/StudentStatement";
 
 const classes = [
   {
@@ -95,6 +103,33 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Fee Routes reside here */}
         <Route path="/fee" element={<FeeSlidebar />}>
+          <Route
+            path="miscellaneous-fee-assign"
+            element={<MiscellaneousFeeAssign />}
+          ></Route>
+          <Route
+            path="miscellaneous-fee-assign/assign"
+            element={<MiscAssign />}
+          ></Route>
+
+          <Route
+            path="fee-statement/student-fee-statement/:student"
+            element={<StudentStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/student-fee-statement"
+            element={<StudentFeeStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/class-fee-statement/:class"
+            element={<ClassStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/class-fee-statement"
+            element={<ClassFeeStatement />}
+          ></Route>
+          <Route path="fee-payment" element={<FeePayment />}></Route>
+          <Route path="fee-payment/:student" element={<FeeStudent />}></Route>
           <Route path="fee-type" element={<FeeType />}></Route>
           <Route path="fee-type/add" element={<AddFeeType />}></Route>
           <Route path="fee-assign" element={<FeeAssign />}></Route>
