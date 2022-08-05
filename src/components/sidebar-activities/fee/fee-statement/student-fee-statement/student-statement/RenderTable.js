@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const LogTableRender = ({ currentItems, setOpen }) => {
+const RenderTable = ({ currentItems, setOpen }) => {
   return (
     <>
       {currentItems.map((person, index) => (
@@ -12,17 +12,19 @@ const LogTableRender = ({ currentItems, setOpen }) => {
             {person.billNo}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.total <= 0
-              ? `(Rs.${Math.abs(person.total)})`
-              : `Rs.${person.total}`}
+            {person.paymentType}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Rs.{person.paid}
+            {person.particulars}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.due <= 0
-              ? `(Rs.${Math.abs(person.due)})`
-              : `Rs.${person.due}`}
+            Rs.{person.dr}
+          </td>
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            Rs.{person.cr}
+          </td>
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            {person.balance}
           </td>
 
           <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
@@ -32,7 +34,7 @@ const LogTableRender = ({ currentItems, setOpen }) => {
                 setOpen(true);
               }}
             >
-              Details
+              View
             </span>
           </td>
         </tr>
@@ -41,4 +43,4 @@ const LogTableRender = ({ currentItems, setOpen }) => {
   );
 };
 
-export default LogTableRender;
+export default RenderTable;

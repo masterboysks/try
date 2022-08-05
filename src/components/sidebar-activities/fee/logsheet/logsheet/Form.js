@@ -18,7 +18,7 @@ export const Form = () => {
           id="normal"
           value="normal"
           onChange={entryOnChange}
-        />{" "}
+        />
         <label htmlFor="normal" className="ml-1 mr-3">
           Normal entry
         </label>
@@ -28,7 +28,7 @@ export const Form = () => {
           id="discount"
           value="discount"
           onChange={entryOnChange}
-        />{" "}
+        />
         <label htmlFor="discount" className="ml-1">
           Discount entry
         </label>

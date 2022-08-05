@@ -101,7 +101,6 @@ export default function Table({ type }) {
       </div>
       <div className="md:flex-row flex flex-col w-full">
         <div className="grid items-center grid-cols-2 py-1">
-          {" "}
           <label htmlFor="grandTotal">Grand total :</label>
           <input
             type="number"
@@ -118,7 +117,7 @@ export default function Table({ type }) {
             id="paidAmmount"
             placeholder="Rs.12000"
             className="mt-[6px] w-36 p- rounded  focus:ring-primary-btn   shadow-md border-primary-field  placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-          />{" "}
+          />
           <label htmlFor="due">Due amount:</label>
           <input
             type="number"
@@ -131,13 +130,12 @@ export default function Table({ type }) {
         </div>
         <div className=" md:ml-3 md:my-0 md:mt-auto flex justify-between flex-1 my-3">
           <div className="generate md:items-center flex">
-            <input type="checkbox" className="mr-3 rounded" id="generateBill" />{" "}
+            <input type="checkbox" className="mr-3 rounded" id="generateBill" />
             <label htmlFor="generateBill" className="">
               Generate Bill
             </label>
           </div>
           <div className="btns w-fit ">
-            {" "}
             <Link
               to="/fee/student-logsheet "
               className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"

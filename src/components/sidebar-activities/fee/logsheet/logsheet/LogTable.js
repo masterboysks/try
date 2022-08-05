@@ -78,7 +78,7 @@ export default function LogTable() {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
@@ -151,7 +151,6 @@ export default function LogTable() {
                             </tr>
                           </thead>
                           <tbody className=" bg-white divide-y divide-gray-200">
-                            {" "}
                             <tr>
                               <td className="p-2">
                                 <input
@@ -197,10 +196,8 @@ export default function LogTable() {
                                   id="total"
                                   placeholder="12000"
                                   className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-                                />{" "}
-                                <div className="top-5 -right-3 absolute z-10 w-5">
-                                  {" "}
-                                </div>
+                                />
+                                <div className="top-5 -right-3 absolute z-10 w-5"></div>
                               </td>
                             </tr>
                             <tr>
@@ -248,10 +245,8 @@ export default function LogTable() {
                                   id="total"
                                   placeholder="12000"
                                   className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-                                />{" "}
-                                <div className="top-5 -right-3 absolute z-10 w-5">
-                                  {" "}
-                                </div>
+                                />
+                                <div className="top-5 -right-3 absolute z-10 w-5"></div>
                               </td>
                             </tr>
                           </tbody>
@@ -261,7 +256,6 @@ export default function LogTable() {
                   </div>
                   <div className="md:flex-row flex flex-col w-full">
                     <div className="grid items-center grid-cols-2 py-1">
-                      {" "}
                       <label htmlFor="grandTotal">Grand total :</label>
                       <input
                         type="number"
@@ -279,7 +273,7 @@ export default function LogTable() {
                         placeholder="Rs.12000"
                         disabled
                         className="ml-auto mt-[6px] w-36 p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-                      />{" "}
+                      />
                       <label htmlFor="due">Due amount:</label>
                       <input
                         type="number"
@@ -291,8 +285,7 @@ export default function LogTable() {
                       />
                     </div>
                     <div className=" md:my-0 md:mt-auto flex flex-1 my-3">
-                      <div className="btns w-fit md:ml-auto ml-0 ml-auto">
-                        {" "}
+                      <div className="btns w-fit md:ml-auto  ml-0">
                         <div
                           to="/fee/student-logsheet "
                           className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"

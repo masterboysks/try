@@ -153,7 +153,7 @@ const FeeSlidebar = () => {
                   </Link>
                 );
               })}
-            </ul>{" "}
+            </ul>
             <Link to="/fee/miscellaneous-fee-assign" onClick={sidebar}>
               <li
                 className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${

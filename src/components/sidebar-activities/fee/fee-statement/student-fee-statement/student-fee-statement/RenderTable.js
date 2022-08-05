@@ -1,39 +1,33 @@
 import { Link } from "react-router-dom";
 
-const LogTableRender = ({ currentItems, setOpen }) => {
+const RenderTable = ({ currentItems }) => {
   return (
     <>
       {currentItems.map((person, index) => (
         <tr key={index}>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.date}
+            {person.id}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.billNo}
+            {person.name}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.total <= 0
-              ? `(Rs.${Math.abs(person.total)})`
-              : `Rs.${person.total}`}
+            {person.level}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Rs.{person.paid}
+            {person.faculty}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.due <= 0
-              ? `(Rs.${Math.abs(person.due)})`
-              : `Rs.${person.due}`}
+            {person.class}
           </td>
-
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            {person.section}
+          </td>
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            {person.status}
+          </td>
           <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
-            <span
-              className="cursor-pointer"
-              onClick={() => {
-                setOpen(true);
-              }}
-            >
-              Details
-            </span>
+            <Link to={`${person.name}-${person.id}`}>Fee statement</Link>
           </td>
         </tr>
       ))}
@@ -41,4 +35,4 @@ const LogTableRender = ({ currentItems, setOpen }) => {
   );
 };
 
-export default LogTableRender;
+export default RenderTable;

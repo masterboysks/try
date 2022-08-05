@@ -85,6 +85,7 @@ import ClassFeeStatement from "./components/sidebar-activities/fee/fee-statement
 import StudentFeeStatement from "./components/sidebar-activities/fee/fee-statement/student-fee-statement/student-fee-statement/StudentFeeStatement";
 import ClassStatement from "./components/sidebar-activities/fee/fee-statement/class-fee-statement/class-statement/ClassStatement";
 import StudentStatement from "./components/sidebar-activities/fee/fee-statement/student-fee-statement/student-statement/StudentStatement";
+import ClassStatementMonthly from "./components/sidebar-activities/fee/fee-statement/class-fee-statement/class-statement-monthly/ClassStatementMonthly";
 
 const classes = [
   {
@@ -119,6 +120,10 @@ function App() {
           <Route
             path="fee-statement/student-fee-statement"
             element={<StudentFeeStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/class-fee-statement/:class/monthly"
+            element={<ClassStatementMonthly />}
           ></Route>
           <Route
             path="fee-statement/class-fee-statement/:class"

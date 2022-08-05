@@ -22,7 +22,6 @@ export default function Form() {
           </label>
           <br />
           <select className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm">
-            {" "}
             <option value="test">Select</option>
           </select>
         </div>
@@ -35,7 +34,6 @@ export default function Form() {
             <option value="test">Select</option>
           </select>
           <div className="mt-3">
-            {" "}
             *Note:You can select multiple months at once
           </div>
         </div>

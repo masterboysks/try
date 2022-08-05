@@ -19,7 +19,7 @@ const pages = [
 function AssignTeacher() {
   return (
     <>
-      <Breadcurm pages={pages} />{" "}
+      <Breadcurm pages={pages} />
       <div className="ring-black ring-opacity-5 ring-1 form-solid lg:w-4/6 p-4 my-6 rounded-md shadow">
         <div className="md:grid-cols-2 gap-x-5 gap-y-2 grid grid-cols-1">
           <div className="flex justify-between py-2 border-b-[1px] border-b-primary-grey-300 ">
@@ -44,7 +44,7 @@ function AssignTeacher() {
           </div>
         </div>
       </div>
-      <Break title="Assign teacher" />{" "}
+      <Break title="Assign teacher" />
       <form className="form-solid my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div className="">

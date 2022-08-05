@@ -69,9 +69,9 @@ export default function Example() {
                         Push Notification
                       </Link>
                       <Link
-                        to="fee-payment"
+                        to="fee/fee-payment"
                         className={`${
-                          location.includes("fee-payment")
+                          location.includes("fee/fee-payment")
                             ? "text-primary-grey-700 font-medium"
                             : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
                         }  inline-flex items-center px-1 pt-1  text-base `}
@@ -79,9 +79,9 @@ export default function Example() {
                         Fee Payment
                       </Link>
                       <Link
-                        to="logsheet"
+                        to="fee/student-logsheet"
                         className={`${
-                          location.includes("logsheet")
+                          location.includes("fee/student-logsheet")
                             ? "text-primary-grey-700 font-medium"
                             : "text-primary-grey-600 font-normal hover:text-primary-grey-700"
                         }  inline-flex items-center px-1 pt-1  text-base `}

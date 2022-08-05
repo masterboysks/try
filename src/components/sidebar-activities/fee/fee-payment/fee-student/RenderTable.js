@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const LogTableRender = ({ currentItems, setOpen }) => {
+const RenderTable = ({ currentItems, setOpen }) => {
   return (
     <>
       {currentItems.map((person, index) => (
@@ -9,20 +9,10 @@ const LogTableRender = ({ currentItems, setOpen }) => {
             {person.date}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.billNo}
+            {person.particular}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.total <= 0
-              ? `(Rs.${Math.abs(person.total)})`
-              : `Rs.${person.total}`}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Rs.{person.paid}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.due <= 0
-              ? `(Rs.${Math.abs(person.due)})`
-              : `Rs.${person.due}`}
+            {person.amount}
           </td>
 
           <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
@@ -32,7 +22,7 @@ const LogTableRender = ({ currentItems, setOpen }) => {
                 setOpen(true);
               }}
             >
-              Details
+              View
             </span>
           </td>
         </tr>
@@ -41,4 +31,4 @@ const LogTableRender = ({ currentItems, setOpen }) => {
   );
 };
 
-export default LogTableRender;
+export default RenderTable;

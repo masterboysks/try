@@ -47,7 +47,7 @@ export default function RenderTable({ type }) {
           id="total"
           placeholder="12000"
           className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-        />{" "}
+        />
         <div className="top-5 -right-3  absolute z-10 w-5"> </div>
       </td>
     </tr>
