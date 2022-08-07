@@ -41,6 +41,19 @@ const AddClassSemester = () => {
           </div>
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">
+              Class/Semester
+            </label>
+
+            <select
+              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+              type="number"
+              placeholder="Science"
+            >
+              <option value="test">Select</option>
+            </select>
+          </div>
+          <div>
+            <label className="my-6 text-sm" htmlFor="Student Id">
               Faculty
             </label>
 
@@ -60,31 +73,19 @@ const AddClassSemester = () => {
               <option value="Test">Select</option>
             </select>
           </div>
-          <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Class/Semester
-            </label>
 
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="number"
-              placeholder="Science"
-            />
-          </div>
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">
               Sections
             </label>
-
             <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm ">
               <option value="Test">A</option>
               <option value="Test">B</option>
               <option value="Test">C</option>
-            </select>
-          </div>
-
-          <div className="col-span-full flex my-3 space-x-4">
-            *Note : You can select multiple section at once
+            </select>{" "}
+            <div className=" my-3">
+              *Note : You can select multiple section at once
+            </div>
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 grid grid-cols-1 gap-4">

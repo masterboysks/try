@@ -59,10 +59,10 @@ export default function Table() {
             </select>
           </div>
         </div>
-        <div className="h-fit md:mt-auto flex items-center my-6">
-          <div className="">Print</div>
-          <div className=" text-primary-grey-700 w-6 ml-1">
-            <PrinterIcon />
+        <div className="h-fit md:mt-auto md:my-0 flex items-center my-6">
+          <div className="text-primary-btn">Print</div>
+          <div className=" text-primary-btn w-6 ml-1">
+            <PrinterIcon fontSize="medium" />
           </div>
         </div>
       </div>{" "}
@@ -241,13 +241,13 @@ export default function Table() {
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 w-12 text-left text-sm font-medium text-primary-grey-700    "
+                        className="px-3 py-3.5 w-20 text-left text-sm font-medium text-primary-grey-700    "
                       >
                         Bill.no
                       </th>
                       <th
                         scope="col"
-                        className="px-3 py-3.5 w-20  text-left text-sm font-medium text-primary-grey-700    "
+                        className="px-3 py-3.5 w-40  text-left text-sm font-medium text-primary-grey-700    "
                       >
                         Payment type
                       </th>
@@ -287,17 +287,21 @@ export default function Table() {
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     <RenderTable currentItems={people} setOpen={setOpen} />
-                    <tr>
+                    <tr className="bg-gray-100">
                       <td
                         colSpan="4"
-                        className="text-primary-grey-700 font-medium text-right"
+                        className="whitespace-nowrap px-3 py-4 pr-4 text-sm font-medium text-right text-gray-600"
                       >
                         Total
                       </td>
-                      <td>Rs.12</td>
-                      <td>Rs.9999999999999</td>
-                      <td></td>
-                      <td></td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600">
+                        Rs.12
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600">
+                        Rs.9999999999999
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600"></td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600"></td>
                     </tr>
                   </tbody>
                 </table>

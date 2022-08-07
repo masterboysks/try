@@ -69,7 +69,7 @@ export default function Table() {
                             </th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="divide-primary-50 divide-y-[1px]">
                           <tr>
                             <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                               Monthly fee

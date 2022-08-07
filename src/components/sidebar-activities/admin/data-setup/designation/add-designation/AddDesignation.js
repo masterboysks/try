@@ -9,7 +9,7 @@ const pages = [
     current: false,
   },
   {
-    name: "Sub-Faculty",
+    name: "Designation",
     href: "/admin/data-setup/designation",
     current: false,
   },
@@ -23,7 +23,7 @@ const AddDesignation = () => {
   return (
     <>
       <Breadcurm pages={pages} />
-      <Break title="Add university/Board details" />
+      <Break title="Add designation" />
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>

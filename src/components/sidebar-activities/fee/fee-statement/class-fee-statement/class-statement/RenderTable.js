@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const RenderTable = ({ currentItems, setOpen }) => {
+const RenderTable = ({ currentItems }) => {
   return (
     <>
       {currentItems.map((person, index) => (
@@ -8,12 +8,7 @@ const RenderTable = ({ currentItems, setOpen }) => {
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.date}
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.billNo}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.paymentType}
-          </td>
+
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.particular}
           </td>
@@ -25,17 +20,6 @@ const RenderTable = ({ currentItems, setOpen }) => {
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.balance}
-          </td>
-
-          <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
-            <span
-              className="cursor-pointer"
-              onClick={() => {
-                setOpen(true);
-              }}
-            >
-              View
-            </span>
           </td>
         </tr>
       ))}

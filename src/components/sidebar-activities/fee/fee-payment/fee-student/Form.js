@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Form() {
   return (
     <>
-      <form className="mt-11 lg:w-2/3 md:grid-cols-2 grid w-full grid-cols-1 gap-4">
+      <form className="mt-11 lg:w-1/2 md:grid-cols-2 grid w-full grid-cols-1 gap-4">
         <div className="">
           <label className="py-6 text-sm" htmlFor="Student Id">
             Total Ammount:
@@ -14,7 +14,7 @@ export default function Form() {
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             disabled
             type="Number"
-            placeholder="Rs. 14500000000000"
+            placeholder=""
           />
         </div>
         <div>
@@ -48,7 +48,7 @@ export default function Form() {
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             disabled
             type="Number"
-            placeholder="Rs.14500000000000"
+            placeholder=""
           />
         </div>
         <div>
@@ -84,7 +84,7 @@ export default function Form() {
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             disabled
             type="Number"
-            placeholder="Rs. 99^99^99^99"
+            placeholder=""
           />
         </div>
         <div className="">

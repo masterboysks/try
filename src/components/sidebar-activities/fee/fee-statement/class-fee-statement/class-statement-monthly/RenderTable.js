@@ -27,66 +27,22 @@ export default function RenderTable({
         />
       </td>
       <td className="whitespace-nowrap py-4 pr-3 text-sm text-left text-gray-500">
-        {person.class}
+        {person.name}
       </td>
       <td className="whitespace-nowrap text-primary-grey-600 px-3 py-4 text-sm">
-        {person.level}
+        {person.monthlyFee}
       </td>
       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-        {person.faculty}
+        {person.miscellaneousFee}
       </td>
       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-        {person.section}
+        {person.previousDue}
       </td>
       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-        {person.noOfStd}
+        {person.total}
       </td>
       <td className="whitespace-nowrap w-40 px-3 py-4 text-sm text-gray-500">
         {person.invoiceStatus}
-      </td>
-      <td
-        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
-        onMouseOver={() => {
-          document
-            .getElementById(`${person.class}-${person.section}`)
-            .classList.remove("hidden");
-        }}
-        onMouseLeave={() => {
-          document
-            .getElementById(`${person.class}-${person.section}`)
-            .classList.add("hidden");
-        }}
-      >
-        <ThreeDots className="devMenuTable" />
-        <table
-          className="divide-y-2 absolute -ml-[64px] hidden bg-white shadow-lg w-12 rounded "
-          id={`${person.class}-${person.section}`}
-        >
-          <tbody>
-            <tr>
-              <td className="p-3">
-                <Link
-                  to={`${person.class.toLowerCase().replace(" ", "-")}-${
-                    person.section
-                  }`}
-                >
-                  Fee statement
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td className="p-3">
-                <Link
-                  to={`${person.class.toLowerCase().replace(" ", "-")}-${
-                    person.section
-                  }/monthly`}
-                >
-                  Monthly fee statement
-                </Link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </td>
     </tr>
   );

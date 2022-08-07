@@ -1,11 +1,25 @@
 import Search from "@mui/icons-material/SearchOutlined";
 import LanguageIcon from "@mui/icons-material/Language";
 import Table from "./Table";
-
+import Breadnav from "../../../breadnav";
+const pages = [
+  { name: "Fee", href: "#", current: false },
+  {
+    name: "Fee statement",
+    href: "#",
+    current: false,
+  },
+  {
+    name: "Class fee statement",
+    href: "/fee/fee-statement/class-fee-statement",
+    current: true,
+  },
+];
 export default function ClassFeeStatement() {
   return (
     <>
-      <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow">
+      <Breadnav pages={pages} />
+      <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 mb-12 rounded-md shadow">
         <div className="">
           <label className="my-6 text-sm" htmlFor="Desigation">
             Level*
@@ -47,10 +61,10 @@ export default function ClassFeeStatement() {
           <Search className="w-4 mx-auto"></Search>
         </div>
       </form>
-      <div className="text-primary-grey-700 w-full">
+      <div className="text-primary-btn w-full">
         <div className="w-fit flex items-center ml-auto">
           <div className="">Publish invoice</div>
-          <div className=" text-primary-grey-700 ml-2">
+          <div className=" text-primary-btn ml-2">
             <LanguageIcon />
           </div>
         </div>

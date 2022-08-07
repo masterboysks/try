@@ -72,9 +72,9 @@ const AddAssignSubject = () => {
             <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
               <option value="Test">Select</option>
             </select>
-          </div>
-          <div className="col-span-full text-primary-grey-600 text-xs">
-            *Note:You can select multiple section at once
+            <div className=" text-primary-grey-600 mt-3 text-xs">
+              *Note:You can select multiple section at once
+            </div>
           </div>
         </div>
         <div className="sm:grid-cols-2 lg:grid-cols-3 lg:w-2/3 mt-9 grid grid-cols-1 gap-4">
@@ -186,13 +186,13 @@ const AddAssignSubject = () => {
           <div className="w-fit col-span-full my-6 ml-auto">
             <div className=" w-fit flex">
               <Link
-                to="/admin/data-setup/level"
+                to="/admin/data-setup/assign-subject"
                 className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
               >
                 Cancel
               </Link>
               <Link
-                to="/admin/data-setup/level"
+                to="/admin/data-setup/assign-subject"
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save

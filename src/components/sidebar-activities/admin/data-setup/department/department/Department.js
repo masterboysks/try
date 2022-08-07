@@ -31,7 +31,7 @@ const Department = () => {
       <Breadcurm pages={pages} />
       <div className="mt-11 lg:w-2/3 w-full">
         <div className="sm:flex sm:items-center justify-between">
-          <div className="w-72 -z-10 relative max-w-full">
+          <div className="w-72 relative max-w-full">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
                 aria-hidden="true"

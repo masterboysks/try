@@ -122,11 +122,11 @@ function App() {
             element={<StudentFeeStatement />}
           ></Route>
           <Route
-            path="fee-statement/class-fee-statement/:class/monthly"
+            path="fee-statement/class-fee-statement/:classOfSchool/monthly"
             element={<ClassStatementMonthly />}
           ></Route>
           <Route
-            path="fee-statement/class-fee-statement/:class"
+            path="fee-statement/class-fee-statement/:classOfSchool"
             element={<ClassStatement />}
           ></Route>
           <Route

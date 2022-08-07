@@ -17,7 +17,7 @@ export default function Table() {
   return (
     <div className="mt-11 lg:w-2/3 w-full">
       <div className="sm:flex sm:items-center justify-between">
-        <div className="relative  w-72 max-w-full -z-10">
+        <div className="relative  w-72 max-w-full ">
           <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"

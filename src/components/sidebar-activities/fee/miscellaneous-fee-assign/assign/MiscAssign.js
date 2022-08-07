@@ -1,5 +1,26 @@
 import React from "react";
-
+import Breadnav from "../../breadnav";
+import Break from "../../break";
+import Form from "./Form";
+const pages = [
+  { name: "Fee", href: "#", current: false },
+  {
+    name: "Miscellaneous fee assign",
+    href: "/fee/miscellaneous-fee-assign",
+    current: false,
+  },
+  {
+    name: "Assign",
+    href: "/fee/miscellaneous-fee-assign/assign",
+    current: true,
+  },
+];
 export default function MiscAssign() {
-  return <div>MiscAssign</div>;
+  return (
+    <>
+      <Breadnav pages={pages}></Breadnav>
+      <Break title="Assign misc. fee"></Break>
+      <Form />
+    </>
+  );
 }

@@ -22,10 +22,6 @@ const people = [
   },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Example() {
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
@@ -47,7 +43,7 @@ export default function Example() {
   }
 
   return (
-    <div className=" ring-1 ring-black ring-opacity-5 my-9 min-w-full overflow-x-auto rounded-lg shadow">
+    <div className=" ring-1 ring-black ring-opacity-5 mb-9 min-w-full mt-4 overflow-x-auto rounded-lg shadow">
       <div className="w-fit ml-auto"></div>
       <div className=" flex flex-col w-full rounded">
         <div className=" overflow-x-auto">
@@ -93,10 +89,16 @@ export default function Example() {
                 >
                   Number of std
                 </th>
-                <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                <th
+                  scope="col"
+                  className="relative py-3.5 pl-3 pr-4 sm:pr-6 text-left "
+                >
                   Invoice status
                 </th>
-                <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
+                <th
+                  scope="col"
+                  className="relative py-3.5 pl-3 pr-4 sm:pr-6 text-left"
+                >
                   Action
                 </th>
               </tr>
@@ -104,7 +106,7 @@ export default function Example() {
             <tbody className=" bg-white divide-y divide-gray-200">
               {people.map((person) => (
                 <RenderTable
-                  key={person.id}
+                  key={`${person.class}-${person.section}`}
                   person={person}
                   selectedPeople={selectedPeople}
                   setSelectedPeople={setSelectedPeople}

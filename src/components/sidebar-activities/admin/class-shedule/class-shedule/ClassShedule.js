@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
 import Breadcurm from "../../breadnav";
+import { PrinterIcon } from "@heroicons/react/solid";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -119,9 +120,11 @@ const ClassSchedule = () => {
             </div>
           </div>
           <div className=" flex col-span-2 mt-auto ml-auto">
-            <div className="text-primary-grey-700 print p-2 mx-1 mt-auto font-medium">
+            <div className="text-primary-btn print flex items-center p-2 mx-1 mt-auto font-medium">
               <span className="mx-1">Print</span>
-              <PrintOutlinedIcon text="sm" font="base" />
+              <div className="w-7">
+                <PrinterIcon fontSize="medium" />
+              </div>
             </div>
             <Link
               to="#"
