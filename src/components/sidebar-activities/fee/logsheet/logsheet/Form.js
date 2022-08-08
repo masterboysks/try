@@ -19,7 +19,7 @@ export const Form = () => {
           value="normal"
           onChange={entryOnChange}
         />
-        <label htmlFor="normal" className="ml-1 mr-3">
+        <label htmlFor="normal" className="ml-2 mr-6">
           Normal entry
         </label>
         <input
@@ -29,7 +29,7 @@ export const Form = () => {
           value="discount"
           onChange={entryOnChange}
         />
-        <label htmlFor="discount" className="ml-1">
+        <label htmlFor="discount" className="ml-2">
           Discount entry
         </label>
       </form>

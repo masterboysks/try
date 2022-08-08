@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RenderTable from "./EntryTableRender";
 import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
 import { Link } from "react-router-dom";
 
 export default function Table({ type }) {
@@ -13,7 +12,7 @@ export default function Table({ type }) {
   return (
     <div className={`${type ? "" : " pointer-events-none opacity-50   "}`}>
       <div
-        className={` ring-1 ring-black ring-opacity-5 my-9 min-w-full overflow-x-auto rounded-lg shadow `}
+        className={` ring-1 ring-black ring-opacity-5 mb-3 mt-6 min-w-full overflow-x-auto rounded-lg shadow `}
       >
         <div className=" flex flex-col w-full rounded">
           <div className=" overflow-x-auto">
@@ -50,9 +49,7 @@ export default function Table({ type }) {
                   >
                     Total amount (Rs.)
                   </th>
-                  <th className="text-primary-active px-3 pl-1 pr-1 text-sm font-semibold text-left">
-                    Action
-                  </th>
+                  <th className=""></th>
                 </tr>
               </thead>
               <tbody className=" bg-white divide-y divide-gray-200">
