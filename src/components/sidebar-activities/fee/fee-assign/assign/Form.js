@@ -150,7 +150,7 @@ export default function Form() {
                           className=" mx-2 rounded"
                           id="lab_fee"
                         />
-                        <label htmlFor="lab_fee">Lab fee</label>
+                        <label htmlFor="lab_fee">Pratical fee</label>
                       </td>
                       <td className="whitespace-nowrap py-4 pr-3 text-sm text-left text-gray-500">
                         <input

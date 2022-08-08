@@ -47,7 +47,7 @@ const GuardianFormFalse = () => {
           <input
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="number"
-            placeholder="Mobile number"
+            placeholder="9818756958"
           />
         </div>
         <div className="">
@@ -149,7 +149,7 @@ const GuardianFormFalse = () => {
           <input
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="number"
-            placeholder="Mobile number"
+            placeholder="9818756958"
           />
         </div>
         <div className="">
@@ -218,7 +218,7 @@ const GuardianFormFalse = () => {
           <input
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
             type="number"
-            placeholder="Mobile number"
+            placeholder="9818756958"
           />
         </div>
         <div className="">

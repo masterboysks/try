@@ -24,7 +24,7 @@ export default function Form() {
           <br />
           <input
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-            type="text"
+            type="number"
             placeholder="Rs.12"
           />
         </div>

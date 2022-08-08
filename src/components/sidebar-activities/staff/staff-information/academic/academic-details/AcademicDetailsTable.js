@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 
 const currentItems = [
   {
-    level: 12323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -14,7 +13,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -24,7 +22,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -34,7 +31,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -44,7 +40,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -54,7 +49,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -64,7 +58,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -74,7 +67,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -84,7 +76,6 @@ const currentItems = [
     orgAddress: "active",
   },
   {
-    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",

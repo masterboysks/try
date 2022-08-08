@@ -24,8 +24,8 @@ function ClassForm() {
           <br />
           <input
             className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-            type="number"
-            placeholder="550632"
+            type="text"
+            placeholder="550632a"
           />
         </div>
         <div className="">

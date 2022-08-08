@@ -18,7 +18,7 @@ const activity = [
   { name: "Staff", value: Staff, path: "staff/staff-information" },
   { name: "Student", value: Student, path: "student/student-information" },
   { name: "Fee", value: Fee, path: "fee/fee-type" },
-  { name: "Exam", value: Exam, path: "student/student-information" },
+  { name: "Exam", value: Exam, path: "exam/exam-setup/exam-name" },
   { name: "Libary", value: Libary, path: "student/student-information" },
   {
     name: "Transport",

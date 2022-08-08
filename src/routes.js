@@ -86,6 +86,24 @@ import StudentFeeStatement from "./components/sidebar-activities/fee/fee-stateme
 import ClassStatement from "./components/sidebar-activities/fee/fee-statement/class-fee-statement/class-statement/ClassStatement";
 import StudentStatement from "./components/sidebar-activities/fee/fee-statement/student-fee-statement/student-statement/StudentStatement";
 import ClassStatementMonthly from "./components/sidebar-activities/fee/fee-statement/class-fee-statement/class-statement-monthly/ClassStatementMonthly";
+import ExamSlidebar from "./components/sidebar-activities/exam/ExamSlidebar";
+import ExamName from "./components/sidebar-activities/exam/exam-setup/exam-name/exam-name/ExamName";
+import AddExamName from "./components/sidebar-activities/exam/exam-setup/exam-name/add-exam-name/AddExamName";
+import GradeSystem from "./components/sidebar-activities/exam/exam-setup/grade-system/grade-system/GradeSystem";
+import AddGradeSystem from "./components/sidebar-activities/exam/exam-setup/grade-system/add-grade-system/AddGradeSystem";
+import ExamMarksName from "./components/sidebar-activities/exam/exam-setup/exam-marks-name/exam-marks-name/ExamMarksName";
+import AddExamMarksName from "./components/sidebar-activities/exam/exam-setup/exam-marks-name/add-exam-marks-name/AddExamMarksName";
+import AssignExam from "./components/sidebar-activities/exam/exam-setup/assign-exam/assign-exam/AssignExam";
+import AssignAssignExam from "./components/sidebar-activities/exam/exam-setup/assign-exam/assign-assign-exam/AssignAssignExam";
+import Marksheet from "./components/sidebar-activities/exam/exam-report/marksheet/marksheet/Marksheet";
+import OpenMarksheet from "./components/sidebar-activities/exam/exam-report/marksheet/open-marksheet/OpenMarksheet";
+import MarkLedger from "./components/sidebar-activities/exam/exam-report/mark-ledger/mark-ledger/MarkLedger";
+import ViewMarkLedger from "./components/sidebar-activities/exam/exam-report/mark-ledger/view-mark-ledger/ViewMarkLedger";
+import ExamShedule from "./components/sidebar-activities/exam/exam-shedule/exam-shedule/ExamShedule";
+import SheduleExamShedule from "./components/sidebar-activities/exam/exam-shedule/shedule-exam-shedule/SheduleExamShedule";
+import AddSheduleExamShedule from "./components/sidebar-activities/exam/exam-shedule/add-shedule-exam-shedule/AddSheduleExamShedule";
+import AdmitCard from "./components/sidebar-activities/exam/admit-card/admit-card/AdmitCard";
+import AssignAdmitCard from "./components/sidebar-activities/exam/admit-card/assign-admit-card/AssignAdmitCard";
 
 const classes = [
   {
@@ -102,50 +120,46 @@ function App() {
     <Routes>
       <Route path="/" element={<Base />}>
         <Route path="/" element={<Home />} />
-        {/* Fee Routes reside here */}
-        <Route path="/fee" element={<FeeSlidebar />}>
+        {/* Exam Routes reside here */}
+        <Route path="/exam" element={<ExamSlidebar />}>
+          <Route path="exam-setup">
+            <Route path="exam-name" element={<ExamName />}></Route>
+            <Route path="exam-name/add" element={<AddExamName />}></Route>
+            <Route path="grading-system" element={<GradeSystem />}></Route>
+            <Route
+              path="grading-system/add"
+              element={<AddGradeSystem />}
+            ></Route>{" "}
+            <Route path="exam-marks-name" element={<ExamMarksName />}></Route>
+            <Route
+              path="exam-marks-name/add"
+              element={<AddExamMarksName />}
+            ></Route>
+            <Route path="assign-exam" element={<AssignExam />}></Route>
+            <Route
+              path="assign-exam/assign"
+              element={<AssignAssignExam />}
+            ></Route>
+            {/*  */}
+          </Route>
+          <Route path="exam-report">
+            <Route path="marksheet" element={<Marksheet />}></Route>
+            <Route path="marksheet/open" element={<OpenMarksheet />}></Route>
+            <Route path="marks-ledger" element={<MarkLedger />}></Route>
+            <Route path="exam-name/add" element={<ViewMarkLedger />}></Route>
+          </Route>
+          <Route path="exam-shedule" element={<ExamShedule />}></Route>
           <Route
-            path="miscellaneous-fee-assign"
-            element={<MiscellaneousFeeAssign />}
+            path="exam-shedule/shedule"
+            element={<SheduleExamShedule />}
           ></Route>
           <Route
-            path="miscellaneous-fee-assign/assign"
-            element={<MiscAssign />}
+            path="exam-shedule/shedule/add"
+            element={<AddSheduleExamShedule />}
           ></Route>
-
-          <Route
-            path="fee-statement/student-fee-statement/:student"
-            element={<StudentStatement />}
-          ></Route>
-          <Route
-            path="fee-statement/student-fee-statement"
-            element={<StudentFeeStatement />}
-          ></Route>
-          <Route
-            path="fee-statement/class-fee-statement/:classOfSchool/monthly"
-            element={<ClassStatementMonthly />}
-          ></Route>
-          <Route
-            path="fee-statement/class-fee-statement/:classOfSchool"
-            element={<ClassStatement />}
-          ></Route>
-          <Route
-            path="fee-statement/class-fee-statement"
-            element={<ClassFeeStatement />}
-          ></Route>
-          <Route path="fee-payment" element={<FeePayment />}></Route>
-          <Route path="fee-payment/:student" element={<FeeStudent />}></Route>
-          <Route path="fee-type" element={<FeeType />}></Route>
-          <Route path="fee-type/add" element={<AddFeeType />}></Route>
-          <Route path="fee-assign" element={<FeeAssign />}></Route>
-          <Route path="fee-assign/assign" element={<Assign />}></Route>
-          <Route path="student-logsheet" element={<StudentLogsheet />}></Route>
-          <Route
-            path="student-logsheet/:student"
-            element={<Logsheet />}
-          ></Route>
+          <Route path="admit-card" element={<AdmitCard />}></Route>
+          <Route path="admit-card/assign" element={<AssignAdmitCard />}></Route>
         </Route>
-
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>
           <Route path="template" element={<Temeplate />}></Route>
@@ -254,6 +268,56 @@ function App() {
             path="/admin/data-setup/fiscal-year/add"
             element={<AddFiscalYear />}
           />
+        </Route>{" "}
+        {/* Staff Routes reside here */}
+        <Route path="/staff" element={<StaffSlidebar></StaffSlidebar>}>
+          <Route
+            path="teacher-assign/assign-teacher"
+            element={<AssignTeacher />}
+          ></Route>
+          <Route path="teacher-assign" element={<TeacherAssign />}></Route>
+          <Route path="staff-attendence" element={<StaffAttendence />}></Route>
+          <Route
+            path="staff-information"
+            element={<StaffInformation />}
+          ></Route>
+          <Route
+            path="/staff/staff-information/add-staff/general"
+            element={<AddStaffGeneralBase />}
+          >
+            <Route
+              path="/staff/staff-information/add-staff/general/personal-details"
+              element={<AddStaffGeneralPersonal />}
+            />
+            <Route
+              path="/staff/staff-information/add-staff/general/address-details"
+              element={<AddStaffGeneralAddress />}
+            />
+            <Route
+              path="/staff/staff-information/add-staff/general/office-details"
+              element={<AddStaffGeneralOffice />}
+            />
+          </Route>
+          <Route element={<AddStaffAcademicBase />}>
+            <Route
+              path="/staff/staff-information/add-staff/academic"
+              element={<StaffAcademicDetails />}
+            />
+            <Route
+              path="/staff/staff-information/add-staff/academic/add-academic-details"
+              element={<AddStaffAcademicDetails />}
+            />
+          </Route>
+          <Route element={<AddStaffDocumentBase />}>
+            <Route
+              path="/staff/staff-information/add-staff/documents"
+              element={<StaffDocument />}
+            />
+            <Route
+              path="/staff/staff-information/add-staff/documents/add-documents"
+              element={<AddStaffDocument />}
+            />
+          </Route>
         </Route>
         {/* Student Routes reside here */}
         <Route
@@ -315,55 +379,48 @@ function App() {
             element={<StudentProfile />}
           />
         </Route>
-        {/* Staff Routes reside here */}
-        <Route path="/staff" element={<StaffSlidebar></StaffSlidebar>}>
+        {/* Fee Routes reside here */}
+        <Route path="/fee" element={<FeeSlidebar />}>
           <Route
-            path="teacher-assign/assign-teacher"
-            element={<AssignTeacher />}
-          ></Route>
-          <Route path="teacher-assign" element={<TeacherAssign />}></Route>
-          <Route path="staff-attendence" element={<StaffAttendence />}></Route>
-          <Route
-            path="staff-information"
-            element={<StaffInformation />}
+            path="miscellaneous-fee-assign"
+            element={<MiscellaneousFeeAssign />}
           ></Route>
           <Route
-            path="/staff/staff-information/add-staff/general"
-            element={<AddStaffGeneralBase />}
-          >
-            <Route
-              path="/staff/staff-information/add-staff/general/personal-details"
-              element={<AddStaffGeneralPersonal />}
-            />
-            <Route
-              path="/staff/staff-information/add-staff/general/address-details"
-              element={<AddStaffGeneralAddress />}
-            />
-            <Route
-              path="/staff/staff-information/add-staff/general/office-details"
-              element={<AddStaffGeneralOffice />}
-            />
-          </Route>
-          <Route element={<AddStaffAcademicBase />}>
-            <Route
-              path="/staff/staff-information/add-staff/academic"
-              element={<StaffAcademicDetails />}
-            />
-            <Route
-              path="/staff/staff-information/add-staff/academic/add-academic-details"
-              element={<AddStaffAcademicDetails />}
-            />
-          </Route>
-          <Route element={<AddStaffDocumentBase />}>
-            <Route
-              path="/staff/staff-information/add-staff/documents"
-              element={<StaffDocument />}
-            />
-            <Route
-              path="/staff/staff-information/add-staff/documents/add-documents"
-              element={<AddStaffDocument />}
-            />
-          </Route>
+            path="miscellaneous-fee-assign/assign"
+            element={<MiscAssign />}
+          ></Route>
+
+          <Route
+            path="fee-statement/student-fee-statement/:student"
+            element={<StudentStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/student-fee-statement"
+            element={<StudentFeeStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/class-fee-statement/:classOfSchool/monthly"
+            element={<ClassStatementMonthly />}
+          ></Route>
+          <Route
+            path="fee-statement/class-fee-statement/:classOfSchool"
+            element={<ClassStatement />}
+          ></Route>
+          <Route
+            path="fee-statement/class-fee-statement"
+            element={<ClassFeeStatement />}
+          ></Route>
+          <Route path="fee-payment" element={<FeePayment />}></Route>
+          <Route path="fee-payment/:student" element={<FeeStudent />}></Route>
+          <Route path="fee-type" element={<FeeType />}></Route>
+          <Route path="fee-type/add" element={<AddFeeType />}></Route>
+          <Route path="fee-assign" element={<FeeAssign />}></Route>
+          <Route path="fee-assign/assign" element={<Assign />}></Route>
+          <Route path="student-logsheet" element={<StudentLogsheet />}></Route>
+          <Route
+            path="student-logsheet/:student"
+            element={<Logsheet />}
+          ></Route>
         </Route>
         <Route
           path="*"

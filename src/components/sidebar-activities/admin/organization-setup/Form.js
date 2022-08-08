@@ -12,7 +12,7 @@ const Form = () => {
           <br />
           <input
             className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-            type="number"
+            type="text"
             placeholder="XYZ school"
           />
         </div>
