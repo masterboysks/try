@@ -133,6 +133,11 @@ export default function Table() {
     setIndexOfFirstItem(indexOfLastItem - itemsOnPage);
   }, [indexOfLastItem]);
   useEffect(() => {
+    setmessage(
+      `Showing ${indexOfFirstItem + 1} to ${
+        people.length <= indexOfLastItem ? people.length : indexOfLastItem
+      } of ${people.length}`
+    );
     setCurrentItems(people.slice(indexOfFirstItem, indexOfLastItem));
   }, [indexOfFirstItem]);
 

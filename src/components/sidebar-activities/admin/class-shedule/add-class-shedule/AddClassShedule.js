@@ -52,10 +52,12 @@ function AddClassShedule() {
             <label className="my-6 text-sm" htmlFor="Student Id">
               Days*
             </label>
-
             <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
               <option value="Test">Select</option>
-            </select>
+            </select>{" "}
+            <div className="mt-3">
+              *Note:You can select multiple items at once.
+            </div>
           </div>
           <div>
             <label className="my-6 text-sm" htmlFor="Student Id">

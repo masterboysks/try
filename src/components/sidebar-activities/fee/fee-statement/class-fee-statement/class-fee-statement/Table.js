@@ -97,19 +97,21 @@ export default function Example() {
                 </th>
                 <th
                   scope="col"
-                  className="relative py-3.5 pl-3 pr-4 sm:pr-6 text-left"
+                  className="relative w-10 py-3.5 pl-3 pr-4 sm:pr-6 text-left"
                 >
                   Action
                 </th>
               </tr>
             </thead>
             <tbody className=" bg-white divide-y divide-gray-200">
-              {people.map((person) => (
+              {people.map((person, index, table) => (
                 <RenderTable
                   key={`${person.class}-${person.section}`}
                   person={person}
                   selectedPeople={selectedPeople}
                   setSelectedPeople={setSelectedPeople}
+                  table={table}
+                  index={index}
                 />
               ))}
             </tbody>

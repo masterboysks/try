@@ -2,9 +2,79 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 
-const people = [
+const currentItems = [
   {
     level: 12323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
+    board: "pratap",
+    level: "admistrative",
+    program: "manager",
+    batch: "idk",
+    grade: "male",
+    org: "01234569978",
+    orgAddress: "active",
+  },
+  {
+    level: 14152323,
     board: "pratap",
     level: "admistrative",
     program: "manager",
@@ -26,35 +96,41 @@ const people = [
 ];
 
 export default function AcademicTable() {
-  const itemsOnPage = 5;
-  const [currentPage, setCurrentPage] = useState(1);
-  const [currentItems, setCurrentItems] = useState(
-    people.slice(0, itemsOnPage)
-  );
-  const [indexOfLastItem, setIndexOfLastItem] = useState(
-    currentPage * itemsOnPage
-  );
-  const [indexOfFirstItem, setIndexOfFirstItem] = useState(
-    indexOfLastItem - itemsOnPage
-  );
-  const [message, setmessage] = useState("Showing 1 to 2 of 2 results");
+  // pagination
+  // const itemsOnPage = 5;
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [currentItems, setCurrentItems] = useState(
+  //   people.slice(0, itemsOnPage)
+  // );
+  // const [indexOfLastItem, setIndexOfLastItem] = useState(
+  //   currentPage * itemsOnPage
+  // );
+  // const [indexOfFirstItem, setIndexOfFirstItem] = useState(
+  //   indexOfLastItem - itemsOnPage
+  // );
+  // const [message, setmessage] = useState("Showing 1 to 2 of 2 results");
 
-  const onNextPage = () => {
-    setCurrentPage((curr) => curr + 1);
-  };
+  // const onNextPage = () => {
+  //   setCurrentPage((curr) => curr + 1);
+  // };
 
-  const onPreviousPage = () => {
-    setCurrentPage((curr) => curr - 1);
-  };
-  useEffect(() => {
-    setIndexOfLastItem(currentPage * itemsOnPage);
-  }, [currentPage]);
-  useEffect(() => {
-    setIndexOfFirstItem(indexOfLastItem - itemsOnPage);
-  }, [indexOfLastItem]);
-  useEffect(() => {
-    setCurrentItems(people.slice(indexOfFirstItem, indexOfLastItem));
-  }, [indexOfFirstItem]);
+  // const onPreviousPage = () => {
+  //   setCurrentPage((curr) => curr - 1);
+  // };
+  // useEffect(() => {
+  //   setIndexOfLastItem(currentPage * itemsOnPage);
+  // }, [currentPage]);
+  // useEffect(() => {
+  //   setIndexOfFirstItem(indexOfLastItem - itemsOnPage);
+  // }, [indexOfLastItem]);
+  // useEffect(() => {
+  //   setmessage(
+  //     `Showing ${indexOfFirstItem + 1} to ${
+  //       people.length <= indexOfLastItem ? people.length : indexOfLastItem
+  //     } of ${people.length}`
+  //   );
+  //   setCurrentItems(people.slice(indexOfFirstItem, indexOfLastItem));
+  // }, [indexOfFirstItem]);
 
   return (
     <div className="mt-11">
