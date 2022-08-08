@@ -50,14 +50,24 @@ export default function Table({ type }) {
                   >
                     Total amount (Rs.)
                   </th>
+                  <th className="text-primary-active px-3 pl-1 pr-1 text-sm font-semibold text-left">
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody className=" bg-white divide-y divide-gray-200">
                 {entry.map((curr, index) => {
-                  return <RenderTable type={type} key={index}></RenderTable>;
+                  return (
+                    <RenderTable
+                      type={type}
+                      index={index}
+                      setEntry={setEntry}
+                      entry={entry}
+                    ></RenderTable>
+                  );
                 })}
                 <tr className="bg-gray-50 ">
-                  <td colSpan="5">
+                  <td colSpan="6">
                     <div
                       className={`w-fit flex p-2 mx-2 ml-auto cursor-pointer ${
                         type.entry === "discount"
@@ -76,20 +86,6 @@ export default function Table({ type }) {
                           className="text-primary-btn"
                           fontSize="small"
                         />
-                      </div>
-                      <div
-                        className={`w-fit flex items-center justify-center ml-5 ${
-                          entry.length === 1
-                            ? " opacity-40 pointer-events-none "
-                            : " "
-                        }`}
-                        onClick={() => {
-                          let hlo = entry.slice(0, -1);
-                          setEntry(hlo);
-                        }}
-                      >
-                        <div className="mx-1 text-red-700">Remove</div>
-                        <RemoveIcon className="text-red-700" fontSize="small" />
                       </div>
                     </div>
                   </td>
