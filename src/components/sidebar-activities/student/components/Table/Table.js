@@ -799,7 +799,7 @@ export default function Example() {
                     </th>
                     <th
                       scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700  "
+                      className="px-3 py-3.5 w-10 text-left text-sm font-medium text-primary-grey-700  "
                     >
                       Action
                     </th>

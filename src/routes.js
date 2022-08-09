@@ -137,7 +137,7 @@ function App() {
             ></Route>
             <Route path="assign-exam" element={<AssignExam />}></Route>
             <Route
-              path="assign-exam/assign"
+              path="assign-exam/assign/:classOfSchool/:section"
               element={<AssignAssignExam />}
             ></Route>
             {/*  */}

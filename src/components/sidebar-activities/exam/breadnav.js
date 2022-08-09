@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
 import { Link, useNavigate } from "react-router-dom";
 
-const BreadNav = ({ pages }) => {
+const Breadnav = ({ pages }) => {
   const navigate = useNavigate();
   return (
     <>
@@ -58,4 +58,4 @@ const BreadNav = ({ pages }) => {
   );
 };
 
-export default BreadNav;
+export default Breadnav;
