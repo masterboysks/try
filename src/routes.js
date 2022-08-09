@@ -140,7 +140,6 @@ function App() {
               path="assign-exam/assign/:classOfSchool/:section"
               element={<AssignAssignExam />}
             ></Route>
-            {/*  */}
           </Route>
           <Route path="exam-report">
             <Route path="marksheet" element={<Marksheet />}></Route>
@@ -156,7 +155,7 @@ function App() {
           </Route>
           <Route path="exam-shedule" element={<ExamShedule />}></Route>
           <Route
-            path="exam-shedule/shedule"
+            path="exam-shedule/shedule/:examName"
             element={<SheduleExamShedule />}
           ></Route>
           <Route
