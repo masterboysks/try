@@ -22,7 +22,6 @@ export default function Form() {
         </div>
       </form>
       <div className="mt-11 lg:w-2/3 w-full">
-        {" "}
         <div
           className={` ring-1 ring-black ring-opacity-5 mb-3 mt-6 min-w-full overflow-x-auto rounded-lg shadow `}
         >

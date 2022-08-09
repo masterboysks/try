@@ -52,7 +52,6 @@ export default function Table() {
   const cancelButtonRef = useRef(null);
   return (
     <>
-      {" "}
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"

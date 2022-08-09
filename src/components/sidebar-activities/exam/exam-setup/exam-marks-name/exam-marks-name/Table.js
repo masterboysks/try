@@ -13,7 +13,6 @@ const people = [
 export default function Table() {
   return (
     <>
-      {" "}
       <div className="mt-11 lg:w-2/3 w-full">
         <div className="sm:flex sm:items-center justify-between">
           <div className="w-72 relative max-w-full">

@@ -8,9 +8,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa",
@@ -18,9 +16,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Wa",
@@ -28,9 +24,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Walton1",
@@ -38,9 +32,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa1",
@@ -48,9 +40,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Wa1",
@@ -58,9 +48,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Walton2",
@@ -68,9 +56,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa2",
@@ -78,9 +64,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Wa2",
@@ -88,9 +72,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Walton3",
@@ -98,9 +80,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa3",
@@ -108,9 +88,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Wa3",
@@ -118,9 +96,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Walton4",
@@ -128,9 +104,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa4",
@@ -138,9 +112,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay W4a",
@@ -148,9 +120,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Walto5n",
@@ -158,9 +128,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind5sa",
@@ -168,9 +136,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay 5Wa",
@@ -178,9 +144,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay Wa6lton",
@@ -188,9 +152,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linds87a",
@@ -198,9 +160,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay 87Wa",
@@ -208,9 +168,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay 76Walton",
@@ -218,9 +176,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind23sa",
@@ -228,9 +184,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay11 Wa",
@@ -238,9 +192,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind1say Walton",
@@ -248,9 +200,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lin2dsa",
@@ -258,9 +208,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linds12ay Wa",
@@ -268,9 +216,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa211`3y Walton",
@@ -278,9 +224,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind54sa",
@@ -288,9 +232,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsa453y Wa",
@@ -298,9 +240,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind64say Walton",
@@ -308,9 +248,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linds43a",
@@ -318,9 +256,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind43say Wa",
@@ -328,9 +264,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind34say Walton",
@@ -338,9 +272,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind34sa",
@@ -348,9 +280,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay1 Wa",
@@ -359,9 +289,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsay 34Walton",
@@ -369,9 +297,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsahgs",
@@ -379,9 +305,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsaysfg Wa",
@@ -389,9 +313,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsaysawe Walton",
@@ -399,9 +321,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsafdsa",
@@ -409,9 +329,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linddfsay Wa",
@@ -419,9 +337,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindfadsersay Walton",
@@ -429,9 +345,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindatregasa",
@@ -439,9 +353,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindafretsay Wa",
@@ -449,9 +361,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindartfgreafvsay Walton",
@@ -459,9 +369,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind sa",
@@ -469,9 +377,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linafgfadsay Wa",
@@ -479,9 +385,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindsagreay Walton",
@@ -489,9 +393,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindatrsa",
@@ -499,9 +401,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lintgrdfedsay Wa",
@@ -509,9 +409,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lingaertdsay Walton",
@@ -519,9 +417,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linreagbfgdsa",
@@ -529,9 +425,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindgvzregvrfc csay Wa",
@@ -539,9 +433,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind4365say Walton",
@@ -549,9 +441,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linds464556a",
@@ -559,9 +449,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lin2645345dsay Wa",
@@ -569,9 +457,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linds26453ay Walton",
@@ -579,9 +465,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lin46345bngfdsa",
@@ -589,9 +473,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lin543543dsay Wa",
@@ -599,9 +481,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lin453453fgfdsdsay Walton",
@@ -609,9 +489,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind45543 ggsa",
@@ -619,9 +497,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindffd5343643dsay Wa",
@@ -629,9 +505,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lind543443fghdfsay Walton",
@@ -639,9 +513,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linstrewrtredsa",
@@ -649,9 +521,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lindswertrewway Wa",
@@ -659,9 +529,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Linrterwt45redsay Walton",
@@ -669,9 +537,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
   {
     stdId: "Lintre6tretrdsa",
@@ -679,9 +545,7 @@ const people = [
     class: "lindsay.walton@example.com",
     faculty: "Member",
     sec: "Lindsay Walton",
-    gen: "Front-end Developer",
-    numb: "lindsay.walton@example.com",
-    status: "Member",
+    level: "lindsay.walton@example.com",
   },
 ];
 
@@ -765,6 +629,12 @@ export default function Table() {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
+                      Level
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
+                    >
                       Class/Semester
                     </th>
                     <th
@@ -778,24 +648,6 @@ export default function Table() {
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
                       Section
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
-                    >
-                      Gender
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
-                    >
-                      Mobile Number
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
-                    >
-                      Status
                     </th>
                     <th
                       scope="col"

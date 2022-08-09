@@ -132,7 +132,7 @@ export default function Example() {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className=" w-full my-6">
         <div className=" w-fit ml-auto">
           <Link

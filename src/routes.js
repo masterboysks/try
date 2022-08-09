@@ -144,7 +144,10 @@ function App() {
           </Route>
           <Route path="exam-report">
             <Route path="marksheet" element={<Marksheet />}></Route>
-            <Route path="marksheet/open" element={<OpenMarksheet />}></Route>
+            <Route
+              path="marksheet/open/:studentName/:studentId"
+              element={<OpenMarksheet />}
+            ></Route>
             <Route path="marks-ledger" element={<MarkLedger />}></Route>
             <Route path="exam-name/add" element={<ViewMarkLedger />}></Route>
           </Route>

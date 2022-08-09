@@ -67,12 +67,12 @@ export default function Table() {
       </div>
       <div className="flex items-center justify-between">
         <div className="md:block hidden text-xl">Magh fee statement</div>
-        <div className="flex items-center gap-3">
+        <div className=" flex items-center gap-3">
           <div className="icon text-primary-btn w-8">
             <GlobeAltIcon fontSize="medium" />
           </div>
           <div className="">
-            <select className="mt-[6px] w-24 sm:w-40 min-w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm">
+            <select className="mt-[6px]  sm:w-40 min-w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm">
               <option value="test">Choose print option</option>
             </select>
           </div>
