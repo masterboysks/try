@@ -107,17 +107,17 @@ export default function Table() {
                   <tr className="bg-gray-100">
                     <td
                       colSpan="1"
-                      className="whitespace-nowrap px-3 py-4 pr-4 text-sm font-medium text-right text-gray-600"
+                      className="whitespace-nowrap px-3 py-4 pr-4 text-base font-medium text-right text-gray-600"
                     >
                       Total
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600">
+                    <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600">
                       Rs.1299999999
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600">
+                    <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600">
                       Rs.9999999999999
                     </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600"></td>
+                    <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600"></td>
                     <td></td>
                   </tr>
                 </tbody>

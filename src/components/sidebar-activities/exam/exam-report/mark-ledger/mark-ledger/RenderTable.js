@@ -4,19 +4,15 @@ const RenderTable = ({ currentItems }) => {
   return (
     <>
       {currentItems.map((person, index, table) => (
-        <tr key={person.stdId}>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.stdId}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.stdName}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.level}
-          </td>
+        <tr key={index}>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.class}
           </td>
+
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            {person.level}
+          </td>
+
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.faculty}
           </td>
@@ -25,7 +21,7 @@ const RenderTable = ({ currentItems }) => {
           </td>
 
           <td className="whitespace-nowrap text-primary-btn  relative px-3 py-4 text-sm">
-            <Link to={`open/${person.stdName}/${person.stdId}`}>Open</Link>
+            <Link to={`view/${person.class}/${person.sec}`}>View</Link>
           </td>
         </tr>
       ))}

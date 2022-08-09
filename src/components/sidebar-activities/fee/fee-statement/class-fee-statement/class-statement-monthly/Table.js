@@ -76,9 +76,9 @@ export default function Table() {
               <option value="test">Choose print option</option>
             </select>
           </div>
-          <div className="text-primary-btn">Print</div>
-          <div className="icon text-primary-btn w-8">
-            <PrinterIcon fontSize="medium" />
+          <div className="text-primary-btn font-semibold">Print</div>
+          <div className="icon text-primary-btn w-5">
+            <PrinterIcon />
           </div>
         </div>
       </div>{" "}

@@ -25,6 +25,15 @@ export default function Form() {
         />
       </div>
       <div className="">
+        <label className="my-6 text-sm" htmlFor="Status">
+          Level
+        </label>
+        <br />
+        <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
+          <option value="Test">Select</option>
+        </select>
+      </div>
+      <div className="">
         <label className="my-6 text-sm" htmlFor="Class / Semester">
           Class / Semester
         </label>
@@ -51,25 +60,8 @@ export default function Form() {
           <option value="Test">Select</option>
         </select>
       </div>
-      <div className="">
-        <label className="my-6 text-sm" htmlFor="Status">
-          Status
-        </label>
-        <br />
-        <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-          <option value="Test">Select</option>
-        </select>
-      </div>
-      <div className="">
-        <label className="my-6 text-sm" htmlFor="Order By">
-          Order By
-        </label>
-        <br />
-        <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-          <option value="Test">Select</option>
-        </select>
-      </div>
-      <div className="h-fit w-fit bg-primary-btn sm:box-content lg:col-span-2 xl:col-span-1 box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer">
+
+      <div className="h-fit w-fit bg-primary-btn sm:box-content lg:col-span-3 xl:col-span-2 sm:col-span-2 box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer">
         {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
         <Search className="w-4 mx-auto"></Search>
       </div>

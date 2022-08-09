@@ -1,5 +1,17 @@
 import React from "react";
-
+import Breadnav from "../../breadnav";
+const pages = [
+  { name: "Exam", href: "#", current: false },
+  {
+    name: "Exam shedule",
+    href: "#",
+    current: true,
+  },
+];
 export default function ExamShedule() {
-  return <div>ExamShedule</div>;
+  return (
+    <>
+      <Breadnav pages={pages}></Breadnav>
+    </>
+  );
 }

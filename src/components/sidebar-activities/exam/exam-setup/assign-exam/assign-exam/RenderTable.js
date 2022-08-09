@@ -19,7 +19,7 @@ const RenderTable = ({ currentItems }) => {
             {person.sec}
           </td>
 
-          <td className="whitespace-nowrap text-primary-btn relative text-sm">
+          <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
             <Link to={`assign/${person.class}/${person.sec}`}>Assign</Link>
           </td>
         </tr>

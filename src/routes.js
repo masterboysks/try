@@ -149,7 +149,10 @@ function App() {
               element={<OpenMarksheet />}
             ></Route>
             <Route path="marks-ledger" element={<MarkLedger />}></Route>
-            <Route path="exam-name/add" element={<ViewMarkLedger />}></Route>
+            <Route
+              path="marks-ledger/view/:classOfSchool/:section"
+              element={<ViewMarkLedger />}
+            ></Route>
           </Route>
           <Route path="exam-shedule" element={<ExamShedule />}></Route>
           <Route

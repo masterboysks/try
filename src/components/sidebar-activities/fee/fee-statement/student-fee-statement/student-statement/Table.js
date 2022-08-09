@@ -60,9 +60,9 @@ export default function Table() {
           </div>
         </div>
         <div className="h-fit md:mt-auto md:my-0 flex items-center my-6">
-          <div className="text-primary-btn">Print</div>
-          <div className=" text-primary-btn w-6 ml-1">
-            <PrinterIcon fontSize="medium" />
+          <div className="text-primary-btn font-semibold">Print</div>
+          <div className=" text-primary-btn w-5 ml-1">
+            <PrinterIcon />
           </div>
         </div>
       </div>{" "}
@@ -290,18 +290,18 @@ export default function Table() {
                     <tr className="bg-gray-100">
                       <td
                         colSpan="4"
-                        className="whitespace-nowrap px-3 py-4 pr-4 text-sm font-medium text-right text-gray-600"
+                        className="whitespace-nowrap px-3 py-4 pr-4 text-base font-medium text-right text-gray-600"
                       >
                         Total
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600">
+                      <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600">
                         Rs.12
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600">
+                      <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600">
                         Rs.9999999999999
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600"></td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm font-medium tracking-wide text-gray-600"></td>
+                      <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600"></td>
+                      <td className="whitespace-nowrap px-3 py-4 text-base font-medium tracking-wide text-gray-600"></td>
                     </tr>
                   </tbody>
                 </table>
