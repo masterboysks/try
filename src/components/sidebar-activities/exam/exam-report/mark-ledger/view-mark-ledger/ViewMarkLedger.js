@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Breadnav from "../../../breadnav";
 import Details from "./Details";
-// import Table from "./Table";
+import Table from "./Table";
 
 export default function ViewMarkLedger() {
   const { section, classOfSchool } = useParams();
@@ -28,7 +28,7 @@ export default function ViewMarkLedger() {
     <>
       <Breadnav pages={pages}></Breadnav>
       <Details />
-      {/* <Table /> */}
+      <Table />
     </>
   );
 }

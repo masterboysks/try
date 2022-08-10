@@ -1,7 +1,6 @@
 import { GlobeAltIcon, PrinterIcon } from "@heroicons/react/solid";
 import Search from "@mui/icons-material/SearchOutlined";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 const people = [
   {
@@ -15,8 +14,8 @@ const people = [
     Science: 0,
     total: 0,
     percentage: 32,
-    status: 99,
-    result: "pass",
+    status: "Published",
+    remark: "pass",
     stdId: 556453127332,
     stdName: "Saurav ",
   },
@@ -31,8 +30,8 @@ const people = [
     Science: 0,
     total: 0,
     percentage: 32,
-    status: 99,
-    result: "pass",
+    status: "Published",
+    remark: "pass",
     stdId: 5587667332,
     stdName: "Saurav ",
   },
@@ -47,8 +46,8 @@ const people = [
     Science: 0,
     total: 0,
     percentage: 32,
-    status: 99,
-    result: "pass",
+    status: "Published",
+    remark: "pass",
     stdId: 556733256,
     stdName: "Saurav ",
   },
@@ -63,18 +62,15 @@ const people = [
     Science: 0,
     total: 0,
     percentage: 32,
-    status: 99,
-    result: "pass",
+    status: "Published",
+    remark: "pass",
     stdId: 556733452,
     stdName: "Saurav ",
   },
 ];
-const subject = ["English", "Math", "Nepali", "Social", "EHP", "Science"];
-const total = people.reduce((prv, curr) => {
-  return curr.obtainedTotal + prv;
-}, 0);
+const subject = ["English", "Maths", "Nepali", "Social", "EHP", "Science"];
 
-export default Table = () => {
+export default function Table() {
   const itemsOnPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState(
@@ -140,9 +136,9 @@ export default Table = () => {
           <label className="my-6 text-sm" htmlFor="Status">
             Grading system
           </label>
-          {/* 
+          {/*
           default gpa
-          
+
           */}
           <br />
           <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
@@ -281,6 +277,21 @@ export default Table = () => {
           </button>
         </div>
       </nav>
+      <div className="w-52 grid items-center grid-cols-2 gap-3 mt-3 mb-6 ml-auto">
+        <div className="text-primary-700 text-base font-semibold">
+          Total Pass
+        </div>
+        <div className="mt-[6px] w-full p- rounded  focus:ring-primary-btn  border   border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm p-2">
+          30
+        </div>
+
+        <div className="text-primary-700 text-base font-semibold">
+          Total Fail
+        </div>
+        <div className="mt-[6px] w-full p- rounded  focus:ring-primary-btn  border   border-primary-grey-400 bg-primary-grey-100 shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm p-2 ">
+          0
+        </div>
+      </div>
     </>
   );
-};
+}
