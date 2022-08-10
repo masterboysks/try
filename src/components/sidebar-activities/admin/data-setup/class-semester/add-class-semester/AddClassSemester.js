@@ -81,7 +81,7 @@ const AddClassSemester = () => {
               <option value="Test">A</option>
               <option value="Test">B</option>
               <option value="Test">C</option>
-            </select>{" "}
+            </select>
             <div className=" my-3">
               *Note : You can select multiple section at once
             </div>

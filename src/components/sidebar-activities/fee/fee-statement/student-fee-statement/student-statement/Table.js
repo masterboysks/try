@@ -39,7 +39,6 @@ export default function Table() {
     <>
       <div className="md:flex-row flex flex-col justify-between">
         <div className="sm:grid-cols-2 grid grid-cols-1 gap-4">
-          {" "}
           <div>
             <label className="py-6 text-sm" htmlFor="Student Id">
               From date(month)
@@ -48,7 +47,7 @@ export default function Table() {
             <select className="mt-[6px] w-40 min-w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm">
               <option value="test">Select</option>
             </select>
-          </div>{" "}
+          </div>
           <div>
             <label className="py-6 text-sm" htmlFor="Student Id">
               To date(month)
@@ -65,7 +64,7 @@ export default function Table() {
             <PrinterIcon />
           </div>
         </div>
-      </div>{" "}
+      </div>
       <>
         <Transition.Root show={open} as={Fragment}>
           <Dialog
@@ -152,7 +151,7 @@ export default function Table() {
                       </div>
                       <Dialog.Title className="p-2 text-center">
                         Miscellaneous fee
-                      </Dialog.Title>{" "}
+                      </Dialog.Title>
                       <div className="ring-1 ring-black ring-opacity-5 w-full overflow-x-auto shadow">
                         <table className="min-w-full divide-y divide-gray-300 table-auto">
                           <thead className="bg-gray-50 ">

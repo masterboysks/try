@@ -129,7 +129,7 @@ function App() {
             <Route
               path="grading-system/add"
               element={<AddGradeSystem />}
-            ></Route>{" "}
+            ></Route>
             <Route path="exam-marks-name" element={<ExamMarksName />}></Route>
             <Route
               path="exam-marks-name/add"
@@ -273,7 +273,7 @@ function App() {
             path="/admin/data-setup/fiscal-year/add"
             element={<AddFiscalYear />}
           />
-        </Route>{" "}
+        </Route>
         {/* Staff Routes reside here */}
         <Route path="/staff" element={<StaffSlidebar></StaffSlidebar>}>
           <Route

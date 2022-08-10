@@ -49,10 +49,9 @@ export default function RenderTable({
       </td>
       <td className="whitespace-nowrap relative text-sm text-gray-500">
         <Popover>
-          {" "}
           <Popover.Button>
             <ThreeDots />
-          </Popover.Button>{" "}
+          </Popover.Button>
           <Popover.Panel
             className={` -left-[230%] absolute z-10 bg-white divide-y-2 rounded shadow-lg cursor-pointer
                  ${index + 1 < table.length ? "top-0" : "bottom-0"}`}

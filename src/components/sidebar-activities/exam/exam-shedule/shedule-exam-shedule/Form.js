@@ -27,7 +27,7 @@ export default function Form() {
           <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
             <option value="Test">Select</option>
           </select>
-        </div>{" "}
+        </div>
         <div className="h-fit mt-auto -mb-1 lg:col-span-full xl:col-auto ">
           <div className="h-fit w-fit bg-primary-btn sm:box-content col-span-full xl:ml-0 sm:py-2 box-border px-4 py-3 mt-auto mb-1 ml-auto text-white rounded cursor-pointer">
             {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}

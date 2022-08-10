@@ -12,7 +12,6 @@ const people = [
 export default function Table() {
   return (
     <>
-      {" "}
       <div className="md:flex-row flex flex-col justify-between my-6">
         <div className="sm:grid-cols-2 grid grid-cols-1 gap-4">
           <div>
@@ -31,7 +30,7 @@ export default function Table() {
             </div>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <div className="mt-11 lg:w-2/3 w-full">
         <div className="sm:flex sm:items-center justify-between">
           <div className="w-72  relative max-w-full">
