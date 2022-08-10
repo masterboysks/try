@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Breadnav from "../../breadnav";
 import Form from "./Form";
+import Table from "./Table";
 
 export default function AddSheduleExamShedule() {
   const { examName } = useParams();
@@ -9,7 +10,7 @@ export default function AddSheduleExamShedule() {
     { name: "Exam", href: "#", current: false },
     {
       name: "Exam shedule",
-      href: "#",
+      href: "/exam/exam-shedule",
       current: false,
     },
     {
@@ -22,6 +23,7 @@ export default function AddSheduleExamShedule() {
     <>
       <Breadnav pages={pages}></Breadnav>
       <Form />
+      <Table />
     </>
   );
 }

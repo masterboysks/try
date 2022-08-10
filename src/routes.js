@@ -159,11 +159,14 @@ function App() {
             element={<SheduleExamShedule />}
           ></Route>
           <Route
-            path="exam-shedule/shedule/add"
+            path="exam-shedule/shedule/:examName/add"
             element={<AddSheduleExamShedule />}
           ></Route>
           <Route path="admit-card" element={<AdmitCard />}></Route>
-          <Route path="admit-card/assign" element={<AssignAdmitCard />}></Route>
+          <Route
+            path="admit-card/assign/:classOfschool/:section"
+            element={<AssignAdmitCard />}
+          ></Route>
         </Route>
         {/* Admin Routes reside here */}
         <Route path="/admin" element={<AdminSlidebar></AdminSlidebar>}>

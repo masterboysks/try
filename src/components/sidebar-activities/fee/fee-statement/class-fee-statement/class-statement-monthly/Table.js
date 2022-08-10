@@ -69,7 +69,7 @@ export default function Table() {
         <div className="md:block hidden text-xl">Magh fee statement</div>
         <div className=" flex items-center gap-3">
           <div className="flex items-center">
-            <div className="text-primary-btn">Publish</div>
+            <div className="text-primary-btn  font-semibold">Publish</div>
             <div className="icon text-primary-btn w-8 ml-2">
               <GlobeAltIcon fontSize="medium" />
             </div>

@@ -33,26 +33,21 @@ const RenderTable = ({
               }
             />
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+          <td className="whitespace-nowrap py-3.5 pr-3  text-sm text-gray-500">
             {person.stdId}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.stdName}
           </td>
-          {subject.map((sub) => (
-            <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-              {person[sub]}
-            </td>
-          ))}
 
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.total}
+            {person.class}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.percentage}
+            {person.faculty}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.remark}
+            {person.section}
           </td>
 
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">

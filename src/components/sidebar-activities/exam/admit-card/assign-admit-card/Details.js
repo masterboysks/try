@@ -1,4 +1,7 @@
-const Details = () => {
+import React from "react";
+
+export default function Details() {
+  // params are classOfSchool and section
   return (
     <div className="lg:flex my-12">
       <div className="ring-black ring-opacity-5 ring-1 form-solid lg:w-4/6 p-4 rounded-md shadow">
@@ -27,6 +30,4 @@ const Details = () => {
       </div>
     </div>
   );
-};
-
-export default Details;
+}

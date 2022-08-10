@@ -1,74 +1,42 @@
 import { GlobeAltIcon, PrinterIcon } from "@heroicons/react/solid";
 import Search from "@mui/icons-material/SearchOutlined";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 const people = [
   {
-    subject: "Physics",
-    English: 100,
-    Maths: 0,
-    Nepali: 0,
-    Social: 100,
-
-    EHP: 32,
-    Science: 0,
-    total: 0,
-    percentage: 32,
-    status: "Published",
-    remark: "pass",
+    class: "Physics",
+    section: 100,
+    faculty: 0,
+    status: "Assigned",
     stdId: 556453127332,
     stdName: "Saurav ",
   },
   {
-    subject: "Physics",
-    English: 100,
-    Maths: 0,
-    Nepali: 0,
-    Social: 100,
-
-    EHP: 32,
-    Science: 0,
-    total: 0,
-    percentage: 32,
-    status: "Published",
-    remark: "pass",
+    class: "Physics",
+    section: 100,
+    faculty: 0,
+    status: "Assigned",
     stdId: 5587667332,
     stdName: "Saurav ",
   },
   {
-    subject: "Physics",
-    English: 100,
-    Maths: 0,
-    Nepali: 0,
-    Social: 100,
-
-    EHP: 32,
-    Science: 0,
-    total: 0,
-    percentage: 32,
-    status: "Published",
-    remark: "pass",
+    class: "Physics",
+    section: 100,
+    faculty: 0,
+    status: "Assigned",
     stdId: 556733256,
     stdName: "Saurav ",
   },
   {
-    subject: "Physics",
-    English: 100,
-    Maths: 0,
-    Nepali: 0,
-    Social: 100,
-
-    EHP: 32,
-    Science: 0,
-    total: 0,
-    percentage: 32,
-    status: "Published",
-    remark: "pass",
+    class: "Physics",
+    section: 100,
+    faculty: 0,
+    status: "Assigned",
     stdId: 556733452,
     stdName: "Saurav ",
   },
 ];
-const subject = ["English", "Maths", "Nepali", "Social", "EHP", "Science"];
 
 export default function Table() {
   // Checkbox
@@ -129,84 +97,80 @@ export default function Table() {
   return (
     <>
       {/* search */}
-      <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow">
-        <div className="">
-          <label className="my-6 text-sm" htmlFor="Student Id">
-            Academic Year*
-          </label>
-          <br />
-          <input
-            className="w-full p- rounded  focus:ring-primary-btn mt-[6px]    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
-            type="text"
-            placeholder="Id"
-          />
-        </div>
-        <div className="">
-          <label className="my-6 text-sm" htmlFor="Student Name">
-            Exam name*
-          </label>
-          <br />
-          <input
-            className="w-full p- rounded  focus:ring-primary-btn mt-[6px]    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
-            type="text"
-            placeholder="Student Name"
-          />
-        </div>
-        <div className="">
-          <label className="my-6 text-sm" htmlFor="Status">
-            Grading system
-          </label>
-          {/*
-          default gpa
-
-          */}
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
-        </div>
-        <div className="">
-          <label className="my-6 text-sm" htmlFor="Class / Semester">
-            Result status
-          </label>
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
-        </div>
-        <div className="">
-          <label className="my-6 text-sm" htmlFor="Faculty">
-            Remark
-          </label>
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
-        </div>
-
-        <div className="h-fit w-fit bg-primary-btn sm:box-content xl:col-span-3 box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer">
-          {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
-          <Search className="w-4 mx-auto"></Search>
+      <form className="form-solid w-full my-6 rounded-md">
+        <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
+          <div className="">
+            <label className="my-6 text-sm" htmlFor="Student Id">
+              Exam name*
+            </label>
+            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
+              <option value="Test">Select</option>
+            </select>
+          </div>
+          <div className="">
+            <label className="my-6 text-sm" htmlFor="Student Id">
+              Admit card type*
+            </label>
+            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
+              <option value="Test">Select</option>
+            </select>
+          </div>
         </div>
       </form>
       {/* Table heading */}
-      <div className="flex items-center justify-between">
-        <div className="md:block hidden text-xl">First Term Examination</div>
-        <div className=" flex items-center gap-3">
-          <div className="flex items-center">
-            <div className="text-primary-btn font-semibold">Publish</div>
-            <div className="icon text-primary-btn w-5 ml-2">
-              <GlobeAltIcon fontSize="medium" />
+      <div className="lg:flex-row flex flex-col items-center justify-between">
+        <form className="form-solid lg:w-6/12 w-full my-6 rounded-md">
+          <div className="sm:grid-cols-2 grid grid-cols-1 gap-4">
+            <div className=" relative w-full">
+              <div className="top-1 absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                <svg
+                  aria-hidden="true"
+                  className="text-primary-grey-600 w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="simple-search"
+                className="bg-gray-50 mt-[6px] border border-primary-grey-400 text-primary-grey-600 text-sm rounded focus:ring-primary-btn block w-full pl-10 p-2 "
+                placeholder="Search"
+                required
+              />
+            </div>
+            <div className="">
+              <select
+                placeholder="Status"
+                className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
+              >
+                <option value="Test">Select</option>
+              </select>
             </div>
           </div>
+        </form>
+        <div className=" sm:flex-row sm:items-center flex flex-col items-end gap-3 ml-auto">
           <div className="">
-            <select className="mt-[6px]  sm:w-40 min-w-full p- rounded  focus:ring-primary-btn    border-primary-field bg-white shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm">
-              <option value="test">Choose print option</option>
-            </select>
+            <label htmlFor="assignAndPrint">
+              <input type="radio" name="" id="assignAndPrint" /> Assign and
+              Print
+            </label>
           </div>
-          <div className="text-primary-btn font-semibold">Print</div>
-          <div className="icon text-primary-btn w-5">
-            <PrinterIcon />
+          <div className="">
+            <label htmlFor="assign">
+              <input type="radio" name="" id="assign" /> Assign
+            </label>
+          </div>
+          <div className="">
+            <div className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm">
+              Assign
+            </div>
           </div>
         </div>
       </div>
@@ -232,7 +196,7 @@ export default function Table() {
                     </th>
                     <th
                       scope="col"
-                      className=" py-3.5 pr-3 text-left text-sm font-semibold text-primary-active"
+                      className=" py-3.5 pr-3 text-left text-sm font-medium text-primary-grey-700"
                     >
                       Std.ID
                     </th>
@@ -242,31 +206,24 @@ export default function Table() {
                     >
                       Student Name
                     </th>
-                    {subject.map((curr) => (
-                      <th
-                        scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
-                      >
-                        {curr}
-                      </th>
-                    ))}
+
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
-                      Total
+                      Class/Semester
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
-                      Percentage
+                      Faculty
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-medium text-primary-grey-700   "
                     >
-                      Remark
+                      Section
                     </th>
 
                     <th
@@ -280,7 +237,6 @@ export default function Table() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   <RenderTable
                     currentItems={currentItems}
-                    subject={subject}
                     selectedPeople={selectedPeople}
                     setSelectedPeople={setSelectedPeople}
                   />
