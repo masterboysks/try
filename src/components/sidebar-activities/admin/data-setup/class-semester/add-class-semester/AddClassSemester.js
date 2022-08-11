@@ -1,6 +1,8 @@
 import Breadcurm from "../../breadcurm";
 import Break from "../../../break";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { MultipleSelect, Select } from "../../../../../components/fields";
+import { useState } from "react";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -24,6 +26,29 @@ const subjectType = [
   { id: "optinal", title: "Elective subject" },
 ];
 const AddClassSemester = () => {
+  const levelOption = ["ho", "dfshg", "dskh"];
+  const classOption = ["ho", "dfshg", "dskh"];
+  const facultyOption = ["ho", "dfshg", "dskh"];
+  const subFacultyOption = ["ho", "dfshg", "dskh"];
+  const sectionsOption = ["ho", "dfshg", "dskh"];
+  const [level, setLevel] = useState(levelOption[0]);
+  const [classSemester, setClassSemester] = useState(classOption[0]);
+  const [faculty, setFaculty] = useState(facultyOption[0]);
+  const [subFaculty, setSubFaculty] = useState(subFacultyOption[0]);
+  const [section, setSection] = useState([]);
+
+  //
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log({ level, classSemester, faculty, subFaculty, section });
+    !(section.length === 0) &&
+      level &&
+      classSemester &&
+      faculty &&
+      subFaculty &&
+      navigate("/admin/data-setup/class-semester");
+  };
   return (
     <>
       <Breadcurm pages={pages} />
@@ -31,57 +56,47 @@ const AddClassSemester = () => {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Level*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Level*"
+              value={levelOption}
+              selected={level}
+              setSelected={setLevel}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Class/Semester
-            </label>
-
-            <select
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              placeholder="Science"
-            >
-              <option value="test">Select</option>
-            </select>
+            <Select
+              label="Class/Semester*"
+              value={classOption}
+              selected={classSemester}
+              setSelected={setClassSemester}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Faculty
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Faculty"
+              value={facultyOption}
+              selected={faculty}
+              setSelected={setFaculty}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Sub faculty
-            </label>
-
-            <select
-              disabled
-              className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn   bg-primary-grey-100 border-primary-grey-400 shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
-            >
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Sub faculty"
+              value={subFacultyOption}
+              selected={subFaculty}
+              setSelected={setSubFaculty}
+            />
           </div>
 
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Sections
-            </label>
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm ">
-              <option value="Test">A</option>
-              <option value="Test">B</option>
-              <option value="Test">C</option>
-            </select>
+            <MultipleSelect
+              label="Sections*"
+              value={sectionsOption}
+              selected={section}
+              error={error}
+              setSelected={setSection}
+            />
+
             <div className=" my-3">
               *Note : You can select multiple section at once
             </div>
@@ -96,12 +111,12 @@ const AddClassSemester = () => {
               >
                 Cancel
               </Link>
-              <Link
-                to="/admin/data-setup/class-semester"
+              <div
+                onClick={handleSubmit}
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save
-              </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -4,6 +4,9 @@ import RenderTable from "./RenderTable";
 import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
 import Breadcurm from "../../breadnav";
 import { PrinterIcon } from "@heroicons/react/solid";
+import { Select } from "../../../../components/fields";
+import { useState } from "react";
+import Faculty from "../../data-setup/faculty/faculty/Faculty";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -35,49 +38,65 @@ const people = [
 ];
 
 const ClassSchedule = () => {
+  const [level, setLevel] = useState("");
+  const [classSemester, setClassSemester] = useState("");
+  const [faculty, setFaculty] = useState("");
+  const [section, setSection] = useState("");
+  const [day, setDay] = useState("");
+  const [error, setError] = useState(false);
+  const handleSubmit = () => {
+    console.log({ level, classSemester, faculty, section });
+  };
   return (
     <>
       <Breadcurm pages={pages} />
       <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow">
         <div className="">
-          <label className="my-6 text-sm" htmlFor="Desigation">
-            Level*
-          </label>
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
+          <Select
+            id="level"
+            name="level"
+            error={error}
+            label="Level*"
+            value={["Select", "hi", "hlo"]}
+            selected={level}
+            setSelected={setLevel}
+          ></Select>
         </div>
         <div className="">
-          <label className="my-6 text-sm" htmlFor="Staff type">
-            Class/Semester*
-          </label>
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
+          <Select
+            id="class-semester"
+            name="class-semester"
+            error={error}
+            label="Class/Semester*"
+            value={["Select", "hi", "hlo"]}
+            selected={classSemester}
+            setSelected={setClassSemester}
+          ></Select>
         </div>
         <div className="">
-          <label className="my-6 text-sm" htmlFor="Status">
-            Faculty
-          </label>
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
+          <Select
+            id="faculty"
+            name="faculty"
+            label="Faculty"
+            value={["Select", "hi", "hlo"]}
+            selected={faculty}
+            setSelected={setFaculty}
+          ></Select>
         </div>
         <div className="">
-          <label className="my-6 text-sm" htmlFor="Order By">
-            Section*
-          </label>
-          <br />
-          <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn     border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-            <option value="Test">Select</option>
-          </select>
+          <Select
+            id="section"
+            name="section"
+            error={error}
+            label="Section*"
+            value={["Select", "hi", "hlo"]}
+            selected={section}
+            setSelected={setSection}
+          ></Select>
         </div>
         <div className="h-fit w-fit bg-primary-btn lg:col-span-2 xl:col-span-full sm:box-content col-span-full box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer">
           {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
-          <Search className="w-4 mx-auto"></Search>
+          <Search className="w-4 mx-auto" onClick={handleSubmit}></Search>
         </div>
       </form>
       <div className="lg:flex my-12">
@@ -110,13 +129,15 @@ const ClassSchedule = () => {
         <div className="sm:grid lg:grid-cols-4 sm:items-center justify-between grid-cols-2">
           <div className="col-span-2">
             <div className="">
-              <label className="my-6 text-sm" htmlFor="Desigation">
-                Day*
-              </label>
-              <br />
-              <select className="w-full p-2  cursor-pointer rounded mt-[6px]  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-                <option value="Test">Sunday</option>
-              </select>
+              <Select
+                id="day"
+                name="day"
+                label="Day*"
+                error={error}
+                value={["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"]}
+                selected={day}
+                setSelected={setDay}
+              />
             </div>
           </div>
           <div className=" flex col-span-2 mt-auto ml-auto">

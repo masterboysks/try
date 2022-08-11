@@ -15,7 +15,7 @@ const Breadcurm = ({ pages }) => {
                     <Link
                       to={page.href}
                       className={` text-${
-                        page.current ? "base font-medium" : "sm font-normal"
+                        page.current ? "base  font-medium" : "sm font-normal"
                       }  text-primary-grey-600`}
                       aria-current={page.current ? "page" : undefined}
                     >

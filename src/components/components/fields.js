@@ -1,71 +1,70 @@
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import React, { useState, useEffect, Fragment } from "react";
-//   required="required"(string) or undefined(Dont provide)
+import React, { Fragment, useEffect, useState } from "react";
+//   use error for putting required in handle submit
 // for radio and select provide with array of value
 // checkbox
+// pass value for input field
+// pass selected for others
+
 export const Checkbox = ({
-  label,
+  label, //array with correct index
   name,
-  value: options,
-  required,
-  selected,
+  selected, //true or false
+  setSelected,
   dataTitle,
   dataValue,
   id,
 }) => {
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
-  const [select, setSelect] = useState([...selected]);
+
   return (
-    <>
-      {options.map((curr, i) => (
-        <>
-          <div className="flex items-center h-5">
-            <input
-              id={id}
-              name={name}
-              type="checkbox"
-              required={required}
-              {...optional}
-              checked={select.includes(curr)}
-              className="focus:ring- text-primary-btn focus:ring-0 focus:ring-offset-0 w-4 h-4 border-gray-300 rounded"
-              onChange={(e) => {
-                const values = [...select];
-                values.includes(e.target.value)
-                  ? values.pop(e.target.value)
-                  : values.push(e.target.value);
-                setSelect(values);
-              }}
-            />
-          </div>
-          <div className="ml-3 text-sm">
-            <label htmlFor="comments" className="font-sm text-primary-grey-700">
-              {label[i]}
-            </label>
-          </div>
-        </>
-      ))}
-    </>
+    <div className="flex items-center h-5">
+      <input
+        id={id}
+        name={name}
+        type="checkbox"
+        checked={selected}
+        {...optional}
+        className={`focus:ring- text-primary-btn  w-4 h-4 border-gray-300 rounded `}
+        onChange={(e) => {
+          setSelected(e.currentTarget.checked);
+        }}
+      />{" "}
+      <div className="ml-3 text-sm">
+        <label htmlFor="comments" className="font-sm text-primary-grey-700">
+          {label}
+        </label>
+      </div>
+    </div>
   );
 };
 // Radio bth
 export const Radio = ({
   label,
   name,
+  error: err,
   value: options,
-  required,
+
   selected,
+  setSelected,
   dataTitle,
   dataValue,
 }) => {
+  // useEffect(() => {
+  //   console.log(err, name);
+  //   error && !selected ? setErr(true) : setErr(false);
+  //   console.log(err);
+  // }, [error]);
+
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
-  const [select, setSelect] = useState(selected);
+
   const handleChange = (e) => {
     const target = e.target;
     if (target.checked) {
-      setSelect(target.value);
+      setSelected(target.value);
     }
   };
   return (
@@ -77,32 +76,43 @@ export const Radio = ({
             id={curr}
             name={name}
             value={curr}
-            checked={select === curr}
+            checked={selected === curr}
             onChange={handleChange}
             {...optional}
-            required={required}
           />
           <div className="mr-2">{label[i]}</div>
         </label>
       ))}
+      {err && (
+        <span className="text-xs font-light text-red-600">
+          This is a required field
+        </span>
+      )}
     </>
   );
 };
 // Input field
 export const Input = ({
-  label,
   id,
-  type,
   name,
+  error: err,
+  type,
+  label,
   value,
+  setValue,
   placeholder,
-  required,
   dataTitle,
   dataValue,
 }) => {
+  // useEffect(() => {
+  //   console.log(err, name);
+  //   error && value.trim === "" ? setErr(true) : setErr(false);
+  //   console.log(err);
+  // });
+
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
-  const [val, setVal] = useState(value);
+
   return (
     <>
       <label className="my-6 text-sm" htmlFor={id}>
@@ -114,14 +124,77 @@ export const Input = ({
         id={id}
         name={name}
         placeholder={placeholder}
-        required={required}
         type={type}
         {...optional}
-        value={val}
+        value={value}
         onChange={(e) => {
-          setVal(e.target.value);
+          setValue(e.target.value);
         }}
       />
+      {console.log(err)}
+      {/* {err && (
+        <>
+          <br />
+          <span className="text-xs font-light text-red-600">
+            This field is required error
+          </span>
+        </>
+      )} */}
+    </>
+  );
+};
+// email field
+export const Email = ({
+  id,
+  name,
+  error: err,
+
+  label,
+  value,
+  setValue,
+  placeholder,
+  dataTitle,
+  dataValue,
+}) => {
+  // const [err, setErr] = useState();
+  // let err = false;
+  // const mailRgexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+
+  // useEffect(() => {
+  //   console.log(err, name);
+  //   error && value.matches(mailRgexp) ? setErr(true) : setErr(false);
+  //   console.log(err);
+  // }, [error]);
+
+  const optional = {};
+  dataTitle && (optional[dataTitle] = dataValue);
+
+  return (
+    <>
+      <label className="my-6 text-sm" htmlFor={id}>
+        {label}
+      </label>
+      <br />
+      <input
+        className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+        id={id}
+        name={name}
+        placeholder={placeholder}
+        type="email"
+        {...optional}
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      />{" "}
+      {err && (
+        <>
+          <br />
+          <span className="text-xs font-light text-red-600">
+            Please enter a valid mail address.
+          </span>
+        </>
+      )}
     </>
   );
 };
@@ -131,13 +204,14 @@ export const InputDisabled = ({
   id,
   name,
   value,
+  setValue,
   type,
   dataTitle,
   dataValue,
 }) => {
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
-  const [val, setVal] = useState(value);
+
   return (
     <>
       <label className="my-6 text-sm" htmlFor={id}>
@@ -151,22 +225,60 @@ export const InputDisabled = ({
         disabled
         type={type}
         {...optional}
-        value={val}
+        value={value || " "}
         onChange={(e) => {
-          setVal(e.target.value);
+          setValue(e.target.value);
         }}
       />
     </>
   );
 };
-// Select
-export function Select({
-  required,
+// select disabled
+export const SelectDisabled = ({
   label,
   id,
   name,
+  value,
+  setValue,
+  type,
+  dataTitle,
+  dataValue,
+}) => {
+  const optional = {};
+  dataTitle && (optional[dataTitle] = dataValue);
+
+  return (
+    <>
+      <label className="my-6 text-sm" htmlFor={id}>
+        {label}
+      </label>
+      <br />
+      <select
+        className=" mt-[6px] w-full p- rounded   focus:ring-primary-btn     bg-primary-grey-100 border-primary-grey-400  shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+        id={id}
+        name={name}
+        disabled
+        type={type}
+        defaultValue={value}
+        {...optional}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      >
+        <option value="">{value}</option>
+      </select>
+    </>
+  );
+};
+// Select
+export function Select({
+  label,
+  id,
+  name,
+
   value: options,
-  selectedValue,
+  selected,
+  setSelected,
   dataTitle,
   dataValue,
 }) {
@@ -178,10 +290,12 @@ export function Select({
         {label}
       </label>
       <select
-        defaultValue={selectedValue}
+        value={selected}
+        onChange={(e) => {
+          setSelected(e.target.value);
+        }}
         name={name}
         id={id}
-        requied={required}
         {...optional}
         className={`w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn     shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm  border-primary-field  required:border-red-600 required:animate-pulse 
         }`}
@@ -197,16 +311,25 @@ export function Select({
 }
 // Multiple select
 export function MultipleSelect({
-  required,
-  label,
   id,
   name,
-  value: options,
-  selectedValue,
+  error: err,
+  label,
+  value: options, //array
+  setSelected,
+  selected, //array
   dataTitle,
   dataValue,
 }) {
-  const [selectedPeople, setSelectedPeople] = useState([...selectedValue]);
+  // const [err, setErr] = useState();
+  // let err = false;
+
+  // useEffect(() => {
+  //   console.log(err, name);
+  //   error && !(selected.length === 0) ? setErr(true) : setErr(false);
+  //   console.log(err);
+  // }, [error]);
+
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
   return (
@@ -215,18 +338,24 @@ export function MultipleSelect({
         {label}
       </label>
       <Listbox
-        value={selectedPeople}
-        onChange={setSelectedPeople}
+        value={selected}
+        onChange={(e) => {
+          setSelected(e);
+        }}
         multiple
-        id={id}
-        name={name}
-        required={required}
       >
         <div className="relative mt-[6px]">
-          <Listbox.Button className="  h-[38px]  p- rounded focus:ring-primary-btn focus:ring-2 border px-2   border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm relative w-full text-left  ">
+          <Listbox.Button
+            id={id}
+            name={name}
+            className="  h-[38px]  p- rounded focus:ring-primary-btn focus:ring-2 border px-2   border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm relative w-full text-left  "
+          >
             <span className="block pr-2 truncate">
-              {selectedPeople.map((person) => person.name).join(", ")}
+              {selected.map((person) => person).join(", ")}
             </span>
+            {err && (
+              <span className="text-red-600">This field is required</span>
+            )}
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
               <SelectorIcon
                 className="w-5 h-5 text-gray-400"
@@ -260,7 +389,7 @@ export function MultipleSelect({
                           selected ? "font-medium" : "font-normal"
                         }`}
                       >
-                        {person.name}
+                        {person}
                       </span>
                       {selected ? (
                         <span className=" absolute inset-y-0 left-0 flex items-center pl-3">
@@ -278,13 +407,9 @@ export function MultipleSelect({
     </>
   );
 }
-export function SearchBar({ id, dataTitle, dataValue, searchHandaller }) {
+export function SearchBar({ id, dataTitle, dataValue, value, setValue }) {
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
-  const [val, setVal] = useState("");
-  useEffect(() => {
-    searchHandaller(val);
-  }, [val]);
 
   return (
     <div className=" relative w-full">
@@ -309,11 +434,59 @@ export function SearchBar({ id, dataTitle, dataValue, searchHandaller }) {
         {...optional}
         className="bg-gray-50 mt-[6px] border border-primary-grey-400 text-primary-grey-600 text-sm rounded focus:ring-primary-btn block w-full pl-10 p-2 "
         placeholder="Search"
-        value={val}
+        value={value || ""}
         onChange={(e) => {
-          setVal(e.target.value);
+          setValue(e.target.value);
         }}
       />
     </div>
   );
 }
+// export const CheckboxList = ({
+//   label,
+//   name,
+// error:err,
+//   value: options,
+//   required,
+//   selected,
+//   setSelected,
+//   dataTitle,
+//   dataValue,
+//   id,
+// }) => {
+//   const optional = {};
+//   dataTitle && (optional[dataTitle] = dataValue);
+
+//   return (
+//     <div>
+//       {options.map((curr, i) => (
+//         <>
+//           <div className="flex items-center h-5">
+//             <input
+//               id={id}
+//               name={name}
+//               type="checkbox"
+//               {...optional}
+//               checked={selected[i]}
+//               className="focus:ring- text-primary-btn focus:ring-0 focus:ring-offset-0 w-4 h-4 border-gray-300 rounded"
+//               onChange={(e) => {
+//                 let temp = selected;
+//                 temp.slice(i, 1, e.target.checked);
+//                 console.log(e.target.checked);
+//                 setSelected(temp);
+//               }}
+//             />
+//             <div className="ml-3 text-sm">
+//               <label
+//                 htmlFor="comments"
+//                 className="font-sm text-primary-grey-700"
+//               >
+//                 {label[i]}
+//               </label>
+//             </div>
+//           </div>
+//         </>
+//       ))}
+//     </div>
+//   );
+// };

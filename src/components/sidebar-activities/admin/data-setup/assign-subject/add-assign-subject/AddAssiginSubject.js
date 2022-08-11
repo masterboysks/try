@@ -1,4 +1,11 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Checkbox,
+  CheckboxList,
+  MultipleSelect,
+  Select,
+} from "../../../../../components/fields";
 import Break from "../../../break";
 import Breadcurm from "../../breadcurm";
 const pages = [
@@ -21,7 +28,38 @@ const pages = [
     current: true,
   },
 ];
+const compulsarySubject = ["Science", "Maths", "Nepali", "English", "Social"];
+const optionalSubject = ["Optional Maths", "Computer", "Economic", "Account"];
 const AddAssignSubject = () => {
+  let labelOption = ["Select", "fdjhsduj", "fdsajkh"];
+  let classSemesterOption = ["Select", "fdjhsduj", "fdsajkh"];
+  let facultyOption = ["Select", "fdjhsduj", "fdsajkh"];
+  let subFacultyOption = ["Select", "fdjhsduj", "fdsajkh"];
+  const sectionOption = ["Select", "fdjhsduj", "fdsajkh"];
+  const [label, setLabel] = useState(labelOption[0]);
+  const [classSemester, setClassSemester] = useState(classSemesterOption[0]);
+  const [faculty, setFaculty] = useState(facultyOption[0]);
+  const [subFaculty, setSubFaculty] = useState(subFacultyOption[0]);
+  const [section, setSection] = useState([]);
+
+  //
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log(
+      label,
+      classSemester,
+      faculty,
+      subFaculty,
+      !(section.length === 0)
+    );
+    !(section.length === 0) &&
+      label &&
+      classSemester &&
+      faculty &&
+      subFaculty &&
+      navigate("/admin/data-setup/academic-year");
+  };
   return (
     <>
       <Breadcurm pages={pages} />
@@ -29,54 +67,66 @@ const AddAssignSubject = () => {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Level*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Level*"
+              id="level"
+              name="level"
+              error={error}
+              value={labelOption}
+              selected={label}
+              setSelected={setLabel}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Class/Semester*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Class/Semester*"
+              id="Class/Semester"
+              name="Class/Semester"
+              error={error}
+              value={classSemesterOption}
+              selected={classSemester}
+              setSelected={setClassSemester}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Faculty
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            {" "}
+            <Select
+              label="Faculty"
+              id="Faculty"
+              name="Faculty"
+              value={facultyOption}
+              selected={faculty}
+              setSelected={setFaculty}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Sub-faculty
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Sub-faculty"
+              id="Sub-faculty"
+              name="Sub-faculty"
+              value={subFacultyOption}
+              selected={subFaculty}
+              setSelected={setSubFaculty}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Section*
-            </label>
+            <MultipleSelect
+              label="Section*"
+              id="Section"
+              name="Section"
+              error={error}
+              value={sectionOption}
+              selected={section}
+              setSelected={setSection}
+            />
 
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
             <div className=" text-primary-grey-600 mt-3 text-xs">
               *Note:You can select multiple section at once
             </div>
           </div>
         </div>
+
+        {/* custom component required for this ref multiple select true and false */}
         <div className="sm:grid-cols-2 lg:grid-cols-3 lg:w-2/3 mt-9 grid grid-cols-1 gap-4">
           <div className="col-span-full pt-5">
             Select for compulsary Subject*
@@ -191,12 +241,12 @@ const AddAssignSubject = () => {
               >
                 Cancel
               </Link>
-              <Link
-                to="/admin/data-setup/assign-subject"
+              <div
+                onClick={handleSubmit}
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save
-              </Link>
+              </div>
             </div>
           </div>
         </div>

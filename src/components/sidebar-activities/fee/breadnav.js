@@ -14,7 +14,7 @@ const Breadnav = ({ pages }) => {
                   {pages.indexOf(page) === 0 ? (
                     <Link
                       to={page.href}
-                      className={` text-${
+                      className={` lg:text-base text-xs hidden md:block ${
                         page.current ? "base font-medium" : "sm font-normal"
                       }  text-primary-grey-600`}
                       aria-current={page.current ? "page" : undefined}
@@ -29,8 +29,8 @@ const Breadnav = ({ pages }) => {
                       />
                       <Link
                         to={page.href}
-                        className={`ml-2 text-${
-                          page.current ? "base font-medium" : "sm font-normal"
+                        className={`ml-2  lg:text-base text-xs ${
+                          page.current ? " font-medium" : " font-normal"
                         }  text-primary-grey-600`}
                         aria-current={page.current ? "page" : undefined}
                       >
