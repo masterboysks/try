@@ -3,10 +3,10 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import React, { Fragment, useEffect, useState } from "react";
 //   use error for putting required in handle submit
 // for radio and select provide with array of value
-// checkbox
 // pass value for input field
 // pass selected for others
 
+// checkbox
 export const Checkbox = ({
   label, //array with correct index
   name,
@@ -44,9 +44,9 @@ export const Checkbox = ({
 export const Radio = ({
   label,
   name,
-  error: err,
+  error,
   value: options,
-
+  setError,
   selected,
   setSelected,
   dataTitle,
@@ -63,6 +63,7 @@ export const Radio = ({
 
   const handleChange = (e) => {
     const target = e.target;
+    setError(false);
     if (target.checked) {
       setSelected(target.value);
     }
@@ -83,7 +84,7 @@ export const Radio = ({
           <div className="mr-2">{label[i]}</div>
         </label>
       ))}
-      {err && (
+      {error && (
         <span className="text-xs font-light text-red-600">
           This is a required field
         </span>
@@ -95,7 +96,8 @@ export const Radio = ({
 export const Input = ({
   id,
   name,
-  error: err,
+  error,
+  setError,
   type,
   label,
   value,
@@ -130,16 +132,17 @@ export const Input = ({
         onChange={(e) => {
           setValue(e.target.value);
         }}
+        onClick={() => setError(false)}
       />
-      {console.log(err)}
-      {/* {err && (
+      {/* {console.log(error)} */}
+      {error && (
         <>
           <br />
           <span className="text-xs font-light text-red-600">
             This field is required error
           </span>
         </>
-      )} */}
+      )}
     </>
   );
 };
@@ -147,8 +150,8 @@ export const Input = ({
 export const Email = ({
   id,
   name,
-  error: err,
-
+  error,
+  setError,
   label,
   value,
   setValue,
@@ -183,11 +186,12 @@ export const Email = ({
         type="email"
         {...optional}
         value={value}
+        onClick={() => setError(false)}
         onChange={(e) => {
           setValue(e.target.value);
         }}
       />{" "}
-      {err && (
+      {error && (
         <>
           <br />
           <span className="text-xs font-light text-red-600">
@@ -313,7 +317,8 @@ export function Select({
 export function MultipleSelect({
   id,
   name,
-  error: err,
+  error,
+  setError,
   label,
   value: options, //array
   setSelected,
@@ -334,7 +339,7 @@ export function MultipleSelect({
   dataTitle && (optional[dataTitle] = dataValue);
   return (
     <>
-      <label className="my-6 text-sm" htmlFor="Student Id">
+      <label className="my-6 text-sm" htmlFor={id}>
         {label}
       </label>
       <Listbox
@@ -342,6 +347,7 @@ export function MultipleSelect({
         onChange={(e) => {
           setSelected(e);
         }}
+        onClick={() => setError(false)}
         multiple
       >
         <div className="relative mt-[6px]">
@@ -353,7 +359,7 @@ export function MultipleSelect({
             <span className="block pr-2 truncate">
               {selected.map((person) => person).join(", ")}
             </span>
-            {err && (
+            {error && (
               <span className="text-red-600">This field is required</span>
             )}
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">

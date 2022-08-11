@@ -35,11 +35,11 @@ function AddClassShedule() {
   const handleSubmit = () => {
     console.log({ days, subject, startTime, endTime, teacher });
     let temp = false;
-    !(days.length === 0) && (temp = true) && setDaysError(true);
-    !subject.trim && (temp = true) && setsubjectError(true);
+    days.length === 0 && (temp = true) && setDaysError(true);
+
     !startTime && (temp = true) && setStartTimeError(true);
     !endTime && (temp = true) && setEndTimeError(true);
-    !teacher && (temp = true) && setTeacherError(true);
+
     temp || navigate("/admin/class-schedule");
   };
   return (
@@ -89,6 +89,7 @@ function AddClassShedule() {
                 name="days"
                 label="Days*"
                 error={daysError}
+                setError={setDaysError}
                 value={["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"]}
                 selected={days}
                 setSelected={setDays}
@@ -102,7 +103,6 @@ function AddClassShedule() {
               <Select
                 id="subject"
                 name="subject"
-                error={subjectError}
                 label="Subject*"
                 value={["Select", "hi", "hlo"]}
                 selected={subject}
@@ -118,6 +118,7 @@ function AddClassShedule() {
                 value={startTime}
                 setValue={setStartTime}
                 error={startTimeError}
+                setError={setStartTimeError}
               />
               {/*cannot not place placeholder for type time */}
             </div>
@@ -131,6 +132,7 @@ function AddClassShedule() {
                 value={endTime}
                 setValue={setEndTime}
                 error={endTimeError}
+                setError={setEndTimeError}
               />
             </div>
             {/* select */}
@@ -138,7 +140,6 @@ function AddClassShedule() {
               <Select
                 id="subject-teacher"
                 name="subject-teacher"
-                error={teacherError}
                 label="Subject teacher*"
                 value={["Select", "hi", "hlo"]}
                 selected={teacher}
