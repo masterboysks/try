@@ -93,7 +93,7 @@ const Form = () => {
       setErrorVdcMuncaliplity(true);
     dateFormat === "Select" && (temp = true) && setErrorDateFormat(true);
 
-    temp || navigate("/admin/event-calender");
+    temp || navigate("/admin/organization-setup");
   };
   return (
     <form className="form-solid w-full my-6 rounded-md">
