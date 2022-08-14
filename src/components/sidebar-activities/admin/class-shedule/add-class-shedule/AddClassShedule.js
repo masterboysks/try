@@ -19,26 +19,29 @@ const pages = [
   },
 ];
 function AddClassShedule() {
-  const arrayTeachers = ["Select", "hi", "hlo"];
+  const arrayTeachers = ["hi", "hlo"];
   const arrayDays = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
   const arraySubjects = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
 
   const [days, setDays] = useState([]); //array for multiple
-  const [subject, setSubject] = useState(arraySubjects[0]); //single select has one item so no array
+  const [subject, setSubject] = useState("Select"); //single select has one item so no array
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const [teacher, setTeacher] = useState(arrayTeachers[0]);
+  const [teacher, setTeacher] = useState("Select");
 
   const [daysError, setDaysError] = useState(false);
   const [startTimeError, setStartTimeError] = useState(false);
   const [endTimeError, setEndTimeError] = useState(false);
+  const [errorSubject, setErrorSubject] = useState(false);
+  const [errorTeacher, setErrorTeacher] = useState(false);
   //
   const navigate = useNavigate();
   const handleSubmit = () => {
     console.log({ days, subject, startTime, endTime, teacher });
     let temp = false;
     days.length === 0 && (temp = true) && setDaysError(true);
-
+    subject === "Select" && (temp = true) && setErrorSubject(true);
+    teacher === "Select" && (temp = true) && setErrorTeacher(true);
     !startTime && (temp = true) && setStartTimeError(true);
     !endTime && (temp = true) && setEndTimeError(true);
 
@@ -105,6 +108,8 @@ function AddClassShedule() {
                 id="subject"
                 name="subject"
                 label="Subject*"
+                error={errorSubject}
+                setError={setErrorSubject}
                 value={arraySubjects}
                 selected={subject}
                 setSelected={setSubject}
@@ -142,6 +147,8 @@ function AddClassShedule() {
                 id="subject-teacher"
                 name="subject-teacher"
                 label="Subject teacher*"
+                error={errorTeacher}
+                setError={setErrorTeacher}
                 value={arrayTeachers}
                 selected={teacher}
                 setSelected={setTeacher}

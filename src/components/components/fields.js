@@ -1,6 +1,7 @@
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import React, { Fragment, useEffect, useState } from "react";
+import UploadOutlined from "@mui/icons-material/UploadOutlined";
 //   use error for putting required in handle submit
 // for radio and select provide with array of value
 // pass value for input field
@@ -33,7 +34,7 @@ export const Checkbox = ({
         }}
       />{" "}
       <div className="ml-3 text-sm">
-        <label htmlFor="comments" className="font-sm text-primary-grey-700">
+        <label htmlFor={id} className="font-sm text-primary-grey-700">
           {label}
         </label>
       </div>
@@ -42,7 +43,6 @@ export const Checkbox = ({
 };
 // Radio bth
 export const Radio = ({
-  label,
   name,
   error,
   value: options,
@@ -63,14 +63,14 @@ export const Radio = ({
 
   const handleChange = (e) => {
     const target = e.target;
-    setError(false);
+    error && setError(false);
     if (target.checked) {
       setSelected(target.value);
     }
   };
   return (
     <>
-      {options.map((curr, i) => (
+      {options.map((curr) => (
         <label key={curr} htmlFor={curr}>
           <input
             type="radio"
@@ -81,13 +81,13 @@ export const Radio = ({
             onChange={handleChange}
             {...optional}
           />
-          <div className="mr-2">{label[i]}</div>
+          <span className={`mx-2 ${error && "text-red-600"}`}>{curr}</span>
         </label>
       ))}
       {error && (
-        <span className="text-xs font-light text-red-600">
+        <div className=" md:block hidden text-xs font-light text-red-600">
           This is a required field
-        </span>
+        </div>
       )}
     </>
   );
@@ -126,13 +126,13 @@ export const Input = ({
         id={id}
         name={name}
         placeholder={placeholder}
-        type={type}
+        type={type || "text"}
         {...optional}
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        onClick={() => setError(false)}
+        onClick={() => error && setError(false)}
       />
       {/* {console.log(error)} */}
       {error && (
@@ -141,67 +141,13 @@ export const Input = ({
           <span className="text-xs font-light text-red-600">
             This field is required error
           </span>
-        </>
-      )}
-    </>
-  );
-};
-// email field
-export const Email = ({
-  id,
-  name,
-  error,
-  setError,
-  label,
-  value,
-  setValue,
-  placeholder,
-  dataTitle,
-  dataValue,
-}) => {
-  // const [err, setErr] = useState();
-  // let err = false;
-  // const mailRgexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
-
-  // useEffect(() => {
-  //   console.log(err, name);
-  //   error && value.matches(mailRgexp) ? setErr(true) : setErr(false);
-  //   console.log(err);
-  // }, [error]);
-
-  const optional = {};
-  dataTitle && (optional[dataTitle] = dataValue);
-
-  return (
-    <>
-      <label className={`my-6 text-sm ${error && "text-red-600"}`} htmlFor={id}>
-        {label}
-      </label>
-      <br />
-      <input
-        className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        type="email"
-        {...optional}
-        value={value}
-        onClick={() => setError(false)}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      />{" "}
-      {error && (
-        <>
           <br />
-          <span className="text-xs font-light text-red-600">
-            Please enter a valid mail address.
-          </span>
         </>
       )}
     </>
   );
 };
+
 // Input disabled field
 export const InputDisabled = ({
   label,
@@ -227,7 +173,7 @@ export const InputDisabled = ({
         id={id}
         name={name}
         disabled
-        type={type}
+        type={type || "text"}
         {...optional}
         value={value || " "}
         onChange={(e) => {
@@ -279,22 +225,25 @@ export function Select({
   label,
   id,
   name,
-
-  value: options,
+  value,
   selected,
   setSelected,
   dataTitle,
   dataValue,
+  error,
+  setError,
 }) {
+  const options = ["Select", ...value];
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
   return (
     <>
-      <label className="my-6 text-sm" htmlFor={id}>
+      <label className={`my-6 text-sm ${error && "text-red-600"}`} htmlFor={id}>
         {label}
       </label>
       <select
         value={selected}
+        onClick={() => error && setError(false)}
         onChange={(e) => {
           setSelected(e.target.value);
         }}
@@ -310,6 +259,14 @@ export function Select({
           </option>
         ))}
       </select>
+      {error && (
+        <>
+          <span className="text-xs font-light text-red-600">
+            This is a required field.
+          </span>
+          <br />
+        </>
+      )}
     </>
   );
 }
@@ -350,7 +307,7 @@ export function MultipleSelect({
         onChange={(e) => {
           setSelected(e);
         }}
-        onClick={() => setError(false)}
+        onClick={() => error && setError(false)}
         multiple
       >
         <div className="relative mt-[6px]">
@@ -451,6 +408,246 @@ export function SearchBar({ id, dataTitle, dataValue, value, setValue }) {
     </div>
   );
 }
+export const Upload = ({
+  label,
+  name,
+  error,
+  setError,
+  value,
+  setValue,
+  dataTitle,
+  dataValue,
+  uploadText,
+  id,
+}) => {
+  const optional = {};
+  dataTitle && (optional[dataTitle] = dataValue);
+  return (
+    <>
+      <label
+        htmlFor={id}
+        className={` ${error && " text-red-600 "} block text-sm`}
+      >
+        {label}
+      </label>
+      <div className=" mt-[6px] sm:col-span-2 ">
+        <div className=" flex w-full px-3 py-1.5 border-2 border-gray-300 border-dashed rounded-md">
+          <div className=" w-full space-y-1">
+            <label
+              htmlFor={id}
+              className="text-primary-grey-700 -indigo-600 hover:text-focus-within:outline-none focus-within:ring- focus-within:ring-offset-0 flex items-center justify-between w-full text-sm bg-white rounded-md cursor-pointer"
+            >
+              <div>{uploadText || "Upload here"}</div>
+              <div className="text-primary-btn">
+                <UploadOutlined />
+              </div>
+              <input
+                id={id}
+                name={name}
+                type="file"
+                className="sr-only"
+                {...optional}
+                value={value}
+                onChange={(e) => {
+                  error && setError(false);
+                  setValue(e.target.value);
+                }}
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+      {error && (
+        <>
+          <br />
+          <span className="text-xs font-light text-red-600">
+            This is a required field
+          </span>
+        </>
+      )}
+    </>
+  );
+};
+
+export const UploadPhoto = ({
+  label,
+  name,
+  error,
+  setError,
+  value,
+  setValue,
+  dataTitle,
+  dataValue,
+  uploadText,
+  id,
+}) => {
+  const optional = {};
+  dataTitle && (optional[dataTitle] = dataValue);
+  return (
+    <>
+      <div className="">
+        <label
+          htmlFor={id}
+          className={`${error && "text-red-600 "} block text-sm`}
+        >
+          {label}
+        </label>
+        <div className="mt-[6px] sm:mt-0 sm:col-span-2">
+          <div className="text-primary-gray-700 flex items-center">
+            <span className=" w-12 h-12 overflow-hidden rounded-full">
+              <svg
+                className="w-full h-full text-gray-300"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </span>
+            <input
+              type="file"
+              className="text-primary-gray- hover:bg-gray-50 focus:outline-none focus:ring- focus:ring-offset-2 hidden px-3 py-2 ml-5 text-sm font-medium leading-4 bg-white rounded-md"
+              name={name}
+              id={id}
+              value={value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+              {...optional}
+              onClick={() => {
+                error && setError(false);
+              }}
+            />
+            <label
+              htmlFor={id}
+              className="bg-primary-grey-200 cursor-pointer border-primary-field border-[1px] rounded ml-2 p-1 text-primary-grey-700"
+            >
+              {uploadText || "Choose a file to upload"}
+            </label>
+          </div>
+        </div>
+        {error && (
+          <>
+            <span className="text-xs font-light text-red-600">
+              This is a required field
+            </span>
+            <br />
+          </>
+        )}
+      </div>
+    </>
+  );
+};
+export const Textarea = ({
+  id,
+  name,
+  error,
+  setError,
+  row,
+  label,
+  value,
+  setValue,
+  placeholder,
+  dataTitle,
+  dataValue,
+}) => {
+  const optional = {};
+  dataTitle && (optional[dataTitle] = dataValue);
+
+  return (
+    <>
+      <label
+        className={`my-6 text-sm ${error && " text-red-600"}`}
+        htmlFor={id}
+      >
+        {label}
+      </label>
+      <br />
+      <textarea
+        {...optional}
+        name={name}
+        id={id}
+        row={row || 20}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+        onClick={() => {
+          error && setError(false);
+        }}
+        className="resize-none  mt-[6px] w-full p- rounded  focus:ring-primary-btn  h-52  border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+      />
+      {error && (
+        <>
+          <br />
+          <span className="text-xs font-light text-red-600">
+            {" "}
+            This is a required field.
+          </span>
+          <br />
+        </>
+      )}
+    </>
+  );
+};
+// email field
+// export const Email = ({
+//   id,
+//   name,
+//   error,
+//   setError,
+//   label,
+//   value,
+//   setValue,
+//   placeholder,
+//   dataTitle,
+//   dataValue,
+// }) => {
+//   // const [err, setErr] = useState();
+//   // let err = false;
+//   // const mailRgexp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+
+//   // useEffect(() => {
+//   //   console.log(err, name);
+//   //   error && value.matches(mailRgexp) ? setErr(true) : setErr(false);
+//   //   console.log(err);
+//   // }, [error]);
+
+//   const optional = {};
+//   dataTitle && (optional[dataTitle] = dataValue);
+
+//   return (
+//     <>
+//       <label className={`my-6 text-sm ${error && "text-red-600"}`} htmlFor={id}>
+//         {label}
+//       </label>
+//       <br />
+//       <input
+//         className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+//         id={id}
+//         name={name}
+//         placeholder={placeholder}
+//         type="email"
+//         {...optional}
+//         value={value}
+//         onClick={() => error && setError(false)}
+//         onChange={(e) => {
+//           setValue(e.target.value);
+//         }}
+//       />{" "}
+//       {error && (
+//         <>
+//           <br />
+//           <span className="text-xs font-light text-red-600">
+//             Please enter a valid mail address.
+//           </span>
+//         </>
+//       )}
+//     </>
+//   );
+// };
+//
+// {...optional}
 // export const CheckboxList = ({
 //   label,
 //   name,

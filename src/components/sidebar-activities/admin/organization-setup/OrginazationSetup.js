@@ -1,6 +1,6 @@
 import React from "react";
+import Breadcurm from "../breadnav";
 import Break from "../break";
-import Breadcurm from "./breadCurm";
 import Form from "./Form";
 const pages = [
   { name: "Admin", href: "#", current: false },

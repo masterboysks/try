@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Input, Select } from "../../../../../components/fields";
 import Break from "../../../break";
 import Breadcurm from "../../breadcurm";
 const pages = [
@@ -19,7 +21,23 @@ const pages = [
     current: true,
   },
 ];
+
 const AddDesignation = () => {
+  const arrayDepartment = ["jdskhf", "djshjh"];
+  const [department, setDepartment] = useState("Select");
+  const [designation, setDesignation] = useState("");
+
+  //
+  const [errorDepartment, setErrorDepartment] = useState(false);
+  const [errorDesignation, setErrorDesignation] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log({ department, designation });
+    let temp = false;
+    department === "Select" && (temp = true) && setErrorDepartment(true);
+    designation || setErrorDesignation(true) || (temp = true);
+    temp || navigate("/admin/data-setup/designation");
+  };
   return (
     <>
       <Breadcurm pages={pages} />
@@ -27,22 +45,25 @@ const AddDesignation = () => {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Department*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Department*"
+              value={arrayDepartment}
+              selected={department}
+              setSelected={setDepartment}
+              error={errorDepartment}
+              setError={setErrorDepartment}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Designation*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Input
+              type="text"
+              label="Designation*"
+              value={designation}
+              setValue={setDesignation}
+              placeholder="Manager"
+              error={errorDesignation}
+              setError={setErrorDesignation}
+            />
           </div>
         </div>
         <div className="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
@@ -54,12 +75,12 @@ const AddDesignation = () => {
               >
                 Cancel
               </Link>
-              <Link
-                to="/admin/data-setup/university-board"
+              <div
+                onClick={handleSubmit}
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save
-              </Link>
+              </div>
             </div>
           </div>
         </div>

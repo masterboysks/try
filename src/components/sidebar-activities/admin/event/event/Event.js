@@ -4,7 +4,7 @@ const pages = [
   { name: "Admin", href: "#", current: false },
   {
     name: "Event",
-    href: "/admin/event",
+    href: "/admin/event-calender",
     current: true,
   },
 ];

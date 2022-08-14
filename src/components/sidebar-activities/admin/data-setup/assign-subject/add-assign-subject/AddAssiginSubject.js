@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  Checkbox,
-  CheckboxList,
-  MultipleSelect,
-  Select,
-} from "../../../../../components/fields";
+import { MultipleSelect, Select } from "../../../../../components/fields";
 import Break from "../../../break";
 import Breadcurm from "../../breadcurm";
 const pages = [
@@ -31,34 +26,29 @@ const pages = [
 const compulsarySubject = ["Science", "Maths", "Nepali", "English", "Social"];
 const optionalSubject = ["Optional Maths", "Computer", "Economic", "Account"];
 const AddAssignSubject = () => {
-  let labelOption = ["Select", "fdjhsduj", "fdsajkh"];
-  let classSemesterOption = ["Select", "fdjhsduj", "fdsajkh"];
-  let facultyOption = ["Select", "fdjhsduj", "fdsajkh"];
-  let subFacultyOption = ["Select", "fdjhsduj", "fdsajkh"];
-  const sectionOption = ["Select", "fdjhsduj", "fdsajkh"];
-  const [label, setLabel] = useState(labelOption[0]);
-  const [classSemester, setClassSemester] = useState(classSemesterOption[0]);
-  const [faculty, setFaculty] = useState(facultyOption[0]);
-  const [subFaculty, setSubFaculty] = useState(subFacultyOption[0]);
+  let labelOption = ["fdjhsduj", "fdsajkh"];
+  let classSemesterOption = ["fdjhsduj", "fdsajkh"];
+  let facultyOption = ["fdjhsduj", "fdsajkh"];
+  let subFacultyOption = ["fdjhsduj", "fdsajkh"];
+  const sectionOption = ["fdjhsduj", "fdsajkh"];
+  const [label, setLabel] = useState("Select");
+  const [classSemester, setClassSemester] = useState("Select");
+  const [faculty, setFaculty] = useState("Select");
+  const [subFaculty, setSubFaculty] = useState("Select");
   const [section, setSection] = useState([]);
 
   //
-  const [error, setError] = useState(false);
+  const [errorSection, setErrorSection] = useState(false);
+  const [errorClass, setErrorClass] = useState(false);
+  const [errorLevel, setErrorLevel] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = () => {
-    console.log(
-      label,
-      classSemester,
-      faculty,
-      subFaculty,
-      !(section.length === 0)
-    );
-    !(section.length === 0) &&
-      label &&
-      classSemester &&
-      faculty &&
-      subFaculty &&
-      navigate("/admin/data-setup/academic-year");
+    console.log({ label, classSemester, faculty, subFaculty, section });
+    let temp = false;
+    section.length === 0 && setErrorSection(true) && (temp = true);
+    label === "Select" && setErrorLevel(true) && (temp = true);
+    classSemester === "Select" && (temp = true) && setErrorClass(true);
+    temp || navigate("/admin/data-setup/academic-year");
   };
   return (
     <>
@@ -71,10 +61,11 @@ const AddAssignSubject = () => {
               label="Level*"
               id="level"
               name="level"
-              error={error}
               value={labelOption}
               selected={label}
               setSelected={setLabel}
+              error={errorLevel}
+              setError={setErrorLevel}
             />
           </div>
           <div>
@@ -82,14 +73,14 @@ const AddAssignSubject = () => {
               label="Class/Semester*"
               id="Class/Semester"
               name="Class/Semester"
-              error={error}
               value={classSemesterOption}
               selected={classSemester}
               setSelected={setClassSemester}
+              error={errorClass}
+              setError={setErrorClass}
             />
           </div>
           <div>
-            {" "}
             <Select
               label="Faculty"
               id="Faculty"
@@ -114,7 +105,8 @@ const AddAssignSubject = () => {
               label="Section*"
               id="Section"
               name="Section"
-              error={error}
+              error={errorSection}
+              setError={setErrorSection}
               value={sectionOption}
               selected={section}
               setSelected={setSection}

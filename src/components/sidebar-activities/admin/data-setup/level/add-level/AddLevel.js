@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Checkbox, Input } from "../../../../../components/fields";
 import Break from "../../../break";
 import Breadcurm from "../../breadcurm";
 const pages = [
@@ -20,6 +22,20 @@ const pages = [
   },
 ];
 const AddLevel = () => {
+  const [university, setUniversity] = useState("");
+  const [level, setLevel] = useState("");
+  const [hasFaculty, setHasFaculty] = useState(false);
+  const [errorUniversity, setErrorUniversity] = useState(false);
+  const [errorLevel, setErrorLevel] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log({ university, level, hasFaculty });
+    let temp = false;
+    university || ((temp = true) && setErrorUniversity(true));
+    level || ((temp = true) && setErrorLevel(true));
+
+    temp || navigate("/admin/data-setup/level");
+  };
   return (
     <>
       <Breadcurm pages={pages} />
@@ -27,35 +43,34 @@ const AddLevel = () => {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              University/Board*
-            </label>
-            <br />
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            <Input
+              label="University/Board*"
               type="text"
-              placeholder="National Education Board"
+              value={university}
+              setValue={setUniversity}
+              error={errorUniversity}
+              setError={setErrorUniversity}
+              placeholder="NEB"
             />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Level*
-            </label>
-            <br />
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            <Input
+              label="Level*"
               type="text"
+              value={level}
+              setValue={setLevel}
+              error={errorLevel}
+              setError={setErrorLevel}
               placeholder="+2"
             />
           </div>
           <div className="col-span-full">
-            <input
-              type="checkbox"
-              name="faculty"
-              id="faculty"
-              className="mr-2 rounded"
+            <Checkbox
+              label="Has faculty"
+              selected={hasFaculty}
+              setSelected={setHasFaculty}
+              id="hasFaculty"
             />
-            Has faculty
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
@@ -67,12 +82,12 @@ const AddLevel = () => {
               >
                 Cancel
               </Link>
-              <Link
-                to="/admin/data-setup/level"
+              <div
+                onClick={handleSubmit}
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save
-              </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -24,12 +24,14 @@ const pages = [
 const AddDepartment = () => {
   const [department, setDepartment] = useState("");
   //
-  const [error, setError] = useState(false);
+  const [errorDepartment, setErrorDepartment] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = () => {
     console.log({ department });
 
-    department && navigate("/admin/data-setup/department");
+    department
+      ? navigate("/admin/data-setup/department")
+      : setErrorDepartment(true);
   };
   return (
     <>
@@ -42,7 +44,8 @@ const AddDepartment = () => {
               value={department}
               setValue={setDepartment}
               label="Department*"
-              error={error}
+              error={errorDepartment}
+              setError={setErrorDepartment}
               placeholder="Non-academic"
               type="text"
             />

@@ -26,14 +26,12 @@ const AddAcademicYear = () => {
   const [running, setRunning] = useState(false);
 
   //
-  const [error, setError] = useState(false);
+  const [errorYear, setErrorYear] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = () => {
     console.log({ year, running });
 
-    !(running.length === 0) &&
-      year &&
-      navigate("/admin/data-setup/academic-year");
+    year ?   navigate("/admin/data-setup/academic-year") :setErrorYear(true)
   };
   return (
     <>
@@ -50,7 +48,8 @@ const AddAcademicYear = () => {
               value={year}
               setValue={setYear}
               label="Academic year*"
-              error={error}
+              error={errorYear}
+              setError={setErrorYear}
             ></Input>
           </div>
           <div className="col-span-full">

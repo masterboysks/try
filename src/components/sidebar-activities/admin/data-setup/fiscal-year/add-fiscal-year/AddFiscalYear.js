@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Checkbox, Input } from "../../../../../components/fields";
 import Break from "../../../break";
 import Breadcurm from "../../breadcurm";
 const pages = [
@@ -20,6 +22,20 @@ const pages = [
   },
 ];
 const AddFiscalYear = () => {
+  const [fiscalYearEnd, setFiscalYearEnd] = useState("");
+  const [errorFiscalYearEnd, setErrorFiscalYearEnd] = useState(false);
+  const [fiscalYearStart, setFiscalYearStart] = useState("");
+  const [errorFiscalYearStart, setErrorFiscalYearStart] = useState(false);
+  const [isRunning, setIsRunning] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log({ fiscalYearEnd, fiscalYearStart });
+    let temp = false;
+    fiscalYearEnd || ((temp = true) && setErrorFiscalYearEnd(true));
+    fiscalYearStart || ((temp = true) && setErrorFiscalYearStart(true));
+
+    temp || navigate("/admin/data-setup/fiscal-year");
+  };
   return (
     <>
       <Breadcurm pages={pages} />
@@ -27,30 +43,34 @@ const AddFiscalYear = () => {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Fiscal year start*
-            </label>
-            <br />
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
+            <Input
+              label="Fiscal year start*"
               placeholder="2072"
+              type="number"
+              value={fiscalYearStart}
+              setValue={setFiscalYearStart}
+              error={errorFiscalYearStart}
+              setError={setErrorFiscalYearStart}
             />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Fiscal year end*
-            </label>
-            <br />
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
-              placeholder="2073"
+            <Input
+              label="Fiscal year start*"
+              placeholder="2075"
+              type="number"
+              value={fiscalYearEnd}
+              setValue={setFiscalYearEnd}
+              error={errorFiscalYearEnd}
+              setError={setErrorFiscalYearEnd}
             />
           </div>
           <div className="col-span-full">
-            <input type="checkbox" className=" mx-1 mr-3 rounded" />
-            is running?
+            <Checkbox
+              selected={isRunning}
+              setSelected={setIsRunning}
+              label="is running?"
+              id="isRunning"
+            />
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
@@ -62,12 +82,12 @@ const AddFiscalYear = () => {
               >
                 Cancel
               </Link>
-              <Link
-                to="/admin/data-setup/fiscal-year"
+              <div
+                onClick={handleSubmit}
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save
-              </Link>
+              </div>
             </div>
           </div>
         </div>

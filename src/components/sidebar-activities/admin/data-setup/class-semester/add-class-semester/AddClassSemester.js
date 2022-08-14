@@ -31,23 +31,25 @@ const AddClassSemester = () => {
   const facultyOption = ["ho", "dfshg", "dskh"];
   const subFacultyOption = ["ho", "dfshg", "dskh"];
   const sectionsOption = ["ho", "dfshg", "dskh"];
-  const [level, setLevel] = useState(levelOption[0]);
-  const [classSemester, setClassSemester] = useState(classOption[0]);
-  const [faculty, setFaculty] = useState(facultyOption[0]);
-  const [subFaculty, setSubFaculty] = useState(subFacultyOption[0]);
+  const [level, setLevel] = useState("Select");
+  const [classSemester, setClassSemester] = useState("Select");
+  const [faculty, setFaculty] = useState("Select");
+  const [subFaculty, setSubFaculty] = useState("Select");
   const [section, setSection] = useState([]);
 
   //
-  const [error, setError] = useState(false);
+  const [errorSection, setErrorSection] = useState(false);
+  const [errorLevel, setErrorLevel] = useState(false);
+  const [errorClass, setErrorClass] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = () => {
     console.log({ level, classSemester, faculty, subFaculty, section });
-    !(section.length === 0) &&
-      level &&
-      classSemester &&
-      faculty &&
-      subFaculty &&
-      navigate("/admin/data-setup/class-semester");
+    let temp = false;
+    section.length === 0 && (temp = true) && setErrorSection(true);
+    level === "Select" && (temp = true) && setErrorLevel(true);
+    classSemester === "Select" && (temp = true) && setErrorClass(true);
+
+    temp || navigate("/admin/data-setup/class-semester");
   };
   return (
     <>
@@ -61,6 +63,8 @@ const AddClassSemester = () => {
               value={levelOption}
               selected={level}
               setSelected={setLevel}
+              error={errorLevel}
+              setError={setErrorLevel}
             />
           </div>
           <div>
@@ -69,6 +73,8 @@ const AddClassSemester = () => {
               value={classOption}
               selected={classSemester}
               setSelected={setClassSemester}
+              error={errorClass}
+              setError={setErrorClass}
             />
           </div>
           <div>
@@ -93,7 +99,8 @@ const AddClassSemester = () => {
               label="Sections*"
               value={sectionsOption}
               selected={section}
-              error={error}
+              error={errorSection}
+              setError={setErrorSection}
               setSelected={setSection}
             />
 

@@ -1,6 +1,8 @@
 import Break from "../../../break";
 import Breadcurm from "../../breadcurm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Input, Select } from "../../../../../components/fields";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -20,6 +22,23 @@ const pages = [
   },
 ];
 const AddFaculty = () => {
+  const arrayLevel = ["Seljhdfg", "kjdhsfuj", "khdsafjkh", "fdjkhfc"];
+  const [level, setLevel] = useState("Select");
+  const [faculty, setFaculty] = useState("");
+
+  const navigate = useNavigate();
+  const [errorFaculty, setErrorFaculty] = useState(false);
+  const [errorLevel, setErrorLevel] = useState(false);
+
+  const handleSubmit = () => {
+    console.log({ level, faculty });
+    let temp = false;
+    faculty || ((temp = true) && setErrorFaculty(true));
+
+    level === "Select" && (temp = true) && setErrorLevel(true);
+    console.log();
+    temp || navigate("/admin/data-setup/faculty");
+  };
   return (
     <>
       <Breadcurm pages={pages} />
@@ -27,25 +46,25 @@ const AddFaculty = () => {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Level*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Level*"
+              value={arrayLevel}
+              selected={level}
+              setSelected={setLevel}
+              error={errorLevel}
+              setError={setErrorLevel}
+            />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Faculty*
-            </label>
-
-            <select
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+            <Input
+              type="text"
               placeholder="Science"
-            >
-              <option value="test">Select</option>
-            </select>
+              label="Faculty*"
+              error={errorFaculty}
+              setError={setErrorFaculty}
+              value={faculty}
+              setValue={setFaculty}
+            />
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
@@ -57,12 +76,12 @@ const AddFaculty = () => {
               >
                 Cancel
               </Link>
-              <Link
-                to="/admin/data-setup/faculty"
+              <div
+                onClick={handleSubmit}
                 className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
               >
                 Save
-              </Link>
+              </div>
             </div>
           </div>
         </div>

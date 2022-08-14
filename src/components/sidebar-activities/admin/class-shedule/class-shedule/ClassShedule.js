@@ -38,14 +38,21 @@ const people = [
 
 const ClassSchedule = () => {
   const arraysDays = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
-  const [level, setLevel] = useState("");
-  const [classSemester, setClassSemester] = useState("");
-  const [faculty, setFaculty] = useState("");
-  const [section, setSection] = useState("");
-  const [day, setDay] = useState("");
-  const [error, setError] = useState(false);
-  const handleSubmit = () => {
+  const [level, setLevel] = useState("Select");
+  const [classSemester, setClassSemester] = useState("Select");
+  const [faculty, setFaculty] = useState("Select");
+  const [section, setSection] = useState("Select");
+  const [day, setDay] = useState("Select");
+  const [errorLevel, setErrorLevel] = useState(false);
+  const [errorClass, setErrorClass] = useState(false);
+  const [errorSection, setErrorSection] = useState(false);
+  const [errorDay, setErrorDay] = useState(false);
+
+  const handleSearch = () => {
     console.log({ level, classSemester, faculty, section });
+    level == "Select" && setErrorLevel(true);
+    classSemester == "Select" && setErrorClass(true);
+    section == "Select" && setErrorSection(true);
   };
   return (
     <>
@@ -55,9 +62,10 @@ const ClassSchedule = () => {
           <Select
             id="level"
             name="level"
-            error={error}
+            error={errorLevel}
+            setError={setErrorLevel}
             label="Level*"
-            value={["Select", "hi", "hlo"]}
+            value={["hi", "hlo"]}
             selected={level}
             setSelected={setLevel}
           ></Select>
@@ -66,9 +74,10 @@ const ClassSchedule = () => {
           <Select
             id="class-semester"
             name="class-semester"
-            error={error}
+            error={errorClass}
+            setError={setErrorClass}
             label="Class/Semester*"
-            value={["Select", "hi", "hlo"]}
+            value={["hi", "hlo"]}
             selected={classSemester}
             setSelected={setClassSemester}
           ></Select>
@@ -78,7 +87,7 @@ const ClassSchedule = () => {
             id="faculty"
             name="faculty"
             label="Faculty"
-            value={["Select", "hi", "hlo"]}
+            value={["hi", "hlo"]}
             selected={faculty}
             setSelected={setFaculty}
           ></Select>
@@ -87,16 +96,17 @@ const ClassSchedule = () => {
           <Select
             id="section"
             name="section"
-            error={error}
+            error={errorSection}
+            setError={setErrorSection}
             label="Section*"
-            value={["Select", "hi", "hlo"]}
+            value={["hi", "hlo"]}
             selected={section}
             setSelected={setSection}
           ></Select>
         </div>
         <div className="h-fit w-fit bg-primary-btn lg:col-span-2 xl:col-span-full sm:box-content col-span-full box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer">
           {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
-          <Search className="w-4 mx-auto" onClick={handleSubmit}></Search>
+          <Search className="w-4 mx-auto" onClick={handleSearch}></Search>
         </div>
       </form>
       <div className="lg:flex my-12">
@@ -133,7 +143,8 @@ const ClassSchedule = () => {
                 id="day"
                 name="day"
                 label="Day*"
-                error={error}
+                error={errorDay}
+                setError={setErrorDay}
                 value={arraysDays}
                 selected={day}
                 setSelected={setDay}
