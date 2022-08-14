@@ -117,7 +117,7 @@ export const Input = ({
 
   return (
     <>
-      <label className="my-6 text-sm" htmlFor={id}>
+      <label className={`my-6 ${error && "text-red-600"} text-sm`} htmlFor={id}>
         {label}
       </label>
       <br />
@@ -174,7 +174,7 @@ export const Email = ({
 
   return (
     <>
-      <label className="my-6 text-sm" htmlFor={id}>
+      <label className={`my-6 text-sm ${error && "text-red-600"}`} htmlFor={id}>
         {label}
       </label>
       <br />
@@ -339,7 +339,10 @@ export function MultipleSelect({
   dataTitle && (optional[dataTitle] = dataValue);
   return (
     <>
-      <label className="my-6 text-sm" htmlFor={id}>
+      <label
+        className={`my-6 text-sm  ${error && " text-red-600"}`}
+        htmlFor={id}
+      >
         {label}
       </label>
       <Listbox

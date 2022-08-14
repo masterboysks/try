@@ -1,12 +1,11 @@
 import Search from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
-import PrintOutlinedIcon from "@mui/icons-material/PrintOutlined";
 import Breadcurm from "../../breadnav";
 import { PrinterIcon } from "@heroicons/react/solid";
 import { Select } from "../../../../components/fields";
 import { useState } from "react";
-import Faculty from "../../data-setup/faculty/faculty/Faculty";
+
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -38,6 +37,7 @@ const people = [
 ];
 
 const ClassSchedule = () => {
+  const arraysDays = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
   const [level, setLevel] = useState("");
   const [classSemester, setClassSemester] = useState("");
   const [faculty, setFaculty] = useState("");
@@ -134,7 +134,7 @@ const ClassSchedule = () => {
                 name="day"
                 label="Day*"
                 error={error}
-                value={["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"]}
+                value={arraysDays}
                 selected={day}
                 setSelected={setDay}
               />

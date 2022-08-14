@@ -19,17 +19,19 @@ const pages = [
   },
 ];
 function AddClassShedule() {
+  const arrayTeachers = ["Select", "hi", "hlo"];
+  const arrayDays = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
+  const arraySubjects = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
+
   const [days, setDays] = useState([]); //array for multiple
-  const [subject, setSubject] = useState(""); //single select has one item so no array
+  const [subject, setSubject] = useState(arraySubjects[0]); //single select has one item so no array
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const [teacher, setTeacher] = useState("");
+  const [teacher, setTeacher] = useState(arrayTeachers[0]);
 
   const [daysError, setDaysError] = useState(false);
-  const [subjectError, setsubjectError] = useState(false);
   const [startTimeError, setStartTimeError] = useState(false);
   const [endTimeError, setEndTimeError] = useState(false);
-  const [teacherError, setTeacherError] = useState(false);
   //
   const navigate = useNavigate();
   const handleSubmit = () => {
@@ -44,7 +46,6 @@ function AddClassShedule() {
   };
   return (
     <>
-      {console.log(daysError)}
       <div>
         <Breadcurm pages={pages} />
         {/* details */}
@@ -90,7 +91,7 @@ function AddClassShedule() {
                 label="Days*"
                 error={daysError}
                 setError={setDaysError}
-                value={["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"]}
+                value={arrayDays}
                 selected={days}
                 setSelected={setDays}
               ></MultipleSelect>
@@ -104,7 +105,7 @@ function AddClassShedule() {
                 id="subject"
                 name="subject"
                 label="Subject*"
-                value={["Select", "hi", "hlo"]}
+                value={arraySubjects}
                 selected={subject}
                 setSelected={setSubject}
               ></Select>
@@ -141,7 +142,7 @@ function AddClassShedule() {
                 id="subject-teacher"
                 name="subject-teacher"
                 label="Subject teacher*"
-                value={["Select", "hi", "hlo"]}
+                value={arrayTeachers}
                 selected={teacher}
                 setSelected={setTeacher}
               ></Select>
