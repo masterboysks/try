@@ -104,6 +104,9 @@ import SheduleExamShedule from "./components/sidebar-activities/exam/exam-shedul
 import AddSheduleExamShedule from "./components/sidebar-activities/exam/exam-shedule/add-shedule-exam-shedule/AddSheduleExamShedule";
 import AdmitCard from "./components/sidebar-activities/exam/admit-card/admit-card/AdmitCard";
 import AssignAdmitCard from "./components/sidebar-activities/exam/admit-card/assign-admit-card/AssignAdmitCard";
+// routes of report
+import StudentAttendenceReportClasses from "./components/sidebar-activities/report/attendence-report/student-attendence-report/classes/StudentAttendenceReportClasses";
+import ReportSlidebar from "./components/sidebar-activities/report/slidebar";
 
 const classes = [
   {
@@ -120,6 +123,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Base />}>
         <Route path="/" element={<Home />} />
+        {/* Report route */}
+        <Route path="/report" element={<ReportSlidebar />}>
+          <Route
+            path="attendence-report/student-attendence-report"
+            element={<StudentAttendenceReportClasses />}
+          />
+        </Route>
         {/* Exam Routes reside here */}
         <Route path="/exam" element={<ExamSlidebar />}>
           <Route path="exam-setup">

@@ -8,6 +8,7 @@ import Inventory from "@mui/icons-material/Inventory2Outlined";
 import Exam from "@mui/icons-material/QuizOutlined";
 import Lms from "@mui/icons-material/AppRegistrationOutlined";
 import Transport from "@mui/icons-material/DirectionsBusOutlined";
+import SummarizeOutlinedIcon from "@mui/icons-material/SummarizeOutlined";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -19,6 +20,8 @@ const activity = [
   { name: "Student", value: Student, path: "student/student-information" },
   { name: "Fee", value: Fee, path: "fee/fee-type" },
   { name: "Exam", value: Exam, path: "exam/exam-setup/exam-name" },
+
+  { name: "Report", value: SummarizeOutlinedIcon, path: "report/" },
   { name: "Libary", value: Libary, path: "student/student-information" },
   {
     name: "Transport",
@@ -84,7 +87,7 @@ export default function Sidebar() {
           return (
             <div
               className={` w-[60px] text-center text-xs rounded py-1 my-4 mx-auto hover:bg-primary-grey-100 z-50 opacity-100 ${
-                location.includes(`${curr.name.toLowerCase()}/`)
+                location.includes(`/${curr.name.toLowerCase()}/`)
                   ? "  bg-primary-grey-100 text-primary-grey-700"
                   : " text-primary-grey-600 "
               }`}
@@ -97,14 +100,14 @@ export default function Sidebar() {
                 to={curr.path}
                 tabIndex="-1"
                 className={
-                  location.includes(`${curr.name.toLowerCase()}/`)
+                  location.includes(`/${curr.name.toLowerCase()}/`)
                     ? "pointer pointer-events-none"
                     : " "
                 }
               >
                 <curr.value
                   className={` mx-auto ${
-                    location.includes(`${curr.name.toLowerCase()}/`)
+                    location.includes(`/${curr.name.toLowerCase()}/`)
                       ? "text-primary-grey-700"
                       : "text-primary-grey-400"
                   }`}

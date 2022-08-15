@@ -1,36 +1,33 @@
-import React, { useState, useEffect } from "react";
+import Arrow from "@mui/icons-material/ArrowForwardIos";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
-import Arrow from "@mui/icons-material/ArrowForwardIos";
 
-const links = [
-  { name: "University/Board", path: "/admin/data-setup/university-board" },
-  { name: "Level", path: "/admin/data-setup/level" },
-  { name: "Faculty", path: "/admin/data-setup/faculty" },
-  { name: "Sub-Faculty", path: "/admin/data-setup/sub-faculty" },
-  { name: "Section", path: "/admin/data-setup/section" },
-  { name: "Subject", path: "/admin/data-setup/subject" },
-  { name: "Class/Semester", path: "/admin/data-setup/class-semester" },
-  { name: "Assign-Subject", path: "/admin/data-setup/assign-subject" },
-  { name: "Department", path: "/admin/data-setup/department" },
-  { name: "Designation", path: "/admin/data-setup/designation" },
-  { name: "Academic Year", path: "/admin/data-setup/academic-year" },
-  { name: "Fiscal Year", path: "/admin/data-setup/fiscal-year" },
-];
-const Slidebar = () => {
-  const [dropdownActive, setDropdownActive] = useState(true);
-  const [data, setData] = useState(false);
+const ReportSlidebar = () => {
+  const [attendenceReport, setAttendenceReport] = useState(false);
+  const [dropAttendenceReport, setDropAttendenceReport] = useState(false);
   const location = useLocation().pathname;
-  useEffect(() => {
-    location.includes("/admin/data-setup") ? setData(true) : setData(false);
-  }, [location]);
-
   let nav;
   const sidebar = () => {
     nav = document.getElementById("sidebar").classList;
     nav.contains("hidden") ? nav.remove("hidden") : nav.add("hidden");
     slidebar();
   };
+  const links = [
+    {
+      name: "Student attendence report",
+      path: "attendence-report/student-attendence-report",
+    },
+    {
+      name: "Staff attendence report",
+      path: "attendence-report/staff-attendence-report",
+    },
+  ];
+  useEffect(() => {
+    location.includes("/report/attendence-report")
+      ? setAttendenceReport(true)
+      : setAttendenceReport(false);
+  }, [location]);
 
   const slidebar = () => {
     nav = document.getElementById("sidebar").classList;
@@ -53,34 +50,24 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] z-[99] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 min-h-screen hidden lg:inline "
+        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 absolute top-16 md:static   ml-[72px] md:ml-0 min-h-screen hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">
           <ul className="pt-9 mx-2">
-            <Link to="/admin/organization-setup" onClick={sidebar}>
-              <li
-                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/organization-setup")
-                    ? " bg-primary-grey-200  text-primary-grey-700 "
-                    : " hover:bg-primary-grey-200 text-primary-grey-600 "
-                } text-sm`}
-              >
-                <div className="devList text-primary-grey-300">
-                  <Arrow fontSize="sm"></Arrow>
-                </div>
-                Organization setup
-              </li>
-            </Link>
             <li
-              id="data"
+              id="attendenceReport"
               onClick={() => {
-                setDropdownActive(!dropdownActive);
+                setDropAttendenceReport(!dropAttendenceReport);
               }}
               className={`flex  p-1 mt-2 mb-3 cursor-pointer rounded hover:bg-primary-grey-200 
-              ${data ? "text-primary-grey-700" : "text-primary-grey-600"} 
+              ${
+                attendenceReport
+                  ? "text-primary-grey-700"
+                  : "text-primary-grey-600"
+              } 
                    ${
-                     data && !dropdownActive
+                     attendenceReport && !dropAttendenceReport
                        ? "bg-primary-grey-200 "
                        : "text-primary-grey-600"
                    }text-sm`}
@@ -88,16 +75,16 @@ const Slidebar = () => {
               <div
                 id="arrow"
                 className={`devList text-black  transition duration-100 ease-in text-sm ${
-                  dropdownActive ? "rotate-90" : ""
+                  dropAttendenceReport ? "rotate-90" : ""
                 }  `}
               >
                 <Arrow fontSize="sm" />
               </div>
-              <div className=" text-sm">Data setup</div>
+              <div className=" text-sm">Attendence report</div>
             </li>
             <ul
               className={`${
-                dropdownActive ? "" : "hidden"
+                dropAttendenceReport ? "" : "hidden"
               } transition duration-700 ease-in`}
               id="dropdown"
             >
@@ -117,76 +104,77 @@ const Slidebar = () => {
                 );
               })}
             </ul>
-            <Link to="/admin/class-schedule" onClick={sidebar}>
+            <Link to="exam-report" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/class-schedule")
+                className={` flex p-1  mt-2 mb-3 cursor-pointer rounded  ${
+                  location.includes("/report/exam-report")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
               >
                 <div className="devList text-primary-grey-300">
-                  <Arrow fontSize="sm"></Arrow>
+                  <Arrow fontSize="sm" />
                 </div>
-                Class schedule
+                Exam report
               </li>
             </Link>
-            <Link to="/admin/upgrade" onClick={sidebar}>
+            <Link to="fee-report" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/upgrade")
+                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                  location.includes("/report/fee-report")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
               >
                 <div className="devList text-primary-grey-300">
-                  <Arrow fontSize="sm"></Arrow>
+                  <Arrow fontSize="sm" />
                 </div>
-                Upgrade class
+                Fee report
               </li>
             </Link>
-            <Link to="/admin/notice" onClick={sidebar}>
+            <Link to="topper-report" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/notice")
+                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                  location.includes("/report/topper-report")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
               >
                 <div className="devList text-primary-grey-300">
-                  <Arrow fontSize="sm"></Arrow>
+                  <Arrow fontSize="sm" />
                 </div>
-                Notice
+                Topper report
               </li>
             </Link>
-            <Link to="/admin/event-calender" onClick={sidebar}>
+            {/* <Link to="/fee/fee-payment" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/event-calender")
+                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                  location.includes("fee/fee-payment")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
               >
                 <div className="devList text-primary-grey-300">
-                  <Arrow fontSize="sm"></Arrow>
+                  <Arrow fontSize="sm" />
                 </div>
-                Event Calender
+                Fee payment
               </li>
-            </Link>
-            <Link to="/admin/template" onClick={sidebar}>
+            </Link> */}
+            {/* 
+            <Link to="/fee/miscellaneous-fee-assign" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3  cursor-pointer rounded ${
-                  location.includes("/admin/template")
+                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                  location.includes("fee/miscellaneous-fee-assign")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
                 } text-sm`}
               >
                 <div className="devList text-primary-grey-300">
-                  <Arrow fontSize="sm"></Arrow>
+                  <Arrow fontSize="sm" />
                 </div>
-                Template
+                Misc. fee assign
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>
@@ -206,4 +194,4 @@ const Slidebar = () => {
   );
 };
 
-export default Slidebar;
+export default ReportSlidebar;
