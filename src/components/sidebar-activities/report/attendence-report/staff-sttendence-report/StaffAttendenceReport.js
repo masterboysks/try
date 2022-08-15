@@ -1,5 +1,5 @@
 import React from "react";
-import Breadnav from "../../../../../components/Breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Form from "./Form";
 import Table from "./Table";
 const pages = [
@@ -10,16 +10,16 @@ const pages = [
     current: false,
   },
   {
-    name: "Student attendence report",
-    href: "/report/attendence-report/student-attendence-report",
+    name: "Staff attendence report",
+    href: "/report/attendence-report/staff-attendence-report",
     current: true,
   },
 ];
-export default function StudentAttendenceReportClasses() {
+export default function StaffAttendenceReport() {
   return (
     <>
       <Breadnav pages={pages} />
-      <Form />
+      <Form></Form>
       <Table />
     </>
   );

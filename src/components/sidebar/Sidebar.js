@@ -21,7 +21,11 @@ const activity = [
   { name: "Fee", value: Fee, path: "fee/fee-type" },
   { name: "Exam", value: Exam, path: "exam/exam-setup/exam-name" },
 
-  { name: "Report", value: SummarizeOutlinedIcon, path: "report/" },
+  {
+    name: "Report",
+    value: SummarizeOutlinedIcon,
+    path: "report/attendence-report/student-attendence-report",
+  },
   { name: "Libary", value: Libary, path: "student/student-information" },
   {
     name: "Transport",

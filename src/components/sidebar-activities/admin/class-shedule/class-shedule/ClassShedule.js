@@ -38,6 +38,10 @@ const people = [
 
 const ClassSchedule = () => {
   const arraysDays = ["Sun", "Mon", "Tue", "Thur", "Fri", "Sat"];
+  const arrayLevel = ["jhdgs", "fjkdhgs", "hdsg", "djkshf"];
+  const arrayClass = ["jhdgs", "fjkdhgs", "hdsg", "djkshf"];
+  const arrayFaculty = ["jhdgs", "fjkdhgs", "hdsg", "djkshf"];
+  const arraySection = ["jhdgs", "fjkdhgs", "hdsg", "djkshf"];
   const [level, setLevel] = useState("Select");
   const [classSemester, setClassSemester] = useState("Select");
   const [faculty, setFaculty] = useState("Select");
@@ -50,9 +54,9 @@ const ClassSchedule = () => {
 
   const handleSearch = () => {
     console.log({ level, classSemester, faculty, section });
-    level == "Select" && setErrorLevel(true);
-    classSemester == "Select" && setErrorClass(true);
-    section == "Select" && setErrorSection(true);
+    level === "Select" && setErrorLevel(true);
+    classSemester === "Select" && setErrorClass(true);
+    section === "Select" && setErrorSection(true);
   };
   return (
     <>
@@ -65,7 +69,7 @@ const ClassSchedule = () => {
             error={errorLevel}
             setError={setErrorLevel}
             label="Level*"
-            value={["hi", "hlo"]}
+            value={arrayLevel}
             selected={level}
             setSelected={setLevel}
           ></Select>
@@ -77,7 +81,7 @@ const ClassSchedule = () => {
             error={errorClass}
             setError={setErrorClass}
             label="Class/Semester*"
-            value={["hi", "hlo"]}
+            value={arrayClass}
             selected={classSemester}
             setSelected={setClassSemester}
           ></Select>
@@ -87,7 +91,7 @@ const ClassSchedule = () => {
             id="faculty"
             name="faculty"
             label="Faculty"
-            value={["hi", "hlo"]}
+            value={arrayFaculty}
             selected={faculty}
             setSelected={setFaculty}
           ></Select>
@@ -99,7 +103,7 @@ const ClassSchedule = () => {
             error={errorSection}
             setError={setErrorSection}
             label="Section*"
-            value={["hi", "hlo"]}
+            value={arraySection}
             selected={section}
             setSelected={setSection}
           ></Select>

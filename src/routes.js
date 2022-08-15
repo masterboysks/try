@@ -107,6 +107,15 @@ import AssignAdmitCard from "./components/sidebar-activities/exam/admit-card/ass
 // routes of report
 import StudentAttendenceReportClasses from "./components/sidebar-activities/report/attendence-report/student-attendence-report/classes/StudentAttendenceReportClasses";
 import ReportSlidebar from "./components/sidebar-activities/report/slidebar";
+import StudentAttendenceReportClass from "./components/sidebar-activities/report/attendence-report/student-attendence-report/class/StudentAttendenceReportClass";
+import StaffAttendenceReport from "./components/sidebar-activities/report/attendence-report/staff-sttendence-report/StaffAttendenceReport";
+import ExamReportClasses from "./components/sidebar-activities/report/exam-report/exam-report-classes/ExamReportClasses";
+import ExamReportClass from "./components/sidebar-activities/report/exam-report/exam-report-class/ExamReportClass";
+import FeeReport from "./components/sidebar-activities/report/fee-report/fee-report/FeeReport";
+import MonthlyFeeStatementReport from "./components/sidebar-activities/report/fee-report/monthly-fee-statement-report/MonthlyFeeStatementReport";
+import FeeStatementReport from "./components/sidebar-activities/report/fee-report/fee-statement-report/FeeStatementReport";
+import TopperReportClasses from "./components/sidebar-activities/report/topper-report/topper-report-classes/TopperReportClasses";
+import TopperReportClass from "./components/sidebar-activities/report/topper-report/topper-report-class/TopperReportClass";
 
 const classes = [
   {
@@ -128,6 +137,33 @@ function App() {
           <Route
             path="attendence-report/student-attendence-report"
             element={<StudentAttendenceReportClasses />}
+          />
+          <Route
+            path="attendence-report/student-attendence-report/:classOfSchool/:section"
+            element={<StudentAttendenceReportClass />}
+          />
+          <Route
+            path="attendence-report/staff-attendence-report"
+            element={<StaffAttendenceReport />}
+          />
+          <Route path="exam-report" element={<ExamReportClasses />} />
+          <Route
+            path="exam-report/:classOfSchool/:section"
+            element={<ExamReportClass />}
+          />
+          <Route path="fee-report" element={<FeeReport />} />
+          <Route
+            path="fee-report/fee-statement-monthly/:classOfSchool/:section"
+            element={<MonthlyFeeStatementReport />}
+          />
+          <Route
+            path="fee-report/fee-statement/:classOfSchool/:section"
+            element={<FeeStatementReport />}
+          />
+          <Route path="topper-report" element={<TopperReportClasses />} />
+          <Route
+            path="topper-report/:classOfSchool/:section"
+            element={<TopperReportClass />}
           />
         </Route>
         {/* Exam Routes reside here */}
