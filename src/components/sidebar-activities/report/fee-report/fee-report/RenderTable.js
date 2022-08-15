@@ -1,7 +1,13 @@
+import ThreeDots from "@mui/icons-material/MoreVert";
+import { Popover } from "@headlessui/react";
+import { Link } from "react-router-dom";
+
 export default function RenderTable({
   person,
   selectedPeople,
   setSelectedPeople,
+  table,
+  index,
 }) {
   return (
     <tr className={selectedPeople.includes(person) ? "bg-gray-50" : undefined}>
@@ -24,22 +30,46 @@ export default function RenderTable({
         />
       </td>
       <td className="whitespace-nowrap py-4 pr-3 text-sm text-left text-gray-500">
-        {person.name}
+        {person.class}
       </td>
       <td className="whitespace-nowrap text-primary-grey-600 px-3 py-4 text-sm">
-        {person.monthlyFee}
+        {person.level}
       </td>
       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-        {person.miscellaneousFee}
+        {person.faculty}
       </td>
       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-        {person.previousDue}
+        {person.section}
       </td>
       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-        {person.total}
+        {person.noOfStd}
       </td>
       <td className="whitespace-nowrap w-40 px-3 py-4 text-sm text-gray-500">
         {person.invoiceStatus}
+      </td>
+      <td className="whitespace-nowrap relative text-sm text-gray-500">
+        <Popover>
+          <Popover.Button>
+            <ThreeDots />
+          </Popover.Button>
+          <Popover.Panel
+            className={` -left-[230%] absolute z-10 bg-white divide-y-2 rounded shadow-lg cursor-pointer
+                 ${index + 1 < table.length ? "top-0" : "bottom-0"}`}
+          >
+            <div className="p-3">
+              <Link to={`fee-statement/${person.class}/${person.section}`}>
+                Fee statement
+              </Link>
+            </div>
+            <div className="p-3">
+              <Link
+                to={`fee-statement-monthly/${person.class}/${person.section}`}
+              >
+                Monthly fee statement
+              </Link>
+            </div>
+          </Popover.Panel>
+        </Popover>
       </td>
     </tr>
   );

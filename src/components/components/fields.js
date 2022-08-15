@@ -233,7 +233,10 @@ export function Select({
   error,
   setError,
 }) {
-  const options = ["Select", ...value];
+  let options;
+  selected === "Select"
+    ? (options = ["Select", ...value])
+    : (options = [...value]);
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
   return (

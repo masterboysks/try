@@ -1,6 +1,6 @@
 import { PrinterIcon } from "@heroicons/react/solid";
 import { useState } from "react";
-import { Select } from "../../../../../components/fields";
+import { Select } from "../../../../components/fields";
 import RenderTable from "./RenderTable";
 const people = [
   {

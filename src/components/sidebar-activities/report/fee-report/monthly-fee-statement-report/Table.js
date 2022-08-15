@@ -3,7 +3,7 @@ import React from "react";
 import { useLayoutEffect, useRef, useState } from "react";
 import RenderTable from "./RenderTable";
 import Search from "@mui/icons-material/SearchOutlined";
-import { Select } from "../../../../../components/fields";
+import { Select } from "../../../../components/fields";
 
 const people = [
   {

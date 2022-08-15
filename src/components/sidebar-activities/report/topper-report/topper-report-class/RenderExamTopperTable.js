@@ -2,22 +2,16 @@ const RenderTable = ({ currentItems }) => {
   return (
     <>
       {currentItems.map((person, index, table) => (
-        <tr key={index}>
+        <tr key={person.stdId}>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.date}
+            {person.stdId}
+          </td>
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+            {person.stdName}
           </td>
 
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.particular}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Rs.{person.dr}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Rs.{person.cr}
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.balance}
+            {person.obtainedPercentage}
           </td>
         </tr>
       ))}

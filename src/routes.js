@@ -162,7 +162,7 @@ function App() {
           />
           <Route path="topper-report" element={<TopperReportClasses />} />
           <Route
-            path="topper-report/:classOfSchool/:section"
+            path="topper-report/:classOfSchool"
             element={<TopperReportClass />}
           />
         </Route>

@@ -1,8 +1,15 @@
 import { GlobeAltIcon, PrinterIcon } from "@heroicons/react/solid";
-import Search from "@mui/icons-material/SearchOutlined";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Input, Select } from "../../../../../components/fields";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  Fragment,
+} from "react";
 import RenderTable from "./RenderTable";
+
+import { Dialog, Transition } from "@headlessui/react";
+import { Input } from "../../../../components/fields";
 const people = [
   {
     subject: "Physics",
@@ -72,6 +79,13 @@ const people = [
 const subject = ["English", "Maths", "Nepali", "Social", "EHP", "Science"];
 
 export default function Table() {
+  // Modal
+  const [open, setOpen] = useState(false);
+  const [miniumDueAmmount, setMiniumDueAmmount] = useState("");
+  const cancelButtonRef = useRef(null);
+  const handleSubmitMiniumDueAmmount = () => {
+    console.log(miniumDueAmmount);
+  };
   // Checkbox
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
@@ -126,88 +140,14 @@ export default function Table() {
     );
     setCurrentItems(people.slice(indexOfFirstItem, indexOfLastItem));
   }, [indexOfFirstItem]);
-  //
-  const arrayGradingSystem = ["GPA", "Percentage"];
-  const arrayResultStatus = ["kjdhf", "jhgd"];
-  const arrayRemark = ["jhfgd", "fdjkh"];
-  const [academicYear, setAcademicYear] = useState("");
-  const [examName, setExamName] = useState("");
-  const [gradingSystem, setGradingSystem] = useState("GPA");
-  const [resultStatus, setResultStatus] = useState("Select");
-  const [remark, setRemark] = useState("Select");
-  const [errorAcademicYear, setErrorAcademicYear] = useState(false);
-  const [errorExamName, setErrorExamName] = useState(false);
-  //
-  const handleSubmit = () => {
-    console.log({
-      academicYear,
-      examName,
-      gradingSystem,
-      resultStatus,
-      remark,
-    });
-    academicYear || setErrorAcademicYear(true);
-    examName || setErrorExamName(true);
-  };
+
   return (
     <>
-      {/* search */}
-      <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow">
-        <div className="">
-          <Input
-            value={academicYear}
-            setValue={setAcademicYear}
-            error={errorAcademicYear}
-            setError={setErrorAcademicYear}
-            placeholder="2078"
-            label="Academic Year*"
-          />
-        </div>
-        <div className="">
-          <Input
-            value={examName}
-            setValue={setExamName}
-            error={errorExamName}
-            setError={setErrorExamName}
-            placeholder="First term examination"
-            label="Exam name*"
-          />
-        </div>
-        <div className="">
-          <Select
-            label="Grading system"
-            value={arrayGradingSystem}
-            setSelected={setGradingSystem}
-            selected={gradingSystem}
-          />
-        </div>
-        <div className="">
-          <Select
-            label="Result status"
-            value={arrayResultStatus}
-            setSelected={setResultStatus}
-            selected={resultStatus}
-          />
-        </div>
-        <div className="">
-          <Select
-            label="Remark"
-            value={arrayRemark}
-            setSelected={setRemark}
-            selected={remark}
-          />
-        </div>
-
-        <div className="h-fit w-fit bg-primary-btn sm:box-content xl:col-span-3 box-border px-4 py-3 mt-auto ml-auto text-white rounded cursor-pointer">
-          {/* <span className="sm:hidden text-primary-grey-100 text-sm">Search</span> */}
-          <Search className="w-4 mx-auto" onClick={handleSubmit}></Search>
-        </div>
-      </form>
       {/* Table heading */}
       <div className="flex items-center justify-between">
         <div className="md:block hidden text-xl">First Term Examination</div>
         <div className=" flex items-center gap-3">
-          <div className="flex items-center">
+          <div className="flex items-center" onClick={() => setOpen(true)}>
             <div className="text-primary-btn font-semibold">Publish</div>
             <div className="icon text-primary-btn w-5 ml-2">
               <GlobeAltIcon fontSize="medium" />
@@ -344,6 +284,77 @@ export default function Table() {
           0
         </div>
       </div>
+      <Transition.Root show={open} as={Fragment}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          initialFocus={cancelButtonRef}
+          onClose={setOpen}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div className="sm:items-center sm:p-0 flex items-end justify-center min-h-full p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel
+                  className="sm:my-8 sm:max-w-xl relative w-full p-4 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl"
+                  as="div"
+                >
+                  <Dialog.Title className="p-2 text-left">
+                    How much minium due amount is allowed for online result?
+                  </Dialog.Title>
+                  <Dialog.Description as="div">
+                    <div className="w-6/12">
+                      <Input
+                        label="Minimum due ammount:"
+                        placeholder="5000"
+                        type="number"
+                        value={miniumDueAmmount}
+                        setValue={setMiniumDueAmmount}
+                      />
+                    </div>
+                    <div className=" w-fit my-3 ml-auto">
+                      <div
+                        onClick={() => setOpen(false)}
+                        className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
+                      >
+                        Cancel
+                      </div>
+                      <div
+                        onClick={() => {
+                          setOpen(false);
+                          handleSubmitMiniumDueAmmount();
+                        }}
+                        className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
+                      >
+                        Publish
+                      </div>
+                    </div>
+                  </Dialog.Description>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
     </>
   );
 }
