@@ -5,7 +5,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const ReportSlidebar = () => {
   const [attendenceReport, setAttendenceReport] = useState(false);
-  const [dropAttendenceReport, setDropAttendenceReport] = useState(false);
+  const [dropAttendenceReport, setDropAttendenceReport] = useState(true);
   const location = useLocation().pathname;
   let nav;
   const sidebar = () => {

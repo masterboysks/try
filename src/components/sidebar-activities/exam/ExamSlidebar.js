@@ -28,7 +28,7 @@ const reportLinks = [
   { name: "Marks Ledger", path: "/exam/exam-report/marks-ledger" },
 ];
 const Slidebar = () => {
-  const [dropdownSetupActive, setDropdownSetupActive] = useState(false);
+  const [dropdownSetupActive, setDropdownSetupActive] = useState(true);
   const [setup, setSetup] = useState(false);
   const [dropdownReportActive, setDropdownReportActive] = useState(false);
   const [report, setReport] = useState(false);

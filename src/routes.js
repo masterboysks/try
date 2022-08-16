@@ -117,14 +117,6 @@ import FeeStatementReport from "./components/sidebar-activities/report/fee-repor
 import TopperReportClasses from "./components/sidebar-activities/report/topper-report/topper-report-classes/TopperReportClasses";
 import TopperReportClass from "./components/sidebar-activities/report/topper-report/topper-report-class/TopperReportClass";
 
-const classes = [
-  {
-    semester: "Class-11",
-    level: "+2",
-    faculty: "Science-Bio",
-    section: "A",
-  },
-];
 function App() {
   const [hasAnotherChild, setHasAnotherChild] = useState(false);
   const location = useLocation();

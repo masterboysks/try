@@ -18,7 +18,7 @@ const links = [
   { name: "Fiscal Year", path: "/admin/data-setup/fiscal-year" },
 ];
 const Slidebar = () => {
-  const [dropdownActive, setDropdownActive] = useState(true);
+  const [dropdownActive, setDropdownActive] = useState(false);
   const [data, setData] = useState(false);
   const location = useLocation().pathname;
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import UploadOutlined from "@mui/icons-material/UploadOutlined";
 //   use error for putting required in handle submit
 // for radio and select provide with array of value
