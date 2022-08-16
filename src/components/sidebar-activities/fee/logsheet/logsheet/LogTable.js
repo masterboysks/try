@@ -82,7 +82,7 @@ export default function LogTable() {
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="relative z-10"
+          className="relative z-[99]"
           initialFocus={cancelButtonRef}
           onClose={setOpen}
         >
@@ -285,7 +285,7 @@ export default function LogTable() {
                       />
                     </div>
                     <div className=" md:my-0 md:mt-auto flex flex-1 my-3">
-                      <div className="btns w-fit md:ml-auto  ml-0">
+                      <div className="btns w-fit md:ml-auto ml-0">
                         <div
                           to="/fee/student-logsheet "
                           className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
