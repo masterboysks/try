@@ -1,4 +1,3 @@
-import { GlobeAltIcon, PrinterIcon } from "@heroicons/react/solid";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import RenderTable from "./RenderTable";
@@ -33,7 +32,6 @@ const people = [
   },
 ];
 export default function Table() {
-  const { examName } = useParams();
   const checkbox = useRef();
   const [checked, setChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
@@ -54,30 +52,6 @@ export default function Table() {
   }
   return (
     <div className="mt-11">
-      {/* table heading */}
-      <div className="flex items-center justify-between">
-        <div className="md:block hidden text-xl"></div>
-        <div className=" flex items-center gap-3">
-          <div className="flex items-center">
-            <div className="text-primary-btn font-semibold">Publish</div>
-            <div className="icon text-primary-btn w-5 ml-2">
-              <GlobeAltIcon fontSize="medium" />
-            </div>
-          </div>
-          <div className="text-primary-btn font-semibold">Print</div>
-          <div className="icon text-primary-btn w-5">
-            <PrinterIcon />
-          </div>{" "}
-          <div className="">
-            <Link
-              to={`/exam/exam-shedule/shedule/${examName}/add`}
-              className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
-            >
-              Add
-            </Link>
-          </div>
-        </div>
-      </div>
       {/* Table */}
       <div className="my-6">
         <div className=" ring-1 ring-black ring-opacity-5 min-w-full overflow-x-auto rounded-lg shadow">

@@ -4,7 +4,7 @@ import Table from "./Table";
 const pages = [
   { name: "Exam", href: "#", current: false },
   {
-    name: "Exam shedule",
+    name: "Exam schedule",
     href: "/exam/exam-shedule",
     current: true,
   },

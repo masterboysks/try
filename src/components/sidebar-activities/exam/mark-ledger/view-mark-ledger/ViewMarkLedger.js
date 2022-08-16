@@ -1,25 +1,21 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Breadnav from "../../../../../components/Breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Details from "./Details";
 import Table from "./Table";
 
-export default function OpenMarksheet() {
-  const { studentName, StudentId } = useParams();
+export default function ViewMarkLedger() {
+  const { section, classOfSchool } = useParams();
   const pages = [
     { name: "Exam", href: "#", current: false },
+
     {
-      name: "Exam report",
-      href: "#",
+      name: "Marksledger",
+      href: "/exam/marks-ledger",
       current: false,
     },
     {
-      name: "Marksheet",
-      href: "/exam/exam-report/marksheet",
-      current: false,
-    },
-    {
-      name: studentName,
+      name: `${classOfSchool}-${section}`,
       href: "#",
       current: true,
     },
@@ -28,7 +24,7 @@ export default function OpenMarksheet() {
     <>
       <Breadnav pages={pages} />
       <Details />
-      <Table></Table>
+      <Table />
     </>
   );
 }

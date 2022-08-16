@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RenderTable = ({
   currentItems,
@@ -34,8 +35,10 @@ const RenderTable = ({
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.stdId}
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.stdName}
+          <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
+            <Link to={`${person.stdName}/${person.stdId}`}>
+              {person.stdName}
+            </Link>
           </td>
           {subject.map((sub, i) => (
             <td

@@ -11,7 +11,7 @@ const pages = [
   },
   {
     name: "Exam name",
-    href: "/exam/exam-setup/assign-exam",
+    href: "/exam/exam-setup/assign-mark",
     current: true,
   },
 ];

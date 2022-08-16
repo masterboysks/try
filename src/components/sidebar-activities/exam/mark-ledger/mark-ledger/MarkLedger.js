@@ -1,17 +1,12 @@
-import React from "react";
-import Breadnav from "../../../../../components/Breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Form from "./Form";
 import Table from "./Table";
 const pages = [
   { name: "Exam", href: "#", current: false },
-  {
-    name: "Exam report",
-    href: "#",
-    current: false,
-  },
+
   {
     name: "Marksledger",
-    href: "/exam/exam-report/marks-ledger",
+    href: "/exam/marks-ledger",
     current: true,
   },
 ];

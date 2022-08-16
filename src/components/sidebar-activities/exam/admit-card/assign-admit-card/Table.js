@@ -150,7 +150,9 @@ export default function Table() {
                 placeholder="Status"
                 className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm"
               >
-                <option value="Test">Select</option>
+                <option value="Test">Status</option>
+                <option value="Test">Assigned</option>
+                <option value="Test">Not assigned</option>
               </select>
             </div>
           </div>

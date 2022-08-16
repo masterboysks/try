@@ -1,21 +1,21 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import Breadnav from "../../../../../components/Breadnav";
-import Details from "./Details";
+import Break from "../../../break";
+import Form from "./Form";
 import Table from "./Table";
 
-export default function ViewMarkLedger() {
-  const { section, classOfSchool } = useParams();
+export default function AssignAssignExam() {
+  const { classOfSchool, section } = useParams();
   const pages = [
     { name: "Exam", href: "#", current: false },
     {
-      name: "Exam report",
+      name: "Exam setup",
       href: "#",
       current: false,
     },
     {
-      name: "Marksledger",
-      href: "/exam/exam-report/marks-ledger",
+      name: "Exam name",
+      href: "/exam/exam-setup/assign-mark",
       current: false,
     },
     {
@@ -27,7 +27,8 @@ export default function ViewMarkLedger() {
   return (
     <>
       <Breadnav pages={pages} />
-      <Details />
+      <Break title="Assign exams" />
+      <Form></Form> <Break title="Assign marks" />
       <Table />
     </>
   );

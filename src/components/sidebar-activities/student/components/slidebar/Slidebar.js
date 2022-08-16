@@ -34,14 +34,14 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] z-[99] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 h-[94vh] pb-20 overflow-y-auto hidden lg:inline "
+        className="w-[216px] mt-[2px] box-border text-primary-grey-600 border-r-[1px] z-[99] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 h-[94vh] pb-20 overflow-y-auto hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">
           <ul className="pt-9 mx-2">
             <Link to="/student/student-information" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                className={` flex  pr-3    p-1 mt-2 mb-3 cursor-pointer rounded ${
                   location.includes("student-information")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "
@@ -55,7 +55,7 @@ const Slidebar = () => {
             </Link>
             <Link to="/student/student-attendence" onClick={sidebar}>
               <li
-                className={` flex p-1 mt-2 mb-3 cursor-pointer rounded ${
+                className={`  pr-3    flex p-1 mt-2 mb-3 cursor-pointer rounded ${
                   location.includes("student-attendence")
                     ? " bg-primary-grey-200  text-primary-grey-700 "
                     : " hover:bg-primary-grey-200 text-primary-grey-600 "

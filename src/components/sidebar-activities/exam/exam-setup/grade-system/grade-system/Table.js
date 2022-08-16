@@ -92,7 +92,7 @@ export default function Table() {
                         <thead className="bg-gray-50 ">
                           <tr>
                             <th className="px-3 py-3.5 text-primary-grey-700 font-medium text-sm">
-                              Marks
+                              Limit(%)
                             </th>
                             <th className="px-3 py-3.5 text-primary-grey-700 font-medium text-sm">
                               Grade

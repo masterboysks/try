@@ -11,7 +11,7 @@ export default function ExamReportClass() {
     { name: "Report", href: "#", current: false },
     {
       name: "Exam report",
-      href: "exam-report",
+      href: "/report/exam-report",
       current: false,
     },
 

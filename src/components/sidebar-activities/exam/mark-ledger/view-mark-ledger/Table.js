@@ -1,7 +1,7 @@
 import { GlobeAltIcon, PrinterIcon } from "@heroicons/react/solid";
 import Search from "@mui/icons-material/SearchOutlined";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Input, Select } from "../../../../../components/fields";
+import { Input, Select } from "../../../../components/fields";
 import RenderTable from "./RenderTable";
 const people = [
   {

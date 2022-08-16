@@ -14,6 +14,9 @@ import AddguardianTrue from "./components/sidebar-activities/student/components/
 import AddguardianFalse from "./components/sidebar-activities/student/components/add-student/AddGuardianFalse";
 import WholeClass from "./components/sidebar-activities/student/components-attendence/wholeClass/WholeClass";
 import StudentProfile from "./components/sidebar-activities/student/components-attendence/studentProfile/StudentProfile";
+import AddAddress from "./components/sidebar-activities/student/components/add-student/AddAddress";
+import AddClassDetails from "./components/sidebar-activities/student/components/add-student/AddClassDetails";
+import AddFeeDetails from "./components/sidebar-activities/student/components/add-student/AddFeeDetails";
 // Staff immport
 import StaffSlidebar from "./components/sidebar-activities/staff/slidebar.js";
 import StaffInformation from "./components/sidebar-activities/staff/staff-information/main/staff-information.js";
@@ -64,9 +67,7 @@ import NewNotice from "./components/sidebar-activities/admin/notice/new-notice/N
 import Event from "./components/sidebar-activities/admin/event/event/Event";
 import AddEvent from "./components/sidebar-activities/admin/event/add-event/AddEvent";
 import Temeplate from "./components/sidebar-activities/admin/tempelate/Temeplate";
-import AddAddress from "./components/sidebar-activities/student/components/add-student/AddAddress";
-import AddClassDetails from "./components/sidebar-activities/student/components/add-student/AddClassDetails";
-import AddFeeDetails from "./components/sidebar-activities/student/components/add-student/AddFeeDetails";
+//
 import StaffAttendence from "./components/sidebar-activities/staff/staff-attendence/main/StaffAttendence";
 import TeacherAssign from "./components/sidebar-activities/staff/teacher-assign/teacher-assign/TeacherAssign";
 import AssignTeacher from "./components/sidebar-activities/staff/teacher-assign/assign-teacher/AssignTeacher";
@@ -93,12 +94,11 @@ import GradeSystem from "./components/sidebar-activities/exam/exam-setup/grade-s
 import AddGradeSystem from "./components/sidebar-activities/exam/exam-setup/grade-system/add-grade-system/AddGradeSystem";
 import ExamMarksName from "./components/sidebar-activities/exam/exam-setup/exam-marks-name/exam-marks-name/ExamMarksName";
 import AddExamMarksName from "./components/sidebar-activities/exam/exam-setup/exam-marks-name/add-exam-marks-name/AddExamMarksName";
-import AssignExam from "./components/sidebar-activities/exam/exam-setup/assign-exam/assign-exam/AssignExam";
-import AssignAssignExam from "./components/sidebar-activities/exam/exam-setup/assign-exam/assign-assign-exam/AssignAssignExam";
-import Marksheet from "./components/sidebar-activities/exam/exam-report/marksheet/marksheet/Marksheet";
-import OpenMarksheet from "./components/sidebar-activities/exam/exam-report/marksheet/open-marksheet/OpenMarksheet";
-import MarkLedger from "./components/sidebar-activities/exam/exam-report/mark-ledger/mark-ledger/MarkLedger";
-import ViewMarkLedger from "./components/sidebar-activities/exam/exam-report/mark-ledger/view-mark-ledger/ViewMarkLedger";
+import AssignExam from "./components/sidebar-activities/exam/exam-setup/assign-mark/assign-mark/AssignExam";
+import AssignAssignExam from "./components/sidebar-activities/exam/exam-setup/assign-mark/assign-assign-mark/AssignAssignExam";
+import MarkLedger from "./components/sidebar-activities/exam/mark-ledger/mark-ledger/MarkLedger";
+import ViewMarkLedger from "./components/sidebar-activities/exam/mark-ledger/view-mark-ledger/ViewMarkLedger";
+import OpenMarksheet from "./components/sidebar-activities/exam/mark-ledger/view-mark-ledger/open-marksheet/OpenMarksheet";
 import ExamShedule from "./components/sidebar-activities/exam/exam-shedule/exam-shedule/ExamShedule";
 import SheduleExamShedule from "./components/sidebar-activities/exam/exam-shedule/shedule-exam-shedule/SheduleExamShedule";
 import AddSheduleExamShedule from "./components/sidebar-activities/exam/exam-shedule/add-shedule-exam-shedule/AddSheduleExamShedule";
@@ -173,24 +173,23 @@ function App() {
               path="exam-marks-name/add"
               element={<AddExamMarksName />}
             ></Route>
-            <Route path="assign-exam" element={<AssignExam />}></Route>
+            <Route path="assign-mark" element={<AssignExam />}></Route>
             <Route
-              path="assign-exam/assign/:classOfSchool/:section"
+              path="assign-mark/assign/:classOfSchool/:section"
               element={<AssignAssignExam />}
             ></Route>
           </Route>
-          <Route path="exam-report">
-            <Route path="marksheet" element={<Marksheet />}></Route>
-            <Route
-              path="marksheet/open/:studentName/:studentId"
-              element={<OpenMarksheet />}
-            ></Route>
-            <Route path="marks-ledger" element={<MarkLedger />}></Route>
-            <Route
-              path="marks-ledger/view/:classOfSchool/:section"
-              element={<ViewMarkLedger />}
-            ></Route>
-          </Route>
+
+          <Route
+            path="marks-ledger/view/:classOfSchool/:section/:studentName/:studentId"
+            element={<OpenMarksheet />}
+          ></Route>
+          <Route path="marks-ledger" element={<MarkLedger />}></Route>
+          <Route
+            path="marks-ledger/view/:classOfSchool/:section"
+            element={<ViewMarkLedger />}
+          ></Route>
+
           <Route path="exam-shedule" element={<ExamShedule />}></Route>
           <Route
             path="exam-shedule/shedule/:examName"

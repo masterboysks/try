@@ -1,6 +1,3 @@
-import { GlobeAltIcon, PrinterIcon } from "@heroicons/react/solid";
-import { useLayoutEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
 import RenderTable from "./RenderTable";
 const people = [
   {
@@ -21,25 +18,6 @@ const people = [
   },
 ];
 export default function Table() {
-  const { examName } = useParams();
-  const checkbox = useRef();
-  const [checked, setChecked] = useState(false);
-  const [indeterminate, setIndeterminate] = useState(false);
-  const [selectedPeople, setSelectedPeople] = useState([]);
-
-  useLayoutEffect(() => {
-    const isIndeterminate =
-      selectedPeople.length > 0 && selectedPeople.length < people.length;
-    setChecked(selectedPeople.length === people.length);
-    setIndeterminate(isIndeterminate);
-    checkbox.current.indeterminate = isIndeterminate;
-  }, [selectedPeople]);
-
-  function toggleAll() {
-    setSelectedPeople(checked || indeterminate ? [] : people);
-    setChecked(!checked && !indeterminate);
-    setIndeterminate(false);
-  }
   return (
     <div className="">
       {/* Table */}
@@ -52,19 +30,7 @@ export default function Table() {
                   <tr>
                     <th
                       scope="col"
-                      className="sm:w-16 sm:px-8 relative w-12 px-6"
-                    >
-                      <input
-                        type="checkbox"
-                        className="left-4 top-1/2 focus:ring-primary-btn border-primary-field placeholder:text-primary-grey-400 text-primary-btn absolute w-4 h-4 -mt-2 text-sm rounded shadow-md"
-                        ref={checkbox}
-                        checked={checked}
-                        onChange={toggleAll}
-                      />
-                    </th>
-                    <th
-                      scope="col"
-                      className=" py-3.5 pr-3 text-left text-sm font-semibold text-primary-active"
+                      className=" py-3.5 px-3 text-left text-sm font-semibold text-primary-grey-700"
                     >
                       Subject
                     </th>
@@ -90,14 +56,7 @@ export default function Table() {
                 </thead>
                 <tbody className=" bg-white divide-y divide-gray-200">
                   {people.map((person, index, table) => (
-                    <RenderTable
-                      key={"1"}
-                      person={person}
-                      selectedPeople={selectedPeople}
-                      setSelectedPeople={setSelectedPeople}
-                      table={table}
-                      index={index}
-                    />
+                    <RenderTable key={index} person={person} />
                   ))}
                 </tbody>
               </table>

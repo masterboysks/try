@@ -12,8 +12,8 @@ const RenderTable = ({ currentItems }) => {
             {person.examName}
           </td>
 
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-btn">
-            <Link to={`shedule/${person.examName}`}>Shedule</Link>
+          <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
+            <Link to={`shedule/${person.examName}`}>Schedule</Link>
           </td>
         </tr>
       ))}

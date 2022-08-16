@@ -6,7 +6,7 @@ const pages = [
   { name: "Report", href: "#", current: false },
   {
     name: "Exam report",
-    href: "/exam-report",
+    href: "/report/exam-report",
     current: true,
   },
 ];

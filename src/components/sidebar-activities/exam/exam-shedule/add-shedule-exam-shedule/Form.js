@@ -5,6 +5,7 @@ export default function Form() {
     <form className="form-solid w-full my-6 rounded-md">
       <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
         <div className="">
+          {/* disabled text */}
           <label className="my-6 text-sm" htmlFor="Student Id">
             Level
           </label>

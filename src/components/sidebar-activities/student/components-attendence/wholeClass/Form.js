@@ -3,7 +3,7 @@ import Search from "@mui/icons-material/SearchOutlined";
 
 const Form = () => {
   return (
-    <div className="w-full lg:w-11/12 mb-14">
+    <div className="w-full lg:w-10/12 mb-14">
       <div className="p-4 my-6 rounded-md shadow xl:flex ring-black ring-opacity-5 ring-1 form-solid">
         <div className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           <div className="">

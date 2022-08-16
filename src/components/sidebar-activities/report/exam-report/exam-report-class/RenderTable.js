@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 const RenderTable = ({
   currentItems,
@@ -6,6 +7,7 @@ const RenderTable = ({
   selectedPeople,
   setSelectedPeople,
 }) => {
+  const { classOfSchool, section } = useParams();
   return (
     <>
       {currentItems.map((person, index, table) => (
@@ -34,8 +36,12 @@ const RenderTable = ({
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.stdId}
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.stdName}
+          <td className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm">
+            <Link
+              to={`/exam/marks-ledger/view/${classOfSchool}/${section}/${person.stdName}/${person.stdId}`}
+            >
+              {person.stdName}
+            </Link>
           </td>
           {subject.map((sub, i) => (
             <td
