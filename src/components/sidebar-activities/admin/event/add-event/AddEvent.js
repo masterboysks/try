@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Breadcurm from "../../breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Break from "../../break";
 import Form from "./Form";
 
@@ -26,7 +26,7 @@ function AddEvent() {
 
   return (
     <div>
-      <Breadcurm pages={pages}></Breadcurm>
+      <Breadnav pages={pages} />
       <Break title="Add event"></Break>
       <Form date={date} />
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcurm from "../../Breadnavs";
+import Breadnav from "../../../../components/Breadnav";
 import Break from "../../Break";
 import Form from "./Form";
 import Table from "./Table";
@@ -15,7 +15,7 @@ const pages = [
 function StaffAttendence() {
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <Break title="Attendence" />
       <Form></Form>
       <Table></Table>

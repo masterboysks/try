@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import Break from "../../break";
-import Breadcurm from "../../breadnav";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 import { Input, MultipleSelect, Select } from "../../../../components/fields";
 import { useState } from "react";
+import Breadnav from "../../../../components/Breadnav";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -50,7 +50,7 @@ function AddClassShedule() {
   return (
     <>
       <div>
-        <Breadcurm pages={pages} />
+        <Breadnav pages={pages} />
         {/* details */}
         <div className="lg:flex my-12">
           <div className="ring-black ring-opacity-5 ring-1 form-solid lg:w-4/6 p-4 rounded-md shadow">

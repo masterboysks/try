@@ -5,7 +5,7 @@ const Breadnav = ({ pages }) => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="breadNav sm:block hidden">
+      <div className="breadNav">
         <nav className="flex" aria-label="Breadcrumb">
           <ol role="list" className=" flex items-center">
             {pages.map((page) => (
@@ -44,7 +44,7 @@ const Breadnav = ({ pages }) => {
           </ol>
         </nav>
       </div>
-      <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
+      {/* <span className="left-3 text-primary-grey-700 -top-6 absolute font-semibold">
         {pages[pages.length - 1].name}
       </span>
       <div
@@ -52,7 +52,7 @@ const Breadnav = ({ pages }) => {
         onClick={() => navigate(-1)}
       >
         <ChevronRightIcon />
-      </div>
+      </div> */}
     </>
   );
 };

@@ -1,5 +1,4 @@
-import React from "react";
-import Breadnav from "../../breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Break from "../../break";
 import Form from "./Form";
 const pages = [
@@ -18,7 +17,7 @@ const pages = [
 export default function AddFeeType() {
   return (
     <>
-      <Breadnav pages={pages}></Breadnav>
+      <Breadnav pages={pages} />
       <Break title="Add fee"></Break>
       <Form></Form>
     </>

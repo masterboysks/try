@@ -1,4 +1,4 @@
-import Breadcurm from "../../breadcurm";
+import Breadnav from "../../../../../components/Breadnav";
 import Table from "./Table";
 
 const pages = [
@@ -17,7 +17,7 @@ const pages = [
 const ClassSemester = () => {
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <Table />
     </>
   );

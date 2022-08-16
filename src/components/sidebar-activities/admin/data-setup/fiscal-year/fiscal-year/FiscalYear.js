@@ -1,9 +1,8 @@
-import Breadcurm from "../../breadcurm";
-
 import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
 import { useState } from "react";
 import { SearchBar } from "../../../../../components/fields";
+import Breadnav from "../../../../../components/Breadnav";
 
 const people = [
   {
@@ -32,7 +31,7 @@ const FiscalYear = () => {
   const [search, setSearch] = useState("");
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <div className="mt-11 lg:w-2/3 w-full">
         <div className="sm:flex sm:items-center justify-between">
           <div className="w-72 relative max-w-full">

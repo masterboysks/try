@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcurm from "../breadnav";
+import Breadnav from "../../../components/Breadnav";
 import Break from "../break";
 import Form from "./Form";
 const pages = [
@@ -13,7 +13,7 @@ const pages = [
 const OrginazationSetup = () => {
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <Break title="Organization details" />
       <Form />
     </>

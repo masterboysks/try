@@ -1,4 +1,3 @@
-import Breadcurm from "../../breadnav";
 import Break from "../../break";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -8,6 +7,7 @@ import {
   Textarea,
   Upload,
 } from "../../../../components/fields";
+import Breadnav from "../../../../components/Breadnav";
 
 const pages = [
   { name: "Admin", href: "#", current: false },
@@ -51,7 +51,7 @@ function NewNotice() {
   };
   return (
     <div>
-      <Breadcurm pages={pages}></Breadcurm>
+      <Breadnav pages={pages} />
       <Break title="New notice"></Break>
       <form className="form-solid w-full my-4 space-y-4 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">

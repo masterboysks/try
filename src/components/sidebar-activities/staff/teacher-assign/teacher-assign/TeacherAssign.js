@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcurm from "../../Breadnavs";
+import Breadnav from "../../../../components/Breadnav";
 import Form from "./Form";
 import Table from "./Table";
 
@@ -14,7 +14,7 @@ const pages = [
 function TeacherAssign() {
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <Form></Form>
       <Table></Table>
     </>

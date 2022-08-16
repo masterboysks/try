@@ -1,10 +1,10 @@
 import React from "react";
-import Breadcurm from "../breadnav";
 import Break from "../break";
 import photo from "./Rectangle 4369.png";
 import photo1 from "./Rectangle 4370.png";
 import View from "./View";
 import { Link } from "react-router-dom";
+import Breadnav from "../../../components/Breadnav";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -16,7 +16,7 @@ const pages = [
 function Temeplate() {
   return (
     <>
-      <Breadcurm pages={pages}></Breadcurm>
+      <Breadnav pages={pages} />
       <Break title="Exam routine"></Break>
       Select a template :
       <form className=" md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 grid grid-cols-2 gap-4 my-6 rounded-md">

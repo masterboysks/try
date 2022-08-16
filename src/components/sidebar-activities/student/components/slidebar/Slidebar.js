@@ -5,33 +5,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Slidebar = () => {
   const location = useLocation().pathname;
-  //   const modal = () => {
-  //     const sidebarS = document.getElementById("modal").classList;
-  //     // const sidebar = document.getElementById("sidebar").classList;
-  //     sidebarS.contains("hidden")
-  //       ? sidebarS.remove("hidden")
-  //       : sidebarS.add("hidden");
-  //     // sidebar.contains("sm-hide")
-  //     //   ? sidebar.remove("sm-hide")
-  //     //   : sidebar.add("sm-hide");
-  //   };
 
-  /* {/* {value ? (
-  ""
-) : (
-  <img
-    src={hamburger}
-    alt="hamburger"
-    className="absolute   top-[70px] left-20 block md:hidden"
-    onClick={modal}
-  /> }*/
-  // useEffect(() => {
-  //   // function some() {
-  //   //   document.getElementById("slidebar").classList.slidebar.remove("hidden");
-  //   // }
-  //   //  && some();
-  //   // console.log(document.getElementById("slidebar").classList.remove("hidden"));
-  // }, []);
   let nav;
   const sidebar = () => {
     nav = document.getElementById("sidebar").classList;
@@ -60,7 +34,7 @@ const Slidebar = () => {
   return (
     <>
       <div
-        className="min-w-[216px] mt-[2px]  z-10 text-primary-grey-600 border-r-[1px] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 min-h-screen hidden lg:inline "
+        className="min-w-[216px] mt-[2px]  text-primary-grey-600 border-r-[1px] z-[99] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 h-[94vh] pb-20 overflow-y-auto hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">

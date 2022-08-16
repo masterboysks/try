@@ -1,10 +1,10 @@
 import Search from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
 import RenderTable from "./RenderTable";
-import Breadcurm from "../../breadnav";
 import { PrinterIcon } from "@heroicons/react/solid";
 import { Select } from "../../../../components/fields";
 import { useState } from "react";
+import Breadnav from "../../../../components/Breadnav";
 
 const pages = [
   { name: "Admin", href: "#", current: false },
@@ -60,7 +60,7 @@ const ClassSchedule = () => {
   };
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow">
         <div className="">
           <Select

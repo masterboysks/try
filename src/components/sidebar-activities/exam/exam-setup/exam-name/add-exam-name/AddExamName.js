@@ -1,5 +1,5 @@
 import React from "react";
-import BreadNav from "../../../breadnav";
+import Breadnav from "../../../../../components/Breadnav";
 import Break from "../../../break";
 import Form from "./Form";
 
@@ -24,7 +24,7 @@ const pages = [
 export default function AddExamName() {
   return (
     <>
-      <BreadNav pages={pages}></BreadNav>
+      <Breadnav pages={pages} />
       <Break title="Add exam name"></Break>
       <Form />
     </>

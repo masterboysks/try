@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Breadnav from "../../breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import { Form } from "./Form";
 import LogTable from "./LogTable";
 import Profile from "./Profile";
@@ -25,7 +25,7 @@ export default function Logsheet() {
   ];
   return (
     <>
-      <Breadnav pages={pages}></Breadnav>
+      <Breadnav pages={pages} />
       <Profile></Profile>
       <Form></Form>
       <LogTable />

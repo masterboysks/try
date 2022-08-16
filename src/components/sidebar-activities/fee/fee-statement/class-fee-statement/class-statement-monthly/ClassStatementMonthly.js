@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Breadnav from "../../../breadnav";
+import Breadnav from "../../../../../components/Breadnav";
 import Break from "../../../break";
 import Details from "./Details";
 import Table from "./Table";

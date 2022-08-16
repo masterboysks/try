@@ -1,4 +1,4 @@
-import Breadcurm from "../../breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Calendar from "./Calendar";
 const pages = [
   { name: "Admin", href: "#", current: false },
@@ -11,7 +11,7 @@ const pages = [
 function Event() {
   return (
     <div>
-      <Breadcurm pages={pages}></Breadcurm>
+      <Breadnav pages={pages} />
       <Calendar />
     </div>
   );

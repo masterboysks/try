@@ -33,9 +33,7 @@ const RenderTable = () => {
             {person.reason}
           </td>
           <td className="text-primary-btn whitespace-nowrap px-3 py-4 text-sm font-medium">
-            <Link to="/student/student-attendence/Class-11-Science-Bio-A/ranjit">
-              View
-            </Link>
+            <Link to={`${person.stdName}/${person.stdId}`}>View</Link>
           </td>
         </tr>
       ))}

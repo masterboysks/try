@@ -1,4 +1,4 @@
-import Breadnav from "../../../breadnav";
+import Breadnav from "../../../../../components/Breadnav";
 import Form from "./Form";
 import Table from "./Table";
 const pages = [
@@ -17,7 +17,7 @@ const pages = [
 export default function Marksheet() {
   return (
     <>
-      <Breadnav pages={pages}></Breadnav>
+      <Breadnav pages={pages} />
       <Form></Form>
       <Table />
     </>

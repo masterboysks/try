@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import Breadcurm from "../../breadnav";
 import Form from "./Form";
 import Filter from "./Filter";
 import { Tab } from "@headlessui/react";
 import Table from "./Table";
+import Breadnav from "../../../../components/Breadnav";
 export default function UpgradeClass() {
   let { classname } = useParams();
   const pages = [
@@ -21,7 +21,7 @@ export default function UpgradeClass() {
   ];
   return (
     <div>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <Form></Form>
       <Filter />
       <Table />

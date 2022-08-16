@@ -1,5 +1,5 @@
 import React from "react";
-import Breadcurm from "../../breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Table from "./Table";
 const pages = [
   { name: "Fee", href: "#", current: false },
@@ -12,7 +12,7 @@ const pages = [
 function Notice() {
   return (
     <div>
-      <Breadcurm pages={pages}></Breadcurm>
+      <Breadnav pages={pages} />
       <Table></Table>
     </div>
   );

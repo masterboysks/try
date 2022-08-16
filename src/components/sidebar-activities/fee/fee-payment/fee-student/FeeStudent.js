@@ -1,8 +1,8 @@
 import profile from "./profile.png";
 import { useParams } from "react-router-dom";
-import Breadnav from "../../breadnav";
 import Table from "./Table";
 import Form from "./Form";
+import Breadnav from "../../../../components/Breadnav";
 
 export default function FeeStudent() {
   const { student } = useParams();
@@ -24,7 +24,7 @@ export default function FeeStudent() {
   ];
   return (
     <>
-      <Breadnav pages={pages}></Breadnav>
+      <Breadnav pages={pages} />
 
       <div className=" my-6">
         <div className="w-fit my-3 ml-auto">

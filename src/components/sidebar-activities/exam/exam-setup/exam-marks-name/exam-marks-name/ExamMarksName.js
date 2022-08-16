@@ -1,5 +1,5 @@
 import React from "react";
-import BreadNav from "../../../breadnav";
+import Breadnav from "../../../../../components/Breadnav";
 import Table from "./Table";
 const pages = [
   { name: "Exam", href: "#", current: false },
@@ -17,7 +17,7 @@ const pages = [
 export default function ExamMarksName() {
   return (
     <>
-      <BreadNav pages={pages}></BreadNav>
+      <Breadnav pages={pages} />
       <Table />
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-// import Test from "./components/test";
+// import Test from "./paginationtry";
 import Routes from "./routes";
 
 const App = () => {

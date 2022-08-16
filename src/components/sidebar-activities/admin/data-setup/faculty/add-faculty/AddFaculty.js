@@ -1,8 +1,8 @@
 import Break from "../../../break";
-import Breadcurm from "../../breadcurm";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Input, Select } from "../../../../../components/fields";
+import Breadnav from "../../../../../components/Breadnav";
 const pages = [
   { name: "Admin", href: "#", current: false },
   {
@@ -41,7 +41,7 @@ const AddFaculty = () => {
   };
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <Break title="Add faculty" />
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">

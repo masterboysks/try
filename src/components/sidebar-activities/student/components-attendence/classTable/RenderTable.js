@@ -30,7 +30,7 @@ const RenderTable = () => {
 
             <td className="whitespace-nowrap text-end px-3 py-4 text-sm text-gray-500">
               <Link
-                to={`${classs.semester}-${classs.faculty}-${classs.section}`}
+                to={`${classs.semester}/${classs.section}`}
                 className="text-primary-btn whitespace-nowrap px-3 py-4 text-sm font-medium"
               >
                 View

@@ -1,5 +1,5 @@
 import React from "react";
-import BreadNav from "../../../breadnav";
+import Breadnav from "../../../../../components/Breadnav";
 import Form from "./Form";
 import Table from "./Table";
 const pages = [
@@ -18,7 +18,7 @@ const pages = [
 export default function AssignExam() {
   return (
     <>
-      <BreadNav pages={pages} />
+      <Breadnav pages={pages} />
       <Form></Form>
       <Table></Table>
     </>

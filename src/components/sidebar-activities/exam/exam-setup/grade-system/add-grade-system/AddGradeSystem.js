@@ -1,5 +1,5 @@
 import React from "react";
-import BreadNav from "../../../breadnav";
+import Breadnav from "../../../../../components/Breadnav";
 import Break from "../../../break";
 import Form from "./Form";
 const pages = [
@@ -23,7 +23,7 @@ const pages = [
 export default function AddGradeSystem() {
   return (
     <>
-      <BreadNav pages={pages}></BreadNav>
+      <Breadnav pages={pages} />
       <Break title="Add grade system"></Break>
       <Form></Form>
     </>

@@ -1,5 +1,5 @@
 import React from "react";
-import Breadnav from "../../breadnav";
+import Breadnav from "../../../../components/Breadnav";
 import Break from "../../break";
 import Details from "./Details";
 import Table from "./Table";
@@ -19,7 +19,7 @@ const pages = [
 export default function AssignAdmitCard() {
   return (
     <>
-      <Breadnav pages={pages}></Breadnav>
+      <Breadnav pages={pages} />
       <Details></Details>
       <Break title="Assign admit card" />
       <Table />

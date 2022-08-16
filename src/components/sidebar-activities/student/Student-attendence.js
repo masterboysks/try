@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
 import Main from "./components-attendence/Main";
 
 const Student = () => {

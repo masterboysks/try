@@ -419,17 +419,14 @@ function App() {
             path="/student/student-attendence"
             element={<StudentAttendence />}
           ></Route>
-          {classes.map((classs, index) => {
-            return (
-              <Route
-                key={index}
-                path={`/student/student-attendence/${classs.semester}-${classs.faculty}-${classs.section}`}
-                element={<WholeClass />}
-              />
-            );
-          })}
+
           <Route
-            path="/student/student-attendence/Class-11-Science-Bio-A/ranjit"
+            path="/student/student-attendence/:classOfSchool/:section"
+            element={<WholeClass />}
+          />
+
+          <Route
+            path="/student/student-attendence/:classOfSchool/:section/:studentName/:studentId"
             element={<StudentProfile />}
           />
         </Route>

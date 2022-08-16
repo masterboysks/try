@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Breadnavs from "../../Breadnavs";
+import Breadnav from "../../../../components/Breadnav";
 import Tabs from "../Tabs";
 const tabs = [
   {
@@ -34,7 +34,7 @@ const pages = [
 const Base = () => {
   return (
     <>
-      <Breadnavs pages={pages} />
+      <Breadnav pages={pages} />
       <Tabs tabs={tabs} />
       <Outlet></Outlet>
     </>

@@ -1,7 +1,5 @@
-import { ChevronRightIcon } from "@heroicons/react/solid";
-import { useNavigate } from "react-router-dom";
 import Search from "@mui/icons-material/SearchOutlined";
-import Breadcurm from "../../Breadnavs";
+import Breadnav from "../../../../components/Breadnav";
 
 const pages = [
   { name: "Staff", href: "#", current: false },
@@ -12,10 +10,9 @@ const pages = [
   },
 ];
 const Form = () => {
-  const navigate = useNavigate();
   return (
     <>
-      <Breadcurm pages={pages} />
+      <Breadnav pages={pages} />
       <form className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ring-1 ring-black ring-opacity-5 form-solid grid grid-cols-1 gap-4 p-4 my-6 rounded-md shadow">
         <div className="">
           <label className="my-6 text-sm" htmlFor="Staff Id">
