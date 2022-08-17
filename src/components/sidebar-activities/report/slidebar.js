@@ -50,7 +50,7 @@ const ReportSlidebar = () => {
   return (
     <>
       <div
-        className="w-[216px] mt-[2px] box-border text-primary-grey-600 border-r-[1px] z-[99] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 h-[94vh] pb-20 overflow-y-auto hidden lg:inline "
+        className="w-[216px]  mt-[2px] box-border text-primary-grey-600 border-r-[1px] z-[99] border-r-primary-grey-100-grey-200 bg-primary-grey-100 fixed top-16 md:static   ml-[72px] md:ml-0 h-[94vh] pb-20 overflow-y-auto hidden lg:inline "
         id="slidebar"
       >
         <div className="w-full">
@@ -151,7 +151,7 @@ const ReportSlidebar = () => {
       </div>
       <div className=" sm:ml-[72px] box-border md:ml-0 sm:pt-2 md:w-full  md:min-w-0 flex-1">
         <div className="top-28 sm:mt-9 md:block sm:static -z-10 absolute left-0 w-full">
-          <div className="-z-10 sm:mt-9 w-10/12 mx-auto text-sm">
+          <div className="-z-10 sm:mt-9 w-11/12 mx-auto text-sm">
             <Outlet />
           </div>
         </div>

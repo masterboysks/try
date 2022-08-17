@@ -1,3 +1,4 @@
+import { PrinterIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
 import { Select } from "../../../../components/fields";
 import RenderTable from "./RenderExamTopperTable";
@@ -23,13 +24,21 @@ export default function ExamTopper() {
   const [examName, setExamName] = useState("Select");
   return (
     <>
-      <div className=" md:w-6/12 lg:w-3/12 w-full mt-3">
-        <Select
-          value={arrayExamName}
-          label="Exam name"
-          selected={examName}
-          setSelected={setExamName}
-        />
+      <div className=" md:flex-row md:justify-between flex flex-col items-center">
+        <div className=" md:w-6/12 lg:w-3/12 w-full mt-3">
+          <Select
+            value={arrayExamName}
+            label="Exam name"
+            selected={examName}
+            setSelected={setExamName}
+          />
+        </div>
+        <div className="h-fit md:my-auto flex items-center self-end my-6">
+          <div className="text-primary-btn font-semibold">Print</div>
+          <div className=" text-primary-btn w-5 ml-1">
+            <PrinterIcon />
+          </div>
+        </div>
       </div>
       <div className="">
         <div className="my-6">

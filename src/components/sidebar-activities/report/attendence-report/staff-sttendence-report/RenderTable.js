@@ -1,11 +1,9 @@
 import React from "react";
-import ThreeDots from "@mui/icons-material/MoreVert";
-import { Popover } from "@headlessui/react";
 
-const RenderTable = ({ currentItems }) => {
+const RenderTable = ({ currentItems, setOpen }) => {
   return (
     <>
-      {currentItems.map((person, index, table) => (
+      {currentItems.map((person, index) => (
         <tr key={index}>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.staffId}
@@ -22,7 +20,10 @@ const RenderTable = ({ currentItems }) => {
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             {person.presentDays}
           </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+          <td
+            className="whitespace-nowrap text-primary-btn px-3 py-4 text-sm"
+            onClick={() => setOpen(true)}
+          >
             {person.absentDays}
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">

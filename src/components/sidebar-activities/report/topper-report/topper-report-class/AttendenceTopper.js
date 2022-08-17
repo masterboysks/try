@@ -1,3 +1,4 @@
+import { PrinterIcon } from "@heroicons/react/solid";
 import RenderTable from "./RenderAttendenceTable";
 const currentItems = [
   {
@@ -26,6 +27,12 @@ const currentItems = [
 export default function AttendenceTopper() {
   return (
     <div className="mt-6">
+      <div className="h-fit md:my-auto flex items-center justify-end my-6">
+        <div className="text-primary-btn font-semibold">Print</div>
+        <div className=" text-primary-btn w-5 ml-1">
+          <PrinterIcon />
+        </div>
+      </div>
       <div className="my-6">
         <div className=" ring-1 ring-black ring-opacity-5 min-w-full overflow-x-auto rounded-lg shadow">
           <div className="inline-block w-full align-middle">
