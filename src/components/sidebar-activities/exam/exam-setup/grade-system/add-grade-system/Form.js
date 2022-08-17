@@ -1,23 +1,44 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import AddIcon from "@mui/icons-material/Add";
 import RenderTable from "./RenderTable";
+import { Select } from "../../../../../components/fields";
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from "../../../../../components/Buttons";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 export default function Form() {
-  const [entry, setEntry] = useState([1]);
+  const arrayLevel = ["kdsjhf", "dsjjkhujhg"];
+
+  const [level, setLevel] = useState("Select");
+  const [errorLevel, setErrorLevel] = useState(false);
+  const [inputFileds, setInputFileds] = useState([
+    { lowerLimit: "", upperLimit: "", grade: "", gpa: "" },
+  ]);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log({ inputFileds, level });
+    let temp = false;
+    level === Select && (temp = true) && setErrorLevel(true);
+    inputFileds.map((curr) => {
+      (curr.lowerLimit && curr.upperLimit && curr.grade && curr.gpa) ||
+        (temp = true);
+    });
+    temp || navigate("/exam/exam-setup/grading-system");
+  };
   return (
     <>
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Level*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Level*"
+              value={arrayLevel}
+              selected={level}
+              setSelected={setLevel}
+              error={errorLevel}
+              setError={setErrorLevel}
+            />
           </div>
         </div>
       </form>
@@ -59,12 +80,14 @@ export default function Form() {
                   </tr>
                 </thead>
                 <tbody className=" bg-white divide-y divide-gray-200">
-                  {entry.map((curr, index) => {
+                  {inputFileds.map((curr, index) => {
                     return (
                       <RenderTable
+                        key={index}
                         index={index}
-                        entry={entry}
-                        setEntry={setEntry}
+                        inputFiled={curr}
+                        inputFields={inputFileds}
+                        setInputFiled={setInputFileds}
                       ></RenderTable>
                     );
                   })}
@@ -77,7 +100,15 @@ export default function Form() {
                         <div
                           className="w-fit flex items-center justify-center"
                           onClick={() => {
-                            setEntry([...entry, 1]);
+                            setInputFileds([
+                              ...inputFileds,
+                              {
+                                lowerLimit: "",
+                                upperLimit: "",
+                                grade: "",
+                                gpa: "",
+                              },
+                            ]);
                           }}
                         >
                           <div className="text-primary-btn mx-1">Add new</div>
@@ -93,6 +124,13 @@ export default function Form() {
               </table>
             </div>
           </div>
+        </div>
+
+        <div className="w-fit ml-auto">
+          <Link to="/exam/exam-setup/grading-system">
+            <SecondaryButton>Cancel</SecondaryButton>
+          </Link>
+          <PrimaryButton onClick={handleSubmit}>Save</PrimaryButton>
         </div>
       </div>
     </>

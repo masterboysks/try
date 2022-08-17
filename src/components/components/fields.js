@@ -105,6 +105,9 @@ export const Input = ({
   placeholder,
   dataTitle,
   dataValue,
+  onChange,
+  className,
+  step,
 }) => {
   // useEffect(() => {
   //   console.log(err, name);
@@ -117,21 +120,33 @@ export const Input = ({
 
   return (
     <>
-      <label className={`my-6 ${error && "text-red-600"} text-sm`} htmlFor={id}>
-        {label}
-      </label>
-      <br />
+      {label && (
+        <>
+          <label
+            className={`my-6 ${error && "text-red-600"} text-sm`}
+            htmlFor={id}
+          >
+            {label}
+          </label>{" "}
+          <br />
+        </>
+      )}
+
       <input
-        className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+        className={`mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm ${className}`}
         id={id}
+        step={step}
         name={name}
         placeholder={placeholder}
         type={type || "text"}
         {...optional}
         value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
+        onChange={
+          onChange ||
+          ((e) => {
+            setValue(e.target.value);
+          })
+        }
         onClick={() => error && setError(false)}
       />
       {/* {console.log(error)} */}

@@ -1,39 +1,58 @@
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-export default function RenderTable({ type, index, setEntry, entry }) {
+import { Input } from "../../../../../components/fields";
+export default function RenderTable({
+  index,
+  inputFiled,
+  setInputFiled,
+  inputFields,
+}) {
+  const handleChange = (index, event) => {
+    let data = [...inputFields];
+    data[index][event.target.name] = event.target.value;
+    setInputFiled(data);
+  };
   return (
     <tr>
       <td className="p-2">
-        <input
-          type="number"
-          name="date"
-          id="date"
-          className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+        <Input
           placeholder="80"
+          name="lowerLimit"
+          type="number"
+          value={inputFiled.lowerLimit}
+          onChange={(e) => handleChange(index, e)}
         />
       </td>
       <td className="p-2">
-        <input
-          type="number"
+        <Input
+          name="upperLimit"
           placeholder="90"
-          className="mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-        />
-      </td>
-      <td className="p-2">
-        <input
-          type="text"
-          name="ammount"
-          id="ammount"
-          placeholder="A"
-          className="mt-[6px] w-full p- rounded  focus:ring-primary-btn   shadow-md border-primary-field  placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-        />
-      </td>
-      <td className="p-2">
-        <input
           type="number"
-          name="ammount"
-          id="ammount"
-          placeholder="3.6"
-          className="mt-[6px] w-full p- rounded  focus:ring-primary-btn   shadow-md border-primary-field  placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+          value={inputFiled.upperLimit}
+          onChange={(e) => {
+            handleChange(index, e);
+          }}
+        />
+      </td>
+      <td className="p-2">
+        <Input
+          placeholder="A"
+          name="grade"
+          value={inputFiled.grade}
+          onChange={(e) => {
+            handleChange(index, e);
+          }}
+        />
+      </td>
+      <td className="p-2">
+        <Input
+          placeholder="4"
+          name="gpa"
+          type="number"
+          value={inputFiled.gpa}
+          onChange={(e) => {
+            handleChange(index, e);
+          }}
+          step="0.1"
         />
       </td>
 
@@ -44,8 +63,7 @@ export default function RenderTable({ type, index, setEntry, entry }) {
           <div
             className=" text-primary-grey-700 w-fit p-1 mx-1 bg-white rounded-full shadow"
             onClick={() => {
-              // console.log(examName.slice(0, -1));
-              setEntry(entry.slice(0, -1));
+              setInputFiled(inputFields.slice(0, -1));
             }}
           >
             <CloseOutlinedIcon fontSize="small" />
