@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Breadnav from "../../../../../components/Breadnav";
-import Break from "../../../break";
+import Break from "../../../../../components/Break";
+
 import Form from "./Form";
 import Table from "./Table";
 
@@ -27,8 +28,8 @@ export default function AssignAssignExam() {
   return (
     <>
       <Breadnav pages={pages} />
-      <Break title="Assign exams" />
-      <Form></Form> <Break title="Assign marks" />
+      <Break title="Assign marks" />
+      <Form></Form>
       <Table />
     </>
   );
