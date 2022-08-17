@@ -1,7 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Breadnav from "../../../../../components/Breadnav";
-import Break from "../../../break";
+import Break from "../../../../../components/Break";
+import {
+  PrimaryButton,
+  SecondaryButton,
+} from "../../../../../components/Buttons";
+import { Input } from "../../../../../components/fields";
+
 const pages = [
   { name: "Exam", href: "#", current: false },
   {
@@ -21,6 +27,16 @@ const pages = [
   },
 ];
 export default function ExamMarksName() {
+  const [examMarksName, setExamMarksName] = useState("");
+  const [errorExamMarksName, setErrorExamMarksName] = useState(false);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    console.log({ examMarksName });
+
+    examMarksName
+      ? navigate("/exam/exam-setup/exam-marks-name")
+      : setErrorExamMarksName(true);
+  };
   return (
     <>
       <Breadnav pages={pages} />
@@ -28,13 +44,12 @@ export default function ExamMarksName() {
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Exam marks name*
-            </label>
-            <br />
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
+            <Input
+              label="Exam marks name*"
+              value={examMarksName}
+              setValue={setExamMarksName}
+              error={errorExamMarksName}
+              setError={setErrorExamMarksName}
               placeholder="Partical marks"
             />
           </div>
@@ -42,18 +57,12 @@ export default function ExamMarksName() {
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div className="md:flex-row w-fit flex flex-col my-6 ml-auto">
             <div className=" w-fit my-auto">
-              <Link
-                to="/exam/exam-setup/exam-marks-name"
-                className="bg-primary-grey-50 text-primary-grey-700 hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 mr-3 text-sm font-medium border border-transparent rounded-md shadow-sm"
-              >
-                Cancel
+              <Link to="/exam/exam-setup/exam-marks-name">
+                <SecondaryButton>Cancel</SecondaryButton>
               </Link>
-              <Link
-                to="/exam/exam-setup/exam-marks-name"
-                className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 sm:w-auto inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white border border-transparent rounded-md shadow-sm"
-              >
-                Save
-              </Link>
+              <span onClick={handleSubmit}>
+                <PrimaryButton>Save</PrimaryButton>
+              </span>
             </div>
           </div>
         </div>
