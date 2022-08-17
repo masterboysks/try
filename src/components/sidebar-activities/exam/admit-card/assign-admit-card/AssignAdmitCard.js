@@ -1,6 +1,7 @@
 import React from "react";
 import Breadnav from "../../../../components/Breadnav";
-import Break from "../../break";
+import Break from "../../../../components/Break";
+
 import Details from "./Details";
 import Table from "./Table";
 const pages = [

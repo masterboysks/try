@@ -251,7 +251,9 @@ export function Select({
         name={name}
         id={id}
         {...optional}
-        className={`w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn     shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm  border-primary-field  required:border-red-600 required:animate-pulse 
+        className={`w-full p-2 ${
+          label && " mt-[6px] "
+        }  cursor-pointer rounded  focus:ring-primary-btn     shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm  border-primary-field  required:border-red-600 required:animate-pulse 
         }`}
       >
         {options.map((curr) => (
