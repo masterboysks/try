@@ -32,7 +32,7 @@ export const Checkbox = ({
         onChange={(e) => {
           setSelected(e.currentTarget.checked);
         }}
-      />{" "}
+      />
       <div className="ml-3 text-sm">
         <label htmlFor={id} className="font-sm text-primary-grey-700">
           {label}
@@ -127,7 +127,7 @@ export const Input = ({
             htmlFor={id}
           >
             {label}
-          </label>{" "}
+          </label>
           <br />
         </>
       )}
@@ -154,7 +154,7 @@ export const Input = ({
         <>
           <br />
           <span className="text-xs font-light text-red-600">
-            This field is required error
+            This is a required field.
           </span>
           <br />
         </>
@@ -599,7 +599,6 @@ export const Textarea = ({
         <>
           <br />
           <span className="text-xs font-light text-red-600">
-            {" "}
             This is a required field.
           </span>
           <br />
@@ -652,7 +651,7 @@ export const Textarea = ({
 //         onChange={(e) => {
 //           setValue(e.target.value);
 //         }}
-//       />{" "}
+//       />
 //       {error && (
 //         <>
 //           <br />

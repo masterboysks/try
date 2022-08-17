@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Breadnav from "../../../../components/Breadnav";
-import Break from "../../break";
+import Break from "../../../../components/Break";
+
 import Form from "./Form";
 import Table from "./Table";
 
@@ -29,8 +30,9 @@ export default function AddSheduleExamShedule() {
     <>
       <Breadnav pages={pages}></Breadnav>
       <Break title="Exam schedule"></Break>
-      <Form />
-      <Table />
+      <Form>
+        <Table />
+      </Form>
     </>
   );
 }

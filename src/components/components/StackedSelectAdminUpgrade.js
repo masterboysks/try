@@ -55,7 +55,6 @@ export default function StackedSelectAdminUpgrade({
             disabled && " bg-primary-grey-100 "
           }`}
         >
-          {" "}
           {optionsTop.map((curr) => (
             <option value={curr} key={curr}>
               {curr}
@@ -75,7 +74,6 @@ export default function StackedSelectAdminUpgrade({
             disabled && " bg-primary-grey-100 "
           }`}
         >
-          {" "}
           {optionsBottom.map((curr) => (
             <option value={curr} key={curr}>
               {curr}

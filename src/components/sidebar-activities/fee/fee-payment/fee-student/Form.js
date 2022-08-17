@@ -5,7 +5,6 @@ export default function Form() {
   return (
     <>
       <form className="mt-11 lg:w-9/12 xl:w-2/3 md:grid-cols-2 grid w-full grid-cols-1 gap-4">
-        {" "}
         <div className="">
           <label className="py-6 text-sm" htmlFor="Student Id">
             Total Ammount:

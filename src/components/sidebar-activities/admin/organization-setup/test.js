@@ -124,7 +124,6 @@ const Form = () => {
         </div>
 
         <div className="">
-          {" "}
           <Input
             label="Education reg. no*"
             placeholder="21445165412152154"

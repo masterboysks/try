@@ -16,7 +16,7 @@ export default function OpenMarksheet() {
     },
     {
       name: `${classOfSchool} - ${section}`,
-      href: `/exam/marks-ledger/view/${classOfSchool}/${section}/${studentName}/${studentId}`,
+      href: `/exam/marks-ledger/view/${classOfSchool}/${section}`,
       current: false,
     },
     {
