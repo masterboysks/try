@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Breadnav from "../../../../../components/Breadnav";
+import Break from "../../../../../components/Break";
 import { Input, Select } from "../../../../../components/fields";
-import Break from "../../../break";
 
 const pages = [
   { name: "Admin", href: "#", current: false },

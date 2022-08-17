@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import { SelectDisabled } from "../../../../components/fields";
 
 const people = [
   {
@@ -141,11 +142,8 @@ export default function Example() {
                   <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     {person.mob}
                   </td>
-                  <td className="w-72">
-                    <select className="focus:ring-primary-btn border-primary-field placeholder:text-primary-grey-400 text-primary-grey-700 w-64 px-2 py-1 text-sm rounded shadow-md cursor-pointer">
-                      <option value="Active">Active</option>
-                      <option value="Inactive">inactive</option>
-                    </select>
+                  <td className="min-w-[116px] flex items-center justify-center">
+                    <SelectDisabled value="Inactive" />
                   </td>
                 </tr>
               ))}

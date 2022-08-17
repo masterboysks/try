@@ -154,7 +154,7 @@ export const InputDisabled = ({
   id,
   name,
   value,
-  setValue,
+
   type,
   dataTitle,
   dataValue,
@@ -175,10 +175,7 @@ export const InputDisabled = ({
         disabled
         type={type || "text"}
         {...optional}
-        value={value || " "}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
+        value={value || ""}
       />
     </>
   );
@@ -193,18 +190,19 @@ export const SelectDisabled = ({
   type,
   dataTitle,
   dataValue,
+  className,
 }) => {
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
 
   return (
     <>
-      <label className="my-6 text-sm" htmlFor={id}>
+      <label className={`my-6 text-sm `} htmlFor={id}>
         {label}
       </label>
       <br />
       <select
-        className=" mt-[6px] w-full p- rounded   focus:ring-primary-btn     bg-primary-grey-100 border-primary-grey-400  shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
+        className={` mt-[6px] w-full p- rounded   focus:ring-primary-btn     bg-primary-grey-100 border-primary-grey-400  shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm ${className}`}
         id={id}
         name={name}
         disabled

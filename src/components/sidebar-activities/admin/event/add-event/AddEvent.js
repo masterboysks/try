@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Breadnav from "../../../../components/Breadnav";
-import Break from "../../break";
+import Break from "../../../../components/Break";
+
 import Form from "./Form";
 
 function AddEvent() {

@@ -1,91 +1,128 @@
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
+import StackedSelectAdminUpgrade from "../../../../components/StackedSelectAdminUpgrade";
+import { useState } from "react";
+import { InputDisabled, Select } from "../../../../components/fields";
 
 const Form = () => {
+  // array
+  const arrayClassSemester = ["dfsmkhb", "dsjhfg"];
+  const arraySelectedSection = ["dfsmkhb", "dsjhfg"];
+  const arrayFromLevel = ["dfsmkhb", "dsjhfg"];
+  const arrayFromYear = ["dfsmkhb", "dsjhfg"];
+  const arrayToLevel = ["dfsmkhb", "dsjhfg"];
+  const arrayToYear = ["dfsmkhb", "dsjhfg"];
+  // backend this is disabled
+  const [fromClassSemester, setFromClassSemester] = useState("Class 12");
+  const [fromAvailableSections, setFromAvailableSections] = useState("A, B, C");
+  const [toAvailableSections, setToAvailableSections] = useState("A, B, C");
+  const [fromSection, setFromSection] = useState("A");
+  //
+  const [toSelectedSection, setToSelectedSection] = useState("Select");
+  const [toClassSemester, setToClassSemester] = useState("Select");
+  const [fromLevelStacked, setFromLevelStacked] = useState(arrayFromLevel[0]);
+  const [fromYearStacked, setFromYearStacked] = useState(arrayFromYear[0]);
+  const [toLevelStacked, setToLevelStacked] = useState("Select");
+  const [toYearStacked, setToYearStacked] = useState("Select");
+  // error
+  const [errorToYearStacked, setErrorToYearStacked] = useState(false);
+  const [errorToLevelStacked, setErrorToLevelStacked] = useState(false);
+  const [errorToClassSemester, setErrorToClassSemester] = useState(false);
+  const [errorToSelectedSection, setErrorToSelectedSection] = useState(false);
+  //  submit and error handaling
+  const handleClick = () => {
+    console.log({
+      fromClassSemester,
+      fromAvailableSections,
+      toAvailableSections,
+      fromSection,
+      toSelectedSection,
+      toClassSemester,
+      fromLevelStacked,
+      toLevelStacked,
+      toYearStacked,
+    });
+    console.log(setErrorToLevelStacked(true));
+    let temp = false;
+    toLevelStacked === "Select" &&
+      (temp = true) &&
+      setErrorToLevelStacked(true);
+    toYearStacked === "Select" && (temp = true) && setErrorToYearStacked(true);
+    toClassSemester === "Select" &&
+      (temp = true) &&
+      setErrorToClassSemester(true);
+    toSelectedSection === "Select" &&
+      (temp = true) &&
+      setErrorToSelectedSection(true);
+  };
   return (
     <>
       <form className="form-solid w-full my-6 rounded-md">
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4">
           <div className="flex">
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              From*:
-            </label>
-            <div className="flex-1 ml-1">
-              <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-                <option value="Test">School level</option>
-              </select>
-              <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-                <option value="Test">2078</option>
-              </select>
-            </div>
+            <StackedSelectAdminUpgrade
+              label="From:"
+              selectedTop={fromLevelStacked}
+              selectedBottom={fromYearStacked}
+              valueTop={arrayFromLevel}
+              valueBottom={arrayFromYear}
+              nameTop="kjdsh"
+              nameBottom="kdfh"
+              disabled={true}
+            />
           </div>
           <div className="flex">
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              To*:
-            </label>
-            <div className="flex-1 ml-1">
-              <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-                <option value="Test">School level</option>
-              </select>
-              <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-                <option value="Test">2079</option>
-              </select>
-            </div>
+            <StackedSelectAdminUpgrade
+              label="To:*"
+              selectedTop={toLevelStacked}
+              selectedBottom={toYearStacked}
+              setSelectedTop={setToLevelStacked}
+              setSelectedBottom={setToYearStacked}
+              errorTop={errorToLevelStacked}
+              errorBottom={errorToYearStacked}
+              setErrorTop={setErrorToLevelStacked}
+              setErrorBottom={setErrorToYearStacked}
+              valueTop={arrayToLevel}
+              valueBottom={arrayToYear}
+              nameTop="kjdsh"
+              nameBottom="kdfh"
+            />
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Class/Semester*
-            </label>
-
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
-              placeholder="Class 12"
-            />
+            <InputDisabled label="Class/Semester" value={fromClassSemester} />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Class/Semester*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              value={arrayClassSemester}
+              label="Class/Semester*"
+              setSelected={setToClassSemester}
+              selected={toClassSemester}
+              error={errorToClassSemester}
+              setError={setErrorToClassSemester}
+            />
           </div>
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Available sections
-            </label>
-
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
-              placeholder="Science"
+            <InputDisabled
+              label="Aviable section"
+              value={fromAvailableSections}
             />
           </div>
-          <div>
-            <div className="flex justify-between">
-              <label className="" htmlFor="Student Id">
-                Available sections
-              </label>
-              <Link
-                to="/admin/data-setup/section/add"
-                className=" text-primary-btn lg:hidden flex mr-1"
-              >
-                <AiOutlineEdit className=" top-1 relative mx-2 cursor-pointer"></AiOutlineEdit>
-                <span>Manage</span>
-              </Link>
-            </div>
-
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn   border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
-              placeholder="Science"
+          <div className="relative">
+            <InputDisabled
+              label="Aviable section"
+              value={toAvailableSections}
             />
+            <Link
+              to="/admin/data-setup/section/add"
+              className=" text-primary-btn absolute lg:hidden top-0  right-0 flex mr-1"
+            >
+              <AiOutlineEdit className=" cursor-pointer"></AiOutlineEdit>
+              <span>Manage</span>
+            </Link>
           </div>
           <div className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 h-fit w-fit lg:block items-center justify-center hidden px-3 py-2 mt-auto text-sm font-medium text-white border border-transparent rounded-md shadow-sm cursor-pointer">
             <Link to="/admin/data-setup/section/add">Manage section</Link>
@@ -93,27 +130,29 @@ const Form = () => {
         </div>
         <div className="sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid grid-cols-1 gap-4 my-4">
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Selected section*
-            </label>
-
-            <input
-              className=" mt-[6px] w-full p- rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400    text-primary-grey-700 text-sm"
-              type="text"
-              placeholder="Science"
-            />
+            <InputDisabled label="From Section" value={fromSection} />
           </div>
           <div>
-            <label className="my-6 text-sm" htmlFor="Student Id">
-              Selected section*
-            </label>
-
-            <select className="w-full p-2 mt-[6px]  cursor-pointer rounded  focus:ring-primary-btn    border-primary-field shadow-md placeholder:text-primary-grey-400   text-primary-grey-700 text-sm">
-              <option value="Test">Select</option>
-            </select>
+            <Select
+              label="Selected section*"
+              value={arraySelectedSection}
+              selected={toSelectedSection}
+              setSelected={setToSelectedSection}
+              error={errorToSelectedSection}
+              setError={setErrorToSelectedSection}
+            />
           </div>
         </div>
       </form>
+      <div className="flex justify-between mt-6">
+        <span className="mt-auto">Filter by:</span>
+        <div
+          onClick={handleClick}
+          className="bg-primary-btn hover: focus:outline-none focus:ring- focus:ring-offset-2 h-fit w-fit lg:block items-center justify-center hidden px-3 py-2 mt-auto text-sm font-medium text-white border border-transparent rounded-md shadow-sm cursor-pointer"
+        >
+          Upgrade
+        </div>
+      </div>
     </>
   );
 };

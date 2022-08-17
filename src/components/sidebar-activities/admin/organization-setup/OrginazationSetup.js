@@ -1,6 +1,7 @@
 import React from "react";
 import Breadnav from "../../../components/Breadnav";
-import Break from "../break";
+import Break from "../../../components/Break";
+
 import Form from "./Form";
 const pages = [
   { name: "Admin", href: "#", current: false },
