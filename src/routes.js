@@ -145,7 +145,7 @@ function App() {
           />
           <Route path="fee-report" element={<FeeReport />} />
           <Route
-            path="fee-report/fee-statement-monthly/:classOfSchool/:section"
+            path="fee-report/fee-statement/:classOfSchool/:section/:monthly"
             element={<MonthlyFeeStatementReport />}
           />
           <Route
@@ -441,11 +441,11 @@ function App() {
             element={<StudentFeeStatement />}
           ></Route>
           <Route
-            path="fee-statement/class-fee-statement/:classOfSchool/monthly"
+            path="fee-statement/class-fee-statement/:classOfSchool/:section/:monthly"
             element={<ClassStatementMonthly />}
           ></Route>
           <Route
-            path="fee-statement/class-fee-statement/:classOfSchool"
+            path="fee-statement/class-fee-statement/:classOfSchool/:section"
             element={<ClassStatement />}
           ></Route>
           <Route

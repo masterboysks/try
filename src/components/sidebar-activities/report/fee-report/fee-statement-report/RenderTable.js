@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const RenderTable = ({ currentItems }) => {
   return (
     <>
@@ -8,7 +10,7 @@ const RenderTable = ({ currentItems }) => {
           </td>
 
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.particular}
+            <Link to={`${person.particular}`}> {person.particular}</Link>
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             Rs.{person.dr}

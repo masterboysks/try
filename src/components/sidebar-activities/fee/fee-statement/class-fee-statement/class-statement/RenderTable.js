@@ -1,4 +1,7 @@
+import { Link, useParams } from "react-router-dom";
+
 const RenderTable = ({ currentItems }) => {
+  const { classOfSchool, section } = useParams();
   return (
     <>
       {currentItems.map((person, index, table) => (
@@ -7,8 +10,8 @@ const RenderTable = ({ currentItems }) => {
             {person.date}
           </td>
 
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            {person.particular}
+          <td className="whitespace-nowrap px-3 py-4 text-sm text-primary-btn">
+            <Link to={`${person.particular}`}>{person.particular}</Link>
           </td>
           <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
             Rs.{person.dr}

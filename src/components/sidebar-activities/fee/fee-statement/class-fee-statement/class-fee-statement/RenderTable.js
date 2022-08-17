@@ -53,25 +53,12 @@ export default function RenderTable({
             <ThreeDots />
           </Popover.Button>
           <Popover.Panel
-            className={` -left-[230%] absolute z-10 bg-white divide-y-2 rounded shadow-lg cursor-pointer
+            className={` -left-[150%] absolute z-10 bg-white divide-y-2 rounded shadow-lg cursor-pointer
                  ${index + 1 < table.length ? "top-0" : "bottom-0"}`}
           >
             <div className="p-3">
-              <Link
-                to={`${person.class.toLowerCase().replace(" ", "-")}-${
-                  person.section
-                }`}
-              >
+              <Link to={`${person.class}/${person.section}`}>
                 Fee statement
-              </Link>
-            </div>
-            <div className="p-3">
-              <Link
-                to={`${person.class.toLowerCase().replace(" ", "-")}-${
-                  person.section
-                }/monthly`}
-              >
-                Monthly fee statement
               </Link>
             </div>
           </Popover.Panel>
