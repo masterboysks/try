@@ -16,12 +16,13 @@ export const Checkbox = ({
   dataTitle,
   dataValue,
   id,
+  className,
 }) => {
   const optional = {};
   dataTitle && (optional[dataTitle] = dataValue);
 
   return (
-    <div className="flex items-center h-5">
+    <div className={`flex items-center h-5 ${className}`}>
       <input
         id={id}
         name={name}
@@ -108,6 +109,8 @@ export const Input = ({
   onChange,
   className,
   step,
+  errorText,
+  dontShowErrorText,
 }) => {
   // useEffect(() => {
   //   console.log(err, name);
@@ -150,15 +153,15 @@ export const Input = ({
         onClick={() => error && setError(false)}
       />
       {/* {console.log(error)} */}
-      {error && (
-        <>
-          <br />
-          <span className="text-xs font-light text-red-600">
-            This is a required field.
-          </span>
-          <br />
-        </>
-      )}
+      {error &&
+        (dontShowErrorText || (
+          <>
+            <br />
+            <span className="text-xs font-light text-red-600">
+              {errorText || "This is a required field."}
+            </span>
+          </>
+        ))}
     </>
   );
 };
